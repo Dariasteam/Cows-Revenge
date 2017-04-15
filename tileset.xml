@@ -49,10 +49,10 @@
 		<resource name="1/texture" external="0">  </resource>
 		<vector2 name="1/tex_offset"> 0, 0 </vector2>
 		<resource name="1/material"></resource>		<color name="1/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="1/region"> 32, 32, 32, 32 </rect2>
-		<vector2 name="1/occluder_offset"> 16, 16 </vector2>
-		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> 16, 16 </vector2>
-		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> 16, 16 </vector2>
+		<rect2 name="1/region"> 32, 32, 64, 64 </rect2>
+		<vector2 name="1/occluder_offset"> -0, -0 </vector2>
+		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> -0, -0 </vector2>
+		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> -0, -0 </vector2>
 		<array name="1/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://3">  </resource>
 		</array>

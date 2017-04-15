@@ -44,6 +44,7 @@ gui/disable_input = false
 
 [node name="Life" type="Node2D" parent="Control"]
 
+editor/display_folded = true
 transform/pos = Vector2( 64, 64 )
 
 [node name="life1" type="Sprite" parent="Control/Life"]
@@ -63,10 +64,9 @@ texture = ExtResource( 3 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
 
-editor/display_folded = true
-
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 160, 320 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -81,6 +81,7 @@ visibility_mode = 0
 
 [node name="Bttn_A" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 576 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -95,6 +96,7 @@ visibility_mode = 0
 
 [node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 416 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -109,6 +111,7 @@ visibility_mode = 0
 
 [node name="Bttn_S" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 896, 576 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -123,6 +126,7 @@ visibility_mode = 0
 
 [node name="Bttn_D" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 160, 576 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -137,6 +141,7 @@ visibility_mode = 0
 
 [node name="Bttn_DR" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 288, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
 normal = ExtResource( 4 )
@@ -151,6 +156,7 @@ visibility_mode = 0
 
 [node name="Bttn_DL" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 32, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
 normal = ExtResource( 4 )
@@ -165,6 +171,7 @@ visibility_mode = 0
 
 [node name="Bttn_R" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 288, 448 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -179,6 +186,7 @@ visibility_mode = 0
 
 [node name="Bttn_L" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/opacity = 0.5
 transform/pos = Vector2( 32, 448 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 3 )
@@ -228,4 +236,3 @@ visibility_mode = 0
 [connection signal="released" from="Control/Buttons/Bttn_L" to="." method="_on_Bttn_L_released"]
 
 
-[editable path="Control/Viewport/Node2D"]
