@@ -7,13 +7,10 @@ signal damage
 # var b = "textvar"
 const GRAVITY = 3000.0
 
-const JUMP_SPEED = 500
-const SLIDE_LEVEL = 40
+export var velocity = 250
+var v = Vector2(velocity, 0)
 
-const MAX_WALK_SPEED = 350
-const WALK_SPEED_INCREMENT = 20
-var walk_speed = 0
-var velocity = Vector2(100, 0)
+onready var sprite = get_node("Sprite")
 
 export var damage = 1
 
@@ -23,27 +20,30 @@ func _ready():
 	
 func _fixed_process(delta):
 	
-	var motion = velocity * delta
+	var motion = v * delta
 	motion = move(motion)
-	velocity.y += delta * GRAVITY
+	v.y += delta * GRAVITY
 	if (is_colliding()):
 		var normal = get_collision_normal();
-		if (get_collider().is_in_group("player")):
-			if (get_collision_normal().y < 1):
+		var collider = get_collider()
+		if (collider.is_in_group("player")):
+			if (normal.y < 1):
 				emit_signal("damage", damage)
 				queue_free()
 			else:
 				queue_free()
-		elif (get_collider().is_in_group("bullet")):
+		elif (collider.is_in_group("bullet")):
+			collider.queue_free()
 			queue_free()
 		else:
 			if (normal.y == -1):
-				# Está en el suelo			
 				var n = get_collision_normal()
 				motion = n.slide(motion)
-				velocity = n.slide(velocity)
+				v = n.slide(v)
 				move(motion)
 			if (normal.x < 0):
-				velocity = Vector2(-100,0)
+				sprite.set_flip_h(false)
+				v = Vector2(-velocity,0)
 			elif (normal.x > 0):
-				velocity = Vector2(100,0)
+				sprite.set_flip_h(true)
+				v = Vector2(velocity,0)

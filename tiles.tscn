@@ -36,7 +36,7 @@ transform/scale = Vector2( 0.5, 0.5 )
 [node name="Esquina" type="Sprite" parent="."]
 
 visibility/visible = false
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 0, 0, 32, 32 )
@@ -67,15 +67,16 @@ trigger = false
 
 [node name="Suelo" type="Sprite" parent="."]
 
-visibility/visible = false
-transform/scale = Vector2( 2, 2 )
+transform/pos = Vector2( -32, -32 )
 texture = ExtResource( 1 )
+centered = false
 region = true
-region_rect = Rect2( 32, 32, 32, 32 )
+region_rect = Rect2( 32, 32, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Suelo"]
 
-transform/scale = Vector2( 0.5, 0.5 )
+visibility/visible = false
+transform/pos = Vector2( 32, 32 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 3.83209, 0, 0, 3.42399, 0, 0 )
@@ -89,6 +90,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/StaticBody2D"]
 
+visibility/visible = false
 transform/scale = Vector2( 3.83209, 3.42399 )
 shape = SubResource( 3 )
 trigger = false
@@ -97,7 +99,8 @@ _update_shape_index = 0
 [node name="Arbusto" type="Sprite" parent="."]
 
 visibility/visible = false
-transform/scale = Vector2( 2, 2 )
+transform/pos = Vector2( 32, 32 )
+transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 64, 128, 32, 32 )
@@ -126,14 +129,16 @@ _update_shape_index = 0
 
 [node name="Rampa" type="Sprite" parent="."]
 
-transform/scale = Vector2( 2, 2 )
+visibility/visible = false
+transform/pos = Vector2( 32, 32 )
+transform/scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 128, 256, 32, 32 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Rampa"]
 
-transform/pos = Vector2( 16, 16 )
+transform/pos = Vector2( 0, 4.76837e-07 )
 transform/scale = Vector2( 0.5, 0.5 )
 input/pickable = false
 shapes/0/shape = SubResource( 5 )

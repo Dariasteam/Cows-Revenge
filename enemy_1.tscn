@@ -1,38 +1,43 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://enemy_1.gd" type="Script" id=1]
-[ext_resource path="res://tile.png" type="Texture" id=2]
+[ext_resource path="res://malvado.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13, 13 )
+extents = Vector2( 16, 14.2637 )
 
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
 "enemy_1",
 "enemy",
 ]]
 
-transform/scale = Vector2( 0.5, 0.499999 )
+transform/pos = Vector2( 64, -80 )
+transform/scale = Vector2( 2, 2.5 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.46373, 0, 0, 2.46154, -0.0285072, 1.9908e-05 )
+shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, 0, -3.8147e-06 )
 shapes/0/trigger = false
 collision/layers = 4
 collision/mask = 5
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+velocity = 250
+damage = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 2.14577e-06, 5.62668e-05 )
-transform/scale = Vector2( 0.125, 0.125 )
+transform/pos = Vector2( 2.86102e-06, -4.76837e-07 )
+transform/scale = Vector2( 0.0441379, 0.0284444 )
 texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 180, 150, 1450, 2250 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.0285072, 1.9908e-05 )
-transform/scale = Vector2( 2.46373, 2.46154 )
+transform/pos = Vector2( 0, -3.8147e-06 )
+transform/scale = Vector2( 1.68421, 1.85361 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0

@@ -2,47 +2,54 @@
 
 [ext_resource path="res://Movimiento.gd" type="Script" id=1]
 [ext_resource path="res://shooter.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://vaca.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 13.6814, 12.3123 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.6667, 17.1855 )
+extents = Vector2( 13.6667, 15.2052 )
 
 [node name="Player" type="KinematicBody2D"]
 
-transform/pos = Vector2( -320, -768 )
-transform/scale = Vector2( 0.999999, 1 )
+transform/pos = Vector2( 64, 96 )
+transform/scale = Vector2( 2, 3 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 3, 0, 0, 3, -0.04422, -0.0804443 )
+shapes/0/transform = Matrix32( 2.33894, 0, 0, 2.12638, 4.76837e-07, -3.20919 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
-shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.931014, 0, 16 )
+shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.848696, -0.0332489, 10.0762 )
 shapes/1/trigger = true
 collision/layers = 1
 collision/mask = 0
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+JUMP_SPEED = 1000
+altitude = 0.5
 
 [node name="shooter" type="Node2D" parent="."]
 
-transform/pos = Vector2( 50, 0 )
+transform/pos = Vector2( 32, 0 )
 transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
 
+transform/pos = Vector2( -1.43051e-06, -9.53674e-07 )
+transform/scale = Vector2( 0.0426667, 0.022069 )
 texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 200, 450, 1500, 2900 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-transform/pos = Vector2( 1.15633e-05, 0.669312 )
+visibility/visible = false
+transform/pos = Vector2( 1.15633e-05, 1.07288e-06 )
 transform/scale = Vector2( 1, 1 )
 anchor_mode = 1
 rotating = false
@@ -63,16 +70,16 @@ drag_margin/bottom = 0.2
 
 [node name="Collision_Normal" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.04422, -0.0804443 )
-transform/scale = Vector2( 3, 3 )
+transform/pos = Vector2( 4.76837e-07, -3.20919 )
+transform/scale = Vector2( 2.33894, 2.12638 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Collision_Agachado" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0, 16 )
-transform/scale = Vector2( 2.34146, 0.931014 )
+transform/pos = Vector2( -0.0332489, 10.0762 )
+transform/scale = Vector2( 2.34146, 0.848696 )
 shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 1

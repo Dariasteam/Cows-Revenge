@@ -6,10 +6,11 @@ signal looking_right
 const GRAVITY = 3000.0
 
 const FLYING_MOVEMENT_SPEED = 1
-const JUMP_SPEED = 500
+export var JUMP_SPEED = 500
 const SLIDE_LEVEL = 40
 const MAX_JUMP_TIME = 60
-const JUMP_CORRECTION_LEVEL = 1
+
+export var altitude = 0.5
 
 const MAX_WALK_SPEED = 350
 const WALK_SPEED_INCREMENT = 20
@@ -26,7 +27,7 @@ var jump_key_pressed = false
 
 var last_collition_pos = Vector2(100000,10000)
 
-func can_jump_more ():
+func can_jump_more ():	
 	return jump_time > 0
 	
 func horizontal_movement_amount ():
@@ -41,7 +42,7 @@ func _fixed_process(delta):
 	
 	
 	if (jumping):
-		jump_time -= JUMP_CORRECTION_LEVEL
+		jump_time -= altitude
 	velocity.y += delta * GRAVITY
 	
 	# Salto	
@@ -62,10 +63,11 @@ func _fixed_process(delta):
 	if (Input.is_action_pressed("ui_left")):
 		emit_signal("looking_left");
 		velocity.x = - horizontal_movement_amount()
-		
+		sprite.set_flip_h(true)
 	elif (Input.is_action_pressed("ui_right")):
 		velocity.x =  horizontal_movement_amount()
 		emit_signal("looking_right");
+		sprite.set_flip_h(false)
 	else:
 		if (velocity.x > SLIDE_LEVEL):
 			velocity.x -= SLIDE_LEVEL
@@ -79,7 +81,7 @@ func _fixed_process(delta):
 	if (Input.is_action_pressed("ui_down")):
 		get_node("Collision_Normal").set_trigger(true)
 		get_node("Collision_Agachado").set_trigger(false)
-	else:
+	else:		
 		get_node("Collision_Normal").set_trigger(false)
 		get_node("Collision_Agachado").set_trigger(true)
 	
