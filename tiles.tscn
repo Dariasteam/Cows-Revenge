@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://tile.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -10.6626, 9.31828, 0.8897, 9.31828, 0.780776, 9.83776, -5.15769, 9.83331 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -10.6626, 10.4272, -10.6626, 9.31828, -5.15769, 9.83331, -5.20409, 10.4345 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8.33522, 9.47213 )
+
+[sub_resource type="CircleShape2D" id=6]
+
+custom_solver_bias = 0.0
+radius = 7.89035
+
+[sub_resource type="SegmentShape2D" id=5]
+
+custom_solver_bias = 0.0
+a = Vector2( 11.318, -14.8356 )
+b = Vector2( -8.65768, 5.31913 )
+
+[node name="Node2D" type="Node2D"]
+
+transform/pos = Vector2( 16, 16 )
+transform/scale = Vector2( 0.5, 0.5 )
+
+[node name="Esquina" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Esquina"]
+
+transform/scale = Vector2( 0.5, 0.5 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+collision/layers = 2
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Esquina/StaticBody2D"]
+
+build_mode = 0
+polygon = Vector2Array( -5.15769, 9.83331, 0.780776, 9.83776, 0.8897, 9.31828, -10.6626, 9.31828, -10.6626, 10.4272, -5.20409, 10.4345 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="Suelo" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 32, 32, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Suelo"]
+
+transform/scale = Vector2( 0.5, 0.5 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 3.83209, 0, 0, 3.42399, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo/StaticBody2D"]
+
+transform/scale = Vector2( 3.83209, 3.42399 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Arbusto" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 64, 128, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Arbusto"]
+
+transform/scale = Vector2( 0.5, 0.5 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 3.2039, 0, 0, 3.17543, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arbusto/StaticBody2D"]
+
+visibility/light_mask = 3
+transform/scale = Vector2( 3.2039, 3.17543 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Rampa" type="Sprite" parent="."]
+
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 128, 256, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Rampa"]
+
+transform/pos = Vector2( 16, 16 )
+transform/scale = Vector2( 0.5, 0.5 )
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 3.2039, 0, 0, 3.17543, -4.26167, 15.1095 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rampa/StaticBody2D"]
+
+transform/pos = Vector2( -4.26167, 15.1095 )
+transform/scale = Vector2( 3.2039, 3.17543 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+
