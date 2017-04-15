@@ -1,8 +1,45 @@
 extends Node2D
 
+
+export(NodePath) var life1_n
+export(NodePath) var life2_n
+export(NodePath) var life3_n
+
+onready var life1 = get_node(life1_n)
+onready var life2 = get_node(life2_n)
+onready var life3 = get_node(life3_n)
+
+var life = 3
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
+
+func on_add_life():
+	if (life < 3):
+		life = life + 1
+	update_life()
+
+func on_damage(var n):
+	life = life - n
+	update_life()
+
+func update_life():
+	if (life == 3):
+		life1.show();
+		life2.show();
+		life3.show();
+	elif (life == 2):
+		life1.show();
+		life2.show();
+		life3.hide();
+	elif (life == 1):
+		life1.show();
+		life2.hide();
+		life3.hide();
+	elif (life <= 0):
+		life1.hide();
+		life2.hide();
+		life3.hide();
 
 # UP
 func _on_Bttn_U_pressed():
