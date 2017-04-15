@@ -4,7 +4,7 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 
-const LIFE_TIME = 3
+export var LIFE_TIME = 3
 
 
 func _ready():

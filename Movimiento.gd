@@ -24,6 +24,8 @@ var velocity = Vector2()
 var jump_time = 0
 var jump_key_pressed = false
 
+var last_collition_pos = Vector2(100000,10000)
+
 func can_jump_more ():
 	return jump_time > 0
 	
@@ -64,7 +66,6 @@ func _fixed_process(delta):
 	elif (Input.is_action_pressed("ui_right")):
 		velocity.x =  horizontal_movement_amount()
 		emit_signal("looking_right");
-		
 	else:
 		if (velocity.x > SLIDE_LEVEL):
 			velocity.x -= SLIDE_LEVEL
@@ -87,21 +88,25 @@ func _fixed_process(delta):
 
 	# Control de colisiones
 	if (is_colliding()):
-		if (abs(get_collision_normal().y) > 0.45):
-			# Está en el suelo			
+		var normal = get_collision_normal()
+		if (normal.x != 0):
+			last_collition_pos = normal
+		
+		if (normal.y < 0):
+			# Está en el suelo
 			can_jump = true
 			jumping = false
-			var n = get_collision_normal()
-			motion = n.slide(motion)
-			velocity = n.slide(velocity)
+			motion = normal.slide(motion)
+			velocity = normal.slide(velocity)
 			move(motion)
-		elif (get_collision_normal().y > 0):
+		elif (normal.y > 0):
 			# Está chocandose contra el techo
 			jumping = false
 			can_jump = false 
 			jump_time = 0
 	else:
 		can_jump = false
+	
 
 func _ready():
 	set_fixed_process(true)

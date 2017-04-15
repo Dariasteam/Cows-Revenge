@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://enemy_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://tile.png" type="Texture" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+shader/shading_mode = 0
 
 [node name="Level" type="Node2D"]
 
@@ -51,7 +55,14 @@ damage = 1
 transform/pos = Vector2( -480, -928 )
 damage = 1
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -64,17 +75,18 @@ scroll/limit_begin = Vector2( 0, 0 )
 scroll/limit_end = Vector2( 0, 0 )
 scroll/ignore_camera_zoom = true
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 
-transform/pos = Vector2( -320, -768 )
-transform/scale = Vector2( 20, 12 )
-motion/scale = Vector2( 1.5, 1.5 )
+visibility/behind_parent = true
+material/material = SubResource( 1 )
+z/z = -1
+motion/scale = Vector2( 1.2, 0 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 1 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
 
-transform/scale = Vector2( 20, 20 )
+transform/scale = Vector2( 100, 100 )
 texture = ExtResource( 4 )
 
 

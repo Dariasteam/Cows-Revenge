@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 12.5981
+radius = 14.5983
 
 [node name="RigidBody2D" type="RigidBody2D" groups=[
 "bullet",
@@ -18,7 +18,7 @@ shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
-collision/mask = 3
+collision/mask = 2
 mode = 0
 mass = 1.0
 friction = 0.0
@@ -29,12 +29,13 @@ continuous_cd = 0
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
-can_sleep = true
+can_sleep = false
 velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
+LIFE_TIME = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

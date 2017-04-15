@@ -12,20 +12,21 @@ extents = Vector2( 10, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 13.6667, 17.1855 )
 
 [node name="Player" type="KinematicBody2D"]
 
-transform/pos = Vector2( -326.42, -758.827 )
+transform/pos = Vector2( -320, -768 )
+transform/scale = Vector2( 0.999999, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3, 0, 0, 3, -0.04422, -0.0804443 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
-shapes/1/transform = Matrix32( 3, 0, 0, 1.5, 0.417816, 15.288 )
+shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.931014, 0, 16 )
 shapes/1/trigger = true
 collision/layers = 1
-collision/mask = 2
+collision/mask = 0
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 
@@ -41,7 +42,8 @@ texture = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-transform/pos = Vector2( -2.47144, 0.669312 )
+transform/pos = Vector2( 1.15633e-05, 0.669312 )
+transform/scale = Vector2( 1, 1 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -69,8 +71,8 @@ _update_shape_index = 0
 
 [node name="Collision_Agachado" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0.417816, 15.288 )
-transform/scale = Vector2( 3, 1.5 )
+transform/pos = Vector2( 0, 16 )
+transform/scale = Vector2( 2.34146, 0.931014 )
 shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 1

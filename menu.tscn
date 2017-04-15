@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://bttn_jugar.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+transform/pos = Vector2( 640, 384 )
+transform/scale = Vector2( 20, 12 )
+
+[node name="Button" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -19.0
+margin/top = -11.0
+margin/right = 23.0
+margin/bottom = 9.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Jugar"
+flat = true
+script/script = ExtResource( 1 )
+
+
