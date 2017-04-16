@@ -55,7 +55,7 @@ func update_life():
 		life1.hide();
 		life2.hide();
 		life3.hide();
-		get_tree().change_scene("res://menu.tscn")
+		get_tree().change_scene("res://game_over.tscn")
 
 # UP
 func _on_Bttn_U_pressed():

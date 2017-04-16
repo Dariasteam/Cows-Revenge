@@ -1,15 +1,17 @@
-extends Button
+extends Node2D
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 
-func on_Bttn_press():
-	global.level = "res://All.tscn"
-	get_tree().change_scene("res://All.tscn")
-
 func _ready():
-	connect("pressed", self, "on_Bttn_press")
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
+
+func _on_reset_pressed():
+	get_tree().change_scene(global.level)
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene("res://menu.tscn")
