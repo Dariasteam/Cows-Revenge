@@ -35,12 +35,12 @@ __meta__ = {
 ] instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 640, -736 )
+transform/pos = Vector2( -1216, -928 )
 JUMP_SPEED = 500
 
 [node name="Enemy3" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 384, -704 )
+transform/pos = Vector2( -1472, -896 )
 velocity = 200
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
