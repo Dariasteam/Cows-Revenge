@@ -13,10 +13,18 @@ var v = Vector2(-velocity, 0)
 
 onready var sprite = get_node("Sprite")
 
+export(bool) var dir_left = true;
+
 export var damage = 1
+
+func reverse_direction():
+	sprite.set_flip_h(v.x < 0)
+	v = Vector2(-v.x,0)
 
 func _ready():
 	connect("damage", get_tree().get_root().get_node("Node2D"), "on_damage")
+	if (!dir_left):
+		reverse_direction()
 	set_fixed_process(true)
 	
 func _fixed_process(delta):	
@@ -45,9 +53,5 @@ func _fixed_process(delta):
 				v = normal.slide(v)
 				move(motion)
 				v.x = aux
-			if (normal.x < -0.75):
-				sprite.set_flip_h(false)
-				v = Vector2(-velocity,0)
-			elif (normal.x > 0.75):
-				sprite.set_flip_h(true)
-				v = Vector2(velocity,0)
+			if (normal.x < -0.75 or normal.x > 0.75):
+				reverse_direction()			

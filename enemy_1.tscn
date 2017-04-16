@@ -24,6 +24,7 @@ collision/mask = 5
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 velocity = 250
+dir_left = true
 damage = 1
 
 [node name="Sprite" type="Sprite" parent="."]

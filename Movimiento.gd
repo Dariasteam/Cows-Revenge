@@ -25,7 +25,43 @@ var velocity = Vector2()
 var jump_time = 0
 var jump_key_pressed = false
 
+var receive_damage = true
+
 var last_collition_pos = Vector2(100000,10000)
+
+func on_opacity_low ():	
+	sprite.set_opacity(0.5)
+
+func on_opacity_high ():	
+	sprite.set_opacity(1)
+	
+func on_receive_damage ():
+	if (can_receive_damage()):
+		receive_damage = false
+		show_damage()
+		
+	
+func can_receive_damage ():
+	print (receive_damage)
+	return receive_damage
+
+func show_damage ():
+	var t1 = Timer.new()
+	var t2 = Timer.new()
+	t1.set_wait_time(0.2)
+	t2.set_wait_time(0.2)
+	t1.set_one_shot(true)
+	t2.set_one_shot(true)
+	t1.connect("timeout",self,"on_opacity_low")
+	t2.connect("timeout",self,"on_opacity_high")
+	add_child(t1)
+	add_child(t2)
+	for i in range(23):
+		t1.start()
+		yield(t1, "timeout")
+		t2.start()
+		yield(t2, "timeout")
+	receive_damage = true
 
 func can_jump_more ():	
 	return jump_time > 0
@@ -39,8 +75,6 @@ func horizontal_movement_amount ():
 		return walk_speed
 
 func _fixed_process(delta):
-	
-	
 	if (jumping):
 		jump_time -= altitude
 	velocity.y += delta * GRAVITY
@@ -110,5 +144,5 @@ func _fixed_process(delta):
 		can_jump = false
 	
 
-func _ready():
+func _ready():	
 	set_fixed_process(true)

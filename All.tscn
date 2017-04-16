@@ -45,6 +45,7 @@ gui/disable_input = false
 
 [node name="Life" type="Node2D" parent="Control"]
 
+editor/display_folded = true
 transform/pos = Vector2( 64, 64 )
 
 [node name="life1" type="Sprite" parent="Control/Life"]

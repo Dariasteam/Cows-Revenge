@@ -9,6 +9,8 @@ onready var life1 = get_node(life1_n)
 onready var life2 = get_node(life2_n)
 onready var life3 = get_node(life3_n)
 
+onready var player = get_tree().get_nodes_in_group("player")[0]
+
 var life = 3
 # class member variables go here, for example:
 # var a = 2
@@ -20,8 +22,10 @@ func on_add_life():
 	update_life()
 
 func on_damage(var n):
-	life = life - n
-	update_life()
+	if(player.can_receive_damage()):
+		player.on_receive_damage()
+		life = life - n
+		update_life()
 
 func update_life():
 	if (life == 3):

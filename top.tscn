@@ -42,6 +42,18 @@ JUMP_SPEED = 500
 
 transform/pos = Vector2( -1472, -896 )
 velocity = 200
+dir_left = false
+
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -1152, -1344 )
+velocity = 200
+dir_left = false
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -704, -704 )
+velocity = 200
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
