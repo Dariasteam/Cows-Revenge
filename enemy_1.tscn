@@ -6,11 +6,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 14.2637 )
+extents = Vector2( 17.2621, 15.7209 )
 
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
-"enemy_1",
 "enemy",
+"enemy_1",
 ]]
 
 transform/pos = Vector2( 64, -80 )

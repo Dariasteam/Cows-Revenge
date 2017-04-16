@@ -7,12 +7,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.6814, 12.3123 )
+extents = Vector2( 16.4325, 12.3123 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.6667, 15.2052 )
+extents = Vector2( 13.4207, 15.2052 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -20,10 +20,10 @@ transform/pos = Vector2( 64, 96 )
 transform/scale = Vector2( 2, 3 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.33894, 0, 0, 2.12638, 4.76837e-07, -3.20919 )
+shapes/0/transform = Matrix32( 1.9183, 0, 0, 2.12638, 2.86102e-06, -3.20918 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
-shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.848696, -0.0332489, 10.0762 )
+shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.848695, -0.0332508, 10.0762 )
 shapes/1/trigger = true
 collision/layers = 1
 collision/mask = 0
@@ -38,19 +38,33 @@ transform/pos = Vector2( 32, 0 )
 transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
 
+[node name="Collision_Normal" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 2.86102e-06, -3.20918 )
+transform/scale = Vector2( 1.9183, 2.12638 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Collision_Agachado" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -0.0332508, 10.0762 )
+transform/scale = Vector2( 2.34146, 0.848695 )
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 1
+
 [node name="sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -1.43051e-06, -9.53674e-07 )
 transform/scale = Vector2( 0.0426667, 0.022069 )
 texture = ExtResource( 3 )
 region = true
 region_rect = Rect2( 200, 450, 1500, 2900 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="sprite"]
 
-visibility/visible = false
-transform/pos = Vector2( 1.15633e-05, 1.07288e-06 )
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( 0.000244141, 0 )
+transform/scale = Vector2( 23.4375, 45.3125 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -67,22 +81,6 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
-
-[node name="Collision_Normal" type="CollisionShape2D" parent="."]
-
-transform/pos = Vector2( 4.76837e-07, -3.20919 )
-transform/scale = Vector2( 2.33894, 2.12638 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Collision_Agachado" type="CollisionShape2D" parent="."]
-
-transform/pos = Vector2( -0.0332489, 10.0762 )
-transform/scale = Vector2( 2.34146, 0.848696 )
-shape = SubResource( 2 )
-trigger = true
-_update_shape_index = 1
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 
