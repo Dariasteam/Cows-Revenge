@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="TileSet" subresource_count="8" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+<resource_file type="TileSet" subresource_count="7" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
 	<ext_resource path="res://tile.png" type="Texture" index="0"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
@@ -11,25 +11,20 @@
 		<vector2_array name="points" len="4"> 			-10.6626, 10.4272, -10.6626, 9.31828, -5.15769, 9.83331, -5.20409, 10.4345 </vector2_array>
 
 	</resource>
-	<resource type="RectangleShape2D" path="local://3">
+	<resource type="ConvexPolygonShape2D" path="local://9">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 8.33522, 9.47213 </vector2>
-
-	</resource>
-	<resource type="CircleShape2D" path="local://4">
-		<real name="custom_solver_bias"> 0 </real>
-		<real name="radius"> 7.890354 </real>
-
-	</resource>
-	<resource type="CircleShape2D" path="local://6">
-		<real name="custom_solver_bias"> 0 </real>
-		<real name="radius"> 7.89035 </real>
+		<vector2_array name="points" len="5"> 			-32, -32, 32, -32, 32, 32, -32, 32, -32, -32 </vector2_array>
 
 	</resource>
 	<resource type="SegmentShape2D" path="local://5">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="a"> 11.318, -14.8356 </vector2>
 		<vector2 name="b"> -8.65768, 5.31913 </vector2>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://8">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="5"> 			-10, -10, 10, -10, 10, 10, -10, 10, -10, -10 </vector2_array>
 
 	</resource>
 	<main_resource>
@@ -49,14 +44,14 @@
 		<resource name="1/texture" external="0">  </resource>
 		<vector2 name="1/tex_offset"> 0, 0 </vector2>
 		<resource name="1/material"></resource>		<color name="1/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="1/region"> 32, 32, 64, 64 </rect2>
-		<vector2 name="1/occluder_offset"> -0, -0 </vector2>
-		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> -0, -0 </vector2>
-		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> -0, -0 </vector2>
+		<rect2 name="1/region"> 256, 128, 64, 64 </rect2>
+		<vector2 name="1/occluder_offset"> 32, 32 </vector2>
+		<resource name="1/occluder"></resource>		<vector2 name="1/navigation_offset"> 32, 32 </vector2>
+		<resource name="1/navigation"></resource>		<vector2 name="1/shape_offset"> 32, 32 </vector2>
 		<array name="1/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://3">  </resource>
+			<resource  resource_type="Shape2D" path="local://9">  </resource>
 		</array>
-		<string name="2/name"> "Suelo1" </string>
+		<string name="2/name"> "Arbusto" </string>
 		<resource name="2/texture" external="0">  </resource>
 		<vector2 name="2/tex_offset"> 0, 0 </vector2>
 		<resource name="2/material"></resource>		<color name="2/modulate"> 1, 1, 1, 1 </color>
@@ -65,29 +60,29 @@
 		<resource name="2/occluder"></resource>		<vector2 name="2/navigation_offset"> 16, 16 </vector2>
 		<resource name="2/navigation"></resource>		<vector2 name="2/shape_offset"> 16, 16 </vector2>
 		<array name="2/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://4">  </resource>
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
 		</array>
-		<string name="3/name"> "Arbusto" </string>
+		<string name="3/name"> "Rampa" </string>
 		<resource name="3/texture" external="0">  </resource>
 		<vector2 name="3/tex_offset"> 0, 0 </vector2>
 		<resource name="3/material"></resource>		<color name="3/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="3/region"> 64, 128, 32, 32 </rect2>
+		<rect2 name="3/region"> 128, 256, 32, 32 </rect2>
 		<vector2 name="3/occluder_offset"> 16, 16 </vector2>
 		<resource name="3/occluder"></resource>		<vector2 name="3/navigation_offset"> 16, 16 </vector2>
 		<resource name="3/navigation"></resource>		<vector2 name="3/shape_offset"> 16, 16 </vector2>
 		<array name="3/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://6">  </resource>
+			<resource  resource_type="Shape2D" path="local://5">  </resource>
 		</array>
-		<string name="4/name"> "Rampa" </string>
+		<string name="4/name"> "Piso" </string>
 		<resource name="4/texture" external="0">  </resource>
 		<vector2 name="4/tex_offset"> 0, 0 </vector2>
 		<resource name="4/material"></resource>		<color name="4/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="4/region"> 128, 256, 32, 32 </rect2>
-		<vector2 name="4/occluder_offset"> 16, 16 </vector2>
-		<resource name="4/occluder"></resource>		<vector2 name="4/navigation_offset"> 16, 16 </vector2>
-		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> 16, 16 </vector2>
+		<rect2 name="4/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="4/occluder_offset"> 32, 32 </vector2>
+		<resource name="4/occluder"></resource>		<vector2 name="4/navigation_offset"> 32, 32 </vector2>
+		<resource name="4/navigation"></resource>		<vector2 name="4/shape_offset"> 32, 32 </vector2>
 		<array name="4/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://5">  </resource>
+			<resource  resource_type="Shape2D" path="local://8">  </resource>
 		</array>
 
 	</main_resource>

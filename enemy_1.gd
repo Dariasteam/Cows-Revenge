@@ -8,7 +8,7 @@ signal damage
 const GRAVITY = 3000.0
 
 export var velocity = 250
-var v = Vector2(velocity, 0)
+var v = Vector2(-velocity, 0)
 
 onready var sprite = get_node("Sprite")
 
@@ -27,7 +27,7 @@ func _fixed_process(delta):
 		var normal = get_collision_normal();
 		var collider = get_collider()
 		if (collider.is_in_group("player")):
-			if (normal.y < 1):
+			if (normal.y < 0.7):
 				emit_signal("damage", damage)
 				queue_free()
 			else:

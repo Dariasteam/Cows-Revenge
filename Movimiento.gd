@@ -50,7 +50,7 @@ func _fixed_process(delta):
 		if (jumping and can_jump_more() and jump_key_pressed):
 			velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
 			jumping = true
-		elif(can_jump):
+		elif(can_jump and !jump_key_pressed):
 			velocity.y = - JUMP_SPEED
 			jump_time = MAX_JUMP_TIME
 			can_jump = false
