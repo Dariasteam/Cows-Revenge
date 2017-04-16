@@ -7,6 +7,7 @@ signal damage
 # var b = "textvar"
 const GRAVITY = 3000.0
 
+var vertical
 export var velocity = 250
 var v = Vector2(-velocity, 0)
 
@@ -22,7 +23,9 @@ func _fixed_process(delta):
 	
 	var motion = v * delta
 	motion = move(motion)
+	
 	v.y += delta * GRAVITY
+	
 	if (is_colliding()):
 		var normal = get_collision_normal();
 		var collider = get_collider()
@@ -36,14 +39,15 @@ func _fixed_process(delta):
 			collider.queue_free()
 			queue_free()
 		else:
-			if (normal.y == -1):
-				var n = get_collision_normal()
-				motion = n.slide(motion)
-				v = n.slide(v)
+			if (normal.y < 0):
+				if (normal.y > -1):
+					v.y = -velocity
+				motion = normal.slide(motion)
+				v = normal.slide(v)
 				move(motion)
-			if (normal.x < 0):
+			if (normal.x < -0.75):
 				sprite.set_flip_h(false)
 				v = Vector2(-velocity,0)
-			elif (normal.x > 0):
+			elif (normal.x > 0.75):
 				sprite.set_flip_h(true)
 				v = Vector2(velocity,0)

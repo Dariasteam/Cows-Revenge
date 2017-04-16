@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Controles.gd" type="Script" id=1]
 [ext_resource path="res://top.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://tile.png" type="Texture" id=4]
+[ext_resource path="res://corazon.png" type="Texture" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://tile.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,32 +45,42 @@ gui/disable_input = false
 
 [node name="Life" type="Node2D" parent="Control"]
 
-editor/display_folded = true
 transform/pos = Vector2( 64, 64 )
 
 [node name="life1" type="Sprite" parent="Control/Life"]
 
-transform/pos = Vector2( 64, 32 )
+transform/pos = Vector2( 63.7793, 32 )
+transform/scale = Vector2( 0.441379, 0.426667 )
 texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="life2" type="Sprite" parent="Control/Life"]
 
 transform/pos = Vector2( 160, 32 )
+transform/scale = Vector2( 0.441379, 0.426667 )
 texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="life3" type="Sprite" parent="Control/Life"]
 
 transform/pos = Vector2( 256, 32 )
+transform/scale = Vector2( 0.441379, 0.426667 )
 texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
+
+editor/display_folded = true
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
 visibility/opacity = 0.5
 transform/pos = Vector2( 160, 320 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -84,7 +95,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 576 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -99,7 +110,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 416 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -114,7 +125,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 896, 576 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -129,7 +140,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 160, 576 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -144,7 +155,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 288, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 pressed = null
 bitmask = null
 shape = null
@@ -159,7 +170,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 32, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 pressed = null
 bitmask = null
 shape = null
@@ -174,7 +185,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 288, 448 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -189,7 +200,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 32, 448 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 3 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
