@@ -7,7 +7,9 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://tile.png" type="Texture" id=6]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=[
+"control",
+]]
 
 script/script = ExtResource( 1 )
 life1_n = NodePath("Control/Life/life1")
@@ -27,6 +29,7 @@ margin/bottom = 768.0
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
+editor/display_folded = true
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = true
 world = null
@@ -46,7 +49,6 @@ gui/disable_input = false
 
 [node name="Life" type="Node2D" parent="Control"]
 
-editor/display_folded = true
 transform/pos = Vector2( 64, 64 )
 
 [node name="life1" type="Sprite" parent="Control/Life"]
@@ -75,9 +77,11 @@ region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
 
+editor/display_folded = true
+
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.85
+visibility/opacity = 0.9
 transform/pos = Vector2( 160, 320 )
 transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
@@ -137,7 +141,7 @@ visibility_mode = 0
 
 [node name="Bttn_D" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.85
+visibility/opacity = 0.9
 transform/pos = Vector2( 288, 704 )
 transform/rot = 180.0
 transform/scale = Vector2( 0.474074, 0.481203 )
@@ -183,7 +187,7 @@ visibility_mode = 0
 
 [node name="Bttn_R" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.85
+visibility/opacity = 0.9
 transform/pos = Vector2( 416, 448 )
 transform/rot = -90.0
 transform/scale = Vector2( 0.474074, 0.481203 )
@@ -199,7 +203,7 @@ visibility_mode = 0
 
 [node name="Bttn_L" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.85
+visibility/opacity = 0.9
 transform/pos = Vector2( 32, 576 )
 transform/rot = 90.0
 transform/scale = Vector2( 0.474074, 0.481203 )
@@ -212,6 +216,24 @@ shape_visible = true
 passby_press = true
 action = ""
 visibility_mode = 0
+
+[node name="Milk" type="Node2D" parent="Control"]
+
+transform/pos = Vector2( 1056, 96 )
+transform/scale = Vector2( 6, 1 )
+
+[node name="Out" type="Sprite" parent="Control/Milk"]
+
+transform/pos = Vector2( -32, -32 )
+transform/scale = Vector2( 64, 64 )
+
+[node name="In" type="Sprite" parent="Control/Milk"]
+
+transform/pos = Vector2( -0.202426, 0 )
+transform/scale = Vector2( 0.45, 0.426667 )
+texture = ExtResource( 3 )
+region = true
+region_rect = Rect2( 180, 140, 145, 150 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="." method="_on_Bttn_U_pressed"]
 

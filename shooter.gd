@@ -6,7 +6,9 @@ extends Node2D
 const BULLET = preload("res://bullet.tscn")
 var shooting = false
 
-const SHOOT_CADENCE = 0.5
+onready var player = get_parent()
+
+export var SHOOT_CADENCE = 0.5
 
 var shoot_dir = Vector2(500,-250)
 
@@ -14,12 +16,12 @@ func _ready():
 	set_fixed_process(true)
 
 func _fixed_process(delta):	
-	if (Input.is_action_pressed("ui_shoot") and !shooting):
+	if (Input.is_action_pressed("ui_shoot") and !shooting and player.get_milk_level() > 0):
 		
 		var instanced_bullet = BULLET.instance()
 		get_parent().get_parent().add_child(instanced_bullet)
 		instanced_bullet.set_global_pos(get_global_pos())
-		instanced_bullet.set_linear_velocity(shoot_dir)
+		instanced_bullet.set_linear_velocity(shoot_dir + Vector2(rand_range(-100, 100), rand_range(-100, 100)))
 		
 		shooting = true
 		
@@ -30,6 +32,7 @@ func _fixed_process(delta):
 		t.start()
 		yield(t, "timeout")
 		shooting = false
+		player.decrease_milk()
 	
 
 func _on_KinematicBody2D_looking_left():
