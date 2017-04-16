@@ -90,6 +90,29 @@ __meta__ = {
 transform/scale = Vector2( 10, 10 )
 texture = ExtResource( 4 )
 
+[node name="Apple 2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -1344, -1280 )
+transform/scale = Vector2( 1, 0.999998 )
+
+[node name="Apple 3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -128, -640 )
+transform/scale = Vector2( 1, 0.999998 )
+
+[node name="Apple 4" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -384, -640 )
+transform/scale = Vector2( 1, 0.999998 )
+
 [node name="Apple" parent="." instance=ExtResource( 5 )]
 
+editor/display_folded = true
+transform/pos = Vector2( -640, -640 )
 
+[node name="Apple 5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -768, -704 )
+
+
+[editable path="Apple"]

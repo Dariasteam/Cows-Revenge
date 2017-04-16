@@ -32,6 +32,7 @@ script/script = ExtResource( 1 )
 JUMP_SPEED = 500
 altitude = 0.5
 max_milk = 500
+milk_level = 0
 
 [node name="shooter" type="Node2D" parent="."]
 

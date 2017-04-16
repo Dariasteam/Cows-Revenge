@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://manzana.gd" type="Script" id=1]
 [ext_resource path="res://manzana.png" type="Texture" id=2]
@@ -6,16 +6,32 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 13, 13 )
 
-[node name="Area2D" type="Area2D"]
+[sub_resource type="Animation" id=2]
 
-editor/display_folded = true
+resource/name = "Apple_Idle"
+length = 1.6
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Apple:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.4, 0.8, 1.2, 1.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -25.0, 0.0, 25.0, 0.0, -25.0 ]
+}
+
+[node name="Apple" type="Area2D"]
+
 transform/pos = Vector2( -608, -672 )
-transform/scale = Vector2( 0.121212, 0.0993789 )
+transform/scale = Vector2( 1, 0.999999 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 26.4, 0, 0, 32.2, 0, 0 )
+shapes/0/transform = Matrix32( 2.46154, 0, 0, 2.46154, 1.52588e-05, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
@@ -26,15 +42,29 @@ amount = 100
 
 [node name="Apple" type="Sprite" parent="."]
 
-transform/scale = Vector2( 1, 1 )
+transform/pos = Vector2( 0, -3.05176e-05 )
+transform/rot = 9.29221
+transform/scale = Vector2( 0.121212, 0.0993789 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/scale = Vector2( 26.4, 32.2 )
+transform/pos = Vector2( 1.52588e-05, 0 )
+transform/scale = Vector2( 2.46154, 2.46154 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Apple_Idle = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Apple_Idle"
 
 [connection signal="body_enter" from="." to="." method="_on_Area2D_body_enter"]
 

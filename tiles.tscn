@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://tile.png" type="Texture" id=1]
+[ext_resource path="res://suelo.png" type="Texture" id=1]
+[ext_resource path="res://tile.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -23,11 +24,9 @@ transform/pos = Vector2( 32, 32 )
 
 [node name="Suelo" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 texture = ExtResource( 1 )
-region = true
-region_rect = Rect2( 256, 128, 64, 64 )
+region_rect = Rect2( 0, 128, 64, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Suelo"]
 
@@ -53,7 +52,7 @@ trigger = false
 
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 320, 256, 64, 64 )
 
@@ -79,8 +78,9 @@ trigger = false
 
 [node name="Rampa_RL" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 512, 256, 64, 64 )
 

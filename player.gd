@@ -32,7 +32,7 @@ var receive_damage = true
 var last_collition_pos = Vector2(100000,10000)
 
 export(int) var max_milk = 500
-var milk_level = 100
+export(int) var milk_level = 0
 
 func get_max_milk():
 	return max_milk
