@@ -3,6 +3,8 @@ extends KinematicBody2D
 signal looking_left
 signal looking_right
 
+signal update_milk
+
 const GRAVITY = 3000.0
 
 const FLYING_MOVEMENT_SPEED = 1
@@ -29,7 +31,27 @@ var receive_damage = true
 
 var last_collition_pos = Vector2(100000,10000)
 
-func on_opacity_low ():	
+export(int) var max_milk = 500
+var milk_level = 100
+
+func get_max_milk():
+	return max_milk
+
+func add_milk(amount):
+	if (milk_level + amount > max_milk):
+		milk_level = max_milk
+	else:
+		milk_level += amount
+	emit_signal("update_milk", get_max_milk(), get_milk_level());
+
+func get_milk_level():
+	return milk_level
+
+func decrease_milk():
+	milk_level = milk_level - 1
+	emit_signal("update_milk", get_max_milk(), get_milk_level());
+
+func on_opacity_low ():
 	sprite.set_opacity(0.5)
 
 func on_opacity_high ():	
@@ -143,5 +165,7 @@ func _fixed_process(delta):
 		can_jump = false
 	
 
-func _ready():	
+func _ready():
+	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
+	emit_signal("update_milk", get_max_milk(), get_milk_level());
 	set_fixed_process(true)

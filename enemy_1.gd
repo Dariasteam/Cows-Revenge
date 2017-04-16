@@ -40,7 +40,17 @@ func _fixed_process(delta):
 			if (normal.y < 0.7):
 				emit_signal("damage", damage)
 			else:
+				Input.action_press("ui_jump")
+				var t = Timer.new()
+				get_node("Sprite").set_opacity(0)
+				set_shape_as_trigger(0, true)
+				t.set_wait_time(0.2)
+				t.set_one_shot(true)
+				self.add_child(t)
+				t.start()
+				yield(t, "timeout")
 				queue_free()
+				Input.action_release("ui_jump")
 		elif (collider.is_in_group("bullet")):
 			collider.queue_free()
 			queue_free()
