@@ -81,10 +81,6 @@ func _on_Bttn_A_pressed():
 func _on_Bttn_A_released():
 	Input.action_release("ui_jump")
 
-
-func _ready():
-	pass
-
 # DOWN_RIGHT
 func _on_Bttn_DR_pressed():
 	Input.action_press("ui_down")

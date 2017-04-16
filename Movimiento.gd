@@ -41,8 +41,7 @@ func on_receive_damage ():
 		show_damage()
 		
 	
-func can_receive_damage ():
-	print (receive_damage)
+func can_receive_damage ():	
 	return receive_damage
 
 func show_damage ():
