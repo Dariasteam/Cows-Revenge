@@ -37,6 +37,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision/layers = 16
 script/script = ExtResource( 1 )
 amount = 100
 
