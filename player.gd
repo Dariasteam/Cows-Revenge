@@ -62,11 +62,17 @@ func on_receive_damage ():
 		receive_damage = false
 		show_damage()
 		
-	
 func can_receive_damage ():	
 	return receive_damage
 
+func change_collision ():
+	set_layer_mask_bit(0, !get_layer_mask_bit(0))
+	
+	
+	
 func show_damage ():
+	change_collision()
+	
 	var t1 = Timer.new()
 	var t2 = Timer.new()
 	t1.set_wait_time(0.2)
@@ -83,6 +89,7 @@ func show_damage ():
 		t2.start()
 		yield(t2, "timeout")
 	receive_damage = true
+	change_collision()
 
 func can_jump_more ():	
 	return jump_time > 0

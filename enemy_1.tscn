@@ -9,8 +9,8 @@ custom_solver_bias = 0.0
 extents = Vector2( 17.2621, 15.7209 )
 
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
-"enemy",
 "enemy_1",
+"enemy",
 ]]
 
 transform/pos = Vector2( 64, -80 )
@@ -19,8 +19,8 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, 0, -3.8147e-06 )
 shapes/0/trigger = false
-collision/layers = 4
-collision/mask = 5
+collision/layers = 8
+collision/mask = 7
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 velocity = 250
