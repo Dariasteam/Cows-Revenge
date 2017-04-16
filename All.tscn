@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Controles.gd" type="Script" id=1]
 [ext_resource path="res://top.tscn" type="PackedScene" id=2]
 [ext_resource path="res://corazon.png" type="Texture" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://tile.png" type="Texture" id=5]
+[ext_resource path="res://flexa.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://tile.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -74,13 +75,11 @@ region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
 
-editor/display_folded = true
-
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
+visibility/opacity = 0.85
 transform/pos = Vector2( 160, 320 )
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null
@@ -96,7 +95,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 576 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 pressed = null
 bitmask = null
 shape = null
@@ -111,7 +110,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 416 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 pressed = null
 bitmask = null
 shape = null
@@ -126,7 +125,7 @@ visibility_mode = 0
 visibility/opacity = 0.5
 transform/pos = Vector2( 896, 576 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 pressed = null
 bitmask = null
 shape = null
@@ -138,9 +137,10 @@ visibility_mode = 0
 
 [node name="Bttn_D" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
-transform/pos = Vector2( 160, 576 )
-transform/scale = Vector2( 2, 2 )
+visibility/opacity = 0.85
+transform/pos = Vector2( 288, 704 )
+transform/rot = 180.0
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null
@@ -153,10 +153,10 @@ visibility_mode = 0
 
 [node name="Bttn_DR" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
+visibility/opacity = 0.0
 transform/pos = Vector2( 288, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 5 )
+normal = ExtResource( 6 )
 pressed = null
 bitmask = null
 shape = null
@@ -168,10 +168,10 @@ visibility_mode = 0
 
 [node name="Bttn_DL" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
+visibility/opacity = 0.0
 transform/pos = Vector2( 32, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 5 )
+normal = ExtResource( 6 )
 pressed = null
 bitmask = null
 shape = null
@@ -183,9 +183,10 @@ visibility_mode = 0
 
 [node name="Bttn_R" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
-transform/pos = Vector2( 288, 448 )
-transform/scale = Vector2( 2, 2 )
+visibility/opacity = 0.85
+transform/pos = Vector2( 416, 448 )
+transform/rot = -90.0
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null
@@ -198,9 +199,10 @@ visibility_mode = 0
 
 [node name="Bttn_L" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
-transform/pos = Vector2( 32, 448 )
-transform/scale = Vector2( 2, 2 )
+visibility/opacity = 0.85
+transform/pos = Vector2( 32, 576 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null

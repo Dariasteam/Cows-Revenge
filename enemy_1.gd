@@ -18,7 +18,7 @@ export(bool) var dir_left = true;
 export var damage = 1
 
 func reverse_direction():
-	sprite.set_flip_h(v.x < 0)
+	sprite.set_flip_h(v.x < 0)	
 	v = Vector2(-v.x,0)
 
 func _ready():
@@ -35,15 +35,16 @@ func _fixed_process(delta):
 	if (is_colliding()):
 		var normal = get_collision_normal();
 		var collider = get_collider()
+		
 		if (collider.is_in_group("player")):
 			if (normal.y < 0.7):
 				emit_signal("damage", damage)
-				queue_free()
 			else:
 				queue_free()
 		elif (collider.is_in_group("bullet")):
 			collider.queue_free()
 			queue_free()
+			
 		else:
 			if (normal.y < 0):
 				if (normal.y > -1):
@@ -52,6 +53,6 @@ func _fixed_process(delta):
 				motion = normal.slide(motion)
 				v = normal.slide(v)
 				move(motion)
-				v.x = aux
+				v.x = aux			
 			if (normal.x < -0.75 or normal.x > 0.75):
-				reverse_direction()			
+				reverse_direction()
