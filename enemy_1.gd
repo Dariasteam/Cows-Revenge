@@ -19,11 +19,9 @@ func _ready():
 	connect("damage", get_tree().get_root().get_node("Node2D"), "on_damage")
 	set_fixed_process(true)
 	
-func _fixed_process(delta):
-	
+func _fixed_process(delta):	
 	var motion = v * delta
-	motion = move(motion)
-	
+	motion = move(motion)	
 	v.y += delta * GRAVITY
 	
 	if (is_colliding()):
@@ -42,9 +40,11 @@ func _fixed_process(delta):
 			if (normal.y < 0):
 				if (normal.y > -1):
 					v.y = -velocity
+				var aux = v.x
 				motion = normal.slide(motion)
 				v = normal.slide(v)
 				move(motion)
+				v.x = aux
 			if (normal.x < -0.75):
 				sprite.set_flip_h(false)
 				v = Vector2(-velocity,0)
