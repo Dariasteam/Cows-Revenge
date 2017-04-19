@@ -37,8 +37,8 @@ func _fixed_process(delta):
 
 func _on_KinematicBody2D_looking_left():
 	shoot_dir = Vector2(-500,-250)
-	set_pos(Vector2(-50, 0))
+	set_pos(Vector2(-30, 0))
 
 func _on_KinematicBody2D_looking_right():
 	shoot_dir = Vector2(500,-250)
-	set_pos(Vector2(50, 0))
+	set_pos(Vector2(30, 0))

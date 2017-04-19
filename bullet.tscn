@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 14.5983
+radius = 13.2155
 
 [node name="RigidBody2D" type="RigidBody2D" groups=[
 "bullet",
@@ -18,7 +18,7 @@ shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 8
-collision/mask = 14
+collision/mask = 6
 mode = 0
 mass = 1.0
 friction = 0.0

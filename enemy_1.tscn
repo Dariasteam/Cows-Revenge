@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://enemy_1.gd" type="Script" id=1]
 [ext_resource path="res://malvado.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 17.2621, 15.7209 )
+extents = Vector2( 15.7116, 15.0871 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 29.003, 11.9202 )
 
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
 "enemy_1",
@@ -16,8 +21,8 @@ extents = Vector2( 17.2621, 15.7209 )
 transform/pos = Vector2( 64, -80 )
 transform/scale = Vector2( 2, 2.5 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, 0, -3.8147e-06 )
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, -0.356735, 0.856171 )
 shapes/0/trigger = false
 collision/layers = 4
 collision/mask = 7
@@ -26,6 +31,56 @@ script/script = ExtResource( 1 )
 velocity = 250
 dir_left = true
 damage = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+transform/pos = Vector2( 0.145992, -32.1387 )
+transform/scale = Vector2( 1, 0.0869114 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1.14179, 0, 0, 1, -0.0371575, 24.1891 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitoring = false
+monitorable = false
+collision/layers = 4
+collision/mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/pos = Vector2( -0.0371575, 24.1891 )
+transform/scale = Vector2( 1.14179, 1 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Area2D1" type="Area2D" parent="."]
+
+transform/pos = Vector2( 0, -2.0883 )
+transform/scale = Vector2( 1, 0.96394 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 0.999554, 0, 0, 2.58093, -0.0125885, 3.63705 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitoring = false
+monitorable = false
+collision/layers = 4
+collision/mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D1"]
+
+transform/pos = Vector2( -0.0125885, 3.63705 )
+transform/scale = Vector2( 0.999554, 2.58093 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -37,10 +92,16 @@ region_rect = Rect2( 180, 150, 1450, 2250 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0, -3.8147e-06 )
+transform/pos = Vector2( -0.356735, 0.856171 )
 transform/scale = Vector2( 1.68421, 1.85361 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 trigger = false
 _update_shape_index = 0
+
+[connection signal="input_event" from="." to="." method="_on_KinematicBody2D_2_input_event"]
+
+[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="body_enter" from="Area2D1" to="." method="_on_Area2D1_body_enter"]
 
 

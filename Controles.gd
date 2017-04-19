@@ -8,7 +8,8 @@ export(NodePath) var life3_n
 onready var life1 = get_node(life1_n)
 onready var life2 = get_node(life2_n)
 onready var life3 = get_node(life3_n)
- 
+
+
 onready var player = get_tree().get_nodes_in_group("player")[0]
 
 
@@ -19,13 +20,9 @@ var life = 3
 # var a = 2
 # var b = "textvar"
 
-func on_update_milk_bar(var maxm, var value):
-	var milkbar = get_node("Control/Milk/In")    
-	var pos = milkbar.get_region_rect().pos
-	var end = milkbar.get_region_rect().size
-	
-	var offset = MILK_MAX - (MILK_MAX - (value * MILK_MAX / maxm))
-	milkbar.set_region_rect(Rect2(Vector2(offset + 40, pos.y), end))
+
+func on_update_milk_bar(var maxm, var value):	
+	get_node("Control/Milk/Milkbar")   .set_value(value * maxm / 100)
 
 func on_add_life():
 	if (life < 3):

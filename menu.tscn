@@ -9,14 +9,18 @@ transform/scale = Vector2( 20, 12 )
 
 [node name="Button" type="Button" parent="."]
 
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -19.0
-margin/top = -11.0
-margin/right = 23.0
-margin/bottom = 9.0
+margin/left = 51.0
+margin/top = 43.0
+margin/right = 9.0
+margin/bottom = 23.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

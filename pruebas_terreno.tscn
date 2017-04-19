@@ -1,0 +1,146 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://tile full.tex" type="Texture" id=1]
+[ext_resource path="res://tileset.xml" type="TileSet" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+
+const GRAVITY = Vector2(0, 98)
+
+onready var sprite = get_node(\"hero\")
+
+var TileMap_data # pixel data of our TileMap
+var TileMap_rect # useful area in our image
+
+var collision_pixel = Vector2(2, 32) # collision pixel offset in sprite
+
+var explosion = preload(\"res://explosion.png\")
+var explosion_data
+var explosion_size
+
+
+func _ready():
+	TileMap_data = get_node(\"TileMap\").get_texture().get_data()
+	TileMap_rect = TileMap_data.get_used_rect()
+	
+	explosion_data = explosion.get_data()
+	explosion_size = explosion.get_size()
+	
+	set_process_input(true)
+	
+	set_process(true)
+
+func pixel_in_TileMap(pixel):
+	return TileMap_rect.has_point(pixel)
+
+func _input(event):
+	var data_modified = false
+	if(event.type == InputEvent.MOUSE_BUTTON):
+		var mouse_pos = get_global_mouse_pos() - get_node(\"TileMap\").get_pos() - (explosion_size / 2)
+		for x in range(0, explosion_size.width):
+			for y in range(0, explosion_size.height):
+				if explosion_data.get_pixel(x, y).a > 0 and pixel_in_TileMap(Vector2(mouse_pos.x + x, mouse_pos.y + y)):
+					TileMap_data.put_pixel(mouse_pos.x + x, mouse_pos.y + y, Color(0, 0, 0, 0))
+					data_modified = true
+	if data_modified:
+		get_node(\"TileMap\").get_texture().set_data(TileMap_data)
+
+func _process(delta):
+	var fall = false 
+	var counter = 0
+	var end = 5
+	var aux_collision_pixel = collision_pixel
+	for i in range(0, end):	
+		aux_collision_pixel.x += i * 2		
+		var pixel_pos = sprite.get_pos() + aux_collision_pixel - get_node(\"TileMap\").get_pos() # normalize pixel position for texture checking
+		var c = Color(0, 0, 0, 0) # settup transparent color
+		if pixel_in_TileMap(pixel_pos):
+			c = TileMap_data.get_pixel(pixel_pos.x, pixel_pos.y) # if our collision pixel on TileMap, check it's value
+		if (c.a == 0):
+			counter += 1
+		
+	if (counter == end):
+		sprite.set_global_pos(sprite.get_global_pos() + GRAVITY * delta) # if it's transparent, keep on falling
+	"
+
+[node name="Control" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 342.851, 239.154 )
+anchor_mode = 1
+rotating = false
+current = false
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="background" type="TextureFrame" parent="."]
+
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -407.0
+margin/top = -178.0
+margin/right = -727.0
+margin/bottom = -498.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+
+[node name="TileMap" type="TileMap" parent="."]
+
+transform/pos = Vector2( 491.372, 52.4613 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 262142, 4, 262143, 4, 196608, 4, 196609, 4, 196610, 4, 196611, 4, 196612, 4 )
+
+[node name="hero" type="Sprite" parent="."]
+
+visibility/self_opacity = 0.5
+transform/pos = Vector2( 491.372, 52.4613 )
+texture = ExtResource( 3 )
+centered = false
+
+

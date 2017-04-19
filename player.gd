@@ -5,16 +5,16 @@ signal looking_right
 
 signal update_milk
 
-const GRAVITY = 3000.0
+const GRAVITY = 3500.0
 
 const FLYING_MOVEMENT_SPEED = 1
-export var JUMP_SPEED = 500
+export var JUMP_SPEED = 400
 const SLIDE_LEVEL = 40
-const MAX_JUMP_TIME = 60
+export(int) var MAX_JUMP_TIME = 20
 
 export var altitude = 0.5
 
-const MAX_WALK_SPEED = 350
+export(int) var MAX_WALK_SPEED = 450
 const WALK_SPEED_INCREMENT = 20
 var walk_speed = 0
 
@@ -29,10 +29,10 @@ var jump_key_pressed = false
 
 var receive_damage = true
 
-var last_collition_pos = Vector2(100000,10000)
-
 export(int) var max_milk = 500
 export(int) var milk_level = 0
+
+export(int) var invulneravility_time = 16
 
 func get_max_milk():
 	return max_milk
@@ -67,6 +67,7 @@ func can_receive_damage ():
 
 func change_collision ():
 	set_layer_mask_bit(0, !get_layer_mask_bit(0))
+	set_layer_mask_bit(5, !get_layer_mask_bit(0))
 	
 	
 	
@@ -83,7 +84,7 @@ func show_damage ():
 	t2.connect("timeout",self,"on_opacity_high")
 	add_child(t1)
 	add_child(t2)
-	for i in range(23):
+	for i in range(invulneravility_time):
 		t1.start()
 		yield(t1, "timeout")
 		t2.start()
@@ -94,19 +95,17 @@ func show_damage ():
 func can_jump_more ():	
 	return jump_time > 0
 	
-func horizontal_movement_amount ():
-	if (is_colliding() and get_collision_normal().x != 0):		
-		return 0
-	else:
-		if (walk_speed < MAX_WALK_SPEED):
-			walk_speed += WALK_SPEED_INCREMENT
-		return walk_speed
+func horizontal_movement_amount ():	
+	if (walk_speed < MAX_WALK_SPEED):
+		walk_speed += WALK_SPEED_INCREMENT
+	return walk_speed
 
 func _fixed_process(delta):
 	if (jumping):
 		jump_time -= altitude
-	velocity.y += delta * GRAVITY
 	
+	
+	velocity.y += delta * GRAVITY	
 	# Salto	
 	if (Input.is_action_pressed("ui_jump")):
 		if (jumping and can_jump_more() and jump_key_pressed):
@@ -123,7 +122,7 @@ func _fixed_process(delta):
    
 	# Movimiento horizontal
 	if (Input.is_action_pressed("ui_left")):
-		emit_signal("looking_left");
+		emit_signal("looking_left");		
 		velocity.x = - horizontal_movement_amount()
 		sprite.set_flip_h(true)
 	elif (Input.is_action_pressed("ui_right")):
@@ -138,7 +137,6 @@ func _fixed_process(delta):
 		else:
 			velocity.x = 0
 			walk_speed = 0
-			
 	# Agacharse
 	if (Input.is_action_pressed("ui_down")):
 		get_node("Collision_Normal").set_trigger(true)
@@ -148,31 +146,39 @@ func _fixed_process(delta):
 		get_node("Collision_Agachado").set_trigger(true)
 	
 	var motion = velocity * delta
+	
+	if (jumping and test_move(motion)):
+		if (motion.x < 0):
+			motion.x = 0.15
+		else:
+			motion.x = -0.15
+			
 	motion = move(motion)
 
 	# Control de colisiones
 	if (is_colliding()):
 		var normal = get_collision_normal()
-		if (normal.x != 0):
-			last_collition_pos = normal
-		
-		if (normal.y < 0):
+
+		if (normal.y > 0.5 and jumping):
+			# Está chocandose contra el techo
+			jumping = false
+			can_jump = false 
+			jump_time = 0
+		else:
 			# Está en el suelo
 			can_jump = true
 			jumping = false
 			motion = normal.slide(motion)
 			velocity = normal.slide(velocity)
 			move(motion)
-		elif (normal.y > 0):
-			# Está chocandose contra el techo
-			jumping = false
-			can_jump = false 
-			jump_time = 0
 	else:
 		can_jump = false
 	
-
 func _ready():
 	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
 	emit_signal("update_milk", get_max_milk(), get_milk_level());
 	set_fixed_process(true)
+
+func is_falling():
+	return velocity.y < 0
+	
