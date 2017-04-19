@@ -4,35 +4,38 @@
 [ext_resource path="res://shooter.gd" type="Script" id=2]
 [ext_resource path="res://vaca.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16.4325, 12.3123 )
+points = Vector2Array( -16.5903, -10.3465, 13.4341, -10.3403, 13.4341, 9.72513, 12.1306, 11.0393, 9.89776, 11.834, 7.17851, 12.2333, -10.3348, 12.2271, -12.2873, 12.1508, -13.8895, 11.6943, -15.9134, 10.7814, -16.5903, 9.71889 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.4207, 15.2052 )
+extents = Vector2( 12.363, 15.2052 )
 
 [node name="Player" type="KinematicBody2D"]
 
-transform/pos = Vector2( 64, 96 )
+transform/pos = Vector2( 36.4589, 123.59 )
 transform/scale = Vector2( 2, 3 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.9183, 0, 0, 2.12638, 2.86102e-06, -3.20918 )
+shapes/0/transform = Matrix32( 1.9183, 0, 0, 2.12638, 3.8147e-06, -3.20918 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
-shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.848695, -0.0332508, 10.0762 )
+shapes/1/transform = Matrix32( 2.34146, 0, 0, 0.848695, -3.11681, 9.93311 )
 shapes/1/trigger = true
-collision/layers = 1
+collision/layers = 1057
 collision/mask = 18
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 JUMP_SPEED = 500
+MAX_JUMP_TIME = 60
 altitude = 0.5
+MAX_WALK_SPEED = 450
 max_milk = 500
 milk_level = 0
+invulneravility_time = 2
 
 [node name="shooter" type="Node2D" parent="."]
 
@@ -41,17 +44,46 @@ transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
 SHOOT_CADENCE = 0.1
 
-[node name="Collision_Normal" type="CollisionShape2D" parent="."]
+[node name="Particles2D1" type="Particles2D" parent="shooter"]
 
-transform/pos = Vector2( 2.86102e-06, -3.20918 )
+visibility/visible = false
+transform/pos = Vector2( -17.0383, 8.60367 )
+transform/scale = Vector2( 2, 2 )
+config/amount = 32
+config/lifetime = 6.0
+config/process_mode = 1
+config/local_space = false
+config/explosiveness = 1.1
+params/direction = 120.0
+params/spread = 30.0
+params/linear_velocity = 20.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 5.0
+params/final_size = 15.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/initial_size = 1.0
+
+[node name="Collision_Normal" type="CollisionPolygon2D" parent="."]
+
+transform/pos = Vector2( 3.8147e-06, -3.20918 )
 transform/scale = Vector2( 1.9183, 2.12638 )
-shape = SubResource( 1 )
+build_mode = 0
+polygon = Vector2Array( -16.5903, 9.71889, -15.9134, 10.7814, -13.8895, 11.6943, -12.2873, 12.1508, -10.3348, 12.2271, 7.17851, 12.2333, 9.89776, 11.834, 12.1306, 11.0393, 13.4341, 9.72513, 13.4341, -10.3403, -16.5903, -10.3465 )
+shape_range = Vector2( 0, 0 )
 trigger = false
-_update_shape_index = 0
 
 [node name="Collision_Agachado" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.0332508, 10.0762 )
+transform/pos = Vector2( -3.11681, 9.93311 )
 transform/scale = Vector2( 2.34146, 0.848695 )
 shape = SubResource( 2 )
 trigger = true
@@ -84,6 +116,8 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[connection signal="input_event" from="." to="." method="_on_Player_input_event"]
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 

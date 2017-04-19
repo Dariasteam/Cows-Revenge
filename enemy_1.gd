@@ -27,6 +27,19 @@ func _ready():
 		reverse_direction()
 	set_fixed_process(true)
 	
+func die():
+	set_shape_as_trigger(0, true)
+	get_node("Sprite").set_opacity(0)
+	Input.action_press("ui_jump")
+	var t = Timer.new()		
+	t.set_wait_time(0.2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	queue_free()
+	Input.action_release("ui_jump")
+	
 func _fixed_process(delta):	
 	var motion = v * delta
 	motion = move(motion)	
@@ -37,20 +50,10 @@ func _fixed_process(delta):
 		var collider = get_collider()
 		
 		if (collider.is_in_group("player")):
-			if (normal.y < 0.7):
-				emit_signal("damage", damage)
+			if (normal.y > 0.001):
+				die()
 			else:
-				Input.action_press("ui_jump")
-				var t = Timer.new()
-				get_node("Sprite").set_opacity(0)
-				set_shape_as_trigger(0, true)
-				t.set_wait_time(0.2)
-				t.set_one_shot(true)
-				self.add_child(t)
-				t.start()
-				yield(t, "timeout")
-				queue_free()
-				Input.action_release("ui_jump")
+				emit_signal("damage", damage)
 		elif (collider.is_in_group("bullet")):
 			collider.queue_free()
 			queue_free()
@@ -66,3 +69,12 @@ func _fixed_process(delta):
 				v.x = aux			
 			if (normal.x < -0.75 or normal.x > 0.75):
 				reverse_direction()
+
+
+func _on_Area2D_body_enter( body ):
+	if(body.is_in_group("player") and body.is_falling()):
+		pass
+
+func _on_Area2D1_body_enter( body ):
+	if(body.is_in_group("player")):
+		print("coñazo")

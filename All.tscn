@@ -29,7 +29,6 @@ margin/bottom = 768.0
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
-editor/display_folded = true
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = true
 world = null
@@ -76,8 +75,6 @@ region = true
 region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
-
-editor/display_folded = true
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
@@ -222,18 +219,29 @@ visibility_mode = 0
 transform/pos = Vector2( 1056, 96 )
 transform/scale = Vector2( 6, 1 )
 
-[node name="Out" type="Sprite" parent="Control/Milk"]
+[node name="Milkbar" type="TextureProgress" parent="Control/Milk"]
 
-transform/pos = Vector2( -32, -32 )
-transform/scale = Vector2( 64, 64 )
-
-[node name="In" type="Sprite" parent="Control/Milk"]
-
-transform/pos = Vector2( -0.202426, 0 )
-transform/scale = Vector2( 0.45, 0.426667 )
-texture = ExtResource( 3 )
-region = true
-region_rect = Rect2( 180, 140, 145, 150 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -32.0
+margin/top = -64.0
+margin/right = 32.0
+margin/bottom = 0.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 5 )
+mode = 1
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="." method="_on_Bttn_U_pressed"]
 
