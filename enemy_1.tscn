@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://enemy_1.gd" type="Script" id=1]
-[ext_resource path="res://malvado.png" type="Texture" id=2]
+[ext_resource path="res://malvado2.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 15.7116, 15.0871 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 29.003, 11.9202 )
@@ -19,9 +19,9 @@ extents = Vector2( 29.003, 11.9202 )
 ]]
 
 transform/pos = Vector2( 64, -80 )
-transform/scale = Vector2( 2, 2.5 )
+transform/scale = Vector2( 2, 2 )
 input/pickable = false
-shapes/0/shape = SubResource( 7 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, -0.356735, 0.856171 )
 shapes/0/trigger = false
 collision/layers = 4
@@ -37,7 +37,7 @@ damage = 1
 transform/pos = Vector2( 0.145992, -32.1387 )
 transform/scale = Vector2( 1, 0.0869114 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1.14179, 0, 0, 1, -0.0371575, 24.1891 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -53,7 +53,7 @@ collision/mask = 34
 
 transform/pos = Vector2( -0.0371575, 24.1891 )
 transform/scale = Vector2( 1.14179, 1 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 0
 
@@ -62,7 +62,7 @@ _update_shape_index = 0
 transform/pos = Vector2( 0, -2.0883 )
 transform/scale = Vector2( 1, 0.96394 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 0.999554, 0, 0, 2.58093, -0.0125885, 3.63705 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -78,23 +78,20 @@ collision/mask = 34
 
 transform/pos = Vector2( -0.0125885, 3.63705 )
 transform/scale = Vector2( 0.999554, 2.58093 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( 2.86102e-06, -4.76837e-07 )
-transform/scale = Vector2( 0.0441379, 0.0284444 )
 texture = ExtResource( 2 )
-region = true
-region_rect = Rect2( 180, 150, 1450, 2250 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( -0.356735, 0.856171 )
 transform/scale = Vector2( 1.68421, 1.85361 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 

@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://bullet.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://leche.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 13.2155
+radius = 9.41128
 
 [node name="RigidBody2D" type="RigidBody2D" groups=[
 "bullet",
@@ -26,8 +26,8 @@ bounce = 1.0
 gravity_scale = 20.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
+contacts_reported = 1
+contact_monitor = true
 sleeping = false
 can_sleep = false
 velocity/linear = Vector2( 0, 0 )
@@ -43,10 +43,57 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+[node name="Trail" type="Particles2D" parent="."]
 
-transform/pos = Vector2( -0.168064, -0.402534 )
-transform/scale = Vector2( 0.324185, 0.307502 )
-texture = ExtResource( 2 )
+config/amount = 30
+config/lifetime = 0.2
+config/process_mode = 1
+config/local_space = false
+config/texture = ExtResource( 2 )
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 0.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 0.0
+params/anim_initial_pos = 0.0
+randomness/spread = 1.0
+randomness/initial_size = 0.05
+
+[node name="Splash" type="Particles2D" parent="."]
+
+config/amount = 30
+config/lifetime = 0.2
+config/preprocess = 1282.8
+config/emit_timeout = 0.2
+config/emitting = false
+config/process_mode = 0
+config/local_space = false
+config/texture = ExtResource( 2 )
+params/direction = 0.0
+params/spread = 180.0
+params/linear_velocity = 200.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
 
 

@@ -55,7 +55,7 @@ func _fixed_process(delta):
 			else:
 				emit_signal("damage", damage)
 		elif (collider.is_in_group("bullet")):
-			collider.queue_free()
+			collider.destroy()
 			queue_free()
 			
 		else:
