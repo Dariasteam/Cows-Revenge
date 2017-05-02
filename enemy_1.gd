@@ -2,9 +2,6 @@ extends KinematicBody2D
 
 signal damage
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
 const GRAVITY = 3000.0
 
 var vertical
@@ -15,7 +12,9 @@ onready var sprite = get_node("Sprite")
 
 export(bool) var dir_left = true;
 
-export var damage = 1
+export(int) var life = 2
+
+export(int) var damage = 1
 
 func reverse_direction():
 	sprite.set_flip_h(v.x < 0)	
@@ -27,7 +26,7 @@ func _ready():
 		reverse_direction()
 	set_fixed_process(true)
 	
-func die():
+func die_by_jump():
 	set_shape_as_trigger(0, true)
 	get_node("Sprite").set_opacity(0)
 	Input.action_press("ui_jump")
@@ -40,9 +39,17 @@ func die():
 	queue_free()
 	Input.action_release("ui_jump")
 	
+func die():
+	queue_free()
+	
+func decrease_life (value):
+	life -= value
+	if (life <= 0):
+		die()	
+
 func _fixed_process(delta):	
 	var motion = v * delta
-	motion = move(motion)	
+	motion = move(motion)
 	v.y += delta * GRAVITY
 	
 	if (is_colliding()):
@@ -50,13 +57,13 @@ func _fixed_process(delta):
 		var collider = get_collider()
 		
 		if (collider.is_in_group("player")):
-			if (normal.y > 0.001):
-				die()
+			if (normal.y > 0.5):
+				die_by_jump()
 			else:
 				emit_signal("damage", damage)
 		elif (collider.is_in_group("bullet")):
 			collider.destroy()
-			queue_free()
+			decrease_life(1)
 			
 		else:
 			if (normal.y < 0):
@@ -71,10 +78,5 @@ func _fixed_process(delta):
 				reverse_direction()
 
 
-func _on_Area2D_body_enter( body ):
-	if(body.is_in_group("player") and body.is_falling()):
-		pass
 
-func _on_Area2D1_body_enter( body ):
-	if(body.is_in_group("player")):
-		print("coñazo")
+

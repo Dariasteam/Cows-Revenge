@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Controles.gd" type="Script" id=1]
 [ext_resource path="res://top.tscn" type="PackedScene" id=2]
-[ext_resource path="res://corazon.png" type="Texture" id=3]
+[ext_resource path="res://corazon2.tex" type="Texture" id=3]
 [ext_resource path="res://flexa.png" type="Texture" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
-[ext_resource path="res://tile.png" type="Texture" id=6]
+[ext_resource path="res://btn_jump.png" type="Texture" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://btn_shoot.png" type="Texture" id=7]
 
 [node name="Node2D" type="Node2D" groups=[
 "control",
@@ -30,19 +31,19 @@ margin/bottom = 768.0
 [node name="Viewport" type="Viewport" parent="Control"]
 
 rect = Rect2( 0, 0, 1280, 768 )
-own_world = true
+own_world = false
 world = null
-transparent_bg = true
+transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
-render_target/clear_on_new_frame = true
+render_target/clear_on_new_frame = false
 render_target/filter = false
 render_target/gen_mipmaps = false
-render_target/update_mode = 1
+render_target/update_mode = 2
 audio_listener/enable_2d = true
 audio_listener/enable_3d = false
 physics/object_picking = false
-gui/disable_input = false
+gui/disable_input = true
 
 [node name="Node2D" parent="Control/Viewport" instance=ExtResource( 2 )]
 
@@ -52,26 +53,23 @@ transform/pos = Vector2( 64, 64 )
 
 [node name="life1" type="Sprite" parent="Control/Life"]
 
-transform/pos = Vector2( 63.7793, 32 )
-transform/scale = Vector2( 0.441379, 0.426667 )
+transform/pos = Vector2( 64, 32 )
+transform/scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 3 )
-region = true
 region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="life2" type="Sprite" parent="Control/Life"]
 
 transform/pos = Vector2( 160, 32 )
-transform/scale = Vector2( 0.441379, 0.426667 )
+transform/scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 3 )
-region = true
 region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="life3" type="Sprite" parent="Control/Life"]
 
 transform/pos = Vector2( 256, 32 )
-transform/scale = Vector2( 0.441379, 0.426667 )
+transform/scale = Vector2( 1.3, 1.3 )
 texture = ExtResource( 3 )
-region = true
 region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
@@ -93,9 +91,9 @@ visibility_mode = 0
 
 [node name="Bttn_A" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
+visibility/opacity = 0.8
 transform/pos = Vector2( 1088, 576 )
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 5 )
 pressed = null
 bitmask = null
@@ -108,10 +106,11 @@ visibility_mode = 0
 
 [node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons"]
 
+visibility/visible = false
 visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 416 )
 transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 5 )
+normal = ExtResource( 6 )
 pressed = null
 bitmask = null
 shape = null
@@ -123,10 +122,10 @@ visibility_mode = 0
 
 [node name="Bttn_S" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
+visibility/opacity = 0.9
 transform/pos = Vector2( 896, 576 )
-transform/scale = Vector2( 2, 2 )
-normal = ExtResource( 5 )
+transform/scale = Vector2( 0.474074, 0.481203 )
+normal = ExtResource( 7 )
 pressed = null
 bitmask = null
 shape = null
@@ -157,7 +156,7 @@ visibility_mode = 0
 visibility/opacity = 0.0
 transform/pos = Vector2( 288, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 6 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -172,7 +171,7 @@ visibility_mode = 0
 visibility/opacity = 0.0
 transform/pos = Vector2( 32, 576 )
 transform/scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 6 )
+normal = ExtResource( 4 )
 pressed = null
 bitmask = null
 shape = null
@@ -221,8 +220,8 @@ transform/scale = Vector2( 6, 1 )
 
 [node name="Milkbar" type="TextureProgress" parent="Control/Milk"]
 
-focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/ignore_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = -32.0
@@ -238,7 +237,7 @@ range/exp_edit = false
 range/rounded = false
 texture/under = null
 texture/over = null
-texture/progress = ExtResource( 5 )
+texture/progress = ExtResource( 6 )
 mode = 1
 radial_fill/fill_degrees = 360.0
 radial_fill/center_offset = Vector2( 0, 0 )

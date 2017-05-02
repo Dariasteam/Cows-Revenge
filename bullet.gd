@@ -12,6 +12,7 @@ onready var splash = get_node("Splash")
 var t = Timer.new()
 
 func destroy():
+	set_fixed_process(false)
 	set_linear_velocity(Vector2(0,0))
 	set_angular_velocity(0)
 	
@@ -31,11 +32,14 @@ func _fixed_process(delta):
 		destroy()
 	
 func _ready():
-	
 	t.set_wait_time(LIFE_TIME)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
-	yield(t, "timeout")	
+	yield(t, "timeout")
 	set_fixed_process(true)
 
+
+
+func _on_RigidBody2D_body_enter( body ):
+	pass # replace with function body
