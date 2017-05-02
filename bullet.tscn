@@ -6,13 +6,12 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 9.41128
+radius = 9.52631
 
 [node name="RigidBody2D" type="RigidBody2D" groups=[
 "bullet",
 ]]
 
-visibility/behind_parent = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -47,6 +46,7 @@ _update_shape_index = 0
 
 config/amount = 30
 config/lifetime = 0.2
+config/time_scale = 2.0
 config/process_mode = 1
 config/local_space = false
 config/texture = ExtResource( 2 )

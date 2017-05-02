@@ -1,25 +1,37 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://shooter.gd" type="Script" id=2]
-[ext_resource path="res://vaca3.png" type="Texture" id=3]
+[ext_resource path="res://vaca_idle_1.tex" type="Texture" id=3]
+[ext_resource path="res://vaca_idle_2.tex" type="Texture" id=4]
+[ext_resource path="res://vaca_idle_3.tex" type="Texture" id=5]
+[ext_resource path="res://vaca_idle_4.tex" type="Texture" id=6]
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -16.5903, -10.3465, 13.4341, -10.3403, 13.4341, 9.72513, 12.1306, 11.0393, 9.89776, 11.834, 7.17851, 12.2333, -10.3348, 12.2271, -12.2873, 12.1508, -13.8895, 11.6943, -15.9134, 10.7814, -16.5903, 9.71889 )
+points = Vector2Array( -16.5903, -10.3465, 13.4341, -10.3403, 13.4341, 9.72513, 10.9093, 12.2861, -13.9703, 12.2402, -16.5903, 9.71889 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12.363, 15.2052 )
 
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
 [node name="Player" type="KinematicBody2D"]
 
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 1.8, 1.8 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1.9183, 0, 0, 3.19062, 3.14685, -5.78916 )
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.19062, 2.93931, -5.78916 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 2.31574, 0, 0, 1.23398, -0.18514, 15.1934 )
@@ -73,10 +85,10 @@ randomness/initial_size = 1.0
 
 [node name="Collision_Normal" type="CollisionPolygon2D" parent="."]
 
-transform/pos = Vector2( 3.14685, -5.78916 )
-transform/scale = Vector2( 1.9183, 3.19062 )
+transform/pos = Vector2( 2.93931, -5.78916 )
+transform/scale = Vector2( 1.89755, 3.19062 )
 build_mode = 0
-polygon = Vector2Array( -16.5903, 9.71889, -15.9134, 10.7814, -13.8895, 11.6943, -12.2873, 12.1508, -10.3348, 12.2271, 7.17851, 12.2333, 9.89776, 11.834, 12.1306, 11.0393, 13.4341, 9.72513, 13.4341, -10.3403, -16.5903, -10.3465 )
+polygon = Vector2Array( -16.5903, 9.71889, -13.9703, 12.2402, 10.9093, 12.2861, 13.4341, 9.72513, 13.4341, -10.3403, -16.5903, -10.3465 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
@@ -88,10 +100,12 @@ shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 1
 
-[node name="sprite" type="Sprite" parent="."]
+[node name="sprite" type="AnimatedSprite" parent="."]
 
-texture = ExtResource( 3 )
-region_rect = Rect2( 200, 450, 1500, 2900 )
+frames = SubResource( 3 )
+animation = "Idle"
+frame = 3
+playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
 
@@ -113,8 +127,6 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
-
-[connection signal="input_event" from="." to="." method="_on_Player_input_event"]
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 

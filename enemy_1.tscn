@@ -1,35 +1,54 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://enemy_1.gd" type="Script" id=1]
-[ext_resource path="res://malvado2.png" type="Texture" id=2]
+[ext_resource path="res://malvado_caminando0000.tex" type="Texture" id=2]
+[ext_resource path="res://malvado_caminando0001.tex" type="Texture" id=3]
+[ext_resource path="res://malvado_caminando0002.tex" type="Texture" id=4]
+[ext_resource path="res://malvado_caminando0003.tex" type="Texture" id=5]
+[ext_resource path="res://malvado_caminando0004.tex" type="Texture" id=6]
+[ext_resource path="res://malvado_caminando0005.tex" type="Texture" id=7]
+[ext_resource path="res://malvado_caminando0006.tex" type="Texture" id=8]
+[ext_resource path="res://malvado_caminando0007.tex" type="Texture" id=9]
+[ext_resource path="res://malvado_caminando0008.tex" type="Texture" id=10]
+[ext_resource path="res://malvado_caminando0009.tex" type="Texture" id=11]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.7116, 15.0871 )
+points = Vector2Array( -15.2852, -14.9169, 15.1533, -14.9169, 15.5226, 15.8674, 11.6589, 18.9589, -11.6389, 18.8541, -15.4421, 15.9475 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 29.003, 11.9202 )
 
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "walking",
+"speed": 24.0
+} ]
+
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
-"enemy_1",
 "enemy",
+"enemy_1",
 ]]
 
 transform/pos = Vector2( 64, -80 )
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 1.8, 1.8 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, -0.356735, 0.856171 )
 shapes/0/trigger = false
 collision/layers = 4
-collision/mask = 7
+collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 velocity = 250
 dir_left = true
+life = 2
 damage = 1
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -82,20 +101,22 @@ shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 
-transform/pos = Vector2( 2.86102e-06, -4.76837e-07 )
-texture = ExtResource( 2 )
+transform/pos = Vector2( 3.8147e-06, 0 )
+frames = SubResource( 3 )
+animation = "walking"
+frame = 8
+playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
 transform/pos = Vector2( -0.356735, 0.856171 )
 transform/scale = Vector2( 1.68421, 1.85361 )
-shape = SubResource( 1 )
+build_mode = 0
+polygon = Vector2Array( -15.2852, -14.9169, 15.1533, -14.9169, 15.5226, 15.8674, 11.6589, 18.9589, -11.6389, 18.8541, -15.4421, 15.9475 )
+shape_range = Vector2( 0, 0 )
 trigger = false
-_update_shape_index = 0
-
-[connection signal="input_event" from="." to="." method="_on_KinematicBody2D_2_input_event"]
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 

@@ -69,11 +69,8 @@ func change_collision ():
 	set_layer_mask_bit(0, !get_layer_mask_bit(0))
 	set_layer_mask_bit(5, !get_layer_mask_bit(0))
 	
-	
-	
 func show_damage ():
-	change_collision()
-	
+	change_collision()	
 	var t1 = Timer.new()
 	var t2 = Timer.new()
 	t1.set_wait_time(0.2)
@@ -94,11 +91,12 @@ func show_damage ():
 
 func can_jump_more ():	
 	return jump_time > 0
-	
+
 func horizontal_movement_amount ():	
 	if (walk_speed < MAX_WALK_SPEED):
 		walk_speed += WALK_SPEED_INCREMENT
 	return walk_speed
+
 
 func _fixed_process(delta):
 	if (jumping):
@@ -152,11 +150,12 @@ func _fixed_process(delta):
 			motion.x = 0.15
 		else:
 			motion.x = -0.15
-			
+		
 	motion = move(motion)
 
 	# Control de colisiones
 	if (is_colliding()):
+		
 		var normal = get_collision_normal()
 
 		if (normal.y > 0.5 and jumping):
@@ -166,15 +165,17 @@ func _fixed_process(delta):
 			jump_time = 0
 		else:
 			# Está en el suelo
-			can_jump = true
-			jumping = false
+			if (normal.y < -0.5):
+				can_jump = true
+				jumping = false
 			motion = normal.slide(motion)
 			velocity = normal.slide(velocity)
 			move(motion)
+			
 	else:
 		can_jump = false
 	
-func _ready():
+func _ready():	
 	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
 	emit_signal("update_milk", get_max_milk(), get_milk_level());
 	set_fixed_process(true)

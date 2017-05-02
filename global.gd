@@ -6,7 +6,7 @@ extends Node
 
 var level
 
-func release_all():
+func release_all():	
 	Input.action_release("ui_up")
 	Input.action_release("ui_right")
 	Input.action_release("ui_left")

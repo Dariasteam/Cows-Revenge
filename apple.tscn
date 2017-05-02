@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://manzana.gd" type="Script" id=1]
-[ext_resource path="res://manzana.png" type="Texture" id=2]
+[ext_resource path="res://manzana.tex" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -20,13 +20,14 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
+monitorable = false
 collision/layers = 16
 script/script = ExtResource( 1 )
 amount = 100
 
 [node name="Apple" type="Sprite" parent="."]
 
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 1.8, 1.8 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
