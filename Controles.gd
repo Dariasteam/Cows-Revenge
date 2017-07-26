@@ -21,7 +21,7 @@ var life = 3
 # var b = "textvar"
 
 
-func on_update_milk_bar(var maxm, var value):	
+func on_update_milk_bar(var maxm, var value):
 	get_node("Control/Milk/Milkbar")   .set_value(value * maxm / 100)
 
 func on_add_life():

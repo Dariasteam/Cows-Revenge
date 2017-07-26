@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=20 format=1]
 
 [ext_resource path="res://enemy_1.gd" type="Script" id=1]
 [ext_resource path="res://malvado_caminando0000.tex" type="Texture" id=2]
@@ -12,17 +12,42 @@
 [ext_resource path="res://malvado_caminando0008.tex" type="Texture" id=10]
 [ext_resource path="res://malvado_caminando0009.tex" type="Texture" id=11]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=17]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -15.2852, -14.9169, 15.1533, -14.9169, 15.5226, 15.8674, 11.6589, 18.9589, -11.6389, 18.8541, -15.4421, 15.9475 )
+points = Vector2Array( 8.90625, -8.09232, 8.57639, -19.4815, 26.3889, -19.4815, 26.7188, 8.39203 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=18]
 
 custom_solver_bias = 0.0
-extents = Vector2( 29.003, 11.9202 )
+points = Vector2Array( 2.63889, -0.899147, 8.90625, -8.09232, 26.7188, 8.39203, 20.1215, 15.8849, 5.27778, 15.5852, 0.989584, 8.09231 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=19]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -3.29861, -5.99431, 2.63889, -0.899147, 0.989584, 8.09231, -7.91667, 2.09801, -8.24653, -3.59659 )
+
+[sub_resource type="RectangleShape2D" id=16]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.0125, 38.3532 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 8.90625, -8.09232, 8.57639, -19.4815, 26.3889, -19.4815, 26.7188, 8.39203 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2.63889, -0.899147, 8.90625, -8.09232, 26.7188, 8.39203, 20.1215, 15.8849, 5.27778, 15.5852, 0.989584, 8.09231 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -3.29861, -5.99431, 2.63889, -0.899147, 0.989584, 8.09231, -7.91667, 2.09801, -8.24653, -3.59659 )
+
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
@@ -36,14 +61,20 @@ animations = [ {
 "enemy_1",
 ]]
 
-transform/pos = Vector2( 64, -80 )
-transform/scale = Vector2( 1.8, 1.8 )
+transform/pos = Vector2( 64.3, -80 )
+transform/scale = Vector2( 1.79062, 1.8 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, -0.356735, 0.856171 )
+shapes/0/shape = SubResource( 17 )
+shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, -19.4444, 6.66667 )
 shapes/0/trigger = false
-collision/layers = 4
-collision/mask = 1
+shapes/1/shape = SubResource( 18 )
+shapes/1/transform = Matrix32( 1.68421, 0, 0, 1.85361, -19.4444, 6.66667 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 19 )
+shapes/2/transform = Matrix32( 1.68421, 0, 0, 1.85361, -19.4444, 6.66667 )
+shapes/2/trigger = false
+collision/layers = 5
+collision/mask = 4
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 velocity = 250
@@ -51,75 +82,79 @@ dir_left = true
 life = 2
 damage = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 
-transform/pos = Vector2( 0.145992, -32.1387 )
-transform/scale = Vector2( 1, 0.0869114 )
+transform/pos = Vector2( -19.4444, 6.66667 )
+transform/scale = Vector2( 1.68421, 1.85361 )
+build_mode = 0
+polygon = Vector2Array( 8.57639, -19.4815, 8.90625, -8.09232, 2.63889, -0.899147, -3.29861, -5.99431, -8.24653, -3.59659, -7.91667, 2.09801, 0.989584, 8.09231, 5.27778, 15.5852, 20.1215, 15.8849, 26.7188, 8.39203, 26.3889, -19.4815 )
+shape_range = Vector2( 0, 2 )
+trigger = false
+
+[node name="area_head" type="Area2D" parent="."]
+
+transform/pos = Vector2( 9.60559, -33.6111 )
+transform/scale = Vector2( 0.47993, 0.112847 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1.14179, 0, 0, 1, -0.0371575, 24.1891 )
+shapes/0/shape = SubResource( 16 )
+shapes/0/transform = Matrix32( 2.41445, 0, 0, 0.77017, 0.581818, 2.46155 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
-monitoring = false
 monitorable = false
 collision/layers = 4
 collision/mask = 34
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="area_head"]
 
-transform/pos = Vector2( -0.0371575, 24.1891 )
-transform/scale = Vector2( 1.14179, 1 )
-shape = SubResource( 2 )
+transform/pos = Vector2( 0.581818, 2.46155 )
+transform/scale = Vector2( 2.41445, 0.77017 )
+shape = SubResource( 16 )
 trigger = true
 _update_shape_index = 0
 
-[node name="Area2D1" type="Area2D" parent="."]
+[node name="area_body" type="Area2D" parent="."]
 
-transform/pos = Vector2( 0, -2.0883 )
-transform/scale = Vector2( 1, 0.96394 )
+transform/pos = Vector2( -4.07679, 1.11111 )
+transform/scale = Vector2( 0.9363, 1.08512 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 0.999554, 0, 0, 2.58093, -0.0125885, 3.63705 )
-shapes/0/trigger = true
+shapes/0/shape = SubResource( 13 )
+shapes/0/transform = Matrix32( 1.79879, 0, 0, 1.7082, -16.6219, 4.86533 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 14 )
+shapes/1/transform = Matrix32( 1.79879, 0, 0, 1.7082, -16.6219, 4.86533 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 15 )
+shapes/2/transform = Matrix32( 1.79879, 0, 0, 1.7082, -16.6219, 4.86533 )
+shapes/2/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
 linear_damp = 0.1
 angular_damp = 1.0
-monitoring = false
 monitorable = false
 collision/layers = 4
 collision/mask = 34
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D1"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="area_body"]
 
-transform/pos = Vector2( -0.0125885, 3.63705 )
-transform/scale = Vector2( 0.999554, 2.58093 )
-shape = SubResource( 2 )
-trigger = true
-_update_shape_index = 0
+transform/pos = Vector2( -16.6219, 4.86533 )
+transform/scale = Vector2( 1.79879, 1.7082 )
+build_mode = 0
+polygon = Vector2Array( 8.57639, -19.4815, 8.90625, -8.09232, 2.63889, -0.899147, -3.29861, -5.99431, -8.24653, -3.59659, -7.91667, 2.09801, 0.989584, 8.09231, 5.27778, 15.5852, 20.1215, 15.8849, 26.7188, 8.39203, 26.3889, -19.4815 )
+shape_range = Vector2( 0, 2 )
+trigger = false
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 
 transform/pos = Vector2( 3.8147e-06, 0 )
-frames = SubResource( 3 )
+frames = SubResource( 5 )
 animation = "walking"
 frame = 8
-playing = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[connection signal="body_enter" from="area_head" to="." method="_on_area_head_body_enter"]
 
-transform/pos = Vector2( -0.356735, 0.856171 )
-transform/scale = Vector2( 1.68421, 1.85361 )
-build_mode = 0
-polygon = Vector2Array( -15.2852, -14.9169, 15.1533, -14.9169, 15.5226, 15.8674, 11.6589, 18.9589, -11.6389, 18.8541, -15.4421, 15.9475 )
-shape_range = Vector2( 0, 0 )
-trigger = false
-
-[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
-
-[connection signal="body_enter" from="Area2D1" to="." method="_on_Area2D1_body_enter"]
+[connection signal="body_enter" from="area_body" to="." method="_on_area_body_body_enter"]
 
 

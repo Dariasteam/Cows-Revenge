@@ -2,17 +2,17 @@
 
 [ext_resource path="res://tile full.tex" type="Texture" id=1]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=20]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -21.2298, -23.8952, -16.2848, -26.453, -9.37893, -26.9645, 32, -28, 32, 32, -27, 32, -26.601, -15.7957, -24.4696, -20.3144 )
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=21]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -28, 32, -28, 32, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=22]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -28, 13.8965, -27.135, 19.9498, -24.2363, 24.2127, -19.4618, 25.4063, -15.7105, 26, 32, -32, 32 )
@@ -70,7 +70,7 @@ points = Vector2Array( -32, -32, 32, -32, 32, 28, 30, 30, 28, 32, -32, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=14]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -32, -32, 27.4498, -32.0095, 31.9963, -27.7854, 32.0174, 32.0416, -32, 32 )
+points = Vector2Array( -32, -32, 28, -32, 32, -28, 32.0174, 32.0416, -32, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=15]
 
@@ -85,7 +85,7 @@ points = Vector2Array( -27, 32, 32, -28, 32.0174, 31.9257 )
 [sub_resource type="ConvexPolygonShape2D" id=17]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -32, -27, -30.1058, -27.0105, 28, 32, -32, 32 )
+points = Vector2Array( -32, -28, -29, -25, 28, 32, -32, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=18]
 
@@ -111,7 +111,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Arriba_Izquierda"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 20 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -138,7 +138,7 @@ region_rect = Rect2( 64, 0, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 21 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -168,7 +168,7 @@ region_rect = Rect2( 128, 0, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 22 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -465,8 +465,7 @@ trigger = false
 
 [node name="Inner_Izquierda_Abajo" type="Sprite" parent="."]
 
-visibility/visible = false
-transform/pos = Vector2( -64, 0 )
+transform/pos = Vector2( -128, -64 )
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 192, 256, 64, 64 )
@@ -489,7 +488,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 0.0852547, 0.0852585 )
 build_mode = 0
-polygon = Vector2Array( -32, -32, 27.4498, -32.0095, 31.9963, -27.7854, 32.0174, 32.0416, -32, 32 )
+polygon = Vector2Array( -32, -32, 28, -32, 32, -28, 32.0174, 32.0416, -32, 32 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
@@ -555,7 +554,6 @@ trigger = false
 
 [node name="Rampa2" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 texture = ExtResource( 1 )
 region = true
@@ -579,7 +577,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 0.0852547, 0.0852585 )
 build_mode = 0
-polygon = Vector2Array( -32, -27, -30.1058, -27.0105, 28, 32, -32, 32 )
+polygon = Vector2Array( -32, -28, -29, -25, 28, 32, -32, 32 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 

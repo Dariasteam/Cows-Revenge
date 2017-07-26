@@ -15,22 +15,21 @@ func destroy():
 	set_fixed_process(false)
 	set_linear_velocity(Vector2(0,0))
 	set_angular_velocity(0)
-	
-	splash.set_emitting(true)	
+
+	splash.set_emitting(true)
 	particles.set_emitting(false)
-	
+
 	t.set_wait_time(max (particles.get_lifetime(), (splash.get_lifetime() + splash.get_emit_timeout())))
 	t.start()
 	yield(t, "timeout")
-	
+
 	queue_free()
-	
 
 func _fixed_process(delta):
 	if (get_colliding_bodies().size() > 0):
 		set_fixed_process(false)
 		destroy()
-	
+
 func _ready():
 	t.set_wait_time(LIFE_TIME)
 	t.set_one_shot(true)
@@ -42,4 +41,7 @@ func _ready():
 
 
 func _on_RigidBody2D_body_enter( body ):
-	pass # replace with function body
+	if (body.is_in_group("enemy")):
+		body.decrease_life(1)
+		destroy()
+	

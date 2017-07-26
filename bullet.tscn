@@ -28,7 +28,7 @@ continuous_cd = 0
 contacts_reported = 1
 contact_monitor = true
 sleeping = false
-can_sleep = false
+can_sleep = true
 velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
@@ -46,7 +46,7 @@ _update_shape_index = 0
 
 config/amount = 30
 config/lifetime = 0.2
-config/time_scale = 2.0
+config/time_scale = 1.5
 config/process_mode = 1
 config/local_space = false
 config/texture = ExtResource( 2 )
@@ -66,8 +66,6 @@ params/final_size = 0.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 0.0
 params/anim_initial_pos = 0.0
-randomness/spread = 1.0
-randomness/initial_size = 0.05
 
 [node name="Splash" type="Particles2D" parent="."]
 
@@ -95,5 +93,7 @@ params/final_size = 0.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 1.0
 params/anim_initial_pos = 0.0
+
+[connection signal="body_enter" from="." to="." method="_on_RigidBody2D_body_enter"]
 
 
