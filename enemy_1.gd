@@ -74,7 +74,7 @@ func _on_area_body_body_enter( body ):
 
 func _on_area_head_body_enter( body ):
 	if (body.is_in_group("player") and body.can_receive_damage()):
-		if (body.get_pos().y < get_pos().y):
+		if (body.foots.get_pos().y > get_pos().y):
 			print ("cabeza")
 			life = 0
 			die_by_jump()

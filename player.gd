@@ -20,6 +20,7 @@ var walk_speed = 0
 
 onready var shooter = get_node("shooter")
 onready var sprite = get_node("sprite")
+onready var foots = get_node("foots")
 
 var can_jump = true
 var jumping = false
@@ -62,9 +63,7 @@ func on_opacity_high ():
 
 func on_receive_damage ():
 	if (can_receive_damage()):
-		print ("invulnerabilidad on")
 		show_damage()
-		
 
 func can_receive_damage ():
 	return receive_damage
@@ -91,7 +90,6 @@ func show_damage ():
 		yield(t1, "timeout")
 		t2.start()
 		yield(t2, "timeout")
-	print ("invulnerabilidad off")
 	change_collision()
 
 func can_jump_more ():

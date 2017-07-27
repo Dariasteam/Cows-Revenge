@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://shooter.gd" type="Script" id=2]
-[ext_resource path="res://vaca_idle_1.tex" type="Texture" id=3]
-[ext_resource path="res://vaca_idle_2.tex" type="Texture" id=4]
-[ext_resource path="res://vaca_idle_3.tex" type="Texture" id=5]
-[ext_resource path="res://vaca_idle_4.tex" type="Texture" id=6]
+[ext_resource path="res://ray_milk.tscn" type="PackedScene" id=3]
+[ext_resource path="res://vaca_idle_1.tex" type="Texture" id=4]
+[ext_resource path="res://vaca_idle_2.tex" type="Texture" id=5]
+[ext_resource path="res://vaca_idle_3.tex" type="Texture" id=6]
+[ext_resource path="res://vaca_idle_4.tex" type="Texture" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -20,7 +21,7 @@ extents = Vector2( 12.363, 15.2052 )
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 10.0
@@ -55,33 +56,10 @@ transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
 SHOOT_CADENCE = 0.1
 
-[node name="Particles2D1" type="Particles2D" parent="shooter"]
+[node name="ray" parent="shooter" instance=ExtResource( 3 )]
 
-visibility/visible = false
-transform/pos = Vector2( -17.0383, 8.60367 )
-transform/scale = Vector2( 2, 2 )
-config/amount = 32
-config/lifetime = 6.0
-config/process_mode = 1
-config/local_space = false
-config/explosiveness = 1.1
-params/direction = 120.0
-params/spread = 30.0
-params/linear_velocity = 20.0
-params/spin_velocity = 0.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 9.8
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 5.0
-params/final_size = 15.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/initial_size = 1.0
+transform/pos = Vector2( -4.25251, 3.87422 )
+layer_mask = 30
 
 [node name="Collision_Normal" type="CollisionPolygon2D" parent="."]
 
@@ -104,7 +82,7 @@ _update_shape_index = 1
 
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
@@ -127,6 +105,11 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
+
+[node name="foots" type="Node2D" parent="."]
+
+transform/pos = Vector2( -0.0271127, 37.1198 )
+transform/scale = Vector2( 0.885237, 0.0763853 )
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 
