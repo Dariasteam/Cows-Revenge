@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://rayo_leche.gd" type="Script" id=1]
+[ext_resource path="res://corazon2.tex" type="Texture" id=2]
+[ext_resource path="res://corazon_vacio.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Area2D
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+func _fixed_process(delta):
+	set_enable_monitoring(false)
+		
+	var t = Timer.new()
+	t.set_wait_time(0.2)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, \"timeout\")
+		
+	set_enable_monitoring(true)
+	set_fixed_process(false)
+	
+func _on_Area2D_body_enter( body ):	
+	if (body.is_in_group(\"enemy\")):		
+		body.decrease_life(1)
+		set_fixed_process(true)
+	
+"
+
+[node name="ray" type="RayCast2D"]
+
+enabled = true
+cast_to = Vector2( 10000, 0 )
+layer_mask = 63
+type_mask = 31
+script/script = ExtResource( 1 )
+damage = 10
+
+[node name="end" type="Sprite" parent="."]
+
+transform/pos = Vector2( -16, -16 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="end"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitorable = false
+script/script = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="end/Area2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="origin" type="Sprite" parent="."]
+
+transform/pos = Vector2( -16, -16 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="middle" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, -32 )
+transform/scale = Vector2( 0.5, 4.26667 )
+texture = ExtResource( 3 )
+centered = false
+region = true
+region_rect = Rect2( 10, 10, 0, 15 )
+
+[connection signal="body_enter" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_enter"]
+
+

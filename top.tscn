@@ -51,7 +51,7 @@ __meta__ = {
 ] instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( -2240, -3104 )
+transform/pos = Vector2( 640, -3744 )
 JUMP_SPEED = 600
 MAX_JUMP_TIME = 25
 max_milk = 100
