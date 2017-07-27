@@ -19,9 +19,9 @@ onready var instanced_ray = get_node("ray")
 
 var shoot_dir = Vector2(500,-250)
 
+
 func _ready():
 	set_fixed_process(true)
-
 
 func shoot_regular ():
 	var instanced_bullet = BULLET.instance()
@@ -38,13 +38,12 @@ func shoot_regular ():
 	t.start()
 	yield(t, "timeout")
 	shooting = false
-	player.decrease_milk()
+	player.decrease_milk(1)
 
-func shoot_laser():
-	#player.decrease_milk()
-	pass
+func shoot_laser():	
+	player.decrease_milk(0.5)	
 
-func _fixed_process(delta):		
+func _fixed_process(delta):
 	if (Input.is_action_pressed("ui_shoot") and !shooting and player.get_milk_level() > 0):
 		if (weapon == WEAPONS.regular):
 			shoot_regular()
@@ -53,6 +52,14 @@ func _fixed_process(delta):
 			shoot_laser()
 	else:
 		instanced_ray.disable()
+		
+	if (Input.is_action_pressed("ui_change_weapon")):
+		Input.action_release("ui_change_weapon")
+		if (weapon == WEAPONS.regular):
+			weapon = WEAPONS.laser
+		else:
+			weapon = WEAPONS.regular
+	
 
 func _on_KinematicBody2D_looking_left():
 	shoot_dir = Vector2(-500,-250)

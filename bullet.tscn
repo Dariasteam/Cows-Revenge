@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://bullet.gd" type="Script" id=1]
 [ext_resource path="res://leche.png" type="Texture" id=2]
+[ext_resource path="res://Splash.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -67,32 +68,7 @@ params/hue_variation = 0.0
 params/anim_speed_scale = 0.0
 params/anim_initial_pos = 0.0
 
-[node name="Splash" type="Particles2D" parent="."]
-
-config/amount = 30
-config/lifetime = 0.2
-config/preprocess = 1282.8
-config/emit_timeout = 0.2
-config/emitting = false
-config/process_mode = 0
-config/local_space = false
-config/texture = ExtResource( 2 )
-params/direction = 0.0
-params/spread = 180.0
-params/linear_velocity = 200.0
-params/spin_velocity = 0.0
-params/orbit_velocity = 0.0
-params/gravity_direction = 0.0
-params/gravity_strength = 9.8
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 1.0
-params/final_size = 0.0
-params/hue_variation = 0.0
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
+[node name="Splash" parent="." instance=ExtResource( 3 )]
 
 [connection signal="body_enter" from="." to="." method="_on_RigidBody2D_body_enter"]
 

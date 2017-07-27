@@ -17,5 +17,5 @@ func release_all():
 
 func _ready():
 	# Called every time the node is added to the scene.
-	# Initialization here
+	# Initialization here	
 	pass

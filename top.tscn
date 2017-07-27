@@ -11,7 +11,7 @@
 [ext_resource path="res://apple.tscn" type="PackedScene" id=9]
 [ext_resource path="res://DeathLine.gd" type="Script" id=10]
 
-[sub_resource type="LineShape2D" id=1]
+[sub_resource type="LineShape2D" id=2]
 
 custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
@@ -51,7 +51,7 @@ __meta__ = {
 ] instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 640, -3744 )
+transform/pos = Vector2( 640, -4128 )
 JUMP_SPEED = 600
 MAX_JUMP_TIME = 25
 max_milk = 100
@@ -268,6 +268,42 @@ transform/pos = Vector2( 624, -3600 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
+[node name="Apple13" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 640, -3680 )
+transform/scale = Vector2( 1, 0.999998 )
+amount = 20
+
+[node name="Apple14" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 640, -3744 )
+transform/scale = Vector2( 1, 0.999998 )
+amount = 20
+
+[node name="Apple15" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 640, -3808 )
+transform/scale = Vector2( 1, 0.999998 )
+amount = 20
+
+[node name="Apple16" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 640, -3872 )
+transform/scale = Vector2( 1, 0.999998 )
+amount = 20
+
+[node name="Apple17" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 640, -3936 )
+transform/scale = Vector2( 1, 0.999998 )
+amount = 20
+
+[node name="Apple18" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 640, -3936 )
+transform/scale = Vector2( 1, 0.999998 )
+amount = 20
+
 [node name="Apple10" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 2368, -4000 )
@@ -320,7 +356,7 @@ amount = 20
 transform/pos = Vector2( 288, -192 )
 transform/scale = Vector2( 83, 1 )
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 0.43012, 0, 0, 1, 0.71084, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -335,7 +371,7 @@ script/script = ExtResource( 10 )
 
 transform/pos = Vector2( 0.71084, 0 )
 transform/scale = Vector2( 0.43012, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 

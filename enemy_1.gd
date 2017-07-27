@@ -9,6 +9,7 @@ export var velocity = 250
 var v = Vector2(-velocity, 0)
 
 onready var sprite = get_node("Sprite")
+onready var area_head = get_node("area_head")
 
 export(bool) var dir_left = true;
 
@@ -31,6 +32,7 @@ func die_by_jump():
 	set_shape_as_trigger(0, true)
 	get_node("Sprite").set_opacity(0)
 	Input.action_press("ui_jump")
+	Input.action_release("ui_jump")
 	var t = Timer.new()
 	t.set_wait_time(0.2)
 	t.set_one_shot(true)
@@ -38,7 +40,7 @@ func die_by_jump():
 	t.start()
 	yield(t, "timeout")
 	queue_free()
-	Input.action_release("ui_jump")
+	
 
 func die():
 	queue_free()
@@ -74,7 +76,7 @@ func _on_area_body_body_enter( body ):
 
 func _on_area_head_body_enter( body ):
 	if (body.is_in_group("player") and body.can_receive_damage()):
-		if (body.foots.get_pos().y > get_pos().y):
+		if (body.foots.get_global_pos().y > area_head.get_global_pos().y):
 			print ("cabeza")
 			life = 0
 			die_by_jump()

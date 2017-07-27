@@ -116,9 +116,7 @@ func _on_Bttn_S_released():
 
 # MIX
 func _on_Bttn_AS_pressed():
-	Input.action_press("ui_jump")
-	Input.action_press("ui_shoot")
+	Input.action_press("ui_change_weapon")	
 
 func _on_Bttn_AS_released():
-	Input.action_release("ui_jump")
-	Input.action_release("ui_shoot")
+	Input.action_release("ui_change_weapon")	

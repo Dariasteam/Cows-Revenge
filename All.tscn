@@ -36,10 +36,10 @@ world = null
 transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
-render_target/clear_on_new_frame = false
+render_target/clear_on_new_frame = true
 render_target/filter = false
 render_target/gen_mipmaps = false
-render_target/update_mode = 2
+render_target/update_mode = 3
 audio_listener/enable_2d = true
 audio_listener/enable_3d = false
 physics/object_picking = false
@@ -106,7 +106,6 @@ visibility_mode = 0
 
 [node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/visible = false
 visibility/opacity = 0.5
 transform/pos = Vector2( 1088, 416 )
 transform/scale = Vector2( 2, 2 )
@@ -155,7 +154,7 @@ visibility_mode = 0
 
 visibility/opacity = 0.0
 transform/pos = Vector2( 288, 576 )
-transform/scale = Vector2( 0.25, 0.25 )
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null
@@ -170,7 +169,7 @@ visibility_mode = 0
 
 visibility/opacity = 0.0
 transform/pos = Vector2( 32, 576 )
-transform/scale = Vector2( 0.25, 0.25 )
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 4 )
 pressed = null
 bitmask = null
