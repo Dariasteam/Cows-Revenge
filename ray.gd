@@ -6,7 +6,7 @@ extends RayCast2D
 
 
 func _ready():
-	set_fixed_process(true)
+	set_process_input(true)
 	pass
 	
 func _fixed_process(delta):
@@ -14,3 +14,9 @@ func _fixed_process(delta):
 		print ("Colliding")
 	else:
 		print ("Not colliding")
+
+func _input(event):
+	print ("asd")
+	if event.type == InputEvent.MOUSE_MOTION:		
+		print ("asd")
+	

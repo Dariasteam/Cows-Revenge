@@ -151,7 +151,8 @@ trigger = false
 transform/pos = Vector2( 3.8147e-06, 0 )
 frames = SubResource( 8 )
 animation = "walking"
-frame = 8
+frame = 3
+playing = true
 
 [connection signal="body_enter" from="area_head" to="." method="_on_area_head_body_enter"]
 

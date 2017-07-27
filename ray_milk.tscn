@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://rayo_leche.gd" type="Script" id=1]
-[ext_resource path="res://corazon2.tex" type="Texture" id=2]
-[ext_resource path="res://corazon_vacio.png" type="Texture" id=3]
+[ext_resource path="res://Splash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://corazon2.tex" type="Texture" id=3]
+[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -51,11 +52,11 @@ type_mask = 31
 script/script = ExtResource( 1 )
 damage = 10
 
-[node name="end" type="Sprite" parent="."]
+[node name="end" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 0, -1 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+config/emit_timeout = 0.0
 
 [node name="Area2D" type="Area2D" parent="end"]
 
@@ -78,19 +79,19 @@ _update_shape_index = 0
 
 [node name="origin" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 0, -1 )
 transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="middle" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, -2 )
-transform/scale = Vector2( 0.5, 2.13333 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( 0, 7 )
+texture = ExtResource( 4 )
 centered = false
-offset = Vector2( 0, -7 )
+offset = Vector2( 0, -14.5 )
 region = true
-region_rect = Rect2( 10, 10, 100, 15 )
+region_rect = Rect2( 0, 0, 50, 29 )
 
 [connection signal="body_enter" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_enter"]
 

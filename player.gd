@@ -22,6 +22,7 @@ onready var shooter = get_node("shooter")
 onready var sprite = get_node("sprite")
 onready var foots = get_node("foots")
 
+
 var can_jump = true
 var jumping = false
 var velocity = Vector2()
@@ -51,8 +52,8 @@ func add_milk(amount):
 func get_milk_level():
 	return milk_level
 
-func decrease_milk():
-	milk_level = milk_level - 1
+func decrease_milk(amount):
+	milk_level = milk_level - amount
 	emit_signal("update_milk", get_max_milk(), get_milk_level());
 
 func on_opacity_low ():
@@ -100,7 +101,6 @@ func horizontal_movement_amount ():
 		walk_speed += WALK_SPEED_INCREMENT
 	return walk_speed
 
-
 func _fixed_process(delta):
 	if (jumping):
 		jump_time -= altitude
@@ -123,14 +123,17 @@ func _fixed_process(delta):
 
 	# Movimiento horizontal
 	if (Input.is_action_pressed("ui_left")):
+		sprite.set_animation("walk")
 		emit_signal("looking_left");
 		velocity.x = - horizontal_movement_amount()
 		sprite.set_flip_h(true)
 	elif (Input.is_action_pressed("ui_right")):
+		sprite.set_animation("walk")
 		velocity.x =  horizontal_movement_amount()
 		emit_signal("looking_right");
 		sprite.set_flip_h(false)
 	else:
+		sprite.set_animation("Idle")
 		if (velocity.x > SLIDE_LEVEL):
 			velocity.x -= SLIDE_LEVEL
 		elif (velocity.x < -SLIDE_LEVEL):
@@ -168,7 +171,7 @@ func _fixed_process(delta):
 			jump_time = 0
 		else:
 			# Está en el suelo
-			if (normal.y < -0.5):
+			if (normal.y < -0.25):
 				can_jump = true
 				jumping = false
 			motion = normal.slide(motion)
@@ -181,4 +184,5 @@ func _fixed_process(delta):
 func _ready():
 	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
 	emit_signal("update_milk", get_max_milk(), get_milk_level());
-	set_fixed_process(true)
+	set_fixed_process(true)	
+
