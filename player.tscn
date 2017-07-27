@@ -82,7 +82,7 @@ _update_shape_index = 1
 
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]

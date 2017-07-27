@@ -53,7 +53,7 @@ damage = 10
 
 [node name="end" type="Sprite" parent="."]
 
-transform/pos = Vector2( -16, -16 )
+transform/pos = Vector2( 0, -1 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
@@ -78,18 +78,19 @@ _update_shape_index = 0
 
 [node name="origin" type="Sprite" parent="."]
 
-transform/pos = Vector2( -16, -16 )
+transform/pos = Vector2( 0, -1 )
 transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="middle" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, -32 )
-transform/scale = Vector2( 0.5, 4.26667 )
+transform/pos = Vector2( 0, -2 )
+transform/scale = Vector2( 0.5, 2.13333 )
 texture = ExtResource( 3 )
 centered = false
+offset = Vector2( 0, -7 )
 region = true
-region_rect = Rect2( 10, 10, 0, 15 )
+region_rect = Rect2( 10, 10, 100, 15 )
 
 [connection signal="body_enter" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_enter"]
 
