@@ -41,7 +41,8 @@ func shoot_regular ():
 	player.decrease_milk()
 
 func shoot_laser():
-	player.decrease_milk()	
+	#player.decrease_milk()
+	pass
 
 func _fixed_process(delta):		
 	if (Input.is_action_pressed("ui_shoot") and !shooting and player.get_milk_level() > 0):
