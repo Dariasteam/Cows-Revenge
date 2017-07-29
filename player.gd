@@ -56,10 +56,10 @@ func decrease_milk(amount):
 	emit_signal("update_milk", get_max_milk(), get_milk_level());
 
 func on_opacity_low ():
-	sprite.set_opacity(0.5)
+	sprite.set_modulate(Color("fb12e7"))
 
 func on_opacity_high ():
-	sprite.set_opacity(1)
+	sprite.set_modulate(Color("00ffff"))
 
 func on_receive_damage ():
 	if (can_receive_damage()):
@@ -69,6 +69,7 @@ func can_receive_damage ():
 	return receive_damage
 
 func change_collision ():
+	sprite.set_modulate(Color("ffffff"))
 	receive_damage = !receive_damage
 	set_layer_mask_bit(0, !get_layer_mask_bit(0))
 	set_layer_mask_bit(5, !get_layer_mask_bit(5))
@@ -77,8 +78,8 @@ func show_damage ():
 	change_collision()
 	var t1 = Timer.new()
 	var t2 = Timer.new()
-	t1.set_wait_time(0.2)
-	t2.set_wait_time(0.2)
+	t1.set_wait_time(0.07)
+	t2.set_wait_time(0.07)
 	t1.set_one_shot(true)
 	t2.set_one_shot(true)
 	t1.connect("timeout",self,"on_opacity_low")

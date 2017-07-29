@@ -3,7 +3,7 @@
 [ext_resource path="res://rayo_leche.gd" type="Script" id=1]
 [ext_resource path="res://Splash.tscn" type="PackedScene" id=2]
 [ext_resource path="res://corazon2.tex" type="Texture" id=3]
-[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.tex" type="Texture" id=4]
+[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 

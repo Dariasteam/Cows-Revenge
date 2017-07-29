@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -6,12 +6,11 @@
 [ext_resource path="res://fondo_0.tex" type="Texture" id=4]
 [ext_resource path="res://fondo_1.tex" type="Texture" id=5]
 [ext_resource path="res://fondo_2.tex" type="Texture" id=6]
-[ext_resource path="res://fondo_3.tex" type="Texture" id=7]
-[ext_resource path="res://fondo_4.tex" type="Texture" id=8]
-[ext_resource path="res://apple.tscn" type="PackedScene" id=9]
-[ext_resource path="res://DeathLine.gd" type="Script" id=10]
+[ext_resource path="res://fondo_3.png" type="Texture" id=7]
+[ext_resource path="res://apple.tscn" type="PackedScene" id=8]
+[ext_resource path="res://DeathLine.gd" type="Script" id=9]
 
-[sub_resource type="LineShape2D" id=2]
+[sub_resource type="LineShape2D" id=1]
 
 custom_solver_bias = 0.0
 normal = Vector2( 0, -1 )
@@ -60,6 +59,30 @@ invulneravility_time = 10
 [node name="Enemy3" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -2016, -1200 )
+velocity = 200
+dir_left = false
+
+[node name="Enemy13" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 576, -992 )
+velocity = 200
+dir_left = false
+
+[node name="Enemy14" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 1984, -864 )
+velocity = 200
+dir_left = false
+
+[node name="Enemy15" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -1984, -2400 )
+velocity = 200
+dir_left = false
+
+[node name="Enemy16" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -3392, -1824 )
 velocity = 200
 dir_left = false
 
@@ -114,6 +137,7 @@ velocity = 200
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -127,7 +151,6 @@ scroll/ignore_camera_zoom = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 
-editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -4
 motion/scale = Vector2( 0.1, 0 )
@@ -148,7 +171,6 @@ region_rect = Rect2( 0, 0, 1024, 128 )
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 
-editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -3
 motion/scale = Vector2( 0.2, 0 )
@@ -165,11 +187,10 @@ transform/scale = Vector2( 6, 6 )
 texture = ExtResource( 5 )
 centered = false
 region = true
-region_rect = Rect2( 0, 0, 1024, 128 )
+region_rect = Rect2( 0, 0, 1200, 128 )
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 
-editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -3
 motion/scale = Vector2( 0.4, 0 )
@@ -208,145 +229,127 @@ centered = false
 region = true
 region_rect = Rect2( -1000, 0, 2048, 128 )
 
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
-
-visibility/visible = false
-transform/pos = Vector2( -736, -32 )
-z/z = -3
-motion/scale = Vector2( 0.8, 0 )
-motion/offset = Vector2( 1, 2000 )
-motion/mirroring = Vector2( 0, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
-
-transform/pos = Vector2( -3712, -2048 )
-transform/scale = Vector2( 6, 6 )
-texture = ExtResource( 8 )
-centered = false
-region = true
-region_rect = Rect2( -1000, 0, 2048, 128 )
-
-[node name="Apple 2" parent="." instance=ExtResource( 9 )]
+[node name="Apple 2" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -3744, -3264 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple12" parent="." instance=ExtResource( 9 )]
+[node name="Apple12" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -1472, -1184 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple5" parent="." instance=ExtResource( 9 )]
+[node name="Apple5" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -2544, -768 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple6" parent="." instance=ExtResource( 9 )]
+[node name="Apple6" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -2496, -816 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple7" parent="." instance=ExtResource( 9 )]
+[node name="Apple7" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -2448, -864 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple9" parent="." instance=ExtResource( 9 )]
+[node name="Apple9" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -2400, -912 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple4" parent="." instance=ExtResource( 9 )]
+[node name="Apple4" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 624, -3600 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple13" parent="." instance=ExtResource( 9 )]
+[node name="Apple13" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 640, -3680 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple14" parent="." instance=ExtResource( 9 )]
+[node name="Apple14" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 640, -3744 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple15" parent="." instance=ExtResource( 9 )]
+[node name="Apple15" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 640, -3808 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple16" parent="." instance=ExtResource( 9 )]
+[node name="Apple16" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 640, -3872 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple17" parent="." instance=ExtResource( 9 )]
+[node name="Apple17" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 640, -3936 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple18" parent="." instance=ExtResource( 9 )]
+[node name="Apple18" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 640, -3936 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple10" parent="." instance=ExtResource( 9 )]
+[node name="Apple10" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2368, -4000 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple11" parent="." instance=ExtResource( 9 )]
+[node name="Apple11" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 2496, -3872 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple3" parent="." instance=ExtResource( 9 )]
+[node name="Apple3" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 3840, -2928 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple8" parent="." instance=ExtResource( 9 )]
+[node name="Apple8" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 4176, -864 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple 3" parent="." instance=ExtResource( 9 )]
+[node name="Apple 3" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 576, -1600 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple 4" parent="." instance=ExtResource( 9 )]
+[node name="Apple 4" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( -2928, -3744 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
-[node name="Apple" parent="." instance=ExtResource( 9 )]
+[node name="Apple" parent="." instance=ExtResource( 8 )]
 
 editor/display_folded = true
 transform/pos = Vector2( 1856, -2240 )
 amount = 20
 
-[node name="Apple 5" parent="." instance=ExtResource( 9 )]
+[node name="Apple 5" parent="." instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 576, -2880 )
 amount = 20
@@ -356,7 +359,7 @@ amount = 20
 transform/pos = Vector2( 288, -192 )
 transform/scale = Vector2( 83, 1 )
 input/pickable = true
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 0.43012, 0, 0, 1, 0.71084, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -365,13 +368,13 @@ linear_damp = 0.1
 angular_damp = 1.0
 collision/layers = 3
 collision/mask = 3
-script/script = ExtResource( 10 )
+script/script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathLine"]
 
 transform/pos = Vector2( 0.71084, 0 )
 transform/scale = Vector2( 0.43012, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
