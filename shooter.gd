@@ -54,11 +54,11 @@ func _fixed_process(delta):
 		instanced_ray.disable()
 		
 	if (Input.is_action_pressed("ui_change_weapon")):
-		Input.action_release("ui_change_weapon")
 		if (weapon == WEAPONS.regular):
 			weapon = WEAPONS.laser
 		else:
 			weapon = WEAPONS.regular
+		Input.action_release("ui_change_weapon")
 	
 
 func _on_KinematicBody2D_looking_left():
