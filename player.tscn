@@ -24,7 +24,7 @@
 [ext_resource path="res://vaca_walk/vakacaminar0019.png" type="Texture" id=22]
 [ext_resource path="res://vaca_walk/vakacaminar0020.png" type="Texture" id=23]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -16.5903, -10.3465, 13.4341, -10.3403, 13.6042, 6.10309, 1.07087, 13.1015, -3.59432, 13.1015, -16.6847, 5.56475 )
@@ -52,7 +52,7 @@ animations = [ {
 
 transform/scale = Vector2( 1.8, 1.8 )
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.10364, 2.93931, -4.91934 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
@@ -72,8 +72,7 @@ invulneravility_time = 2
 
 [node name="shooter" type="Node2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 32, 0 )
+transform/pos = Vector2( 25.3282, 2.0993 )
 transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
 SHOOT_CADENCE = 0.1
@@ -104,7 +103,7 @@ _update_shape_index = 1
 
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]

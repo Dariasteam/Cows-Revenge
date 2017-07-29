@@ -22,7 +22,6 @@ onready var shooter = get_node("shooter")
 onready var sprite = get_node("sprite")
 onready var foots = get_node("foots")
 
-
 var can_jump = true
 var jumping = false
 var velocity = Vector2()
@@ -161,24 +160,27 @@ func _fixed_process(delta):
 
 	# Control de colisiones
 	if (is_colliding()):
-
 		var normal = get_collision_normal()
-
 		if (normal.y > 0.5 and jumping):
 			# Está chocandose contra el techo
 			jumping = false
 			can_jump = false
 			jump_time = 0
 		else:
-			# Está en el suelo
+			# Está en el suelo			
 			if (normal.y < -0.25):
 				can_jump = true
 				jumping = false
-			motion = normal.slide(motion)
-			velocity = normal.slide(velocity)
+				motion.y = 0
+				motion = normal.slide(motion)
+				velocity = normal.slide(velocity)
+				velocity.y = 0
+			else:
+				motion = normal.slide(motion)
+				velocity = normal.slide(velocity)	
 			move(motion)
 
-	else:
+	else:		
 		can_jump = false
 
 func _ready():

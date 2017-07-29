@@ -11,6 +11,8 @@ var v = Vector2(-velocity, 0)
 onready var sprite = get_node("Sprite")
 onready var area_head = get_node("area_head")
 
+onready var hit_single = get_node("hit_ray_particle")
+
 export(bool) var dir_left = true;
 
 export(int) var life = 2
@@ -27,28 +29,34 @@ func _ready():
 		reverse_direction()
 	set_fixed_process(true)
 
-func die_by_jump():
-	life = 0
-	set_shape_as_trigger(0, true)
-	get_node("Sprite").set_opacity(0)
-	Input.action_press("ui_jump")
-	Input.action_release("ui_jump")
+
+func dissapear():
+	sprite.set_opacity(0)
+	set_fixed_process(false)
+	set_layer_mask_bit(2,false)
+	
 	var t = Timer.new()
-	t.set_wait_time(0.2)
+	t.set_wait_time(hit_single.get_lifetime())
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")
 	queue_free()
-	
+
+func die_by_jump():
+	life = 0
+	dissapear()
 
 func die():
-	queue_free()
+	dissapear()
 
 func decrease_life (value):
-	life -= value
-	if (life <= 0):
-		die()
+	hit_single.set_emitting(false)
+	hit_single.set_emitting(true)
+	if (life > 0):
+		life -= value
+		if (life <= 0):			
+			die()
 
 func _fixed_process(delta):
 	var motion = v * delta
@@ -72,11 +80,10 @@ func _fixed_process(delta):
 func _on_area_body_body_enter( body ):
 	if (body.is_in_group("player") and life > 0 and body.can_receive_damage()):
 		emit_signal("damage", damage)
-		print ("muerte")
 
 func _on_area_head_body_enter( body ):
 	if (body.is_in_group("player") and body.can_receive_damage()):
-		if (body.foots.get_global_pos().y > area_head.get_global_pos().y):
+		if (body.foots.get_global_pos().y > area_head.get_global_pos().y and body.is_falling()):
 			print ("cabeza")
 			life = 0
 			die_by_jump()

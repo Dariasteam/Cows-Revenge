@@ -3,7 +3,7 @@
 [ext_resource path="res://rayo_leche.gd" type="Script" id=1]
 [ext_resource path="res://Splash.tscn" type="PackedScene" id=2]
 [ext_resource path="res://corazon2.tex" type="Texture" id=3]
-[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.png" type="Texture" id=4]
+[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.tex" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -38,7 +38,7 @@ func _fixed_process(delta):
 	
 func _on_Area2D_body_enter( body ):	
 	if (body.is_in_group(\"enemy\")):		
-		body.decrease_life(1)
+		body.decrease_life(0.25)
 		set_fixed_process(true)
 	
 "
@@ -86,12 +86,12 @@ texture = ExtResource( 3 )
 
 [node name="middle" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, 7 )
+transform/pos = Vector2( 0, 6 )
 texture = ExtResource( 4 )
 centered = false
 offset = Vector2( 0, -14.5 )
 region = true
-region_rect = Rect2( 0, 0, 50, 29 )
+region_rect = Rect2( 0, 0, 100, 29 )
 
 [connection signal="body_enter" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_enter"]
 
