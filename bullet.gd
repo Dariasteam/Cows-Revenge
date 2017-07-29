@@ -38,8 +38,6 @@ func _ready():
 	yield(t, "timeout")
 	set_fixed_process(true)
 
-
-
 func _on_RigidBody2D_body_enter( body ):
 	if (body.is_in_group("enemy")):
 		body.decrease_life(1)
