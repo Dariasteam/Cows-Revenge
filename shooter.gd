@@ -8,7 +8,7 @@ enum WEAPONS {
 	laser
 }
 
-var weapon = WEAPONS.laser
+var weapon = WEAPONS.regular
 var shoot = false
 var recharge = false
 
