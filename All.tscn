@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Controles.gd" type="Script" id=1]
 [ext_resource path="res://top.tscn" type="PackedScene" id=2]
@@ -7,6 +7,21 @@
 [ext_resource path="res://btn_jump.png" type="Texture" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://btn_shoot.png" type="Texture" id=7]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	set_process_input(true)
+
+func _input_event(event):
+	get_node(\"Viewport\").input(event)
+"
 
 [node name="Node2D" type="Node2D" groups=[
 "control",
@@ -20,13 +35,14 @@ life3_n = NodePath("Control/Life/life3")
 [node name="Control" type="Control" parent="."]
 
 focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 1280.0
 margin/bottom = 768.0
+script/script = SubResource( 1 )
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
@@ -39,7 +55,7 @@ render_target/v_flip = false
 render_target/clear_on_new_frame = false
 render_target/filter = false
 render_target/gen_mipmaps = false
-render_target/update_mode = 3
+render_target/update_mode = 0
 audio_listener/enable_2d = true
 audio_listener/enable_3d = false
 physics/object_picking = false
@@ -49,6 +65,7 @@ gui/disable_input = false
 
 [node name="Life" type="Node2D" parent="Control"]
 
+editor/display_folded = true
 transform/pos = Vector2( 64, 64 )
 
 [node name="life1" type="Sprite" parent="Control/Life"]
@@ -73,6 +90,8 @@ texture = ExtResource( 3 )
 region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
+
+editor/display_folded = true
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
