@@ -24,7 +24,7 @@ transform/pos = Vector2( 768, -480 )
 "map",
 ]]
 
-transform/scale = Vector2( 1.8, 1.8 )
+transform/scale = Vector2( 2, 2 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 64, 64 )
@@ -50,7 +50,7 @@ __meta__ = {
 ] instance=ExtResource( 2 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 640, -4128 )
+transform/pos = Vector2( 704, -4512 )
 JUMP_SPEED = 600
 MAX_JUMP_TIME = 25
 max_milk = 100
@@ -64,25 +64,25 @@ dir_left = false
 
 [node name="Enemy13" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 576, -992 )
+transform/pos = Vector2( 576, -1184 )
 velocity = 200
 dir_left = false
 
 [node name="Enemy14" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1984, -864 )
+transform/pos = Vector2( 1984, -1056 )
 velocity = 200
 dir_left = false
 
 [node name="Enemy15" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -1984, -2400 )
+transform/pos = Vector2( -3328, -3168 )
 velocity = 200
 dir_left = false
 
 [node name="Enemy16" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -3392, -1824 )
+transform/pos = Vector2( -3648, -2016 )
 velocity = 200
 dir_left = false
 
@@ -94,35 +94,35 @@ dir_left = false
 
 [node name="Enemy7" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -336, -3072 )
+transform/pos = Vector2( -320, -3424 )
 velocity = 200
 dir_left = false
 
 [node name="Enemy8" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -2640, -3312 )
+transform/pos = Vector2( -2560, -4192 )
 velocity = 200
 dir_left = false
 
 [node name="Enemy9" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 960, -3504 )
+transform/pos = Vector2( 1280, -3936 )
 velocity = 200
 dir_left = false
 
 [node name="Enemy5" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -1440, -2352 )
+transform/pos = Vector2( -1408, -2656 )
 velocity = 200
 
 [node name="Enemy6" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2640, -864 )
+transform/pos = Vector2( 2816, -992 )
 velocity = 200
 
 [node name="Enemy10" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 5328, -768 )
+transform/pos = Vector2( 5376, -864 )
 velocity = 200
 
 [node name="Enemy11" parent="." instance=ExtResource( 3 )]
@@ -132,12 +132,11 @@ velocity = 200
 
 [node name="Enemy12" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 4416, -1680 )
+transform/pos = Vector2( 4352, -2016 )
 velocity = 200
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -151,13 +150,15 @@ scroll/ignore_camera_zoom = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 
+editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -4
 motion/scale = Vector2( 0.1, 0 )
 motion/offset = Vector2( 1, 2000 )
 motion/mirroring = Vector2( 0, 0 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
@@ -171,13 +172,15 @@ region_rect = Rect2( 0, 0, 1024, 128 )
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 
+editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -3
 motion/scale = Vector2( 0.2, 0 )
 motion/offset = Vector2( 1, 2000 )
 motion/mirroring = Vector2( 0, 0 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
@@ -191,13 +194,15 @@ region_rect = Rect2( 0, 0, 1200, 128 )
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
 
+editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -3
 motion/scale = Vector2( 0.4, 0 )
 motion/offset = Vector2( 1, 2000 )
 motion/mirroring = Vector2( 0, 0 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
@@ -211,13 +216,15 @@ region_rect = Rect2( 0, 0, 2048, 128 )
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 
+editor/display_folded = true
 transform/pos = Vector2( -736, -32 )
 z/z = -3
 motion/scale = Vector2( 0.6, 0 )
 motion/offset = Vector2( 1, 2000 )
 motion/mirroring = Vector2( 0, 0 )
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
@@ -231,67 +238,67 @@ region_rect = Rect2( -1000, 0, 2048, 128 )
 
 [node name="Apple 2" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -3744, -3264 )
+transform/pos = Vector2( -3520, -3616 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple12" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -1472, -1184 )
+transform/pos = Vector2( -1408, -1248 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple5" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2544, -768 )
+transform/pos = Vector2( -2528, -688 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple6" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2496, -816 )
+transform/pos = Vector2( -2480, -736 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple7" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2448, -864 )
+transform/pos = Vector2( -2432, -784 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple9" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2400, -912 )
+transform/pos = Vector2( -2304, -864 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple4" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 624, -3600 )
+transform/pos = Vector2( 672, -4016 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple13" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 640, -3680 )
+transform/pos = Vector2( 688, -4096 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple14" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 640, -3744 )
+transform/pos = Vector2( 688, -4160 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple15" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 640, -3808 )
+transform/pos = Vector2( 688, -4224 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
 [node name="Apple16" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 640, -3872 )
+transform/pos = Vector2( 688, -4288 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
@@ -303,7 +310,7 @@ amount = 20
 
 [node name="Apple18" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 640, -3936 )
+transform/pos = Vector2( 688, -4352 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
@@ -327,7 +334,7 @@ amount = 20
 
 [node name="Apple8" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 4176, -864 )
+transform/pos = Vector2( 4352, -1312 )
 transform/scale = Vector2( 1, 0.999998 )
 amount = 20
 
@@ -339,14 +346,8 @@ amount = 20
 
 [node name="Apple 4" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2928, -3744 )
+transform/pos = Vector2( -3136, -3616 )
 transform/scale = Vector2( 1, 0.999998 )
-amount = 20
-
-[node name="Apple" parent="." instance=ExtResource( 8 )]
-
-editor/display_folded = true
-transform/pos = Vector2( 1856, -2240 )
 amount = 20
 
 [node name="Apple 5" parent="." instance=ExtResource( 8 )]
@@ -360,7 +361,7 @@ transform/pos = Vector2( 288, -192 )
 transform/scale = Vector2( 83, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 0.43012, 0, 0, 1, 0.71084, 0 )
+shapes/0/transform = Matrix32( 0.798988, 0, 0, 1, 12.9332, -32 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
@@ -372,8 +373,8 @@ script/script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathLine"]
 
-transform/pos = Vector2( 0.71084, 0 )
-transform/scale = Vector2( 0.43012, 1 )
+transform/pos = Vector2( 12.9332, -32 )
+transform/scale = Vector2( 0.798988, 1 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -381,4 +382,3 @@ _update_shape_index = 0
 [connection signal="body_enter" from="DeathLine" to="DeathLine" method="_on_DeathLine_body_enter"]
 
 
-[editable path="Apple"]

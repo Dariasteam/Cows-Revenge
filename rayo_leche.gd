@@ -13,13 +13,15 @@ var distance = MAX_DISTANCE
 func look_left():
 	force_raycast_update()
 	distance = -MAX_DISTANCE
-	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))	
+	origin.set_param(Particles2D.PARAM_DIRECTION, 270)
+	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))
 	middle.set_rot(PI)
 	
 func look_right():
 	force_raycast_update()
 	distance = MAX_DISTANCE
-	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))	
+	origin.set_param(Particles2D.PARAM_DIRECTION, 90)
+	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))
 	middle.set_rot(0)
 
 func _ready():
@@ -28,9 +30,11 @@ func _ready():
 func enable():
 	force_raycast_update()
 	end.set_emitting(true)
+	origin.set_emitting(true)
 	enabled = true
 	
 func disable():
+	origin.set_emitting(false)
 	end.set_emitting(false)
 	enabled = false
 	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))

@@ -111,6 +111,7 @@ func _on_Bttn_L_pressed():
 	a.set_as_action("ui_left", true)
 	get_node("Control/Viewport").input(a)
 	
+	
 	#Input.action_press("ui_left")
 
 func _on_Bttn_L_released():
