@@ -25,8 +25,12 @@ onready var foots = get_node("foots")
 var can_jump = true
 var jumping = false
 var velocity = Vector2()
+var final_velocity = Vector2()
 var jump_time = 0
 var jump_key_pressed = false
+
+var right = false
+var left = false
 
 var receive_damage = true
 
@@ -105,51 +109,26 @@ func _fixed_process(delta):
 	if (jumping):
 		jump_time -= altitude
 
-
 	velocity.y += delta * GRAVITY
+	
 	# Salto
-	if (Input.is_action_pressed("ui_jump")):
-		if (jumping and can_jump_more() and jump_key_pressed):
-			velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
-			sprite.stop()
-			jumping = true
-		elif(can_jump and !jump_key_pressed):
-			velocity.y = - JUMP_SPEED
-			jump_time = MAX_JUMP_TIME
-			can_jump = false
-			jumping = true
-			jump_key_pressed = true
-	else:
-		jump_key_pressed = false
+	if (jumping and can_jump_more() and jump_key_pressed):		
+		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
+		sprite.stop()
+		jumping = true	
+	
 
-	# Movimiento horizontal
-	if (Input.is_action_pressed("ui_left")):
-		sprite.set_animation("walk")
-		emit_signal("looking_left");
-		velocity.x = - horizontal_movement_amount()
-		sprite.set_flip_h(true)
-	elif (Input.is_action_pressed("ui_right")):
-		sprite.set_animation("walk")
-		velocity.x =  horizontal_movement_amount()
-		emit_signal("looking_right");
-		sprite.set_flip_h(false)
-	else:
-		sprite.set_animation("Idle")
-		if (velocity.x > SLIDE_LEVEL):
+	# Movimiento horizontal	
+	if (!right and !left):
+		sprite.set_animatiºon("Idle")		
+		if (velocity.x > SLIDE_LEVEL): 
 			velocity.x -= SLIDE_LEVEL
 		elif (velocity.x < -SLIDE_LEVEL):
 			velocity.x += SLIDE_LEVEL
-		else:
+		else:		
 			velocity.x = 0
 			walk_speed = 0
-	# Agacharse
-	if (Input.is_action_pressed("ui_down")):
-		get_node("Collision_Normal").set_trigger(true)
-		get_node("Collision_Agachado").set_trigger(false)
-	else:
-		get_node("Collision_Normal").set_trigger(false)
-		get_node("Collision_Agachado").set_trigger(true)
-
+	
 	var motion = velocity * delta
 
 	if (jumping and test_move(motion)):
@@ -160,29 +139,30 @@ func _fixed_process(delta):
 
 	motion = move(motion)
 
-	# Control de colisiones
+	# Control de colisiones	
+	
 	if (is_colliding()):
 		sprite.play("")
 		var normal = get_collision_normal()
+		jumping = false
 		if (normal.y > 0.5 and jumping):
-			# Está chocandose contra el techo
-			jumping = false
+			# Está chocandose contra el techo			
 			can_jump = false
 			jump_time = 0
-		else:
-			# Está en el suelo			
+		else:			
+			# Está en el suelo
+			
 			if (normal.y < -0.25):
 				can_jump = true
-				jumping = false
 				motion.y = 0
 				motion = normal.slide(motion)
-				velocity = normal.slide(velocity)
+				final_velocity = normal.slide(final_velocity)
 				velocity.y = 0
-			else:
+			else:				
 				motion = normal.slide(motion)
-				velocity = normal.slide(velocity)	
+				final_velocity = normal.slide(final_velocity)
 			move(motion)
-
+			
 	else:		
 		can_jump = false
 
@@ -197,28 +177,46 @@ func _ready():
 	
 
 func _input(ev):
-	
+
 	if (ev.is_action_pressed("ui_left")):
-		print("ui_left on")
+		left = true
+		sprite.set_animation("walk")
+		emit_signal("looking_left")
+		velocity.x = -450
+		sprite.set_flip_h(true)
 	elif (ev.is_action_released("ui_left")):
-		print("ui_left off")
+		left = false
 		
 	if (ev.is_action_pressed("ui_right")):
-		print("ui_right on")
+		right = true
+		sprite.set_animation("walk")
+		velocity.x =  450
+		emit_signal("looking_right")
+		sprite.set_flip_h(false)
 	elif (ev.is_action_released("ui_right")):
-		print("ui_right off")
+		right = false
+	
+
+
 	
 	if (ev.is_action_pressed("ui_up")):
 		print("ui_up on")
 	elif (ev.is_action_released("ui_up")):
 		print("ui_up off")
-		
+	
+	# Agacharse
 	if (ev.is_action_pressed("ui_down")):
-		print("ui_down on")
+		get_node("Collision_Normal").set_trigger(true)
+		get_node("Collision_Agachado").set_trigger(false)
 	elif (ev.is_action_released("ui_down")):
-		print("ui_down off")
+		get_node("Collision_Normal").set_trigger(false)
+		get_node("Collision_Agachado").set_trigger(true)
 		
 	if (ev.is_action_pressed("ui_jump")):
-		print("ui_jump on")
+		jump_key_pressed = true
+		velocity.y = - JUMP_SPEED
+		jumping = true
+		jump_time = MAX_JUMP_TIME
+		can_jump = false
 	elif (ev.is_action_released("ui_jump")):
-		print("ui_jump off")
+		jump_key_pressed = false

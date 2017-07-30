@@ -69,7 +69,7 @@ altitude = 0.5
 MAX_WALK_SPEED = 450
 max_milk = 500
 milk_level = 0
-invulneravility_time = 2
+invulneravility_time = 1
 
 [node name="shooter" type="Node2D" parent="."]
 
@@ -104,6 +104,7 @@ _update_shape_index = 1
 
 frames = SubResource( 3 )
 animation = "walk"
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
