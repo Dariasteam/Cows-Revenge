@@ -5,7 +5,7 @@ signal damage
 const GRAVITY = 3000.0
 
 var vertical
-export var velocity = 300
+export var velocity = 350
 var v = Vector2(-velocity, 0)
 
 onready var sprite = get_node("Sprite")

@@ -71,7 +71,7 @@ script/script = ExtResource( 1 )
 JUMP_SPEED = 500
 MAX_JUMP_TIME = 60
 altitude = 0.5
-MAX_WALK_SPEED = 450
+MAX_WALK_SPEED = 550
 max_milk = 500
 milk_level = 0
 invulneravility_time = 1
@@ -109,7 +109,7 @@ _update_shape_index = 1
 
 frames = SubResource( 3 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
