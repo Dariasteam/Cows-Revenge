@@ -36,14 +36,14 @@ world = null
 transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
-render_target/clear_on_new_frame = true
+render_target/clear_on_new_frame = false
 render_target/filter = false
 render_target/gen_mipmaps = false
 render_target/update_mode = 3
 audio_listener/enable_2d = true
 audio_listener/enable_3d = false
 physics/object_picking = false
-gui/disable_input = true
+gui/disable_input = false
 
 [node name="Node2D" parent="Control/Viewport" instance=ExtResource( 2 )]
 

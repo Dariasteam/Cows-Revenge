@@ -24,10 +24,10 @@
 [ext_resource path="res://vaca_idle_3.tex" type="Texture" id=22]
 [ext_resource path="res://vaca_idle_4.tex" type="Texture" id=23]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -16.5903, -10.3465, 13.4341, -10.3403, 13.6042, 6.10309, 1.07087, 13.1015, -3.59432, 13.1015, -16.6847, 5.56475 )
+points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 11.4077, 7.42536, 1.19923, 13.0773, -3.50803, 13.0773 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -40,7 +40,7 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "walk",
-"speed": 20.0
+"speed": 27.0
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 21 ) ],
 "loop": true,
@@ -51,8 +51,9 @@ animations = [ {
 [node name="Player" type="KinematicBody2D"]
 
 transform/scale = Vector2( 1.8, 1.8 )
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
+z/relative = false
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.10364, 2.93931, -4.91934 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
@@ -87,7 +88,7 @@ layer_mask = 30
 transform/pos = Vector2( 2.93931, -4.91934 )
 transform/scale = Vector2( 1.89755, 3.10364 )
 build_mode = 0
-polygon = Vector2Array( -16.6847, 5.56475, -3.59432, 13.1015, 1.07087, 13.1015, 13.6042, 6.10309, 13.4341, -10.3403, -16.5903, -10.3465 )
+polygon = Vector2Array( -3.50803, 13.0773, 1.19923, 13.0773, 11.4077, 7.42536, 11.2943, -10.3627, -13.1494, -10.328, -13.2061, 7.63341 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
@@ -102,8 +103,7 @@ _update_shape_index = 1
 [node name="sprite" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 3 )
-animation = "Idle"
-frame = 2
+animation = "walk"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]

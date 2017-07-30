@@ -50,12 +50,33 @@ func die_by_jump():
 func die():
 	dissapear()
 
+func on_opacity_low ():
+	sprite.set_modulate(Color("fb12e7"))
+
+func on_opacity_high ():
+	sprite.set_modulate(Color("00ffff"))
+
 func decrease_life (value):
 	hit_single.set_emitting(false)
 	hit_single.set_emitting(true)
+	var t1 = Timer.new()
+	var t2 = Timer.new()
+	t1.set_wait_time(0.07)
+	t2.set_wait_time(0.07)
+	t1.set_one_shot(true)
+	t2.set_one_shot(true)
+	t1.connect("timeout",self,"on_opacity_low")
+	t2.connect("timeout",self,"on_opacity_high")
+	add_child(t1)
+	add_child(t2)
+	t1.start()
+	yield(t1, "timeout")
+	t2.start()
+	yield(t2, "timeout")	
+	sprite.set_modulate(Color("ffffff"))
 	if (life > 0):
 		life -= value
-		if (life <= 0):			
+		if (life <= 0):
 			die()
 
 func _fixed_process(delta):

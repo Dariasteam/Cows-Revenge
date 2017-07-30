@@ -36,7 +36,7 @@ export(int) var milk_level = 0
 export(int) var invulneravility_time = 16
 
 func is_falling ():
-	return velocity.y < 0
+	return velocity.y > 0
 
 func get_max_milk():
 	return max_milk
@@ -111,6 +111,7 @@ func _fixed_process(delta):
 	if (Input.is_action_pressed("ui_jump")):
 		if (jumping and can_jump_more() and jump_key_pressed):
 			velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
+			sprite.stop()
 			jumping = true
 		elif(can_jump and !jump_key_pressed):
 			velocity.y = - JUMP_SPEED
@@ -161,6 +162,7 @@ func _fixed_process(delta):
 
 	# Control de colisiones
 	if (is_colliding()):
+		sprite.play("")
 		var normal = get_collision_normal()
 		if (normal.y > 0.5 and jumping):
 			# Está chocandose contra el techo
@@ -184,8 +186,39 @@ func _fixed_process(delta):
 	else:		
 		can_jump = false
 
+func key_left_pressed():
+	pass
+
 func _ready():
 	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
-	emit_signal("update_milk", get_max_milk(), get_milk_level());
+	emit_signal("update_milk", get_max_milk(), get_milk_level())
 	set_fixed_process(true)	
+	set_process_input(true)
+	
 
+func _input(ev):
+	
+	if (ev.is_action_pressed("ui_left")):
+		print("ui_left on")
+	elif (ev.is_action_released("ui_left")):
+		print("ui_left off")
+		
+	if (ev.is_action_pressed("ui_right")):
+		print("ui_right on")
+	elif (ev.is_action_released("ui_right")):
+		print("ui_right off")
+	
+	if (ev.is_action_pressed("ui_up")):
+		print("ui_up on")
+	elif (ev.is_action_released("ui_up")):
+		print("ui_up off")
+		
+	if (ev.is_action_pressed("ui_down")):
+		print("ui_down on")
+	elif (ev.is_action_released("ui_down")):
+		print("ui_down off")
+		
+	if (ev.is_action_pressed("ui_jump")):
+		print("ui_jump on")
+	elif (ev.is_action_released("ui_jump")):
+		print("ui_jump off")

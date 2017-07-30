@@ -20,7 +20,6 @@ var life = 3
 # var a = 2
 # var b = "textvar"
 
-
 func on_update_milk_bar(var maxm, var value):
 	get_node("Control/Milk/Milkbar")   .set_value(value * maxm / 100)
 
@@ -116,7 +115,7 @@ func _on_Bttn_S_released():
 
 # MIX
 func _on_Bttn_AS_pressed():
-	Input.action_press("ui_change_weapon")	
+	Input.action_press("ui_change_weapon")
 
 func _on_Bttn_AS_released():
-	Input.action_release("ui_change_weapon")	
+	Input.action_release("ui_change_weapon")
