@@ -112,8 +112,7 @@ func _fixed_process(delta):
 	velocity.y += delta * GRAVITY
 	
 	# Salto
-	if (can_jump and jump_key_pressed):
-		sprite.stop()
+	if (can_jump and jump_key_pressed):		
 		velocity.y = - JUMP_SPEED
 		jumping = true
 		jump_time = MAX_JUMP_TIME
@@ -147,7 +146,7 @@ func _fixed_process(delta):
 	# Control de colisiones	
 	
 	if (is_colliding()):
-		sprite.play("")
+		
 		var normal = get_collision_normal()
 		
 		"""

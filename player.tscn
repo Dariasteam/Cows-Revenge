@@ -46,6 +46,11 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 27.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -103,8 +108,8 @@ _update_shape_index = 1
 [node name="sprite" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 3 )
-animation = "walk"
-frame = 10
+animation = "Idle"
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
