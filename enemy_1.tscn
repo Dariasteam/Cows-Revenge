@@ -68,7 +68,7 @@ colors = ColorArray( 0.773438, 0.773438, 0.773438, 1, 0.1875, 0.1875, 0.1875, 1 
 ]]
 
 transform/pos = Vector2( 64.3, -80 )
-transform/scale = Vector2( 1.79062, 1.8 )
+transform/scale = Vector2( 2, 2 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.68421, 0, 0, 1.85361, -19.4444, 6.66667 )
@@ -157,7 +157,7 @@ trigger = true
 transform/pos = Vector2( 3.8147e-06, 0 )
 frames = SubResource( 8 )
 animation = "walking"
-frame = 8
+frame = 7
 playing = true
 
 [node name="hit_ray_particle" type="Particles2D" parent="."]

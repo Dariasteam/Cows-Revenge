@@ -22,7 +22,7 @@ func _ready():
 	
 func _input(ev):
 	# SHOOT
-	if (ev.is_action_pressed("ui_shoot") and check_can_shoot()):		
+	if (ev.is_action_pressed("ui_shoot")):		
 		set_fixed_process(true)
 	elif (ev.is_action_released("ui_shoot")):
 		instanced_ray.disable()
@@ -61,11 +61,14 @@ func shoot_laser():
 	player.decrease_milk(0.5)
 
 func _fixed_process(delta):
-	if (weapon == WEAPONS.regular and !recharge):
-		shoot_regular()
-	elif (weapon == WEAPONS.laser):
-		instanced_ray.enable()
-		shoot_laser()
+	if (check_can_shoot()):
+		if (weapon == WEAPONS.regular and !recharge):
+			shoot_regular()
+		elif (weapon == WEAPONS.laser):
+			instanced_ray.enable()
+			shoot_laser()
+	else:
+		set_fixed_process(false)
 	
 func _on_KinematicBody2D_looking_left():
 	shoot_dir = Vector2(-500,-250)

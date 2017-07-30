@@ -112,9 +112,14 @@ func _fixed_process(delta):
 	velocity.y += delta * GRAVITY
 	
 	# Salto
+	if (can_jump and jump_key_pressed):
+		sprite.stop()
+		velocity.y = - JUMP_SPEED
+		jumping = true
+		jump_time = MAX_JUMP_TIME
+		can_jump = false
 	if (jumping and can_jump_more() and jump_key_pressed):		
 		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
-		sprite.stop()
 		jumping = true	
 	
 
@@ -144,45 +149,52 @@ func _fixed_process(delta):
 	if (is_colliding()):
 		sprite.play("")
 		var normal = get_collision_normal()
-		jumping = false
-		if (normal.y > 0.5 and jumping):
-			# Está chocandose contra el techo			
-			can_jump = false
-			jump_time = 0
-		else:			
+		
+		"""
+		if (jumping):
+			jump_key_pressed = false
+			print ("TOCO SUELO")
+			can_jump = true
+			jumping = false
+		"""
+		
+		if (normal.y < -0.35):
 			# Está en el suelo
+			jumping = false
+			can_jump = true
 			
-			if (normal.y < -0.25):
-				can_jump = true
-				motion.y = 0
-				motion = normal.slide(motion)
-				final_velocity = normal.slide(final_velocity)
-				velocity.y = 0
-			else:				
-				motion = normal.slide(motion)
-				final_velocity = normal.slide(final_velocity)
-			move(motion)
+			motion.y = 0
+			if (normal.y > -0.9):
+				motion.x += motion.x * (-normal.y)
+			motion = normal.slide(motion)			
+			#velocity = normal.slide(velocity)			
+			velocity.y = 0
+		else:			
+			# Está chocándose contra techo o apred
+			can_jump = false
+			motion = normal.slide(motion)
+			jump_time = 0
+			#final_velocity = normal.slide(final_velocity)
+		move(motion)
 			
 	else:		
 		can_jump = false
 
-func key_left_pressed():
-	pass
-
 func _ready():
 	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
 	emit_signal("update_milk", get_max_milk(), get_milk_level())
-	set_fixed_process(true)	
 	set_process_input(true)
+	set_fixed_process(true)	
 	
 
 func _input(ev):
 
+	# Movimiento horizontal
 	if (ev.is_action_pressed("ui_left")):
 		left = true
 		sprite.set_animation("walk")
 		emit_signal("looking_left")
-		velocity.x = -450
+		velocity.x = -MAX_WALK_SPEED
 		sprite.set_flip_h(true)
 	elif (ev.is_action_released("ui_left")):
 		left = false
@@ -190,15 +202,13 @@ func _input(ev):
 	if (ev.is_action_pressed("ui_right")):
 		right = true
 		sprite.set_animation("walk")
-		velocity.x =  450
+		velocity.x =  MAX_WALK_SPEED
 		emit_signal("looking_right")
 		sprite.set_flip_h(false)
 	elif (ev.is_action_released("ui_right")):
 		right = false
 	
-
-
-	
+	# Arriba
 	if (ev.is_action_pressed("ui_up")):
 		print("ui_up on")
 	elif (ev.is_action_released("ui_up")):
@@ -212,11 +222,10 @@ func _input(ev):
 		get_node("Collision_Normal").set_trigger(false)
 		get_node("Collision_Agachado").set_trigger(true)
 		
+	# Saltar
 	if (ev.is_action_pressed("ui_jump")):
 		jump_key_pressed = true
-		velocity.y = - JUMP_SPEED
-		jumping = true
-		jump_time = MAX_JUMP_TIME
-		can_jump = false
+		
 	elif (ev.is_action_released("ui_jump")):
+		jump_time = 0
 		jump_key_pressed = false
