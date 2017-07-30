@@ -90,9 +90,11 @@ z/relative = false
 config/amount = 16
 config/lifetime = 0.25
 config/emit_timeout = 0.0
+config/local_space = true
 params/direction = 93.33
 params/spread = 78.54
-params/initial_size = 1.5
+params/linear_velocity = 450.0
+params/initial_size = 2.6
 
 [node name="middle" type="Sprite" parent="."]
 

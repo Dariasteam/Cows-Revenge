@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="TileSet" subresource_count="26" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+<resource_file type="TileSet" subresource_count="31" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+	<ext_resource path="res://cochinada_alone.png" type="Texture" index="6"></ext_resource>
 	<ext_resource path="res://tile full.tex" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://cochinada.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://árbol.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://cochinada_left.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://cochinada_right.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://cochinada_single.png" type="Texture" index="5"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="5"> 			-32, -32, 32, -32, 32, 32, -32, 32, -32, -32 </vector2_array>
@@ -360,6 +365,66 @@
 		<resource name="21/navigation"></resource>		<vector2 name="21/shape_offset"> 32, 32 </vector2>
 		<array name="21/shapes" len="1" shared="false">
 			<resource  resource_type="Shape2D" path="local://24">  </resource>
+		</array>
+		<string name="22/name"> "Cochinada" </string>
+		<resource name="22/texture" external="2">  </resource>
+		<vector2 name="22/tex_offset"> 0, 0 </vector2>
+		<resource name="22/material"></resource>		<color name="22/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="22/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="22/occluder_offset"> 32, 32 </vector2>
+		<resource name="22/occluder"></resource>		<vector2 name="22/navigation_offset"> 32, 32 </vector2>
+		<resource name="22/navigation"></resource>		<vector2 name="22/shape_offset"> 0, 0 </vector2>
+		<array name="22/shapes" len="0" shared="false">
+		</array>
+		<string name="23/name"> "Cochinada_left" </string>
+		<resource name="23/texture" external="3">  </resource>
+		<vector2 name="23/tex_offset"> 0, 0 </vector2>
+		<resource name="23/material"></resource>		<color name="23/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="23/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="23/occluder_offset"> 32, 32 </vector2>
+		<resource name="23/occluder"></resource>		<vector2 name="23/navigation_offset"> 32, 32 </vector2>
+		<resource name="23/navigation"></resource>		<vector2 name="23/shape_offset"> 0, 0 </vector2>
+		<array name="23/shapes" len="0" shared="false">
+		</array>
+		<string name="24/name"> "Cochinada_right" </string>
+		<resource name="24/texture" external="4">  </resource>
+		<vector2 name="24/tex_offset"> 0, 0 </vector2>
+		<resource name="24/material"></resource>		<color name="24/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="24/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="24/occluder_offset"> 32, 32 </vector2>
+		<resource name="24/occluder"></resource>		<vector2 name="24/navigation_offset"> 32, 32 </vector2>
+		<resource name="24/navigation"></resource>		<vector2 name="24/shape_offset"> 0, 0 </vector2>
+		<array name="24/shapes" len="0" shared="false">
+		</array>
+		<string name="25/name"> "Cochinada_single" </string>
+		<resource name="25/texture" external="5">  </resource>
+		<vector2 name="25/tex_offset"> 0, 0 </vector2>
+		<resource name="25/material"></resource>		<color name="25/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="25/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="25/occluder_offset"> 32, 32 </vector2>
+		<resource name="25/occluder"></resource>		<vector2 name="25/navigation_offset"> 32, 32 </vector2>
+		<resource name="25/navigation"></resource>		<vector2 name="25/shape_offset"> 0, 0 </vector2>
+		<array name="25/shapes" len="0" shared="false">
+		</array>
+		<string name="26/name"> "Cochinada_reverse" </string>
+		<resource name="26/texture" external="2">  </resource>
+		<vector2 name="26/tex_offset"> 0, 0 </vector2>
+		<resource name="26/material"></resource>		<color name="26/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="26/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="26/occluder_offset"> 32, 32 </vector2>
+		<resource name="26/occluder"></resource>		<vector2 name="26/navigation_offset"> 32, 32 </vector2>
+		<resource name="26/navigation"></resource>		<vector2 name="26/shape_offset"> 0, 0 </vector2>
+		<array name="26/shapes" len="0" shared="false">
+		</array>
+		<string name="27/name"> "Cochinada_alone" </string>
+		<resource name="27/texture" external="6">  </resource>
+		<vector2 name="27/tex_offset"> 0, 0 </vector2>
+		<resource name="27/material"></resource>		<color name="27/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="27/region"> 0, 0, 64, 64 </rect2>
+		<vector2 name="27/occluder_offset"> 32, 32 </vector2>
+		<resource name="27/occluder"></resource>		<vector2 name="27/navigation_offset"> 32, 32 </vector2>
+		<resource name="27/navigation"></resource>		<vector2 name="27/shape_offset"> 0, 0 </vector2>
+		<array name="27/shapes" len="0" shared="false">
 		</array>
 
 	</main_resource>
