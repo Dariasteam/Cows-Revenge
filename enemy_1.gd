@@ -35,6 +35,7 @@ func dissapear():
 	set_fixed_process(false)
 	set_layer_mask_bit(2,false)
 	
+	hit_single.set_emitting(true)
 	var t = Timer.new()
 	t.set_wait_time(hit_single.get_lifetime())
 	t.set_one_shot(true)
@@ -103,7 +104,7 @@ func _on_area_body_body_enter( body ):
 		emit_signal("damage", damage)
 
 func _on_area_head_body_enter( body ):
-	if (body.is_in_group("player") and body.can_receive_damage()):
+	if (body.is_in_group("player")):
 		if (body.foots.get_global_pos().y > area_head.get_global_pos().y and body.is_falling()):
 			print ("cabeza")
 			life = 0

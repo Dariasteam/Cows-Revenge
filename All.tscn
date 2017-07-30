@@ -8,7 +8,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://btn_shoot.png" type="Texture" id=7]
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=1]
 
 ambient_light/enabled = false
 ambient_light/color = Color( 0, 0, 0, 1 )
@@ -52,9 +52,9 @@ bcs/contrast = 1.0
 bcs/saturation = 1.0
 srgb/enabled = false
 
-[sub_resource type="World" id=3]
+[sub_resource type="World" id=2]
 
-environment = SubResource( 2 )
+environment = SubResource( 1 )
 
 [node name="Node2D" type="Node2D" groups=[
 "control",
@@ -80,7 +80,7 @@ margin/bottom = 768.0
 
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = false
-world = SubResource( 3 )
+world = SubResource( 2 )
 transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
@@ -123,8 +123,6 @@ region_rect = Rect2( 180, 140, 145, 150 )
 
 [node name="Buttons" type="Node2D" parent="Control"]
 
-editor/display_folded = true
-
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
 
 visibility/opacity = 0.9
@@ -158,7 +156,7 @@ visibility_mode = 0
 [node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons"]
 
 visibility/opacity = 0.5
-transform/pos = Vector2( 1088, 416 )
+transform/pos = Vector2( 1088, 384 )
 transform/scale = Vector2( 2, 2 )
 normal = ExtResource( 6 )
 pressed = null

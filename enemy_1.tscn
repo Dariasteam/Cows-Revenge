@@ -157,7 +157,7 @@ trigger = true
 transform/pos = Vector2( 3.8147e-06, 0 )
 frames = SubResource( 8 )
 animation = "walking"
-frame = 7
+frame = 3
 playing = true
 
 [node name="hit_ray_particle" type="Particles2D" parent="."]
