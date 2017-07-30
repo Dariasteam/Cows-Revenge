@@ -104,7 +104,7 @@ _update_shape_index = 1
 
 frames = SubResource( 3 )
 animation = "walk"
-frame = 3
+frame = 15
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]

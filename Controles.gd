@@ -55,67 +55,137 @@ func update_life():
 
 # UP
 func _on_Bttn_U_pressed():
-	Input.action_press("ui_up")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_up", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_up")
 
 func _on_Bttn_U_released():
-	Input.action_release("ui_up")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_up", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_up")
 
 # DOWN
 func _on_Bttn_D_pressed():
-	Input.action_press("ui_down")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_down", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_down")
 
 func _on_Bttn_D_released():
-	Input.action_release("ui_down")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_down", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_down")
 
 # RIGHT
 func _on_Bttn_R_pressed():
-	Input.action_press("ui_right")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_right", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_right")
 
 func _on_Bttn_R_released():
-	Input.action_release("ui_right")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_right", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_right")
 
 # LEFT
 func _on_Bttn_L_pressed():
-	Input.action_press("ui_left")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_left", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_left")
 
 func _on_Bttn_L_released():
-	Input.action_release("ui_left")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_left", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_left")
 
 # JUMP
 func _on_Bttn_A_pressed():
-	Input.action_press("ui_jump")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_jump", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_jump")
 
 func _on_Bttn_A_released():
-	Input.action_release("ui_jump")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_jump", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_jump")
 
 # DOWN_RIGHT
 func _on_Bttn_DR_pressed():
-	Input.action_press("ui_down")
-	Input.action_press("ui_right")
+	_on_Bttn_D_pressed()
+	_on_Bttn_R_pressed()
 
 func _on_Bttn_DR_released():
-	Input.action_release("ui_right")
-	Input.action_release("ui_down")
+	_on_Bttn_D_released()
+	_on_Bttn_R_released()
 
 # DOWN_LEFT
 func _on_Bttn_DL_pressed():
-	Input.action_press("ui_down")
-	Input.action_press("ui_left")
+	_on_Bttn_D_pressed()
+	_on_Bttn_L_pressed()
 
 func _on_Bttn_DL_released():
-	Input.action_release("ui_left")
-	Input.action_release("ui_down")
+	_on_Bttn_D_released()
+	_on_Bttn_L_released()
 
 # SHOOT
 func _on_Bttn_S_pressed():
-	Input.action_press("ui_shoot")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_shoot", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_shoot")
 
 func _on_Bttn_S_released():
-	Input.action_release("ui_shoot")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_shoot", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_shoot")
 
 # MIX
 func _on_Bttn_AS_pressed():
-	Input.action_press("ui_change_weapon")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_change_weapon", true)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_press("ui_change_weapon")
 
 func _on_Bttn_AS_released():
-	Input.action_release("ui_change_weapon")
+	var a = InputEvent()
+	a.type = InputEvent.ACTION
+	a.set_as_action("ui_change_weapon", false)
+	get_node("Control/Viewport").input(a)
+	
+	#Input.action_release("ui_change_weapon")

@@ -120,7 +120,7 @@ func _fixed_process(delta):
 
 	# Movimiento horizontal	
 	if (!right and !left):
-		sprite.set_animatiºon("Idle")		
+		sprite.set_animation("Idle")
 		if (velocity.x > SLIDE_LEVEL): 
 			velocity.x -= SLIDE_LEVEL
 		elif (velocity.x < -SLIDE_LEVEL):
