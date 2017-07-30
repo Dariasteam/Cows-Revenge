@@ -1,18 +1,12 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://manzana.gd" type="Script" id=1]
 [ext_resource path="res://manzana.tex" type="Texture" id=2]
-[ext_resource path="res://leche.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 13, 13 )
-
-[sub_resource type="ColorRamp" id=2]
-
-offsets = FloatArray( 0, 1 )
-colors = ColorArray( 0.361877, 1, 0.00390625, 1, 0.126633, 0.753906, 0.753906, 1 )
 
 [node name="Apple" type="Area2D"]
 
@@ -44,35 +38,6 @@ transform/scale = Vector2( 2.46154, 2.46154 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
-
-[node name="Particles2D" type="Particles2D" parent="."]
-
-transform/pos = Vector2( -4.03009, 8.29175 )
-config/amount = 10
-config/lifetime = 2.0
-config/process_mode = 1
-config/half_extents = Vector2( 32, 32 )
-config/texture = ExtResource( 3 )
-params/direction = 0.0
-params/spread = 180.0
-params/linear_velocity = 70.0
-params/spin_velocity = 0.0
-params/orbit_velocity = 3.0
-params/gravity_direction = 0.0
-params/gravity_strength = 9.8
-params/radial_accel = 0.0
-params/tangential_accel = 0.0
-params/damping = 0.0
-params/initial_angle = 0.0
-params/initial_size = 0.7
-params/final_size = 0.0
-params/hue_variation = 0.67
-params/anim_speed_scale = 1.0
-params/anim_initial_pos = 0.0
-randomness/direction = 0.98
-randomness/spread = -0.52
-randomness/final_size = 0.39
-color/color_ramp = SubResource( 2 )
 
 [connection signal="body_enter" from="." to="." method="_on_Area2D_body_enter"]
 
