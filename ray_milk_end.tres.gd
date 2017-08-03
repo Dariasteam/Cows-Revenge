@@ -1,12 +1,8 @@
 extends Area2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 var body_hitted = null
 
-func _fixed_process(delta):	
+func _fixed_process(delta):
 	body_hitted.decrease_life(0.10)
 	var t = Timer.new()
 	t.set_wait_time(0.01)

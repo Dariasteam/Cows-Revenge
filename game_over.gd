@@ -14,6 +14,5 @@ func _on_reset_pressed():
 	get_tree().change_scene(global.level)
 
 
-func _on_main_menu_pressed():
-	global.release_all()
+func _on_main_menu_pressed():	
 	get_tree().change_scene("res://menu.tscn")

@@ -8,6 +8,8 @@ export(Texture) var sprite1
 export(Texture) var sprite2
 export(Texture) var sprite3
 
+onready var sprites = [sprite1, sprite2, sprite3]
+
 func on_set_max_milk (maxm):
 	max_value = maxm
 	each_bottle_value = (float(maxm) / get_children().size())
@@ -27,14 +29,6 @@ func on_update_milk_bar(value):
 			get_children()[bottle_int].set_value(bottle_float * 100)
 		
 func on_set_bottle_sprite(number):
-	var sprite 
-	if (number == 1):
-		sprite = sprite1
-	elif (number == 2):
-		sprite = sprite2
-	else:
-		sprite = sprite3
-		
 	for progress_bar in get_children():
-		progress_bar.set_over_texture(sprite)
+		progress_bar.set_over_texture(sprites[number])
 
