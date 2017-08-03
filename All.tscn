@@ -4,15 +4,15 @@
 [ext_resource path="res://life_hud.gd" type="Script" id=2]
 [ext_resource path="res://corazon2.tex" type="Texture" id=3]
 [ext_resource path="res://buttons_hud.gd" type="Script" id=4]
-[ext_resource path="res://flexa.png" type="Texture" id=5]
-[ext_resource path="res://btn_jump.png" type="Texture" id=6]
-[ext_resource path="res://icon.png" type="Texture" id=7]
-[ext_resource path="res://btn_shoot.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GUI/Buttons/bttn_arrow.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/GUI/Buttons/bttn_jump.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GUI/Buttons/bttn.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=8]
 [ext_resource path="res://milk_botte_hud.gd" type="Script" id=9]
-[ext_resource path="res://leite,kra.png" type="Texture" id=10]
-[ext_resource path="res://boterosadito.png" type="Texture" id=11]
-[ext_resource path="res://boteasul.png" type="Texture" id=12]
-[ext_resource path="res://botejeje.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/GUI/HUD/milbar_outter_2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_inner.png" type="Texture" id=13]
 
 [sub_resource type="Environment" id=1]
 
@@ -126,7 +126,6 @@ region_rect = Rect2( 180, 140, 145, 150 )
 "buttons_hud",
 ]]
 
-editor/display_folded = true
 script/script = ExtResource( 4 )
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
@@ -161,9 +160,9 @@ visibility_mode = 0
 
 [node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons"]
 
-visibility/opacity = 0.5
+visibility/opacity = 0.8
 transform/pos = Vector2( 1088, 384 )
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 0.474074, 0.481203 )
 normal = ExtResource( 7 )
 pressed = null
 bitmask = null
@@ -271,6 +270,7 @@ visibility_mode = 0
 "milk_hud",
 ]]
 
+editor/display_folded = true
 transform/pos = Vector2( 1205, 73 )
 transform/scale = Vector2( 2, 2 )
 script/script = ExtResource( 9 )
@@ -478,9 +478,9 @@ radial_fill/center_offset = Vector2( 0, 0 )
 
 [connection signal="released" from="Control/Buttons/Bttn_A" to="Control/Buttons" method="_on_Bttn_A_released"]
 
-[connection signal="pressed" from="Control/Buttons/Bttn_AS" to="." method="_on_Bttn_AS_pressed"]
+[connection signal="pressed" from="Control/Buttons/Bttn_AS" to="Control/Buttons" method="_on_Bttn_AS_pressed"]
 
-[connection signal="released" from="Control/Buttons/Bttn_AS" to="." method="_on_Bttn_AS_released"]
+[connection signal="released" from="Control/Buttons/Bttn_AS" to="Control/Buttons" method="_on_Bttn_AS_released"]
 
 [connection signal="pressed" from="Control/Buttons/Bttn_S" to="Control/Buttons" method="_on_Bttn_S_pressed"]
 

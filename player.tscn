@@ -3,26 +3,26 @@
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://shooter.gd" type="Script" id=2]
 [ext_resource path="res://ray_milk.tscn" type="PackedScene" id=3]
-[ext_resource path="res://vaca_walk/vakacaminar0005.png" type="Texture" id=4]
-[ext_resource path="res://vaca_walk/vakacaminar0006.png" type="Texture" id=5]
-[ext_resource path="res://vaca_walk/vakacaminar0007.png" type="Texture" id=6]
-[ext_resource path="res://vaca_walk/vakacaminar0008.png" type="Texture" id=7]
-[ext_resource path="res://vaca_walk/vakacaminar0009.png" type="Texture" id=8]
-[ext_resource path="res://vaca_walk/vakacaminar0010.png" type="Texture" id=9]
-[ext_resource path="res://vaca_walk/vakacaminar0011.png" type="Texture" id=10]
-[ext_resource path="res://vaca_walk/vakacaminar0012.png" type="Texture" id=11]
-[ext_resource path="res://vaca_walk/vakacaminar0013.png" type="Texture" id=12]
-[ext_resource path="res://vaca_walk/vakacaminar0014.png" type="Texture" id=13]
-[ext_resource path="res://vaca_walk/vakacaminar0015.png" type="Texture" id=14]
-[ext_resource path="res://vaca_walk/vakacaminar0016.png" type="Texture" id=15]
-[ext_resource path="res://vaca_walk/vakacaminar0017.png" type="Texture" id=16]
-[ext_resource path="res://vaca_walk/vakacaminar0018.png" type="Texture" id=17]
-[ext_resource path="res://vaca_walk/vakacaminar0019.png" type="Texture" id=18]
-[ext_resource path="res://vaca_walk/vakacaminar0020.png" type="Texture" id=19]
-[ext_resource path="res://vaca_idle_1.tex" type="Texture" id=20]
-[ext_resource path="res://vaca_idle_2.tex" type="Texture" id=21]
-[ext_resource path="res://vaca_idle_3.tex" type="Texture" id=22]
-[ext_resource path="res://vaca_idle_4.tex" type="Texture" id=23]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk5.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk6.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk7.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk8.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk9.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk10.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk11.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk12.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk13.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk14.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk15.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk16.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle2.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle3.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle4.png" type="Texture" id=23]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -42,7 +42,7 @@ animations = [ {
 "name": "walk",
 "speed": 27.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
@@ -109,8 +109,7 @@ _update_shape_index = 1
 [node name="sprite" type="AnimatedSprite" parent="."]
 
 frames = SubResource( 3 )
-animation = "Idle"
-frame = 4
+animation = "jump"
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]

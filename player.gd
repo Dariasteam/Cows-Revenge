@@ -112,11 +112,6 @@ func show_damage ():
 func can_jump_more ():
 	return jump_time > 0
 
-func horizontal_movement_amount ():
-	if (walk_speed < MAX_WALK_SPEED):
-		walk_speed += WALK_SPEED_INCREMENT
-	return walk_speed
-
 func _fixed_process(delta):
 	if (jumping):
 		jump_time -= altitude
@@ -133,7 +128,6 @@ func _fixed_process(delta):
 		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
 		jumping = true	
 	
-
 	# Movimiento horizontal	
 	if (!right and !left):
 		sprite.set_animation("Idle")
@@ -154,32 +148,25 @@ func _fixed_process(delta):
 			motion.x = -0.15
 
 	motion = move(motion)
-
-	# Control de colisiones	
 	
+	# Control de colisiones		
 	if (is_colliding()):
-		
 		var normal = get_collision_normal()
-		
 		if (normal.y < -0.35):
 			# Está en el suelo
 			jumping = false
 			can_jump = true
-			
 			motion.y = 0
 			if (normal.y > -0.9):
 				motion.x += motion.x * (-normal.y)
-			motion = normal.slide(motion)			
-			#velocity = normal.slide(velocity)			
+			motion = normal.slide(motion)
 			velocity.y = 0
 		else:			
 			# Está chocándose contra techo o apred
 			can_jump = false
 			motion = normal.slide(motion)
 			jump_time = 0
-			#final_velocity = normal.slide(final_velocity)
 		move(motion)
-			
 	else:		
 		can_jump = false
 

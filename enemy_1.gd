@@ -22,12 +22,11 @@ func reverse_direction():
 	dir_left = !dir_left
 	v = Vector2(-v.x,0)
 
-func _ready():		
+func _ready():
 	if (!dir_left):
 		reverse_direction()
 	set_fixed_process(true)
 	#set_process(true)
-
 
 func dissapear():
 	sprite.set_opacity(0)
@@ -78,9 +77,6 @@ func decrease_life (value):
 		life -= value
 		if (life <= 0):
 			die()
-
-
-#func _fixed_process(delta):
 	
 func restore_velocity():
 	if(dir_left):
@@ -115,7 +111,7 @@ func _fixed_process(delta):
 			reverse_direction()
 
 func _on_area_body_body_enter( body ):
-	if (body.is_in_group("player") and life > 0 and body.can_receive_damage()):
+	if (body.is_in_group("player") and life > 0):
 		body.on_receive_damage(damage)
 
 func _on_area_head_body_enter( body ):

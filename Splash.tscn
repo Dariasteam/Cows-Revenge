@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://leche.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=1]
 
 [node name="Splash" type="Particles2D"]
 

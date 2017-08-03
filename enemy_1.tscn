@@ -1,17 +1,17 @@
 [gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://enemy_1.gd" type="Script" id=1]
-[ext_resource path="res://malvado_caminando0000.tex" type="Texture" id=2]
-[ext_resource path="res://malvado_caminando0001.tex" type="Texture" id=3]
-[ext_resource path="res://malvado_caminando0002.tex" type="Texture" id=4]
-[ext_resource path="res://malvado_caminando0003.tex" type="Texture" id=5]
-[ext_resource path="res://malvado_caminando0004.tex" type="Texture" id=6]
-[ext_resource path="res://malvado_caminando0005.tex" type="Texture" id=7]
-[ext_resource path="res://malvado_caminando0006.tex" type="Texture" id=8]
-[ext_resource path="res://malvado_caminando0007.tex" type="Texture" id=9]
-[ext_resource path="res://malvado_caminando0008.tex" type="Texture" id=10]
-[ext_resource path="res://malvado_caminando0009.tex" type="Texture" id=11]
-[ext_resource path="res://sangre.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk10.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk5.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk6.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk7.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk8.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk9.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Effects/sangre.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -63,8 +63,8 @@ offsets = FloatArray( 0, 1 )
 colors = ColorArray( 0.773438, 0.773438, 0.773438, 1, 0.1875, 0.1875, 0.1875, 1 )
 
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
-"enemy",
 "enemy_1",
+"enemy",
 ]]
 
 transform/pos = Vector2( 64.3, -80 )
@@ -157,7 +157,7 @@ trigger = true
 transform/pos = Vector2( 3.8147e-06, 0 )
 frames = SubResource( 8 )
 animation = "walking"
-frame = 7
+frame = 2
 playing = true
 
 [node name="hit_ray_particle" type="Particles2D" parent="."]
