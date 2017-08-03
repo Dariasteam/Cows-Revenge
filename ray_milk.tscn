@@ -2,45 +2,13 @@
 
 [ext_resource path="res://rayo_leche.gd" type="Script" id=1]
 [ext_resource path="res://Splash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.png" type="Texture" id=3]
+[ext_resource path="res://ray_milk_end.tres.gd" type="Script" id=3]
+[ext_resource path="res://milk_ray/middle/milk_ray_middle0000.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
-
-[sub_resource type="GDScript" id=2]
-
-script/source = "extends Area2D
-
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
-
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
-func _fixed_process(delta):
-	set_enable_monitoring(false)
-		
-	var t = Timer.new()
-	t.set_wait_time(0.2)
-	t.set_one_shot(true)
-	self.add_child(t)
-	t.start()
-	yield(t, \"timeout\")
-		
-	set_enable_monitoring(true)
-	set_fixed_process(false)
-	
-func _on_Area2D_body_enter( body ):	
-	if (body.is_in_group(\"enemy\")):		
-		body.decrease_life(0.25)
-		set_fixed_process(true)
-	
-"
 
 [node name="ray" type="RayCast2D"]
 
@@ -49,7 +17,7 @@ cast_to = Vector2( 10000, 0 )
 layer_mask = 6
 type_mask = 10
 script/script = ExtResource( 1 )
-damage = 10
+damage = 50
 
 [node name="end" parent="." instance=ExtResource( 2 )]
 
@@ -60,7 +28,7 @@ z/relative = false
 config/amount = 16
 config/lifetime = 0.25
 config/emit_timeout = 0.0
-params/initial_size = 2.0
+params/initial_size = 2.2
 
 [node name="Area2D" type="Area2D" parent="end"]
 
@@ -73,7 +41,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 monitorable = false
-script/script = SubResource( 2 )
+script/script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end/Area2D"]
 
@@ -99,12 +67,14 @@ params/initial_size = 2.6
 [node name="middle" type="Sprite" parent="."]
 
 transform/pos = Vector2( 0, 6 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 centered = false
 offset = Vector2( 0, -14.5 )
 region = true
-region_rect = Rect2( 0, 0, 0, 29 )
+region_rect = Rect2( -1, 0, 1, 29 )
 
 [connection signal="body_enter" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_enter"]
+
+[connection signal="body_exit" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_exit"]
 
 

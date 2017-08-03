@@ -10,7 +10,6 @@ func _ready():
 	print ("as")
 	connect("damage", get_tree().get_root().get_node("Node2D"), "on_damage")
 
-
 func _on_Area2D_body_enter( body ):
 	print ("asdasd")
 	if(body.is_in_group("player")):

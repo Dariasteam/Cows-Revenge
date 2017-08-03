@@ -11,7 +11,7 @@ extents = Vector2( 13, 13 )
 [node name="Apple" type="Area2D"]
 
 transform/pos = Vector2( -608, -672 )
-input/pickable = true
+input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 2.46154, 0, 0, 2.46154, 1.52588e-05, 0 )
 shapes/0/trigger = false
@@ -31,7 +31,6 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 1.52588e-05, 0 )
 transform/scale = Vector2( 2.46154, 2.46154 )
 shape = SubResource( 1 )

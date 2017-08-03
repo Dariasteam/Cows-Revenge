@@ -4,6 +4,7 @@ signal looking_left
 signal looking_right
 
 signal update_milk
+signal set_max_milk
 
 const GRAVITY = 3500.0
 
@@ -21,6 +22,7 @@ var walk_speed = 0
 onready var shooter = get_node("shooter")
 onready var sprite = get_node("sprite")
 onready var foots = get_node("foots")
+onready var camera = get_node("sprite/Camera2D")
 
 var can_jump = true
 var jumping = false
@@ -50,14 +52,14 @@ func add_milk(amount):
 		milk_level = max_milk
 	else:
 		milk_level += amount
-	emit_signal("update_milk", get_max_milk(), get_milk_level());
+	emit_signal("update_milk", get_milk_level());
 
 func get_milk_level():
 	return milk_level
 
 func decrease_milk(amount):
 	milk_level = milk_level - amount
-	emit_signal("update_milk", get_max_milk(), get_milk_level());
+	emit_signal("update_milk", get_milk_level());
 
 func on_opacity_low ():
 	sprite.set_modulate(Color("fb12e7"))
@@ -180,10 +182,12 @@ func _fixed_process(delta):
 		can_jump = false
 
 func _ready():
-	connect("update_milk",get_tree().get_nodes_in_group("control")[0],"on_update_milk_bar")
-	emit_signal("update_milk", get_max_milk(), get_milk_level())
+	connect("set_max_milk",get_tree().get_nodes_in_group("milk_hud")[0],"on_set_max_milk")
+	connect("update_milk",get_tree().get_nodes_in_group("milk_hud")[0],"on_update_milk_bar")
+	emit_signal("set_max_milk", get_max_milk())
+	emit_signal("update_milk", get_milk_level())
 	set_process_input(true)
-	set_fixed_process(true)	
+	set_fixed_process(true)
 	
 
 func _input(ev):
@@ -194,7 +198,7 @@ func _input(ev):
 		sprite.set_animation("walk")
 		emit_signal("looking_left")
 		velocity.x = -MAX_WALK_SPEED
-		sprite.set_flip_h(true)
+		sprite.set_flip_h(true)		
 	elif (ev.is_action_released("ui_left")):
 		left = false
 		
