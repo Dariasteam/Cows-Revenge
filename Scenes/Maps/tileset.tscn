@@ -8,102 +8,102 @@
 [ext_resource path="res://Sprites/Tilesets/dirt_single.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Tilesets/dirt_alone.png" type="Texture" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -21.2298, -23.8952, -16.2848, -26.453, -9.37893, -26.9645, 32, -28, 32, 32, -27, 32, -26.601, -15.7957, -24.4696, -20.3144 )
 
-[sub_resource type="ConvexPolygonShape2D" id=25]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -28, 32, -28, 32, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=26]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -28, 13.8965, -27.135, 19.9498, -24.2363, 24.2127, -19.4618, 25.4063, -15.7105, 26, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=27]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 32, -32, 32, 32, -28, 32, -27.4817, -32.0967 )
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 27, -32, 27, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 32.0174, -32.3287, 32.2493, 27.9823, -9.96833, 27.1704, -21.5666, 24.9667, -24.4662, 22.763, -27, 17, -26.9018, -31.7488 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=8]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 32, -32, 32, 28, -32, 28, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 27, -32, 27, 15, 25, 21, 21.115, 25.3147, 11.2565, 26.8224, -32, 28, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=10]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 32, -32, 32, 32, -32, 32, -31.8891, -27.3414, -29, -30 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=11]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -27, -32, 32, -32, -29, -30 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=12]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -31, -32, 33, -32, 33, 32, -27, 32, -29, 30, -31, 28 )
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=13]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 32, -32, 32, 28, 30, 30, 28, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=14]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 28, -32, 32, -28, 32.0174, 32.0416, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=11]
+[sub_resource type="ConvexPolygonShape2D" id=15]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -13, -27, 13, -27, 20.1871, -23.398, 26, -16, 26, 18, 22, 24, 12, 27, -11.8241, 27.0544, -22.7264, 24.6188, -27, 19, -26.9018, -15.1633, -21.7986, -22.5862, -18, -25 )
 
-[sub_resource type="ConvexPolygonShape2D" id=12]
+[sub_resource type="ConvexPolygonShape2D" id=16]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -27, 32, 32, -28, 32.0174, 31.9257 )
 
-[sub_resource type="ConvexPolygonShape2D" id=13]
+[sub_resource type="ConvexPolygonShape2D" id=17]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -28, -29, -25, 28, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
+[sub_resource type="ConvexPolygonShape2D" id=18]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -32, -32, 27, -32, -32, 28 )
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="ConvexPolygonShape2D" id=19]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 32, -32, 32, 28, -28, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=16]
+[sub_resource type="ConvexPolygonShape2D" id=20]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 16, 16, 22, 22, 22, 26, 18, 32, -20, 32, -23, 27, -23, 23, -18, 16 )
@@ -123,7 +123,7 @@ region_rect = Rect2( 0, 0, 64, 64 )
 [node name="StaticBody2D" type="StaticBody2D" parent="Arriba_Izquierda1"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 24 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -151,7 +151,7 @@ region_rect = Rect2( 64, 0, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 25 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -182,7 +182,7 @@ region_rect = Rect2( 128, 0, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 26 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -213,7 +213,7 @@ region_rect = Rect2( 0, 64, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 27 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -244,7 +244,7 @@ region_rect = Rect2( 64, 64, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -275,7 +275,7 @@ region_rect = Rect2( 128, 64, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 22 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -306,7 +306,7 @@ region_rect = Rect2( 0, 128, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 23 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -337,7 +337,7 @@ region_rect = Rect2( 64, 128, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -368,7 +368,7 @@ region_rect = Rect2( 128, 128, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 5 )
+shapes/0/shape = SubResource( 9 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -400,10 +400,10 @@ region_rect = Rect2( 256, 256, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 6 )
+shapes/0/shape = SubResource( 10 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 7 )
+shapes/1/shape = SubResource( 11 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/1/trigger = false
 collision/layers = 2
@@ -436,7 +436,7 @@ region_rect = Rect2( 256, 192, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 12 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.914745, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -468,7 +468,7 @@ region_rect = Rect2( 192, 192, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 9 )
+shapes/0/shape = SubResource( 13 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -498,7 +498,7 @@ region_rect = Rect2( 192, 256, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 10 )
+shapes/0/shape = SubResource( 14 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -529,7 +529,7 @@ region_rect = Rect2( 192, 64, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 11 )
+shapes/0/shape = SubResource( 15 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -560,7 +560,7 @@ region_rect = Rect2( 0, 192, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 12 )
+shapes/0/shape = SubResource( 16 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -590,7 +590,7 @@ region_rect = Rect2( 64, 192, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 13 )
+shapes/0/shape = SubResource( 17 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -621,7 +621,7 @@ region_rect = Rect2( 64, 256, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 14 )
+shapes/0/shape = SubResource( 18 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -652,7 +652,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 15 )
+shapes/0/shape = SubResource( 19 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2
@@ -683,7 +683,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
-shapes/0/shape = SubResource( 16 )
+shapes/0/shape = SubResource( 20 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.0852547, 0.0852585 )
 shapes/0/trigger = false
 collision/layers = 2

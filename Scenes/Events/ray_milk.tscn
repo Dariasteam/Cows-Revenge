@@ -1,9 +1,10 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://rayo_leche.gd" type="Script" id=1]
-[ext_resource path="res://Splash.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ray_milk_end.tres.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Events/milk_ray.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Events/milk_splash.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Events/ray_milk_end.tres.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Effects/milk_ray.png" type="Texture" id=4]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

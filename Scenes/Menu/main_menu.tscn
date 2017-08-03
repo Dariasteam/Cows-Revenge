@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=1]
 
-[ext_resource path="res://bttn_jugar.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Menu/bttn_play.gd" type="Script" id=1]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,5 +27,7 @@ shortcut = null
 text = "Jugar"
 flat = false
 script/script = ExtResource( 1 )
+
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 
 

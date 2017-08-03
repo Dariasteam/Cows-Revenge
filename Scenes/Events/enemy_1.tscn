@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=1]
 
-[ext_resource path="res://enemy_1.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Events/enemy_1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk10.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk2.png" type="Texture" id=4]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk8.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Charasets/Enemy_1/enemy_walk9.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/Effects/sangre.png" type="Texture" id=12]
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -157,7 +159,7 @@ trigger = true
 transform/pos = Vector2( 3.8147e-06, 0 )
 frames = SubResource( 8 )
 animation = "walking"
-frame = 2
+frame = 8
 playing = true
 
 [node name="hit_ray_particle" type="Particles2D" parent="."]
