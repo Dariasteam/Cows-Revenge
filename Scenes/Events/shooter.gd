@@ -1,6 +1,6 @@
 extends Node2D
 
-const BULLET = preload("res://bullet.tscn")
+const BULLET = preload("res://Scenes/Events/milk_bullet.tscn")
 export var SHOOT_CADENCE = 0.001
 
 signal change_milk_bottle

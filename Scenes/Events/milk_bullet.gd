@@ -29,11 +29,11 @@ func _ready():
 	yield(t, "timeout")
 	end = true
 
-func _on_RigidBody2D_body_enter( body ):
-	if (end):
-		destroy()
-	elif (body.is_in_group("enemy")):
+func _on_RigidBody2D_body_enter( body ):	
+	if (body.is_in_group("enemy")):
 		body.decrease_life(1)
+		destroy()
+	elif (end):
 		destroy()
 	
 	
