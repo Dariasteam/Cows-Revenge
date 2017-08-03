@@ -39,6 +39,7 @@ func _input(ev):
 			weapon = WEAPONS.laser
 		else:
 			emit_signal("change_milk_bottle", 1)
+			instanced_ray.disable()
 			weapon = WEAPONS.regular
 	
 		

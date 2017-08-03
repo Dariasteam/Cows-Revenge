@@ -40,6 +40,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+monitoring = false
 monitorable = false
 script/script = ExtResource( 3 )
 
@@ -71,7 +72,7 @@ texture = ExtResource( 4 )
 centered = false
 offset = Vector2( 0, -14.5 )
 region = true
-region_rect = Rect2( -1, 0, 1, 29 )
+region_rect = Rect2( -1, 0, 0, 29 )
 
 [connection signal="body_enter" from="end/Area2D" to="end/Area2D" method="_on_Area2D_body_enter"]
 
