@@ -21,6 +21,7 @@ export(int) var damage = 1
 
 func reverse_direction():
 	sprite.set_flip_h(v.x < 0)
+	dir_left = !dir_left
 	v = Vector2(-v.x,0)
 
 func _ready():	
@@ -28,6 +29,7 @@ func _ready():
 	if (!dir_left):
 		reverse_direction()
 	set_fixed_process(true)
+	#set_process(true)
 
 
 func dissapear():
@@ -80,11 +82,27 @@ func decrease_life (value):
 		if (life <= 0):
 			die()
 
+
+#func _fixed_process(delta):
+	
+func restore_velocity():
+	if(dir_left):
+		v.x = -velocity
+	else:
+		v.x = velocity
+
+func change_velocity(amount, right):
+	if (right == dir_left):
+		v.x = ((!dir_left * -1) + (dir_left * 1)) * amount
+	else:
+		v.x += ((dir_left * -1) + (!dir_left * 1)) * amount
+	
+
 func _fixed_process(delta):
 	var motion = v * delta
 	motion = move(motion)
 	v.y += delta * GRAVITY
-
+    
 	if (is_colliding()):
 		var normal = get_collision_normal();
 		
@@ -96,7 +114,7 @@ func _fixed_process(delta):
 			v = normal.slide(v)
 			move(motion)
 			v.x = aux
-		if (normal.x < -0.75 or normal.x > 0.75):
+		if (normal.x < -0.9 or normal.x > 0.9):
 			reverse_direction()
 
 func _on_area_body_body_enter( body ):
@@ -106,6 +124,5 @@ func _on_area_body_body_enter( body ):
 func _on_area_head_body_enter( body ):
 	if (body.is_in_group("player")):
 		if (body.foots.get_global_pos().y > area_head.get_global_pos().y and body.is_falling()):
-			print ("cabeza")
 			life = 0
 			die_by_jump()

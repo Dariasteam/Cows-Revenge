@@ -12,7 +12,7 @@ onready var splash = get_node("Splash")
 var t = Timer.new()
 
 func destroy():
-	set_fixed_process(false)
+	set_process(false)
 	set_linear_velocity(Vector2(0,0))
 	set_angular_velocity(0)
 
@@ -25,9 +25,9 @@ func destroy():
 
 	queue_free()
 
-func _fixed_process(delta):
+func _process(delta):
 	if (get_colliding_bodies().size() > 0):
-		set_fixed_process(false)
+		set_process(false)
 		destroy()
 
 func _ready():
@@ -36,7 +36,7 @@ func _ready():
 	self.add_child(t)
 	t.start()
 	yield(t, "timeout")
-	set_fixed_process(true)
+	set_process(true)
 
 func _on_RigidBody2D_body_enter( body ):
 	if (body.is_in_group("enemy")):

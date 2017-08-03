@@ -3,6 +3,8 @@ extends Node2D
 const BULLET = preload("res://bullet.tscn")
 export var SHOOT_CADENCE = 0.001
 
+signal change_milk_bottle
+
 enum WEAPONS {
 	regular,
 	laser
@@ -18,23 +20,26 @@ onready var instanced_ray = get_node("ray")
 var shoot_dir = Vector2(500,-250)
 
 func _ready():
-	set_process_input(true)	
+	instanced_ray.set_player(player)
+	connect("change_milk_bottle",get_tree().get_nodes_in_group("milk_hud")[0],"on_set_bottle_sprite")
+	set_process_input(true)
 	
 func _input(ev):
 	# SHOOT
-	if (ev.is_action_pressed("ui_shoot")):		
-		set_fixed_process(true)
+	if (ev.is_action_pressed("ui_shoot")):
+		set_process(true)
 	elif (ev.is_action_released("ui_shoot")):
 		instanced_ray.disable()
-		set_fixed_process(false)
+		set_process(false)
 		
 	# CHANGE WEAPON
 	if (ev.is_action_pressed("ui_change_weapon")):
 		if (weapon == WEAPONS.regular):
+			emit_signal("change_milk_bottle", 0)
 			weapon = WEAPONS.laser
 		else:
+			emit_signal("change_milk_bottle", 1)
 			weapon = WEAPONS.regular
-			instanced_ray.disable()
 	
 		
 func check_can_shoot():
@@ -56,19 +61,19 @@ func shoot_regular():
 	recharge = false
 	player.decrease_milk(1)
 
-
 func shoot_laser():
-	player.decrease_milk(0.5)
+	player.decrease_milk(0.05)
 
-func _fixed_process(delta):
+func _process(delta):
 	if (check_can_shoot()):
 		if (weapon == WEAPONS.regular and !recharge):
 			shoot_regular()
 		elif (weapon == WEAPONS.laser):
 			instanced_ray.enable()
 			shoot_laser()
-	else:
-		set_fixed_process(false)
+	else:		
+		instanced_ray.disable()
+		set_process(false)
 	
 func _on_KinematicBody2D_looking_left():
 	shoot_dir = Vector2(-500,-250)

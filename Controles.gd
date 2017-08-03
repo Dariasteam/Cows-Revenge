@@ -4,24 +4,22 @@ extends Node2D
 export(NodePath) var life1_n
 export(NodePath) var life2_n
 export(NodePath) var life3_n
+export(NodePath) var milk_hud
 
 onready var life1 = get_node(life1_n)
 onready var life2 = get_node(life2_n)
 onready var life3 = get_node(life3_n)
-
+onready var milk_control_hud = milk_hud
 
 onready var player = get_tree().get_nodes_in_group("player")[0]
 
 
-const MILK_MAX = 180
-
 var life = 3
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+	
 
-func on_update_milk_bar(var maxm, var value):
-	get_node("Control/Milk/Milkbar")   .set_value(value * maxm / 100)
+func on_update_milk_bar(var value):
+	get_node("Control/Milk_Bar").set_value(value)
+	#get_node("Control/Milk/Milkbar")   .set_value(value * maxm / 100)
 
 func on_add_life():
 	if (life < 3):
