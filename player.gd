@@ -2,9 +2,10 @@ extends KinematicBody2D
 
 signal looking_left
 signal looking_right
-
 signal update_milk
 signal set_max_milk
+signal update_life
+signal set_max_life
 
 const GRAVITY = 3500.0
 
@@ -24,6 +25,10 @@ onready var sprite = get_node("sprite")
 onready var foots = get_node("foots")
 onready var camera = get_node("sprite/Camera2D")
 
+onready var hud_milk = get_tree().get_nodes_in_group("milk_hud")[0]
+onready var hud_life = get_tree().get_nodes_in_group("life_hud")[0]
+
+
 var can_jump = true
 var jumping = false
 var velocity = Vector2()
@@ -39,7 +44,10 @@ var receive_damage = true
 export(int) var max_milk = 500
 export(int) var milk_level = 0
 
+export(int) var life = 3
+
 export(int) var invulneravility_time = 16
+
 
 func is_falling ():
 	return velocity.y > 0
@@ -67,8 +75,10 @@ func on_opacity_low ():
 func on_opacity_high ():
 	sprite.set_modulate(Color("00ffff"))
 
-func on_receive_damage ():
+func on_receive_damage (amount):	
 	if (can_receive_damage()):
+		life = life - amount
+		emit_signal ("update_life", life)
 		show_damage()
 
 func can_receive_damage ():
@@ -151,14 +161,6 @@ func _fixed_process(delta):
 		
 		var normal = get_collision_normal()
 		
-		"""
-		if (jumping):
-			jump_key_pressed = false
-			print ("TOCO SUELO")
-			can_jump = true
-			jumping = false
-		"""
-		
 		if (normal.y < -0.35):
 			# Está en el suelo
 			jumping = false
@@ -182,10 +184,18 @@ func _fixed_process(delta):
 		can_jump = false
 
 func _ready():
-	connect("set_max_milk",get_tree().get_nodes_in_group("milk_hud")[0],"on_set_max_milk")
-	connect("update_milk",get_tree().get_nodes_in_group("milk_hud")[0],"on_update_milk_bar")
+	connect("set_max_milk",hud_milk,"on_set_max_milk")
+	connect("update_milk",hud_milk,"on_update_milk_bar")
+	
+	connect("update_life",hud_life,"on_update_life")
+	connect("set_max_life",hud_life,"on_set_max_life")
+	
 	emit_signal("set_max_milk", get_max_milk())
 	emit_signal("update_milk", get_milk_level())
+	
+	emit_signal("set_max_life", life)
+	emit_signal("update_life", life)
+	
 	set_process_input(true)
 	set_fixed_process(true)
 	

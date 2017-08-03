@@ -1,9 +1,5 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 var max_value
 var each_bottle_value
 var n_bottles
@@ -11,7 +7,6 @@ var n_bottles
 export(Texture) var sprite1
 export(Texture) var sprite2
 export(Texture) var sprite3
-
 
 func on_set_max_milk (maxm):
 	max_value = maxm

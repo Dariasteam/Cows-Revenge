@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-signal damage
-
 const GRAVITY = 3000.0
 
 var vertical
@@ -24,8 +22,7 @@ func reverse_direction():
 	dir_left = !dir_left
 	v = Vector2(-v.x,0)
 
-func _ready():	
-	connect("damage", get_tree().get_root().get_node("Node2D"), "on_damage")
+func _ready():		
 	if (!dir_left):
 		reverse_direction()
 	set_fixed_process(true)
@@ -119,7 +116,7 @@ func _fixed_process(delta):
 
 func _on_area_body_body_enter( body ):
 	if (body.is_in_group("player") and life > 0 and body.can_receive_damage()):
-		emit_signal("damage", damage)
+		body.on_receive_damage(damage)
 
 func _on_area_head_body_enter( body ):
 	if (body.is_in_group("player")):
