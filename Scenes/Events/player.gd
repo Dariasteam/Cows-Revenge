@@ -22,6 +22,7 @@ var walk_speed = 0
 
 onready var shooter = get_node("shooter")
 onready var sprite = get_node("sprite")
+onready var animation = get_node("sprite/animations")
 onready var foots = get_node("foots")
 onready var camera = get_node("sprite/Camera2D")
 
@@ -130,7 +131,6 @@ func _fixed_process(delta):
 	
 	# Movimiento horizontal	
 	if (!right and !left):
-		sprite.set_animation("Idle")
 		if (velocity.x > SLIDE_LEVEL): 
 			velocity.x -= SLIDE_LEVEL
 		elif (velocity.x < -SLIDE_LEVEL):
@@ -171,6 +171,7 @@ func _fixed_process(delta):
 		can_jump = false
 
 func _ready():
+	
 	connect("set_max_milk",hud_milk,"on_set_max_milk")
 	connect("update_milk",hud_milk,"on_update_milk_bar")
 	
@@ -192,7 +193,7 @@ func _input(ev):
 	# Movimiento horizontal
 	if (ev.is_action_pressed("ui_left")):
 		left = true
-		sprite.set_animation("walk")
+		animation.play("walk")
 		emit_signal("looking_left")
 		velocity.x = -MAX_WALK_SPEED
 		sprite.set_flip_h(true)		
@@ -201,13 +202,15 @@ func _input(ev):
 		
 	if (ev.is_action_pressed("ui_right")):
 		right = true
-		sprite.set_animation("walk")
+		animation.play("walk")
 		velocity.x =  MAX_WALK_SPEED
 		emit_signal("looking_right")
 		sprite.set_flip_h(false)
 	elif (ev.is_action_released("ui_right")):
 		right = false
 	
+	if (!right and !left):
+		animation.play("idle")
 	# Arriba
 	if (ev.is_action_pressed("ui_up")):
 		print("ui_up on")

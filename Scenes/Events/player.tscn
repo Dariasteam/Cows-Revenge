@@ -1,31 +1,10 @@
-[gd_scene load_steps=27 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Scenes/Events/player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Events/shooter.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Events/ray_milk.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk2.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk3.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk4.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk5.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk6.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk7.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk8.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk9.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk10.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk11.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk12.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk13.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk14.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk15.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/Charasets/Player/walk/player_walk16.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle1.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle2.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle3.png" type="Texture" id=22]
-[ext_resource path="res://Sprites/Charasets/Player/idle/player_idle4.png" type="Texture" id=23]
-
-
-
+[ext_resource path="res://Sprites/Charasets/Player/cow.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -37,24 +16,22 @@ points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 
 custom_solver_bias = 0.0
 extents = Vector2( 12.363, 15.2052 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="Animation" id=5]
 
-animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "walk",
-"speed": 27.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 10.0
-} ]
+resource/name = "idle"
+length = 0.6
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 2, 1 ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -109,11 +86,30 @@ shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 1
 
-[node name="sprite" type="AnimatedSprite" parent="."]
+[node name="foots" type="Node2D" parent="."]
 
-frames = SubResource( 3 )
-animation = "jump"
-playing = true
+transform/pos = Vector2( -0.0271127, 37.1198 )
+transform/scale = Vector2( 0.885237, 0.0763853 )
+
+[node name="sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 4 )
+vframes = 6
+hframes = 6
+frame = 6
+region_rect = Rect2( 0, 0, 96, 96 )
+
+[node name="animations" type="AnimationPlayer" parent="sprite"]
+
+playback/process_mode = 0
+playback/default_blend_time = 0.2
+root/root = NodePath("..")
+anims/idle = SubResource( 5 )
+anims/walk = ExtResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
 
@@ -137,11 +133,6 @@ drag_margin/left = 0.05
 drag_margin/top = 0.2
 drag_margin/right = 0.05
 drag_margin/bottom = 0.2
-
-[node name="foots" type="Node2D" parent="."]
-
-transform/pos = Vector2( -0.0271127, 37.1198 )
-transform/scale = Vector2( 0.885237, 0.0763853 )
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 
