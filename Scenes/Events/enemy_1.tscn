@@ -157,7 +157,7 @@ transform/pos = Vector2( 7.90835, 7.78536 )
 texture = ExtResource( 2 )
 vframes = 6
 hframes = 6
-frame = 8
+frame = 4
 
 [node name="animation" type="AnimationPlayer" parent="sprite"]
 
