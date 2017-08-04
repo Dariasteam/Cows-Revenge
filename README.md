@@ -15,7 +15,7 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 ![](Screenshots/1.png)
 
 ## Additional information
-All resources created using with the following FLOSS software:
+All resources have been created using the following FLOSS:
 
 - [krita](https://krita.org/en/)
 - [audacity](http://www.audacityteam.org/)

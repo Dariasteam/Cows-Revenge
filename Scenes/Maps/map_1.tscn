@@ -264,7 +264,6 @@ transform/scale = Vector2( 1, 0.999998 )
 
 [node name="Apple 2" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 0, 0 )
 amount = 20
 
 [node name="Apple12" parent="apples" instance=ExtResource( 8 )]
