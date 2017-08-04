@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/Menu/game_over.gd" type="Script" id=1]
 
-
 [node name="Node2D" type="Node2D"]
 
 script/script = ExtResource( 1 )
