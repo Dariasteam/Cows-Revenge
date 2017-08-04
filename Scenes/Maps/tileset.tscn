@@ -1,12 +1,6 @@
-[gd_scene load_steps=28 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Tilesets/tree.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/Tilesets/dirt_tiling.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Tilesets/dirt_left.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Tilesets/dirt_right.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Tilesets/dirt_single.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Tilesets/dirt_alone.png" type="Texture" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -106,7 +100,7 @@ points = Vector2Array( 32, -32, 32, 28, -28, -32 )
 [sub_resource type="ConvexPolygonShape2D" id=20]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 16, 16, 22, 22, 22, 26, 18, 32, -20, 32, -23, 27, -23, 23, -18, 16 )
+points = Vector2Array( 16, 20, 31, 32, 18, 32, -25, 32, -11, 20 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -115,6 +109,7 @@ transform/pos = Vector2( 32, 32 )
 [node name="Arriba_Izquierda1" type="Sprite" parent="."]
 
 editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( -64, 0 )
 texture = ExtResource( 1 )
 region = true
@@ -143,6 +138,7 @@ trigger = false
 [node name="Arriba" type="Sprite" parent="."]
 
 editor/display_folded = true
+visibility/visible = false
 texture = ExtResource( 1 )
 region = true
 region_rect = Rect2( 64, 0, 64, 64 )
@@ -489,6 +485,7 @@ trigger = false
 [node name="Inner_Izquierda_Abajo" type="Sprite" parent="."]
 
 editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( -128, -64 )
 texture = ExtResource( 1 )
 region = true
@@ -581,6 +578,7 @@ trigger = false
 [node name="Rampa2" type="Sprite" parent="."]
 
 editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 texture = ExtResource( 1 )
 region = true
@@ -670,16 +668,17 @@ polygon = Vector2Array( 32, -32, 32, 28, -28, -32 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
-[node name="Tronco" type="Sprite" parent="."]
+[node name="Tronco_up" type="Sprite" parent="."]
 
-editor/display_folded = true
-visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 9
 region_rect = Rect2( 0, 256, 64, 64 )
 
-[node name="StaticBody2D1" type="StaticBody2D" parent="Tronco"]
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_up"]
 
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
@@ -693,20 +692,33 @@ constant_angular_velocity = 0.0
 friction = 0.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco/StaticBody2D1"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_up/StaticBody2D1"]
 
 transform/pos = Vector2( 0.0852547, 0.0852585 )
 build_mode = 0
-polygon = Vector2Array( -18, 16, -23, 23, -23, 27, -20, 32, 18, 32, 22, 26, 22, 22, 16, 16 )
+polygon = Vector2Array( -11, 20, -25, 32, 18, 32, 31, 32, 16, 20 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+
+[node name="Tronco_down" type="Sprite" parent="."]
+
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 14
+region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="Cochinada" type="Sprite" parent="."]
 
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 28
 region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="Cochinada_left" type="Sprite" parent="."]
@@ -714,7 +726,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 27
 region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="Cochinada_right" type="Sprite" parent="."]
@@ -722,14 +737,21 @@ region_rect = Rect2( 0, 256, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 29
 region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="Cochinada_single" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
-texture = ExtResource( 6 )
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 26
 region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="Cochinada_alone" type="Sprite" parent="."]
@@ -737,7 +759,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
-texture = ExtResource( 7 )
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 25
 region_rect = Rect2( 0, 256, 64, 64 )
 
 
