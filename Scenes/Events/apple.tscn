@@ -3,8 +3,6 @@
 [ext_resource path="res://Scenes/Events/apple.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Charasets/manzana.png" type="Texture" id=2]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -12,10 +10,9 @@ extents = Vector2( 13, 13 )
 
 [node name="Apple" type="Area2D"]
 
-transform/pos = Vector2( -608, -672 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.46154, 0, 0, 2.46154, 1.52588e-05, 0 )
+shapes/0/transform = Matrix32( 2.49193, 0, 0, 2.79981, -2.22558, 5.41232 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 0.0
@@ -33,8 +30,8 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 1.52588e-05, 0 )
-transform/scale = Vector2( 2.46154, 2.46154 )
+transform/pos = Vector2( -2.22558, 5.41232 )
+transform/scale = Vector2( 2.49193, 2.79981 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
