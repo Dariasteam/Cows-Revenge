@@ -75,7 +75,7 @@ func on_opacity_low ():
 func on_opacity_high ():
 	sprite.set_modulate(Color("00ffff"))
 
-func on_receive_damage (amount):	
+func on_receive_damage (amount):
 	if (can_receive_damage()):
 		life = life - amount
 		emit_signal ("update_life", life)

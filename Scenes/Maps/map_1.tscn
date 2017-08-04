@@ -253,131 +253,123 @@ centered = false
 region = true
 region_rect = Rect2( -1000, 0, 2048, 128 )
 
-[node name="Apple 2" parent="." instance=ExtResource( 8 )]
+[node name="apples" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -3520, -3616 )
 transform/scale = Vector2( 1, 0.999998 )
+
+[node name="Apple 2" parent="apples" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 0, 0 )
 amount = 20
 
-[node name="Apple12" parent="." instance=ExtResource( 8 )]
+[node name="Apple12" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -1408, -1248 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 2112, 2368 )
 amount = 20
 
-[node name="Apple5" parent="." instance=ExtResource( 8 )]
+[node name="Apple5" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2816, -864 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 704, 2752.01 )
 amount = 20
 
-[node name="Apple6" parent="." instance=ExtResource( 8 )]
+[node name="Apple6" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2752, -928 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 768, 2688.01 )
 amount = 20
 
-[node name="Apple7" parent="." instance=ExtResource( 8 )]
+[node name="Apple7" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2688, -992 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 832, 2624.01 )
 amount = 20
 
-[node name="Apple9" parent="." instance=ExtResource( 8 )]
+[node name="Apple9" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -2624, -1056 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 896, 2560.01 )
 amount = 20
 
-[node name="Apple4" parent="." instance=ExtResource( 8 )]
+[node name="Apple4" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4384 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -768.001 )
 amount = 20
 
-[node name="Apple13" parent="." instance=ExtResource( 8 )]
+[node name="Apple13" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4064 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -448.001 )
 amount = 20
 
-[node name="Apple14" parent="." instance=ExtResource( 8 )]
+[node name="Apple14" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4128 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -512.001 )
 amount = 20
 
-[node name="Apple15" parent="." instance=ExtResource( 8 )]
+[node name="Apple15" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4192 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -576.001 )
 amount = 20
 
-[node name="Apple16" parent="." instance=ExtResource( 8 )]
+[node name="Apple16" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4256 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -640.001 )
 amount = 20
 
-[node name="Apple17" parent="." instance=ExtResource( 8 )]
+[node name="Apple17" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4000 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -384.001 )
 amount = 20
 
-[node name="Apple18" parent="." instance=ExtResource( 8 )]
+[node name="Apple18" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 704, -4320 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4224, -704.001 )
 amount = 20
 
-[node name="Apple10" parent="." instance=ExtResource( 8 )]
+[node name="Apple10" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 2624, -4384 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 6144, -768.001 )
 amount = 20
 
-[node name="Apple11" parent="." instance=ExtResource( 8 )]
+[node name="Apple11" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 2752, -4256 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 6272, -640.001 )
 amount = 20
 
-[node name="Apple3" parent="." instance=ExtResource( 8 )]
+[node name="Apple3" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 3776, -2592 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 7296, 1024 )
 amount = 20
 
-[node name="Apple8" parent="." instance=ExtResource( 8 )]
+[node name="Apple8" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 4672, -928 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 8192, 2688.01 )
 amount = 20
 
-[node name="Apple 3" parent="." instance=ExtResource( 8 )]
+[node name="Apple 3" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 576, -1600 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 4096, 2016 )
 amount = 20
 
-[node name="Apple 4" parent="." instance=ExtResource( 8 )]
+[node name="Apple 4" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( -3136, -3616 )
-transform/scale = Vector2( 1, 0.999998 )
+transform/pos = Vector2( 384, 0 )
 amount = 20
 
-[node name="Apple 5" parent="." instance=ExtResource( 8 )]
+[node name="Apple 5" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 576, -2880 )
+transform/pos = Vector2( 4096, 736.001 )
+transform/scale = Vector2( 1, 1 )
 amount = 20
 
-[node name="Apple19" parent="." instance=ExtResource( 8 )]
+[node name="Apple19" parent="apples" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 2496, -1312 )
+transform/pos = Vector2( 6016, 2304 )
+transform/scale = Vector2( 1, 1 )
 amount = 500
 
-[node name="DeathLine" parent="." instance=ExtResource( 9 )]
+[node name="death_line" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 24192, -384 )
+transform/scale = Vector2( 6889, 1 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 

@@ -6,8 +6,8 @@ func on_set_max_life(value):
 	max_life = value
 
 func on_update_life (var n):
-	if (n <= 0):
-		get_tree().change_scene("res://game_over.tscn")
+	if (n <= 0):		
+		get_tree().change_scene("res://Scenes/Menu/game_over.tscn")
 	else:
 		for i in range(0,n):
 			get_children()[i].show()
