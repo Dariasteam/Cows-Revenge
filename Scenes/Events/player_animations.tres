@@ -1,0 +1,19 @@
+[gd_resource type="Animation" format=1]
+
+[resource]
+
+resource/name = "walk"
+length = 0.52
+loop = true
+step = 0.12
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.12, 0.24, 0.36, 0.48 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 9, 10 ]
+}
+
