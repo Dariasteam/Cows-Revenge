@@ -13,3 +13,10 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 ## Screenshots
 
 ![](Screenshots/1.png)
+
+## Additional information
+All resources created using with the following FLOSS software:
+
+- [krita](https://krita.org/en/)
+- [audacity](http://www.audacityteam.org/)
+- tuxguitar
