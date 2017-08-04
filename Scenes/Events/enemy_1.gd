@@ -6,7 +6,7 @@ var vertical
 export var velocity = 350
 var v = Vector2(-velocity, 0)
 
-onready var sprite = get_node("Sprite")
+onready var sprite = get_node("sprite")
 onready var area_head = get_node("area_head")
 
 onready var hit_single = get_node("hit_ray_particle")

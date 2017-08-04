@@ -3,8 +3,9 @@
 [ext_resource path="res://Scenes/Events/player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Events/shooter.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Events/ray_milk.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Charasets/Player/cow.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
