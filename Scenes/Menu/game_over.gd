@@ -15,4 +15,4 @@ func _on_reset_pressed():
 
 
 func _on_main_menu_pressed():	
-	get_tree().change_scene("res://menu.tscn")
+	get_tree().change_scene("res://Scenes/Menu/main_menu.tscn")
