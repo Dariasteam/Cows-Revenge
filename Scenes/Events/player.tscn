@@ -6,7 +6,6 @@
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -17,7 +16,7 @@ points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 
 custom_solver_bias = 0.0
 extents = Vector2( 12.363, 15.2052 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource/name = "idle"
 length = 0.6
@@ -105,7 +104,7 @@ region_rect = Rect2( 0, 0, 96, 96 )
 playback/process_mode = 0
 playback/default_blend_time = 0.2
 root/root = NodePath("..")
-anims/idle = SubResource( 5 )
+anims/idle = SubResource( 3 )
 anims/walk = ExtResource( 5 )
 playback/active = true
 playback/speed = 1.0
@@ -121,7 +120,7 @@ offset = Vector2( 0, -80 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 1.1, 1.1 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000
