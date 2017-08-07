@@ -5,7 +5,6 @@
 [ext_resource path="res://Scenes/Events/ray_milk_end.tres.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Effects/milk_ray.png" type="Texture" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -15,8 +14,8 @@ extents = Vector2( 32, 32 )
 
 enabled = true
 cast_to = Vector2( 10000, 0 )
-layer_mask = 6
-type_mask = 10
+layer_mask = 63
+type_mask = 11
 script/script = ExtResource( 1 )
 damage = 50
 

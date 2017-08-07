@@ -56,7 +56,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 }
 
-[sub_resource type="ColorRamp" id=10]
+[sub_resource type="ColorRamp" id=9]
 
 offsets = FloatArray( 0, 1 )
 colors = ColorArray( 0.773438, 0.773438, 0.773438, 1, 0.1875, 0.1875, 0.1875, 1 )
@@ -202,7 +202,7 @@ params/anim_initial_pos = 0.0
 randomness/direction = 0.29
 randomness/spread = 0.8
 randomness/linear_velocity = 0.45
-color/color_ramp = SubResource( 10 )
+color/color_ramp = SubResource( 9 )
 
 [connection signal="body_enter" from="area_head" to="." method="_on_area_head_body_enter"]
 
