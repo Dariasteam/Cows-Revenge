@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=1]
+[gd_scene load_steps=31 format=1]
 
 [ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=1]
 
@@ -101,6 +101,51 @@ points = Vector2Array( 32, -32, 32, 28, -28, -32 )
 
 custom_solver_bias = 0.0
 points = Vector2Array( 16, 20, 31, 32, 18, 32, -25, 32, -11, 20 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 14, 24, 27, 30, -22, 30, -8, 24 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 17, 24, 27, 30, -21, 30, -11, 24 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 14, 13, 17, 24, -11, 24, -8, 13 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, 23, 27, 30, -21, 30, -10, 23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, 23, -10, 23, -9, -31, 16, -31 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, 23, 27, 30, -21, 30, -10, 23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, 23, -10, 23, -9, -34, 16, -34 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -34, 16, 30, -9, 30, -9, -34 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -31, 16, 30, -9, 30, -9, -31 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -670,6 +715,8 @@ trigger = false
 
 [node name="Tronco_up" type="Sprite" parent="."]
 
+editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
 texture = ExtResource( 1 )
@@ -680,6 +727,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_up"]
 
+editor/display_folded = true
 transform/pos = Vector2( -0.0852547, -0.0852585 )
 input/pickable = false
 shapes/0/shape = SubResource( 20 )
@@ -702,12 +750,58 @@ trigger = false
 
 [node name="Tronco_down" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
 texture = ExtResource( 1 )
 vframes = 10
 hframes = 5
 frame = 14
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="Tocon_up" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 31
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tocon_up"]
+
+transform/pos = Vector2( -3, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tocon_up/StaticBody2D1"]
+
+transform/pos = Vector2( 0, 2 )
+build_mode = 0
+polygon = Vector2Array( -8, 24, -22, 30, 27, 30, 14, 24 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Tocon_down" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 36
 region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="Cochinada" type="Sprite" parent="."]
@@ -764,5 +858,193 @@ vframes = 10
 hframes = 5
 frame = 25
 region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="Tocon2_up" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 30
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tocon2_up"]
+
+transform/pos = Vector2( -3, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 22 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 23 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/1/trigger = false
+collision/layers = 2
+collision/mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tocon2_up/StaticBody2D1"]
+
+transform/pos = Vector2( 0, 2 )
+build_mode = 0
+polygon = Vector2Array( 14, 13, 17, 24, 27, 30, -21, 30, -11, 24, -8, 13 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="Tocon2_down" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 35
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="Tronco_largo_up" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 33
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_largo_up"]
+
+transform/pos = Vector2( -3, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 24 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 25 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/1/trigger = false
+collision/layers = 2
+collision/mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_largo_up/StaticBody2D1"]
+
+transform/pos = Vector2( 0, 2 )
+build_mode = 0
+polygon = Vector2Array( 16, -31, 16, 23, 27, 30, -21, 30, -10, 23, -9, -31 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="Tronco_largo_init" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 34
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_largo_init"]
+
+transform/pos = Vector2( -3, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 26 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 27 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/1/trigger = false
+collision/layers = 2
+collision/mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_largo_init/StaticBody2D1"]
+
+transform/pos = Vector2( 0, 2 )
+build_mode = 0
+polygon = Vector2Array( 16, -34, 16, 23, 27, 30, -21, 30, -10, 23, -9, -34 )
+shape_range = Vector2( 0, 1 )
+trigger = false
+
+[node name="Tronco_largo_tiling" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 40
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_largo_tiling"]
+
+transform/pos = Vector2( -3, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 28 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_largo_tiling/StaticBody2D1"]
+
+transform/pos = Vector2( 0, 2 )
+build_mode = 0
+polygon = Vector2Array( 16, -34, 16, 30, -9, 30, -9, -34 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Tronco_largo_end" type="Sprite" parent="."]
+
+transform/pos = Vector2( -64, -64 )
+z/z = 2
+texture = ExtResource( 1 )
+vframes = 10
+hframes = 5
+frame = 41
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_largo_end"]
+
+transform/pos = Vector2( -3, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 29 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 15
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_largo_end/StaticBody2D1"]
+
+transform/pos = Vector2( 0, 2 )
+build_mode = 0
+polygon = Vector2Array( 16, -31, 16, 30, -9, 30, -9, -31 )
+shape_range = Vector2( 0, 0 )
+trigger = false
 
 

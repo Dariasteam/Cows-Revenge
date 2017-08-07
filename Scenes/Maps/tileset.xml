@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="TileSet" subresource_count="22" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
+<resource_file type="TileSet" subresource_count="31" version="2.1" version_name="Godot Engine v2.1.3.stable.official">
 	<ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" index="0"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
@@ -61,9 +61,54 @@
 		<vector2_array name="points" len="7"> 			-32, -28, 13.8965, -27.135, 19.9498, -24.2363, 24.2127, -19.4618, 25.4063, -15.7105, 26, 32, -32, 32 </vector2_array>
 
 	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://21">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			14, 24, 27, 30, -22, 30, -8, 24 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://22">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			17, 24, 27, 30, -21, 30, -11, 24 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://23">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			14, 13, 17, 24, -11, 24, -8, 13 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://24">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			16, 23, 27, 30, -21, 30, -10, 23 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://25">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			16, 23, -10, 23, -9, -31, 16, -31 </vector2_array>
+
+	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			32, -32, 32, 32, -28, 32, -27.4817, -32.0967 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://26">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			16, 23, 27, 30, -21, 30, -10, 23 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://27">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			16, 23, -10, 23, -9, -34, 16, -34 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://28">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			16, -34, 16, 30, -9, 30, -9, -34 </vector2_array>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://29">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="4"> 			16, -31, 16, 30, -9, 30, -9, -31 </vector2_array>
 
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://5">
@@ -371,6 +416,95 @@
 		<resource name="24/occluder"></resource>		<vector2 name="24/navigation_offset"> 32, 32 </vector2>
 		<resource name="24/navigation"></resource>		<vector2 name="24/shape_offset"> 0, 0 </vector2>
 		<array name="24/shapes" len="0" shared="false">
+		</array>
+		<string name="25/name"> "Tocon_up" </string>
+		<resource name="25/texture" external="0">  </resource>
+		<vector2 name="25/tex_offset"> 0, 0 </vector2>
+		<resource name="25/material"></resource>		<color name="25/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="25/region"> 64, 384, 64, 64 </rect2>
+		<vector2 name="25/occluder_offset"> 32, 32 </vector2>
+		<resource name="25/occluder"></resource>		<vector2 name="25/navigation_offset"> 32, 32 </vector2>
+		<resource name="25/navigation"></resource>		<vector2 name="25/shape_offset"> 32, 32 </vector2>
+		<array name="25/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://21">  </resource>
+		</array>
+		<string name="26/name"> "Tocon_down" </string>
+		<resource name="26/texture" external="0">  </resource>
+		<vector2 name="26/tex_offset"> 0, 0 </vector2>
+		<resource name="26/material"></resource>		<color name="26/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="26/region"> 64, 448, 64, 64 </rect2>
+		<vector2 name="26/occluder_offset"> 32, 32 </vector2>
+		<resource name="26/occluder"></resource>		<vector2 name="26/navigation_offset"> 32, 32 </vector2>
+		<resource name="26/navigation"></resource>		<vector2 name="26/shape_offset"> 0, 0 </vector2>
+		<array name="26/shapes" len="0" shared="false">
+		</array>
+		<string name="27/name"> "Tocon2_up" </string>
+		<resource name="27/texture" external="0">  </resource>
+		<vector2 name="27/tex_offset"> 0, 0 </vector2>
+		<resource name="27/material"></resource>		<color name="27/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="27/region"> 0, 384, 64, 64 </rect2>
+		<vector2 name="27/occluder_offset"> 32, 32 </vector2>
+		<resource name="27/occluder"></resource>		<vector2 name="27/navigation_offset"> 32, 32 </vector2>
+		<resource name="27/navigation"></resource>		<vector2 name="27/shape_offset"> 32, 32 </vector2>
+		<array name="27/shapes" len="2" shared="false">
+			<resource  resource_type="Shape2D" path="local://22">  </resource>
+			<resource  resource_type="Shape2D" path="local://23">  </resource>
+		</array>
+		<string name="28/name"> "Tocon2_down" </string>
+		<resource name="28/texture" external="0">  </resource>
+		<vector2 name="28/tex_offset"> 0, 0 </vector2>
+		<resource name="28/material"></resource>		<color name="28/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="28/region"> 0, 448, 64, 64 </rect2>
+		<vector2 name="28/occluder_offset"> 32, 32 </vector2>
+		<resource name="28/occluder"></resource>		<vector2 name="28/navigation_offset"> 32, 32 </vector2>
+		<resource name="28/navigation"></resource>		<vector2 name="28/shape_offset"> 0, 0 </vector2>
+		<array name="28/shapes" len="0" shared="false">
+		</array>
+		<string name="29/name"> "Tronco_largo_up" </string>
+		<resource name="29/texture" external="0">  </resource>
+		<vector2 name="29/tex_offset"> 0, 0 </vector2>
+		<resource name="29/material"></resource>		<color name="29/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="29/region"> 192, 384, 64, 64 </rect2>
+		<vector2 name="29/occluder_offset"> 32, 32 </vector2>
+		<resource name="29/occluder"></resource>		<vector2 name="29/navigation_offset"> 32, 32 </vector2>
+		<resource name="29/navigation"></resource>		<vector2 name="29/shape_offset"> 32, 32 </vector2>
+		<array name="29/shapes" len="2" shared="false">
+			<resource  resource_type="Shape2D" path="local://24">  </resource>
+			<resource  resource_type="Shape2D" path="local://25">  </resource>
+		</array>
+		<string name="30/name"> "Tronco_largo_init" </string>
+		<resource name="30/texture" external="0">  </resource>
+		<vector2 name="30/tex_offset"> 0, 0 </vector2>
+		<resource name="30/material"></resource>		<color name="30/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="30/region"> 256, 384, 64, 64 </rect2>
+		<vector2 name="30/occluder_offset"> 32, 32 </vector2>
+		<resource name="30/occluder"></resource>		<vector2 name="30/navigation_offset"> 32, 32 </vector2>
+		<resource name="30/navigation"></resource>		<vector2 name="30/shape_offset"> 32, 32 </vector2>
+		<array name="30/shapes" len="2" shared="false">
+			<resource  resource_type="Shape2D" path="local://26">  </resource>
+			<resource  resource_type="Shape2D" path="local://27">  </resource>
+		</array>
+		<string name="31/name"> "Tronco_largo_tiling" </string>
+		<resource name="31/texture" external="0">  </resource>
+		<vector2 name="31/tex_offset"> 0, 0 </vector2>
+		<resource name="31/material"></resource>		<color name="31/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="31/region"> 0, 512, 64, 64 </rect2>
+		<vector2 name="31/occluder_offset"> 32, 32 </vector2>
+		<resource name="31/occluder"></resource>		<vector2 name="31/navigation_offset"> 32, 32 </vector2>
+		<resource name="31/navigation"></resource>		<vector2 name="31/shape_offset"> 32, 32 </vector2>
+		<array name="31/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://28">  </resource>
+		</array>
+		<string name="32/name"> "Tronco_largo_end" </string>
+		<resource name="32/texture" external="0">  </resource>
+		<vector2 name="32/tex_offset"> 0, 0 </vector2>
+		<resource name="32/material"></resource>		<color name="32/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="32/region"> 64, 512, 64, 64 </rect2>
+		<vector2 name="32/occluder_offset"> 32, 32 </vector2>
+		<resource name="32/occluder"></resource>		<vector2 name="32/navigation_offset"> 32, 32 </vector2>
+		<resource name="32/navigation"></resource>		<vector2 name="32/shape_offset"> 32, 32 </vector2>
+		<array name="32/shapes" len="1" shared="false">
+			<resource  resource_type="Shape2D" path="local://29">  </resource>
 		</array>
 
 	</main_resource>
