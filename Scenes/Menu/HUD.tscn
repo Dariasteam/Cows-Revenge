@@ -14,8 +14,6 @@
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_inner.png" type="Texture" id=13]
 
-
-
 [sub_resource type="Environment" id=1]
 
 ambient_light/enabled = false
@@ -87,10 +85,10 @@ world = SubResource( 2 )
 transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
-render_target/clear_on_new_frame = true
+render_target/clear_on_new_frame = false
 render_target/filter = false
 render_target/gen_mipmaps = false
-render_target/update_mode = 0
+render_target/update_mode = 3
 audio_listener/enable_2d = true
 audio_listener/enable_3d = false
 physics/object_picking = false
