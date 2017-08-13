@@ -52,7 +52,7 @@ func _process(delta):
 		end_point = Vector2 (get_global_pos().distance_to(get_collision_point()), 29)
 		end.set_emitting(true)
 	else:
-		end_point = Vector2 (get_pos())
+		end_point = Vector2 (distance, 29)
 		end.set_emitting(false)
 			
 	middle.set_region_rect(Rect2(get_pos(),end_point))
