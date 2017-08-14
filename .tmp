@@ -1,369 +1,840 @@
-[gd_resource type="TileSet" load_steps=23 format=2]
+[gd_resource type="TileSet" load_steps=50 format=2]
 
-[ext_resource type="Texture" path="res://tile full.tex" id=0]
+[ext_resource type="Texture" path="res://Sprites/Tilesets/tile full.png" id=0]
 
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias=0.0
-points=PoolVector2Array( -32, -32, 32, -32, 32, 32, -32, 32, -32, -32 )
+points=PoolVector2Array( -21.2298, -23.8952, -16.2848, -26.453, -9.37893, -26.9645, 32, -28, 32, 32, -27, 32, -26.601, -15.7957, -24.4696, -20.3144 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias=0.0
-points=PoolVector2Array( 32, -32, 32, 32, -32, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=11]
-
-custom_solver_bias=0.0
-points=PoolVector2Array( 32, -32, 32, 28, -32, 28, -32, -32 )
+points=PoolVector2Array( -32, -28, 32, -28, 32, 32, -32, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=12]
 
 custom_solver_bias=0.0
-points=PoolVector2Array( 27, -32, 27, 15, 25, 21, 21.115, 25.3147, 11.2565, 26.8224, -32, 28, -32, -32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=35]
-
-custom_solver_bias=0.0
-points=PoolVector2Array( 32, -32, 32, 32, -32, 32, -31.8891, -27.3414, -29, -30 )
-
-[sub_resource type="ConvexPolygonShape2D" id=36]
-
-custom_solver_bias=0.0
-points=PoolVector2Array( -27, -32, 32, -32, -29, -30 )
-
-[sub_resource type="ConvexPolygonShape2D" id=37]
-
-custom_solver_bias=0.0
 points=PoolVector2Array( -31, -32, 33, -32, 33, 32, -27, 32, -29, 30, -31, 28 )
 
-[sub_resource type="ConvexPolygonShape2D" id=38]
+[sub_resource type="ConvexPolygonShape2D" id=13]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( -32, -32, 32, -32, 32, 28, 30, 30, 28, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=30]
+[sub_resource type="ConvexPolygonShape2D" id=14]
 
 custom_solver_bias=0.0
-points=PoolVector2Array( -32, -32, 27.4498, -32.0095, 31.9963, -27.7854, 32.0174, 32.0416, -32, 32 )
+points=PoolVector2Array( -32, -32, 28, -32, 32, -28, 32.0174, 32.0416, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=20]
+[sub_resource type="ConvexPolygonShape2D" id=15]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( -13, -27, 13, -27, 20.1871, -23.398, 26, -16, 26, 18, 22, 24, 12, 27, -11.8241, 27.0544, -22.7264, 24.6188, -27, 19, -26.9018, -15.1633, -21.7986, -22.5862, -18, -25 )
 
-[sub_resource type="ConvexPolygonShape2D" id=41]
+[sub_resource type="ConvexPolygonShape2D" id=16]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( -27, 32, 32, -28, 32.0174, 31.9257 )
 
-[sub_resource type="ConvexPolygonShape2D" id=40]
+[sub_resource type="ConvexPolygonShape2D" id=17]
 
 custom_solver_bias=0.0
-points=PoolVector2Array( -32, -27, -30.1058, -27.0105, 28, 32, -32, 32 )
+points=PoolVector2Array( -32, -28, -29, -25, 28, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=23]
+[sub_resource type="ConvexPolygonShape2D" id=18]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( -32, -32, 27, -32, -32, 28 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
-
-custom_solver_bias=0.0
-points=PoolVector2Array( -32, -32, 32, 32, -32, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=19]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( 32, -32, 32, 28, -28, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=20]
 
 custom_solver_bias=0.0
-points=PoolVector2Array( -21.2298, -23.8952, -16.2848, -26.453, -9.37893, -26.9645, 32, -28, 32, 32, -27, 32, -26.601, -15.7957, -24.4696, -20.3144 )
+points=PoolVector2Array( 16, 20, 31, 32, 18, 32, -25, 32, -11, 20 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
-
-custom_solver_bias=0.0
-points=PoolVector2Array( -32, -28, 32, -28, 32, 32, -32, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( -32, -28, 13.8965, -27.135, 19.9498, -24.2363, 24.2127, -19.4618, 25.4063, -15.7105, 26, 32, -32, 32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=21]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 14, 24, 27, 30, -22, 30, -8, 24 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 17, 24, 27, 30, -21, 30, -11, 24 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 14, 13, 17, 24, -11, 24, -8, 13 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, 23, 27, 30, -21, 30, -10, 23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, 23, -10, 23, -9, -31, 16, -31 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( 32, -32, 32, 32, -28, 32, -27.4817, -32.0967 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
+[sub_resource type="ConvexPolygonShape2D" id=26]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, 23, 27, 30, -21, 30, -10, 23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, 23, -10, 23, -9, -34, 16, -34 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, -34, 16, 30, -9, 30, -9, -34 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, -31, 16, 30, -9, 30, -9, -31 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -9, -34, 16, -34, 16, -19, -9, 30 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -9, 30, 16, -19, 23, -12, 24, 3, 16, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=32]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 23, -12, 35, -12, 35, -1, 24, 3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=33]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -9, 30, 16, 17, 16, 30 )
+
+[sub_resource type="ConvexPolygonShape2D" id=34]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -25, -12, -25, -1, -29, -1, -29, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=47]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -9, -34, 16, -34, 16, 30, -9, -18 )
+
+[sub_resource type="ConvexPolygonShape2D" id=35]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -16, -12, -9, -18, 16, 30, -9, 14, -15, 4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=36]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, 30, -9, 30, -9, 14 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -16, -12, -15, 4, -29, -1, -29, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 35, -1, 31, -1, 31, -12, 35, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=40]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -29, -12, 35, -12, 35, -1, -29, -1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -25, -12, -25, -1, -29, -1, -29, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=48]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 35, -1, 31, -1, 31, -12, 35, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=9]
+[sub_resource type="ConvexPolygonShape2D" id=49]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -29, -12, 35, -12, 35, -1, -29, -1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=41]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -9, -18, -9, -34, 16, -34, 16, -18 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 23, -12, 35, -12, 35, -1, 23, 4, -14, 6 )
+
+[sub_resource type="ConvexPolygonShape2D" id=43]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 16, 19, 16, 30, -9, 30, -9, 18 )
+
+[sub_resource type="ConvexPolygonShape2D" id=44]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -24, -1, -29, -1, -29, -12, -17, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=45]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -14, 6, -24, -1, -17, -12, -9, -18, 16, -18, 23, -12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=46]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 23, 4, 16, 19, -9, 18, -14, 6 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( 27, -32, 27, 32, -32, 32, -32, -32 )
 
-[sub_resource type="ConvexPolygonShape2D" id=10]
+[sub_resource type="ConvexPolygonShape2D" id=7]
 
 custom_solver_bias=0.0
 points=PoolVector2Array( 32.0174, -32.3287, 32.2493, 27.9823, -9.96833, 27.1704, -21.5666, 24.9667, -24.4662, 22.763, -27, 17, -26.9018, -31.7488 )
 
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 32, -32, 32, 28, -32, 28, -32, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 27, -32, 27, 15, 25, 21, 21.115, 25.3147, 11.2565, 26.8224, -32, 28, -32, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( 32, -32, 32, 32, -32, 32, -31.8891, -27.3414, -29, -30 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias=0.0
+points=PoolVector2Array( -27, -32, 32, -32, -29, -30 )
+
 [resource]
 
-0/name="Suelo"
+0/name="Arriba_Izquierda1"
 0/texture=null
 0/tex_offset=Vector2( 0, 0 )
 0/material=null
 0/modulate=Color( 1, 1, 1, 1 )
-0/region=Rect2( 0, 0, 320, 320 )
-0/occluder_offset=Vector2( 160, 160 )
+0/region=Rect2( 0, 0, 64, 64 )
+0/occluder_offset=Vector2( 32, 32 )
 0/occluder=null
-0/navigation_offset=Vector2( 160, 160 )
+0/navigation_offset=Vector2( 32, 32 )
 0/navigation=null
-0/shape_offset=Vector2( 160, 160 )
+0/shape_offset=Vector2( 32, 32 )
 0/shapes=[  ]
-1/name="Rampa_LR"
+0/one_way_collision_direction=Vector2( 0, 0 )
+0/one_way_collision_max_depth=0.0
+1/name="Arriba"
 1/texture=null
 1/tex_offset=Vector2( 0, 0 )
 1/material=null
 1/modulate=Color( 1, 1, 1, 1 )
-1/region=Rect2( 320, 256, 64, 64 )
-1/occluder_offset=Vector2( 32, 32 )
+1/region=Rect2( 64, 0, 64, 64 )
+1/occluder_offset=Vector2( 31.9147, 31.9147 )
 1/occluder=null
-1/navigation_offset=Vector2( 32, 32 )
+1/navigation_offset=Vector2( 31.9147, 31.9147 )
 1/navigation=null
-1/shape_offset=Vector2( 32, 32 )
+1/shape_offset=Vector2( 31.9147, 31.9147 )
 1/shapes=[  ]
-2/name="Rampa_RL"
+1/one_way_collision_direction=Vector2( 0, 0 )
+1/one_way_collision_max_depth=0.0
+2/name="Arriba_Derecha"
 2/texture=null
 2/tex_offset=Vector2( 0, 0 )
 2/material=null
 2/modulate=Color( 1, 1, 1, 1 )
-2/region=Rect2( 512, 256, 64, 64 )
-2/occluder_offset=Vector2( 32, 32 )
+2/region=Rect2( 128, 0, 64, 64 )
+2/occluder_offset=Vector2( 31.9147, 31.9147 )
 2/occluder=null
-2/navigation_offset=Vector2( 32, 32 )
+2/navigation_offset=Vector2( 31.9147, 31.9147 )
 2/navigation=null
-2/shape_offset=Vector2( 32, 32 )
+2/shape_offset=Vector2( 31.9147, 31.9147 )
 2/shapes=[  ]
-3/name="Arriba_Izquierda"
+2/one_way_collision_direction=Vector2( 0, 0 )
+2/one_way_collision_max_depth=0.0
+3/name="Izquierda"
 3/texture=null
 3/tex_offset=Vector2( 0, 0 )
 3/material=null
 3/modulate=Color( 1, 1, 1, 1 )
-3/region=Rect2( 0, 0, 64, 64 )
-3/occluder_offset=Vector2( 32, 32 )
+3/region=Rect2( 0, 64, 64, 64 )
+3/occluder_offset=Vector2( 31.9147, 31.9147 )
 3/occluder=null
-3/navigation_offset=Vector2( 32, 32 )
+3/navigation_offset=Vector2( 31.9147, 31.9147 )
 3/navigation=null
-3/shape_offset=Vector2( 32, 32 )
+3/shape_offset=Vector2( 31.9147, 31.9147 )
 3/shapes=[  ]
-4/name="Arriba"
+3/one_way_collision_direction=Vector2( 0, 0 )
+3/one_way_collision_max_depth=0.0
+4/name="Centro"
 4/texture=null
 4/tex_offset=Vector2( 0, 0 )
 4/material=null
 4/modulate=Color( 1, 1, 1, 1 )
-4/region=Rect2( 64, 0, 64, 64 )
-4/occluder_offset=Vector2( 32, 32 )
+4/region=Rect2( 64, 64, 64, 64 )
+4/occluder_offset=Vector2( 31.9147, 31.9147 )
 4/occluder=null
-4/navigation_offset=Vector2( 32, 32 )
+4/navigation_offset=Vector2( 31.9147, 31.9147 )
 4/navigation=null
-4/shape_offset=Vector2( 32, 32 )
+4/shape_offset=Vector2( 31.9147, 31.9147 )
 4/shapes=[  ]
-5/name="Arriba_Derecha"
+4/one_way_collision_direction=Vector2( 0, 0 )
+4/one_way_collision_max_depth=0.0
+5/name="Derecha"
 5/texture=null
 5/tex_offset=Vector2( 0, 0 )
 5/material=null
 5/modulate=Color( 1, 1, 1, 1 )
-5/region=Rect2( 128, 0, 64, 64 )
-5/occluder_offset=Vector2( 32, 32 )
+5/region=Rect2( 128, 64, 64, 64 )
+5/occluder_offset=Vector2( 31.9147, 31.9147 )
 5/occluder=null
-5/navigation_offset=Vector2( 32, 32 )
+5/navigation_offset=Vector2( 31.9147, 31.9147 )
 5/navigation=null
-5/shape_offset=Vector2( 32, 32 )
+5/shape_offset=Vector2( 31.9147, 31.9147 )
 5/shapes=[  ]
-6/name="Izquierda"
+5/one_way_collision_direction=Vector2( 0, 0 )
+5/one_way_collision_max_depth=0.0
+6/name="Abajo_Izquierda"
 6/texture=null
 6/tex_offset=Vector2( 0, 0 )
 6/material=null
 6/modulate=Color( 1, 1, 1, 1 )
-6/region=Rect2( 0, 64, 64, 64 )
-6/occluder_offset=Vector2( 32, 32 )
+6/region=Rect2( 0, 128, 64, 64 )
+6/occluder_offset=Vector2( 31.9147, 31.9147 )
 6/occluder=null
-6/navigation_offset=Vector2( 32, 32 )
+6/navigation_offset=Vector2( 31.9147, 31.9147 )
 6/navigation=null
-6/shape_offset=Vector2( 32, 32 )
+6/shape_offset=Vector2( 31.9147, 31.9147 )
 6/shapes=[  ]
-7/name="Centro"
+6/one_way_collision_direction=Vector2( 0, 0 )
+6/one_way_collision_max_depth=0.0
+7/name="Abajo"
 7/texture=null
 7/tex_offset=Vector2( 0, 0 )
 7/material=null
 7/modulate=Color( 1, 1, 1, 1 )
-7/region=Rect2( 64, 64, 64, 64 )
-7/occluder_offset=Vector2( 32, 32 )
+7/region=Rect2( 64, 128, 64, 64 )
+7/occluder_offset=Vector2( 31.9147, 31.9147 )
 7/occluder=null
-7/navigation_offset=Vector2( 32, 32 )
+7/navigation_offset=Vector2( 31.9147, 31.9147 )
 7/navigation=null
-7/shape_offset=Vector2( 32, 32 )
+7/shape_offset=Vector2( 31.9147, 31.9147 )
 7/shapes=[  ]
-8/name="Derecha"
+7/one_way_collision_direction=Vector2( 0, 0 )
+7/one_way_collision_max_depth=0.0
+8/name="Abajo_Derecha"
 8/texture=null
 8/tex_offset=Vector2( 0, 0 )
 8/material=null
 8/modulate=Color( 1, 1, 1, 1 )
-8/region=Rect2( 128, 64, 64, 64 )
-8/occluder_offset=Vector2( 32, 32 )
+8/region=Rect2( 128, 128, 64, 64 )
+8/occluder_offset=Vector2( 31.9147, 31.9147 )
 8/occluder=null
-8/navigation_offset=Vector2( 32, 32 )
+8/navigation_offset=Vector2( 31.9147, 31.9147 )
 8/navigation=null
-8/shape_offset=Vector2( 32, 32 )
+8/shape_offset=Vector2( 31.9147, 31.9147 )
 8/shapes=[  ]
-9/name="Abajo_Izquierda"
+8/one_way_collision_direction=Vector2( 0, 0 )
+8/one_way_collision_max_depth=0.0
+9/name="Inner_Derecha_Abajo"
 9/texture=null
 9/tex_offset=Vector2( 0, 0 )
 9/material=null
 9/modulate=Color( 1, 1, 1, 1 )
-9/region=Rect2( 0, 128, 64, 64 )
-9/occluder_offset=Vector2( 32, 32 )
+9/region=Rect2( 256, 256, 64, 64 )
+9/occluder_offset=Vector2( 31.9147, 31.9147 )
 9/occluder=null
-9/navigation_offset=Vector2( 32, 32 )
+9/navigation_offset=Vector2( 31.9147, 31.9147 )
 9/navigation=null
-9/shape_offset=Vector2( 32, 32 )
-9/shapes=[  ]
-10/name="Abajo"
+9/shape_offset=Vector2( 31.9147, 31.9147 )
+9/shapes=[ ,  ]
+9/one_way_collision_direction=Vector2( 0, 0 )
+9/one_way_collision_max_depth=0.0
+10/name="Inner_Derecha_Arriba"
 10/texture=null
 10/tex_offset=Vector2( 0, 0 )
 10/material=null
 10/modulate=Color( 1, 1, 1, 1 )
-10/region=Rect2( 64, 128, 64, 64 )
-10/occluder_offset=Vector2( 32, 32 )
+10/region=Rect2( 256, 192, 64, 64 )
+10/occluder_offset=Vector2( 31.9147, 31.9147 )
 10/occluder=null
-10/navigation_offset=Vector2( 32, 32 )
+10/navigation_offset=Vector2( 31.9147, 31.9147 )
 10/navigation=null
-10/shape_offset=Vector2( 32, 32 )
+10/shape_offset=Vector2( 31.9147, 31.9147 )
 10/shapes=[  ]
-11/name="Abajo_Derecha"
+10/one_way_collision_direction=Vector2( 0, 0 )
+10/one_way_collision_max_depth=0.0
+11/name="Inner_Izquierda_Arriba"
 11/texture=null
 11/tex_offset=Vector2( 0, 0 )
 11/material=null
 11/modulate=Color( 1, 1, 1, 1 )
-11/region=Rect2( 128, 128, 64, 64 )
-11/occluder_offset=Vector2( 32, 32 )
+11/region=Rect2( 192, 192, 64, 64 )
+11/occluder_offset=Vector2( 31.9147, 31.9147 )
 11/occluder=null
-11/navigation_offset=Vector2( 32, 32 )
+11/navigation_offset=Vector2( 31.9147, 31.9147 )
 11/navigation=null
-11/shape_offset=Vector2( 32, 32 )
+11/shape_offset=Vector2( 31.9147, 31.9147 )
 11/shapes=[  ]
-12/name="Inner_Derecha_Abajo"
+11/one_way_collision_direction=Vector2( 0, 0 )
+11/one_way_collision_max_depth=0.0
+12/name="Inner_Izquierda_Abajo"
 12/texture=null
 12/tex_offset=Vector2( 0, 0 )
 12/material=null
 12/modulate=Color( 1, 1, 1, 1 )
-12/region=Rect2( 256, 256, 64, 64 )
-12/occluder_offset=Vector2( 32, 32 )
+12/region=Rect2( 192, 256, 64, 64 )
+12/occluder_offset=Vector2( 31.9147, 31.9147 )
 12/occluder=null
-12/navigation_offset=Vector2( 32, 32 )
+12/navigation_offset=Vector2( 31.9147, 31.9147 )
 12/navigation=null
-12/shape_offset=Vector2( 32, 32 )
-12/shapes=[ ,  ]
-13/name="Inner_Derecha_Arriba"
+12/shape_offset=Vector2( 31.9147, 31.9147 )
+12/shapes=[  ]
+12/one_way_collision_direction=Vector2( 0, 0 )
+12/one_way_collision_max_depth=0.0
+13/name="Unico"
 13/texture=null
 13/tex_offset=Vector2( 0, 0 )
 13/material=null
 13/modulate=Color( 1, 1, 1, 1 )
-13/region=Rect2( 256, 192, 64, 64 )
-13/occluder_offset=Vector2( 32, 32 )
+13/region=Rect2( 192, 64, 64, 64 )
+13/occluder_offset=Vector2( 31.9147, 31.9147 )
 13/occluder=null
-13/navigation_offset=Vector2( 32, 32 )
+13/navigation_offset=Vector2( 31.9147, 31.9147 )
 13/navigation=null
-13/shape_offset=Vector2( 32, 32 )
+13/shape_offset=Vector2( 31.9147, 31.9147 )
 13/shapes=[  ]
-14/name="Inner_Izquierda_Arriba"
+13/one_way_collision_direction=Vector2( 0, 0 )
+13/one_way_collision_max_depth=0.0
+14/name="Rampa1"
 14/texture=null
 14/tex_offset=Vector2( 0, 0 )
 14/material=null
 14/modulate=Color( 1, 1, 1, 1 )
-14/region=Rect2( 192, 192, 64, 64 )
-14/occluder_offset=Vector2( 32, 32 )
+14/region=Rect2( 0, 192, 64, 64 )
+14/occluder_offset=Vector2( 31.9147, 31.9147 )
 14/occluder=null
-14/navigation_offset=Vector2( 32, 32 )
+14/navigation_offset=Vector2( 31.9147, 31.9147 )
 14/navigation=null
-14/shape_offset=Vector2( 32, 32 )
+14/shape_offset=Vector2( 31.9147, 31.9147 )
 14/shapes=[  ]
-15/name="Inner_Izquierda_Abajo"
+14/one_way_collision_direction=Vector2( 0, 0 )
+14/one_way_collision_max_depth=0.0
+15/name="Rampa2"
 15/texture=null
 15/tex_offset=Vector2( 0, 0 )
 15/material=null
 15/modulate=Color( 1, 1, 1, 1 )
-15/region=Rect2( 192, 256, 64, 64 )
-15/occluder_offset=Vector2( 32, 32 )
+15/region=Rect2( 64, 192, 64, 64 )
+15/occluder_offset=Vector2( 31.9147, 31.9147 )
 15/occluder=null
-15/navigation_offset=Vector2( 32, 32 )
+15/navigation_offset=Vector2( 31.9147, 31.9147 )
 15/navigation=null
-15/shape_offset=Vector2( 32, 32 )
+15/shape_offset=Vector2( 31.9147, 31.9147 )
 15/shapes=[  ]
-16/name="Unico"
+15/one_way_collision_direction=Vector2( 0, 0 )
+15/one_way_collision_max_depth=0.0
+16/name="Rampa3"
 16/texture=null
 16/tex_offset=Vector2( 0, 0 )
 16/material=null
 16/modulate=Color( 1, 1, 1, 1 )
-16/region=Rect2( 192, 64, 64, 64 )
-16/occluder_offset=Vector2( 32, 32 )
+16/region=Rect2( 64, 256, 64, 64 )
+16/occluder_offset=Vector2( 31.9147, 31.9147 )
 16/occluder=null
-16/navigation_offset=Vector2( 32, 32 )
+16/navigation_offset=Vector2( 31.9147, 31.9147 )
 16/navigation=null
-16/shape_offset=Vector2( 32, 32 )
+16/shape_offset=Vector2( 31.9147, 31.9147 )
 16/shapes=[  ]
-17/name="Rampa1"
+16/one_way_collision_direction=Vector2( 0, 0 )
+16/one_way_collision_max_depth=0.0
+17/name="Rampa4"
 17/texture=null
 17/tex_offset=Vector2( 0, 0 )
 17/material=null
 17/modulate=Color( 1, 1, 1, 1 )
-17/region=Rect2( 0, 192, 64, 64 )
-17/occluder_offset=Vector2( 32, 32 )
+17/region=Rect2( 0, 256, 64, 64 )
+17/occluder_offset=Vector2( 31.9147, 31.9147 )
 17/occluder=null
-17/navigation_offset=Vector2( 32, 32 )
+17/navigation_offset=Vector2( 31.9147, 31.9147 )
 17/navigation=null
-17/shape_offset=Vector2( 32, 32 )
+17/shape_offset=Vector2( 31.9147, 31.9147 )
 17/shapes=[  ]
-18/name="Rampa2"
+17/one_way_collision_direction=Vector2( 0, 0 )
+17/one_way_collision_max_depth=0.0
+18/name="Tronco_up"
 18/texture=null
 18/tex_offset=Vector2( 0, 0 )
 18/material=null
 18/modulate=Color( 1, 1, 1, 1 )
-18/region=Rect2( 64, 192, 64, 64 )
-18/occluder_offset=Vector2( 32, 32 )
+18/region=Rect2( 256, 64, 64, 64 )
+18/occluder_offset=Vector2( 31.9147, 31.9147 )
 18/occluder=null
-18/navigation_offset=Vector2( 32, 32 )
+18/navigation_offset=Vector2( 31.9147, 31.9147 )
 18/navigation=null
-18/shape_offset=Vector2( 32, 32 )
+18/shape_offset=Vector2( 31.9147, 31.9147 )
 18/shapes=[  ]
-19/name="Rampa3"
+18/one_way_collision_direction=Vector2( 0, 0 )
+18/one_way_collision_max_depth=0.0
+19/name="Tronco_down"
 19/texture=null
 19/tex_offset=Vector2( 0, 0 )
 19/material=null
 19/modulate=Color( 1, 1, 1, 1 )
-19/region=Rect2( 64, 256, 64, 64 )
+19/region=Rect2( 256, 128, 64, 64 )
 19/occluder_offset=Vector2( 32, 32 )
 19/occluder=null
 19/navigation_offset=Vector2( 32, 32 )
 19/navigation=null
-19/shape_offset=Vector2( 32, 32 )
+19/shape_offset=Vector2( 0, 0 )
 19/shapes=[  ]
-20/name="Rampa4"
+19/one_way_collision_direction=Vector2( 0, 0 )
+19/one_way_collision_max_depth=0.0
+20/name="Cochinada"
 20/texture=null
 20/tex_offset=Vector2( 0, 0 )
 20/material=null
 20/modulate=Color( 1, 1, 1, 1 )
-20/region=Rect2( 0, 256, 64, 64 )
+20/region=Rect2( 192, 320, 64, 64 )
 20/occluder_offset=Vector2( 32, 32 )
 20/occluder=null
 20/navigation_offset=Vector2( 32, 32 )
 20/navigation=null
-20/shape_offset=Vector2( 32, 32 )
+20/shape_offset=Vector2( 0, 0 )
 20/shapes=[  ]
+20/one_way_collision_direction=Vector2( 0, 0 )
+20/one_way_collision_max_depth=0.0
+21/name="Cochinada_left"
+21/texture=null
+21/tex_offset=Vector2( 0, 0 )
+21/material=null
+21/modulate=Color( 1, 1, 1, 1 )
+21/region=Rect2( 128, 320, 64, 64 )
+21/occluder_offset=Vector2( 32, 32 )
+21/occluder=null
+21/navigation_offset=Vector2( 32, 32 )
+21/navigation=null
+21/shape_offset=Vector2( 0, 0 )
+21/shapes=[  ]
+21/one_way_collision_direction=Vector2( 0, 0 )
+21/one_way_collision_max_depth=0.0
+22/name="Cochinada_right"
+22/texture=null
+22/tex_offset=Vector2( 0, 0 )
+22/material=null
+22/modulate=Color( 1, 1, 1, 1 )
+22/region=Rect2( 256, 320, 64, 64 )
+22/occluder_offset=Vector2( 32, 32 )
+22/occluder=null
+22/navigation_offset=Vector2( 32, 32 )
+22/navigation=null
+22/shape_offset=Vector2( 0, 0 )
+22/shapes=[  ]
+22/one_way_collision_direction=Vector2( 0, 0 )
+22/one_way_collision_max_depth=0.0
+23/name="Cochinada_single"
+23/texture=null
+23/tex_offset=Vector2( 0, 0 )
+23/material=null
+23/modulate=Color( 1, 1, 1, 1 )
+23/region=Rect2( 64, 320, 64, 64 )
+23/occluder_offset=Vector2( 32, 32 )
+23/occluder=null
+23/navigation_offset=Vector2( 32, 32 )
+23/navigation=null
+23/shape_offset=Vector2( 0, 0 )
+23/shapes=[  ]
+23/one_way_collision_direction=Vector2( 0, 0 )
+23/one_way_collision_max_depth=0.0
+24/name="Cochinada_alone"
+24/texture=null
+24/tex_offset=Vector2( 0, 0 )
+24/material=null
+24/modulate=Color( 1, 1, 1, 1 )
+24/region=Rect2( 0, 320, 64, 64 )
+24/occluder_offset=Vector2( 32, 32 )
+24/occluder=null
+24/navigation_offset=Vector2( 32, 32 )
+24/navigation=null
+24/shape_offset=Vector2( 0, 0 )
+24/shapes=[  ]
+24/one_way_collision_direction=Vector2( 0, 0 )
+24/one_way_collision_max_depth=0.0
+25/name="Tocon_up"
+25/texture=null
+25/tex_offset=Vector2( 0, 0 )
+25/material=null
+25/modulate=Color( 1, 1, 1, 1 )
+25/region=Rect2( 64, 384, 64, 64 )
+25/occluder_offset=Vector2( 29, 32 )
+25/occluder=null
+25/navigation_offset=Vector2( 29, 32 )
+25/navigation=null
+25/shape_offset=Vector2( 29, 32 )
+25/shapes=[  ]
+25/one_way_collision_direction=Vector2( 0, 0 )
+25/one_way_collision_max_depth=0.0
+26/name="Tocon_down"
+26/texture=null
+26/tex_offset=Vector2( 0, 0 )
+26/material=null
+26/modulate=Color( 1, 1, 1, 1 )
+26/region=Rect2( 64, 448, 64, 64 )
+26/occluder_offset=Vector2( 32, 32 )
+26/occluder=null
+26/navigation_offset=Vector2( 32, 32 )
+26/navigation=null
+26/shape_offset=Vector2( 0, 0 )
+26/shapes=[  ]
+26/one_way_collision_direction=Vector2( 0, 0 )
+26/one_way_collision_max_depth=0.0
+27/name="Tocon2_up"
+27/texture=null
+27/tex_offset=Vector2( 0, 0 )
+27/material=null
+27/modulate=Color( 1, 1, 1, 1 )
+27/region=Rect2( 0, 384, 64, 64 )
+27/occluder_offset=Vector2( 29, 32 )
+27/occluder=null
+27/navigation_offset=Vector2( 29, 32 )
+27/navigation=null
+27/shape_offset=Vector2( 29, 32 )
+27/shapes=[ ,  ]
+27/one_way_collision_direction=Vector2( 0, 0 )
+27/one_way_collision_max_depth=0.0
+28/name="Tocon2_down"
+28/texture=null
+28/tex_offset=Vector2( 0, 0 )
+28/material=null
+28/modulate=Color( 1, 1, 1, 1 )
+28/region=Rect2( 0, 448, 64, 64 )
+28/occluder_offset=Vector2( 32, 32 )
+28/occluder=null
+28/navigation_offset=Vector2( 32, 32 )
+28/navigation=null
+28/shape_offset=Vector2( 0, 0 )
+28/shapes=[  ]
+28/one_way_collision_direction=Vector2( 0, 0 )
+28/one_way_collision_max_depth=0.0
+29/name="Tronco_largo_up"
+29/texture=null
+29/tex_offset=Vector2( 0, 0 )
+29/material=null
+29/modulate=Color( 1, 1, 1, 1 )
+29/region=Rect2( 192, 384, 64, 64 )
+29/occluder_offset=Vector2( 29, 32 )
+29/occluder=null
+29/navigation_offset=Vector2( 29, 32 )
+29/navigation=null
+29/shape_offset=Vector2( 29, 32 )
+29/shapes=[ ,  ]
+29/one_way_collision_direction=Vector2( 0, 0 )
+29/one_way_collision_max_depth=0.0
+30/name="Tronco_largo_init"
+30/texture=null
+30/tex_offset=Vector2( 0, 0 )
+30/material=null
+30/modulate=Color( 1, 1, 1, 1 )
+30/region=Rect2( 256, 384, 64, 64 )
+30/occluder_offset=Vector2( 29, 32 )
+30/occluder=null
+30/navigation_offset=Vector2( 29, 32 )
+30/navigation=null
+30/shape_offset=Vector2( 29, 32 )
+30/shapes=[ ,  ]
+30/one_way_collision_direction=Vector2( 0, 0 )
+30/one_way_collision_max_depth=0.0
+31/name="Tronco_largo_tiling"
+31/texture=null
+31/tex_offset=Vector2( 0, 0 )
+31/material=null
+31/modulate=Color( 1, 1, 1, 1 )
+31/region=Rect2( 0, 512, 64, 64 )
+31/occluder_offset=Vector2( 29, 32 )
+31/occluder=null
+31/navigation_offset=Vector2( 29, 32 )
+31/navigation=null
+31/shape_offset=Vector2( 29, 32 )
+31/shapes=[  ]
+31/one_way_collision_direction=Vector2( 0, 0 )
+31/one_way_collision_max_depth=0.0
+32/name="Tronco_largo_end"
+32/texture=null
+32/tex_offset=Vector2( 0, 0 )
+32/material=null
+32/modulate=Color( 1, 1, 1, 1 )
+32/region=Rect2( 64, 512, 64, 64 )
+32/occluder_offset=Vector2( 29, 32 )
+32/occluder=null
+32/navigation_offset=Vector2( 29, 32 )
+32/navigation=null
+32/shape_offset=Vector2( 29, 32 )
+32/shapes=[  ]
+32/one_way_collision_direction=Vector2( 0, 0 )
+32/one_way_collision_max_depth=0.0
+33/name="Tronco_rama_right"
+33/texture=null
+33/tex_offset=Vector2( 0, 0 )
+33/material=null
+33/modulate=Color( 1, 1, 1, 1 )
+33/region=Rect2( 128, 512, 64, 64 )
+33/occluder_offset=Vector2( 29, 32 )
+33/occluder=null
+33/navigation_offset=Vector2( 29, 32 )
+33/navigation=null
+33/shape_offset=Vector2( 29, 32 )
+33/shapes=[ , , ,  ]
+33/one_way_collision_direction=Vector2( 0, 0 )
+33/one_way_collision_max_depth=0.0
+34/name="Rama_right1"
+34/texture=null
+34/tex_offset=Vector2( 0, 0 )
+34/material=null
+34/modulate=Color( 1, 1, 1, 1 )
+34/region=Rect2( 192, 512, 64, 64 )
+34/occluder_offset=Vector2( 32, 32 )
+34/occluder=null
+34/navigation_offset=Vector2( 32, 32 )
+34/navigation=null
+34/shape_offset=Vector2( 32, 32 )
+34/shapes=[  ]
+34/one_way_collision_direction=Vector2( 0, 0 )
+34/one_way_collision_max_depth=0.0
+35/name="Tronco_rama_left"
+35/texture=null
+35/tex_offset=Vector2( 0, 0 )
+35/material=null
+35/modulate=Color( 1, 1, 1, 1 )
+35/region=Rect2( 256, 512, 64, 64 )
+35/occluder_offset=Vector2( 29, 32 )
+35/occluder=null
+35/navigation_offset=Vector2( 29, 32 )
+35/navigation=null
+35/shape_offset=Vector2( 29, 32 )
+35/shapes=[ , , ,  ]
+35/one_way_collision_direction=Vector2( 0, 0 )
+35/one_way_collision_max_depth=0.0
+36/name="Rama_right2"
+36/texture=null
+36/tex_offset=Vector2( 0, 0 )
+36/material=null
+36/modulate=Color( 1, 1, 1, 1 )
+36/region=Rect2( 256, 448, 64, 64 )
+36/occluder_offset=Vector2( 32, 32 )
+36/occluder=null
+36/navigation_offset=Vector2( 32, 32 )
+36/navigation=null
+36/shape_offset=Vector2( 32, 32 )
+36/shapes=[  ]
+36/one_way_collision_direction=Vector2( 0, 0 )
+36/one_way_collision_max_depth=0.0
+37/name="Rama_1"
+37/texture=null
+37/tex_offset=Vector2( 0, 0 )
+37/material=null
+37/modulate=Color( 1, 1, 1, 1 )
+37/region=Rect2( 0, 576, 64, 64 )
+37/occluder_offset=Vector2( 32, 32 )
+37/occluder=null
+37/navigation_offset=Vector2( 32, 32 )
+37/navigation=null
+37/shape_offset=Vector2( 32, 32 )
+37/shapes=[  ]
+37/one_way_collision_direction=Vector2( 0, 0 )
+37/one_way_collision_max_depth=0.0
+38/name="Rama_end_right"
+38/texture=null
+38/tex_offset=Vector2( 0, 0 )
+38/material=null
+38/modulate=Color( 1, 1, 1, 1 )
+38/region=Rect2( 192, 512, 64, 64 )
+38/occluder_offset=Vector2( 29, 32 )
+38/occluder=null
+38/navigation_offset=Vector2( 29, 32 )
+38/navigation=null
+38/shape_offset=Vector2( 29, 32 )
+38/shapes=[  ]
+38/one_way_collision_direction=Vector2( 0, 0 )
+38/one_way_collision_max_depth=0.0
+39/name="Rama_end_left"
+39/texture=null
+39/tex_offset=Vector2( 0, 0 )
+39/material=null
+39/modulate=Color( 1, 1, 1, 1 )
+39/region=Rect2( 256, 448, 64, 64 )
+39/occluder_offset=Vector2( 29, 32 )
+39/occluder=null
+39/navigation_offset=Vector2( 29, 32 )
+39/navigation=null
+39/shape_offset=Vector2( 29, 32 )
+39/shapes=[  ]
+39/one_way_collision_direction=Vector2( 0, 0 )
+39/one_way_collision_max_depth=0.0
+40/name="Rama"
+40/texture=null
+40/tex_offset=Vector2( 0, 0 )
+40/material=null
+40/modulate=Color( 1, 1, 1, 1 )
+40/region=Rect2( 0, 576, 64, 64 )
+40/occluder_offset=Vector2( 29, 32 )
+40/occluder=null
+40/navigation_offset=Vector2( 29, 32 )
+40/navigation=null
+40/shape_offset=Vector2( 29, 32 )
+40/shapes=[  ]
+40/one_way_collision_direction=Vector2( 0, -1 )
+40/one_way_collision_max_depth=50000.0
+41/name="Tronco_rama_doble"
+41/texture=null
+41/tex_offset=Vector2( 0, 0 )
+41/material=null
+41/modulate=Color( 1, 1, 1, 1 )
+41/region=Rect2( 64, 576, 64, 64 )
+41/occluder_offset=Vector2( 29, 32 )
+41/occluder=null
+41/navigation_offset=Vector2( 29, 32 )
+41/navigation=null
+41/shape_offset=Vector2( 29, 32 )
+41/shapes=[ , , , , ,  ]
+41/one_way_collision_direction=Vector2( 0, 0 )
+41/one_way_collision_max_depth=0.0
