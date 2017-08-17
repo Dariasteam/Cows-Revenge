@@ -219,11 +219,9 @@ func _input(ev):
 	
 	# Agacharse
 	if (ev.is_action_pressed("ui_down")):
-		get_node("Collision_Normal").set_trigger(true)
-		get_node("Collision_Agachado").set_trigger(false)
+		set_collision_mask_bit(11, 0)
 	elif (ev.is_action_released("ui_down")):
-		get_node("Collision_Normal").set_trigger(false)
-		get_node("Collision_Agachado").set_trigger(true)
+		set_collision_mask_bit(11, 1)
 		
 	# Saltar
 	if (ev.is_action_pressed("ui_jump")):
