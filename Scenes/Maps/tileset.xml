@@ -722,7 +722,7 @@
 			<resource  resource_type="Shape2D" path="local://39">  </resource>
 		</array>
 		<vector2 name="37/one_way_collision_direction"> 0, 1 </vector2>
-		<real name="37/one_way_collision_max_depth"> 20 </real>
+		<real name="37/one_way_collision_max_depth"> 1 </real>
 		<string name="38/name"> "Tronco_rama_doble" </string>
 		<resource name="38/texture" external="0">  </resource>
 		<vector2 name="38/tex_offset"> 0, 0 </vector2>
@@ -745,7 +745,7 @@
 		<resource name="39/texture" external="0">  </resource>
 		<vector2 name="39/tex_offset"> 0, 0 </vector2>
 		<resource name="39/material"></resource>		<color name="39/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="39/region"> 128, 576, 64, 64 </rect2>
+		<rect2 name="39/region"> 0, 640, 64, 64 </rect2>
 		<vector2 name="39/occluder_offset"> 32, 32 </vector2>
 		<resource name="39/occluder"></resource>		<vector2 name="39/navigation_offset"> 32, 32 </vector2>
 		<resource name="39/navigation"></resource>		<vector2 name="39/shape_offset"> 0, 0 </vector2>
@@ -757,7 +757,7 @@
 		<resource name="40/texture" external="0">  </resource>
 		<vector2 name="40/tex_offset"> 0, 0 </vector2>
 		<resource name="40/material"></resource>		<color name="40/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="40/region"> 192, 576, 64, 64 </rect2>
+		<rect2 name="40/region"> 64, 640, 64, 64 </rect2>
 		<vector2 name="40/occluder_offset"> 32, 32 </vector2>
 		<resource name="40/occluder"></resource>		<vector2 name="40/navigation_offset"> 32, 32 </vector2>
 		<resource name="40/navigation"></resource>		<vector2 name="40/shape_offset"> 0, 0 </vector2>
@@ -769,7 +769,7 @@
 		<resource name="41/texture" external="0">  </resource>
 		<vector2 name="41/tex_offset"> 0, 0 </vector2>
 		<resource name="41/material"></resource>		<color name="41/modulate"> 1, 1, 1, 1 </color>
-		<rect2 name="41/region"> 256, 576, 64, 64 </rect2>
+		<rect2 name="41/region"> 128, 640, 64, 64 </rect2>
 		<vector2 name="41/occluder_offset"> 32, 32 </vector2>
 		<resource name="41/occluder"></resource>		<vector2 name="41/navigation_offset"> 32, 32 </vector2>
 		<resource name="41/navigation"></resource>		<vector2 name="41/shape_offset"> 0, 0 </vector2>
@@ -777,6 +777,66 @@
 		</array>
 		<vector2 name="41/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="41/one_way_collision_max_depth"> 0 </real>
+		<string name="42/name"> "hoja_4" </string>
+		<resource name="42/texture" external="0">  </resource>
+		<vector2 name="42/tex_offset"> 0, 0 </vector2>
+		<resource name="42/material"></resource>		<color name="42/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="42/region"> 0, 704, 64, 64 </rect2>
+		<vector2 name="42/occluder_offset"> 32, 32 </vector2>
+		<resource name="42/occluder"></resource>		<vector2 name="42/navigation_offset"> 32, 32 </vector2>
+		<resource name="42/navigation"></resource>		<vector2 name="42/shape_offset"> 0, 0 </vector2>
+		<array name="42/shapes" len="0" shared="false">
+		</array>
+		<vector2 name="42/one_way_collision_direction"> 0, 0 </vector2>
+		<real name="42/one_way_collision_max_depth"> 0 </real>
+		<string name="43/name"> "hoja_5" </string>
+		<resource name="43/texture" external="0">  </resource>
+		<vector2 name="43/tex_offset"> 0, 0 </vector2>
+		<resource name="43/material"></resource>		<color name="43/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="43/region"> 64, 704, 64, 64 </rect2>
+		<vector2 name="43/occluder_offset"> 32, 32 </vector2>
+		<resource name="43/occluder"></resource>		<vector2 name="43/navigation_offset"> 32, 32 </vector2>
+		<resource name="43/navigation"></resource>		<vector2 name="43/shape_offset"> 0, 0 </vector2>
+		<array name="43/shapes" len="0" shared="false">
+		</array>
+		<vector2 name="43/one_way_collision_direction"> 0, 0 </vector2>
+		<real name="43/one_way_collision_max_depth"> 0 </real>
+		<string name="44/name"> "hoja_6" </string>
+		<resource name="44/texture" external="0">  </resource>
+		<vector2 name="44/tex_offset"> 0, 0 </vector2>
+		<resource name="44/material"></resource>		<color name="44/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="44/region"> 128, 704, 64, 64 </rect2>
+		<vector2 name="44/occluder_offset"> 32, 32 </vector2>
+		<resource name="44/occluder"></resource>		<vector2 name="44/navigation_offset"> 32, 32 </vector2>
+		<resource name="44/navigation"></resource>		<vector2 name="44/shape_offset"> 0, 0 </vector2>
+		<array name="44/shapes" len="0" shared="false">
+		</array>
+		<vector2 name="44/one_way_collision_direction"> 0, 0 </vector2>
+		<real name="44/one_way_collision_max_depth"> 0 </real>
+		<string name="45/name"> "hoja_7" </string>
+		<resource name="45/texture" external="0">  </resource>
+		<vector2 name="45/tex_offset"> 0, 0 </vector2>
+		<resource name="45/material"></resource>		<color name="45/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="45/region"> 192, 704, 64, 64 </rect2>
+		<vector2 name="45/occluder_offset"> 32, 32 </vector2>
+		<resource name="45/occluder"></resource>		<vector2 name="45/navigation_offset"> 32, 32 </vector2>
+		<resource name="45/navigation"></resource>		<vector2 name="45/shape_offset"> 0, 0 </vector2>
+		<array name="45/shapes" len="0" shared="false">
+		</array>
+		<vector2 name="45/one_way_collision_direction"> 0, 0 </vector2>
+		<real name="45/one_way_collision_max_depth"> 0 </real>
+		<string name="46/name"> "hoja_8" </string>
+		<resource name="46/texture" external="0">  </resource>
+		<vector2 name="46/tex_offset"> 0, 0 </vector2>
+		<resource name="46/material"></resource>		<color name="46/modulate"> 1, 1, 1, 1 </color>
+		<rect2 name="46/region"> 256, 576, 64, 64 </rect2>
+		<vector2 name="46/occluder_offset"> 32, 32 </vector2>
+		<resource name="46/occluder"></resource>		<vector2 name="46/navigation_offset"> 32, 32 </vector2>
+		<resource name="46/navigation"></resource>		<vector2 name="46/shape_offset"> 0, 0 </vector2>
+		<array name="46/shapes" len="0" shared="false">
+		</array>
+		<vector2 name="46/one_way_collision_direction"> 0, 0 </vector2>
+		<real name="46/one_way_collision_max_depth"> 0 </real>
 
 	</main_resource>
 </resource_file>

@@ -120,14 +120,13 @@ func _fixed_process(delta):
 	velocity.y += delta * GRAVITY
 	
 	# Salto
-	if (can_jump and jump_key_pressed):		
+	if (can_jump and jump_key_pressed):
 		velocity.y = - JUMP_SPEED
 		jumping = true
 		jump_time = MAX_JUMP_TIME
 		can_jump = false
 	if (jumping and can_jump_more() and jump_key_pressed):		
-		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
-		jumping = true	
+		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20		
 	
 	# Movimiento horizontal	
 	if (!right and !left):
@@ -153,19 +152,21 @@ func _fixed_process(delta):
 	if (is_colliding()):
 		var normal = get_collision_normal()
 		if (normal.y < -0.35):
-			# Está en el suelo
+			# Está en el suelo			
+			if (!jumping):
+				can_jump = true
 			jumping = false
-			can_jump = true
 			motion.y = 0
 			if (normal.y > -0.9):
 				motion.x += motion.x * (-normal.y)
 			motion = normal.slide(motion)
-			velocity.y = 0
+			
 		else:			
-			# Está chocándose contra techo o apred
+			# Está chocándose contra techo o pared			
 			can_jump = false
 			motion = normal.slide(motion)
 			jump_time = 0
+		velocity.y = 0
 		move(motion)
 	else:		
 		can_jump = false
@@ -219,8 +220,12 @@ func _input(ev):
 	
 	# Agacharse
 	if (ev.is_action_pressed("ui_down")):
+		get_node("Collision_Agachado").set_trigger(false)
+		get_node("Collision_Normal").set_trigger(true)
 		set_collision_mask_bit(11, 0)
 	elif (ev.is_action_released("ui_down")):
+		get_node("Collision_Normal").set_trigger(false)
+		get_node("Collision_Agachado").set_trigger(true)
 		set_collision_mask_bit(11, 1)
 		
 	# Saltar
