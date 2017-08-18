@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 11.4077, 7.42536, 1.19923, 13.0773, -3.50803, 13.0773 )
@@ -14,7 +14,7 @@ points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 12.363, 15.2052 )
+extents = Vector2( 9.93203, 15.2052 )
 
 [sub_resource type="Animation" id=3]
 
@@ -38,11 +38,11 @@ tracks/0/keys = {
 transform/scale = Vector2( 2, 2 )
 z/relative = false
 input/pickable = true
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.10364, 2.93931, -4.91934 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
-shapes/1/transform = Matrix32( 2.31574, 0, 0, 1.23398, -0.18514, 15.1934 )
+shapes/1/transform = Matrix32( 2.31574, 0, 0, 1.23398, 1.5, 17 )
 shapes/1/trigger = true
 collision/layers = 1057
 collision/mask = 2066
@@ -80,7 +80,7 @@ trigger = false
 
 [node name="Collision_Agachado" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.18514, 15.1934 )
+transform/pos = Vector2( 1.5, 17 )
 transform/scale = Vector2( 2.31574, 1.23398 )
 shape = SubResource( 2 )
 trigger = true
@@ -113,7 +113,7 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="sprite"]
 
-transform/pos = Vector2( -16.1907, 15.3196 )
+transform/pos = Vector2( -16, 16 )
 transform/scale = Vector2( 23.4375, 45.3125 )
 z/relative = false
 offset = Vector2( 0, -80 )
