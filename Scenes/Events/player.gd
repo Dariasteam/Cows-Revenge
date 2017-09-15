@@ -43,7 +43,7 @@ var left = false
 
 var receive_damage = true
 
-export(int) var max_milk = 500
+export(int) var max_milk = 100
 export(int) var milk_level = 0
 
 export(int) var life = 3
@@ -212,7 +212,6 @@ func set_movement_right():
 	sprite.set_flip_h(false)
 
 func _input(ev):
-
 	# Movimiento horizontal	
 	if (ev.is_action_pressed("ui_left")):
 		left = true
@@ -231,9 +230,7 @@ func _input(ev):
 		right = false
 		if (left):
 			set_movement_left()
-	
-	
-	
+
 	if (!right and !left):
 		animation.play("idle")
 	# Arriba

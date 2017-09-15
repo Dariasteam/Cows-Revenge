@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 11.4077, 7.42536, 1.19923, 13.0773, -3.50803, 13.0773 )
@@ -38,7 +38,7 @@ tracks/0/keys = {
 transform/scale = Vector2( 2, 2 )
 z/relative = false
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.10364, 2.93931, -4.91934 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
@@ -52,7 +52,7 @@ JUMP_SPEED = 500
 MAX_JUMP_TIME = 60
 altitude = 0.5
 MAX_WALK_SPEED = 550
-max_milk = 500
+max_milk = 100
 milk_level = 0
 life = 3
 invulneravility_time = 1

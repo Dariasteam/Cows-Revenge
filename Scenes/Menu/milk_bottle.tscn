@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_inner.png" type="Texture" id=2]
+
+[node name="Milk_bottle0" type="TextureProgress"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -10.0
+margin/top = -20.0
+margin/right = 30.0
+margin/bottom = 22.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = ExtResource( 1 )
+texture/progress = ExtResource( 2 )
+mode = 3
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+

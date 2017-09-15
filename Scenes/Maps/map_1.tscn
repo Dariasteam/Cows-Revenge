@@ -58,7 +58,7 @@ tile_data = IntArray( -2031646, 41, -1900576, 41, -1900574, 42, -1900573, 44, -1
 [node name="tile_decorations_base" type="TileMap" parent="."]
 
 transform/scale = Vector2( 2, 2 )
-z/z = 1
+z/z = -1
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 64, 64 )
@@ -98,7 +98,7 @@ tile_data = IntArray( -2490339, 32, -2424804, 32, -2424803, 31, -2424802, 32, -2
 [node name="tile_trees" type="TileMap" parent="."]
 
 transform/scale = Vector2( 2, 2 )
-z/z = 1
+z/z = -1
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 64, 64 )
@@ -120,6 +120,7 @@ tile_data = IntArray( -2097183, 32, -2031647, 38, -1966111, 31, -1900575, 38, -1
 ]]
 
 transform/scale = Vector2( 2, 2 )
+z/z = -2
 mode = 0
 tile_set = ExtResource( 1 )
 cell/size = Vector2( 64, 64 )
@@ -248,7 +249,7 @@ transform/scale = Vector2( 1, 1 )
 transform/pos = Vector2( -3584, -3840 )
 JUMP_SPEED = 600
 MAX_JUMP_TIME = 25
-max_milk = 100
+max_milk = 50
 invulneravility_time = 10
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
