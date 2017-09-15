@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Events/enemy_1.tscn" type="PackedScene" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Sprites/Background/night_outside_b.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Background/night_outside_a.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Events/apple.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Events/death_line.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Music/main_music_loop.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/Events/heart.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Events/death_line.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Music/main_music_loop.ogg" type="AudioStream" id=11]
 
 [node name="Level" type="Node2D"]
 
@@ -32,7 +33,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -1048607, 39 )
+tile_data = IntArray( -1900576, 39, -1900574, 40, -1900572, 41, -1048607, 39 )
 
 [node name="tile_leaves" type="TileMap" parent="."]
 
@@ -246,10 +247,10 @@ transform/scale = Vector2( 1, 1 )
 "player",
 ] instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -3584, -3840 )
+transform/pos = Vector2( -3587, -3840 )
 JUMP_SPEED = 600
 MAX_JUMP_TIME = 25
-max_milk = 50
+max_life = 3
 invulneravility_time = 10
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -447,14 +448,20 @@ amount = 20
 transform/pos = Vector2( 6016, 2304 )
 amount = 500
 
-[node name="death_line" parent="." instance=ExtResource( 9 )]
+[node name="hearts" type="Node2D" parent="."]
+
+[node name="Heart" parent="hearts" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2880, -3680 )
+
+[node name="death_line" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 24192, -384 )
 transform/scale = Vector2( 6889, 1 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 10 )
+stream/stream = ExtResource( 11 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 1.0
