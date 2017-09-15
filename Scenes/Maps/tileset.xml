@@ -667,7 +667,7 @@
 			<resource  resource_type="Shape2D" path="local://33">  </resource>
 		</array>
 		<vector2 name="33/one_way_collision_direction"> 0, 1 </vector2>
-		<real name="33/one_way_collision_max_depth"> 20 </real>
+		<real name="33/one_way_collision_max_depth"> 1 </real>
 		<string name="34/name"> "Tronco_rama_left" </string>
 		<resource name="34/texture" external="0">  </resource>
 		<vector2 name="34/tex_offset"> 0, 0 </vector2>
@@ -682,8 +682,8 @@
 			<resource  resource_type="Shape2D" path="local://36">  </resource>
 			<resource  resource_type="Shape2D" path="local://37">  </resource>
 		</array>
-		<vector2 name="34/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="34/one_way_collision_max_depth"> 0 </real>
+		<vector2 name="34/one_way_collision_direction"> 0, 1 </vector2>
+		<real name="34/one_way_collision_max_depth"> 1 </real>
 		<string name="35/name"> "Rama_end_right" </string>
 		<resource name="35/texture" external="0">  </resource>
 		<vector2 name="35/tex_offset"> 0, 0 </vector2>
@@ -739,8 +739,8 @@
 			<resource  resource_type="Shape2D" path="local://44">  </resource>
 			<resource  resource_type="Shape2D" path="local://45">  </resource>
 		</array>
-		<vector2 name="38/one_way_collision_direction"> 0, 0 </vector2>
-		<real name="38/one_way_collision_max_depth"> 0 </real>
+		<vector2 name="38/one_way_collision_direction"> 0, 1 </vector2>
+		<real name="38/one_way_collision_max_depth"> 1 </real>
 		<string name="39/name"> "hoja_1" </string>
 		<resource name="39/texture" external="0">  </resource>
 		<vector2 name="39/tex_offset"> 0, 0 </vector2>
