@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Sprites/GUI/HUD/milbar_outter_2.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/GUI/HUD/milkbar_inner.png" type="Texture" id=13]
 
 [sub_resource type="Environment" id=1]
 
@@ -272,201 +271,12 @@ visibility_mode = 0
 transform/pos = Vector2( 1205, 73 )
 transform/scale = Vector2( 2, 2 )
 script/script = ExtResource( 9 )
+each_bottle_value = 20.0
+bottle_inter_distance = 32
+initial_bottle_pos = Vector2( -10, -20 )
 sprite1 = ExtResource( 10 )
 sprite2 = ExtResource( 11 )
 sprite3 = ExtResource( 12 )
-
-[node name="Milk_bottle0" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -10.0
-margin/top = -20.0
-margin/right = 30.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle1" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -42.0
-margin/top = -20.0
-margin/right = -2.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle2" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -74.0
-margin/top = -20.0
-margin/right = -34.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle3" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -106.0
-margin/top = -20.0
-margin/right = -66.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle4" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -138.0
-margin/top = -20.0
-margin/right = -98.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle5" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -170.0
-margin/top = -20.0
-margin/right = -130.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle6" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -202.0
-margin/top = -20.0
-margin/right = -162.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
-
-[node name="Milk_bottle7" type="TextureProgress" parent="Control/Milk_Bar"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -234.0
-margin/top = -20.0
-margin/right = -194.0
-margin/bottom = 22.0
-range/min = 0.0
-range/max = 100.0
-range/step = 1.0
-range/page = 0.0
-range/value = 0.0
-range/exp_edit = false
-range/rounded = false
-texture/under = null
-texture/over = ExtResource( 11 )
-texture/progress = ExtResource( 13 )
-mode = 3
-radial_fill/fill_degrees = 360.0
-radial_fill/center_offset = Vector2( 0, 0 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 
