@@ -36,6 +36,7 @@ var velocity = Vector2()
 var final_velocity = Vector2()
 var jump_time = 0
 var jump_key_pressed = false
+var colliding_in_jump = false
 
 var right = false
 var left = false
@@ -116,8 +117,8 @@ func can_jump_more ():
 func _fixed_process(delta):
 	if (jumping):
 		jump_time -= altitude
-
-	velocity.y += delta * GRAVITY
+	
+	velocity.y += delta * GRAVITY	
 	
 	# Salto
 	if (can_jump and jump_key_pressed):
@@ -145,8 +146,12 @@ func _fixed_process(delta):
 			motion.x = 0.15
 		else:
 			motion.x = -0.15
-
-	motion = move(motion)
+			
+	if (!colliding_in_jump):
+		motion = move(motion)
+	else:
+		motion = move(Vector2(0, motion.y))
+		colliding_in_jump = false
 	
 	# Control de colisiones		
 	if (is_colliding()):
@@ -160,16 +165,14 @@ func _fixed_process(delta):
 			if (normal.y > -0.9):
 				motion.x += motion.x * (-normal.y)
 			motion = normal.slide(motion)
-			
-		else:
-			print ("Techo o pared")
+			velocity.y = 0	
+		else:			
 			# Está chocándose contra techo o pared			
 			can_jump = false
-			motion.x = 0
-			velocity.x = 0
+			colliding_in_jump = true
 			motion = normal.slide(motion)
 			jump_time = 0
-		velocity.y = 0
+		
 		move(motion)
 	else:		
 		can_jump = false
@@ -200,7 +203,7 @@ func _input(ev):
 		animation.play("walk")
 		emit_signal("looking_left")
 		velocity.x = -MAX_WALK_SPEED
-		sprite.set_flip_h(true)		
+		sprite.set_flip_h(true)
 	elif (ev.is_action_released("ui_left")):
 		left = false
 		
