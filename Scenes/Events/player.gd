@@ -167,11 +167,15 @@ func _fixed_process(delta):
 			motion = normal.slide(motion)
 			velocity.y = 0	
 		else:			
-			# Está chocándose contra techo o pared			
+			# Está chocándose contra techo o pared						
 			can_jump = false
 			colliding_in_jump = true
 			motion = normal.slide(motion)
 			jump_time = 0
+			# Si está chocando contra el techo hacerlo caer
+			if (normal.y > 0.2):
+				velocity.y = 0
+			
 		
 		move(motion)
 	else:		
