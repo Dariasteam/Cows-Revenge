@@ -128,7 +128,7 @@ func _fixed_process(delta):
 	if (jumping and can_jump_more() and jump_key_pressed):		
 		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20		
 	
-	# Movimiento horizontal	
+	# Movimiento horizontal
 	if (!right and !left):
 		if (velocity.x > SLIDE_LEVEL): 
 			velocity.x -= SLIDE_LEVEL
@@ -161,9 +161,12 @@ func _fixed_process(delta):
 				motion.x += motion.x * (-normal.y)
 			motion = normal.slide(motion)
 			
-		else:			
+		else:
+			print ("Techo o pared")
 			# Está chocándose contra techo o pared			
 			can_jump = false
+			motion.x = 0
+			velocity.x = 0
 			motion = normal.slide(motion)
 			jump_time = 0
 		velocity.y = 0
