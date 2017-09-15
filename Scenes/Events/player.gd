@@ -46,7 +46,8 @@ var receive_damage = true
 export(int) var max_milk = 100
 export(int) var milk_level = 0
 
-export(int) var life = 3
+export(int) var max_life = 3
+onready var life = max_life
 
 export(int) var invulneravility_time = 16
 
@@ -63,6 +64,16 @@ func add_milk(amount):
 	else:
 		milk_level += amount
 	emit_signal("update_milk", get_milk_level());
+
+func can_add_life():
+	if (life < max_life):
+		return true
+	else:
+		return false
+
+func add_life():
+	life += 1
+	emit_signal ("update_life", life)
 
 func get_milk_level():
 	return milk_level

@@ -54,7 +54,7 @@ altitude = 0.5
 MAX_WALK_SPEED = 550
 max_milk = 100
 milk_level = 0
-life = 3
+max_life = 3
 invulneravility_time = 1
 
 [node name="shooter" type="Node2D" parent="."]

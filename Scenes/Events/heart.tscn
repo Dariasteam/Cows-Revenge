@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scenes/Events/heart.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/GUI/HUD/heart_full.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 11.274, 9.08089 )
+
+[node name="Heart" type="Area2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 2.49193, 0, 0, 2.79981, -2.03185, 7.34944 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
+monitorable = false
+collision/layers = 16
+script/script = ExtResource( 1 )
+lifes = 1
+
+[node name="Heart" type="Sprite" parent="."]
+
+transform/pos = Vector2( -2.02597, 7.01037 )
+transform/scale = Vector2( 1.02304, 0.941319 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -2.03185, 7.34944 )
+transform/scale = Vector2( 2.49193, 2.79981 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="." to="." method="_on_Area2D_body_enter"]
+
+
