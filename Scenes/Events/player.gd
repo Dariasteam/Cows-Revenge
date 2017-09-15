@@ -7,7 +7,7 @@ signal set_max_milk
 signal update_life
 signal set_max_life
 
-const GRAVITY = 3500.0
+const GRAVITY = 4000.0
 
 const FLYING_MOVEMENT_SPEED = 1
 export var JUMP_SPEED = 400
@@ -199,26 +199,40 @@ func _ready():
 	set_fixed_process(true)
 	
 
+func set_movement_left ():
+	animation.play("walk")
+	emit_signal("looking_left")
+	velocity.x = -MAX_WALK_SPEED
+	sprite.set_flip_h(true)
+
+func set_movement_right():
+	animation.play("walk")
+	velocity.x =  MAX_WALK_SPEED
+	emit_signal("looking_right")
+	sprite.set_flip_h(false)
+
 func _input(ev):
 
-	# Movimiento horizontal
+	# Movimiento horizontal	
 	if (ev.is_action_pressed("ui_left")):
 		left = true
-		animation.play("walk")
-		emit_signal("looking_left")
-		velocity.x = -MAX_WALK_SPEED
-		sprite.set_flip_h(true)
+		if (!right):
+			set_movement_left()
 	elif (ev.is_action_released("ui_left")):
 		left = false
-		
+		if (right):
+			set_movement_right()
+			
 	if (ev.is_action_pressed("ui_right")):
 		right = true
-		animation.play("walk")
-		velocity.x =  MAX_WALK_SPEED
-		emit_signal("looking_right")
-		sprite.set_flip_h(false)
+		if (!left):
+			set_movement_right()
 	elif (ev.is_action_released("ui_right")):
 		right = false
+		if (left):
+			set_movement_left()
+	
+	
 	
 	if (!right and !left):
 		animation.play("idle")
