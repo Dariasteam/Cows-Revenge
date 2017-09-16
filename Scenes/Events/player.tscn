@@ -33,7 +33,9 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 2, 1 ]
 }
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 
 transform/scale = Vector2( 2, 2 )
 z/relative = false
@@ -48,17 +50,18 @@ collision/layers = 1057
 collision/mask = 2066
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-JUMP_SPEED = 500
-MAX_JUMP_TIME = 60
+JUMP_SPEED = 600
+MAX_JUMP_TIME = 25
 altitude = 0.5
 MAX_WALK_SPEED = 550
 max_milk = 100
 milk_level = 0
-max_life = 3
-invulneravility_time = 1
+max_life = 5
+invulneravility_time = 8
 
 [node name="shooter" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 25.3282, 2.0993 )
 transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )

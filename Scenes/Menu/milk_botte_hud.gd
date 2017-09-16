@@ -1,6 +1,6 @@
 extends Node2D
 
-const MILK_BOTLE = preload("res://Scenes/Menu/milk_bottle_hud.tscn") 
+const MILK_BOTLE_INDICATOR = preload("res://Scenes/Menu/milk_bottle_hud.tscn") 
 
 var max_value
 var n_bottles
@@ -20,7 +20,7 @@ func on_set_max_milk (maxm):
 	n_bottles = maxm / each_bottle_value	
 	var next_bottle_pos = initial_bottle_pos
 	for i in range(0, n_bottles):
-		var next_bottle = MILK_BOTLE.instance()
+		var next_bottle = MILK_BOTLE_INDICATOR.instance()
 		next_bottle.set_pos(next_bottle_pos)
 		add_child(next_bottle)
 		next_bottle_pos.x -= bottle_inter_distance
