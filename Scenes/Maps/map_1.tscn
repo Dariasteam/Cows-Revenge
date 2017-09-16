@@ -247,10 +247,10 @@ transform/scale = Vector2( 1, 1 )
 "player",
 ] instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -3587, -3840 )
+transform/pos = Vector2( -1632, -1376 )
 JUMP_SPEED = 600
 MAX_JUMP_TIME = 25
-max_life = 3
+max_life = 2
 invulneravility_time = 10
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -453,6 +453,26 @@ amount = 500
 [node name="Heart" parent="hearts" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( -2880, -3680 )
+
+[node name="Heart1" parent="hearts" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2112, -2976 )
+
+[node name="Heart2" parent="hearts" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -4032, -2464 )
+
+[node name="Heart3" parent="hearts" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 3776, -4896 )
+
+[node name="Heart4" parent="hearts" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 2880, -2112 )
+
+[node name="Heart5" parent="hearts" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -832, -1600 )
 
 [node name="death_line" parent="." instance=ExtResource( 10 )]
 
