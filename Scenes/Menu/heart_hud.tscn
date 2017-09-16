@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://Sprites/GUI/HUD/heart_full.png" type="Texture" id=1]
+
+[node name="life1" type="Sprite"]
+
+transform/pos = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 180, 140, 145, 150 )
+
+

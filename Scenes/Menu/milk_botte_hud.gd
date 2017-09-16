@@ -1,6 +1,6 @@
 extends Node2D
 
-const MILK_BOTLE = preload("res://Scenes/Menu/milk_bottle.tscn")
+const MILK_BOTLE = preload("res://Scenes/Menu/milk_bottle_hud.tscn") 
 
 var max_value
 var n_bottles
