@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Events/enemy_1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Events/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player_spawner.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Background/night_outside_c.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Background/night_outside_b.png" type="Texture" id=6]
@@ -243,18 +243,14 @@ transform/scale = Vector2( 1, 1 )
 transform/pos = Vector2( 928, -448 )
 transform/scale = Vector2( 1, 1 )
 
-[node name="Player" parent="." groups=[
-"player",
-] instance=ExtResource( 3 )]
+[node name="player_spawner" type="Node2D" parent="."]
 
-transform/pos = Vector2( -1632, -1376 )
-JUMP_SPEED = 600
-MAX_JUMP_TIME = 25
-max_life = 2
-invulneravility_time = 10
+transform/pos = Vector2( -1632, -1728 )
+script/script = ExtResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -449,6 +445,8 @@ transform/pos = Vector2( 6016, 2304 )
 amount = 500
 
 [node name="hearts" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Heart" parent="hearts" instance=ExtResource( 9 )]
 
