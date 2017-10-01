@@ -4,6 +4,8 @@ onready var middle = get_node("middle")
 onready var end = get_node("end")
 onready var origin = get_node("origin")
 
+onready var sound = get_node("sound")
+
 var player
 
 export var damage = 50
@@ -29,12 +31,13 @@ func look_right():
 	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))
 	middle.set_rot(0)
 	
-func enable():
+func enable():	
 	force_raycast_update()
 	end.set_emitting(true)
 	end.get_node("Area2D").enable()
 	origin.set_emitting(true)
 	middle.set_opacity(1)
+	sound.play()
 	set_process(true)
 	
 func disable():
@@ -42,6 +45,7 @@ func disable():
 	end.set_emitting(false)
 	end.get_node("Area2D").disable()
 	middle.set_opacity(0)
+	sound.stop()
 	set_process(false)
 	
 func _process(delta):

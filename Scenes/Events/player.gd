@@ -51,7 +51,6 @@ onready var life = max_life
 
 export(int) var invulneravility_time = 16
 
-
 func is_falling ():
 	return velocity.y > 0
 

@@ -25,8 +25,8 @@ func reverse_direction():
 func _ready():
 	if (!dir_left):
 		reverse_direction()
-	set_fixed_process(true)
-	#set_process(true)
+	#set_fixed_process(true)
+	set_process(true)
 
 func dissapear():
 	sprite.set_opacity(0)
@@ -91,7 +91,7 @@ func change_velocity(amount, right):
 		v.x += ((dir_left * -1) + (!dir_left * 1)) * amount
 	
 
-func _fixed_process(delta):
+func _process(delta):
 	var motion = v * delta
 	motion = move(motion)
 	v.y += delta * GRAVITY

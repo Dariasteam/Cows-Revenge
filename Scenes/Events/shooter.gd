@@ -3,6 +3,8 @@ extends Node2D
 const BULLET = preload("res://Scenes/Events/milk_bullet.tscn")
 export var SHOOT_CADENCE = 0.001
 
+var shooting = false
+
 signal change_milk_bottle
 
 enum WEAPONS {
@@ -30,6 +32,7 @@ func _input(ev):
 		set_process(true)
 	elif (ev.is_action_released("ui_shoot")):
 		instanced_ray.disable()
+		shooting = false
 		set_process(false)
 		
 	# CHANGE WEAPON
@@ -69,10 +72,12 @@ func _process(delta):
 	if (check_can_shoot()):
 		if (weapon == WEAPONS.regular and !recharge):
 			shoot_regular()
-		elif (weapon == WEAPONS.laser):
+		elif (weapon == WEAPONS.laser and !shooting):
 			instanced_ray.enable()
 			shoot_laser()
-	else:		
+			shooting = true
+	else:
+		shooting = false
 		instanced_ray.disable()
 		set_process(false)
 	
