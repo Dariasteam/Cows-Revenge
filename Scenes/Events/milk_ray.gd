@@ -31,7 +31,7 @@ func look_right():
 	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))
 	middle.set_rot(0)
 	
-func enable():	
+func enable():
 	force_raycast_update()
 	end.set_emitting(true)
 	end.get_node("Area2D").enable()

@@ -66,16 +66,17 @@ func shoot_regular():
 	player.decrease_milk(1)
 
 func shoot_laser():
-	player.decrease_milk(0.05)
+	player.decrease_milk(0.1)
 
 func _process(delta):
 	if (check_can_shoot()):
 		if (weapon == WEAPONS.regular and !recharge):
 			shoot_regular()
-		elif (weapon == WEAPONS.laser and !shooting):
-			instanced_ray.enable()
+		elif (weapon == WEAPONS.laser):
 			shoot_laser()
-			shooting = true
+			if (!shooting):
+				shooting = true
+				instanced_ray.enable()
 	else:
 		shooting = false
 		instanced_ray.disable()

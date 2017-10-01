@@ -57,9 +57,8 @@ func on_opacity_high ():
 	sprite.set_modulate(Color("00ffff"))
 
 func play_damage_sound():	
-	var sample_list = sound.get_sample_library().get_sample_list()
+	var sample_list = sound.get_sample_library().get_sample_list()	
 	sound.play(sample_list[rand_range(0, sample_list.size())], 0)
-	print (sample_list[rand_range(0, sample_list.size())])
 
 func decrease_life (value):
 	play_damage_sound()
