@@ -50,7 +50,7 @@ _update_shape_index = 0
 
 config/polyphony = 1
 config/samples = SubResource( 2 )
-default/volume_db = 8.0
+default/volume_db = 7.0
 default/pitch_scale = 1.0
 default/pan = 0.0
 default/depth = 0.0

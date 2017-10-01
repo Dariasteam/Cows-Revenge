@@ -85,11 +85,11 @@ params/anim_initial_pos = 0.0
 params/volume_db = 6.0
 params/pitch_scale = 1.0
 params/attenuation/min_distance = 0.0
-params/attenuation/max_distance = 764.0
+params/attenuation/max_distance = 750.0
 params/attenuation/distance_exp = 2.37841
-config/polyphony = 1
+config/polyphony = 4
 config/samples = SubResource( 2 )
-config/pitch_random = 0.0
+config/pitch_random = 0.135
 
 [connection signal="body_enter" from="." to="." method="_on_RigidBody2D_body_enter"]
 

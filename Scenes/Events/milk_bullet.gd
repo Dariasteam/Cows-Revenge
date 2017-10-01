@@ -22,8 +22,7 @@ func destroy():
 	yield(t, "timeout")
 	queue_free()
 
-func _ready():
-	sound.set_random_pitch_scale(0.2)
+func _ready():	
 	sound.play("bullet_sound")
 	t.set_wait_time(LIFE_TIME)
 	t.set_one_shot(true)
