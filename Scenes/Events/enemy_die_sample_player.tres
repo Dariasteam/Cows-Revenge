@@ -1,0 +1,62 @@
+[gd_resource type="SampleLibrary" load_steps=9 format=1]
+
+[ext_resource path="res://Sound/enemy_die_sound_1.wav" type="Sample" id=1]
+[ext_resource path="res://Sound/enemy_die_sound_2.wav" type="Sample" id=2]
+[ext_resource path="res://Sound/enemy_die_sound_3.wav" type="Sample" id=3]
+[ext_resource path="res://Sound/enemy_die_sound_4.wav" type="Sample" id=4]
+[ext_resource path="res://Sound/enemy_die_sound_5.wav" type="Sample" id=5]
+[ext_resource path="res://Sound/enemy_die_sound_6.wav" type="Sample" id=6]
+[ext_resource path="res://Sound/enemy_die_sound_8.wav" type="Sample" id=7]
+[ext_resource path="res://Sound/enemy_die_sound_9.wav" type="Sample" id=8]
+
+[resource]
+
+samples/enemy_die_sound_1 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/enemy_die_sound_2 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/enemy_die_sound_3 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/enemy_die_sound_4 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/enemy_die_sound_5 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+samples/enemy_die_sound_6 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
+}
+samples/enemy_die_sound_8 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 7 )
+}
+samples/enemy_die_sound_9 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 8 )
+}
+

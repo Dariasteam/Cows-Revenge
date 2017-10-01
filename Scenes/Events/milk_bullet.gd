@@ -23,7 +23,7 @@ func destroy():
 	queue_free()
 
 func _ready():
-	sound.set_default_pitch_scale(rand_range(1,1.2))
+	sound.set_random_pitch_scale(0.2)	
 	sound.play("bullet_sound")
 	t.set_wait_time(LIFE_TIME)
 	t.set_one_shot(true)
@@ -39,4 +39,5 @@ func _on_RigidBody2D_body_enter( body ):
 	elif (end):
 		destroy()
 	
-	
+func _on_RigidBody2D_body_enter_shape( body_id, body, body_shape, local_shape ):
+	sound.play("bullet_sound")

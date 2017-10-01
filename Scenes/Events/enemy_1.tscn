@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Scenes/Events/enemy_1.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Charasets/enemy_1.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Effects/sangre.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Events/enemy_die_sample_player.tres" type="SampleLibrary" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -203,6 +204,17 @@ randomness/direction = 0.29
 randomness/spread = 0.8
 randomness/linear_velocity = 0.45
 color/color_ramp = SubResource( 9 )
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 5.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 2.92817
+config/polyphony = 1
+config/samples = ExtResource( 4 )
+config/pitch_random = 0.135
 
 [connection signal="body_enter" from="area_head" to="." method="_on_area_head_body_enter"]
 
