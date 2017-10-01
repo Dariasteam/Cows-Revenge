@@ -10,14 +10,9 @@ signal set_max_life
 const GRAVITY = 4000.0
 
 const FLYING_MOVEMENT_SPEED = 1
-export var JUMP_SPEED = 400
 const SLIDE_LEVEL = 40
-export(int) var MAX_JUMP_TIME = 20
-
-export var altitude = 0.5
-
-export(int) var MAX_WALK_SPEED = 450
 const WALK_SPEED_INCREMENT = 20
+
 var walk_speed = 0
 
 onready var shooter = get_node("shooter")
@@ -31,6 +26,7 @@ onready var hud_milk = get_tree().get_nodes_in_group("milk_hud")[0]
 onready var hud_life = get_tree().get_nodes_in_group("life_hud")[0]
 
 onready var JUMP_SOUND = ResourceLoader.load("Sound/player_jump_sound.ogg")
+onready var cowbell_collector = get_node("cowbell_collector")
 
 
 var can_jump = true
@@ -46,13 +42,22 @@ var left = false
 
 var receive_damage = true
 
-export(int) var max_milk = 100
-export(int) var milk_level = 0
-
-export(int) var max_life = 3
 onready var life = max_life
 
+export(int) var max_milk = 100
+export(int) var milk_level = 0
+export(int) var max_life = 3
+export(int) var MAX_JUMP_TIME = 20
+export(int) var MAX_WALK_SPEED = 450
 export(int) var invulneravility_time = 16
+
+export var JUMP_SPEED = 400
+export var altitude = 0.5
+export(int) var cowbells_collected = 0
+
+func add_cowbells(var number):
+	cowbells_collected += number
+	return cowbell_collector.play_sound()
 
 func is_falling ():
 	return velocity.y > 0

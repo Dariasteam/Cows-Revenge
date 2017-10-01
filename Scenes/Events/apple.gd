@@ -11,6 +11,7 @@ func _ready():
 func _on_Area2D_body_enter( body ):
 	if(body.is_in_group("player")):
 		body.add_milk(amount)
+		disconnect("body_enter",self,"_on_Area2D_body_enter")
 		sound.play()
 		sprite.set_opacity(0)
 		
