@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Scenes/Events/player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Events/shooter.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Events/ray_milk.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
+[ext_resource path="res://Sound/player_jump_sound.ogg" type="AudioStream" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
@@ -136,6 +137,17 @@ drag_margin/left = 0.05
 drag_margin/top = 0.2
 drag_margin/right = 0.05
 drag_margin/bottom = 0.2
+
+[node name="sound" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 6 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 

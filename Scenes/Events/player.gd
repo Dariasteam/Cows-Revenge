@@ -25,9 +25,12 @@ onready var sprite = get_node("sprite")
 onready var animation = get_node("sprite/animations")
 onready var foots = get_node("foots")
 onready var camera = get_node("sprite/Camera2D")
+onready var sound = get_node("sound")
 
 onready var hud_milk = get_tree().get_nodes_in_group("milk_hud")[0]
 onready var hud_life = get_tree().get_nodes_in_group("life_hud")[0]
+
+onready var JUMP_SOUND = ResourceLoader.load("Sound/player_jump_sound.ogg")
 
 
 var can_jump = true
@@ -123,6 +126,10 @@ func show_damage ():
 
 func can_jump_more ():
 	return jump_time > 0
+	
+func play_sound(stream):
+	sound.set_stream(stream)
+	sound.play()
 
 func _fixed_process(delta):
 	if (jumping):
@@ -132,6 +139,7 @@ func _fixed_process(delta):
 	
 	# Salto
 	if (can_jump and jump_key_pressed):
+		#play_sound(JUMP_SOUND)
 		velocity.y = - JUMP_SPEED
 		jumping = true
 		jump_time = MAX_JUMP_TIME

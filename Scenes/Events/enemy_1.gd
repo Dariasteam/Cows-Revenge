@@ -8,8 +8,8 @@ var v = Vector2(-velocity, 0)
 
 onready var sprite = get_node("sprite")
 onready var area_head = get_node("area_head")
-
 onready var hit_single = get_node("hit_ray_particle")
+onready var sound = get_node("sound")
 
 export(bool) var dir_left = true;
 
@@ -29,6 +29,7 @@ func _ready():
 	set_process(true)
 
 func dissapear():
+	play_damage_sound()
 	sprite.set_opacity(0)
 	set_fixed_process(false)
 	set_layer_mask_bit(2,false)
@@ -55,7 +56,13 @@ func on_opacity_low ():
 func on_opacity_high ():
 	sprite.set_modulate(Color("00ffff"))
 
+func play_damage_sound():	
+	var sample_list = sound.get_sample_library().get_sample_list()
+	sound.play(sample_list[rand_range(0, sample_list.size())], 0)
+	print (sample_list[rand_range(0, sample_list.size())])
+
 func decrease_life (value):
+	play_damage_sound()
 	hit_single.set_emitting(false)
 	hit_single.set_emitting(true)
 	var t1 = Timer.new()
