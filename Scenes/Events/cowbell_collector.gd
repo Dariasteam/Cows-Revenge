@@ -7,11 +7,12 @@ extends Node2D
 onready var timer = get_node("next_cowbell_time")
 
 export(float) var pitch_increment = 0.05
+export(float) var base_pitch = 1.5
 
-var pitch = 1
+var pitch = base_pitch
 
 func timer_timeout():
-	pitch = 1
+	pitch = base_pitch
 
 func play_sound():
 	pitch += pitch_increment
