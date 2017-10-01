@@ -4,6 +4,7 @@ export var LIFE_TIME = 3
 
 onready var trail = get_node("Trail")
 onready var splash = get_node("Splash")
+onready var sound = get_node("Sound")
 
 var t = Timer.new()
 var end = false
@@ -22,6 +23,8 @@ func destroy():
 	queue_free()
 
 func _ready():
+	sound.set_default_pitch_scale(rand_range(1,1.2))
+	sound.play("bullet_sound")
 	t.set_wait_time(LIFE_TIME)
 	t.set_one_shot(true)
 	self.add_child(t)
