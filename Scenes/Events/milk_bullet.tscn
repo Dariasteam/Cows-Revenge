@@ -82,10 +82,10 @@ params/anim_initial_pos = 0.0
 
 [node name="Sound" type="SamplePlayer2D" parent="."]
 
-params/volume_db = 4.0
+params/volume_db = 6.0
 params/pitch_scale = 1.0
 params/attenuation/min_distance = 0.0
-params/attenuation/max_distance = 2048.0
+params/attenuation/max_distance = 764.0
 params/attenuation/distance_exp = 2.37841
 config/polyphony = 1
 config/samples = SubResource( 2 )
