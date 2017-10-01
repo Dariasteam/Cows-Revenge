@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://Scenes/Events/player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Events/shooter.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Events/ray_milk.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
-[ext_resource path="res://Sound/player_jump_sound.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Events/cowbell_collector.gd" type="Script" id=6]
+[ext_resource path="res://Sound/player_jump_sound.ogg" type="AudioStream" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
@@ -51,17 +52,19 @@ collision/layers = 1057
 collision/mask = 2066
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-JUMP_SPEED = 600
-MAX_JUMP_TIME = 25
-altitude = 0.5
-MAX_WALK_SPEED = 550
 max_milk = 100
 milk_level = 0
 max_life = 5
+MAX_JUMP_TIME = 20
+MAX_WALK_SPEED = 450
 invulneravility_time = 8
+JUMP_SPEED = 620
+altitude = 0.5
+cowbells_collected = 0
 
 [node name="shooter" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 25.3282, 2.0993 )
 transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
@@ -97,6 +100,7 @@ transform/scale = Vector2( 0.885237, 0.0763853 )
 
 [node name="sprite" type="Sprite" parent="."]
 
+editor/display_folded = true
 texture = ExtResource( 4 )
 vframes = 6
 hframes = 6
@@ -138,9 +142,22 @@ drag_margin/top = 0.2
 drag_margin/right = 0.05
 drag_margin/bottom = 0.2
 
+[node name="cowbell_collector" type="Node2D" parent="."]
+
+transform/scale = Vector2( 0.5, 0.5 )
+script/script = ExtResource( 6 )
+pitch_increment = 0.05
+
+[node name="next_cowbell_time" type="Timer" parent="cowbell_collector"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
 [node name="sound" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 6 )
+stream/stream = ExtResource( 7 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 10.0

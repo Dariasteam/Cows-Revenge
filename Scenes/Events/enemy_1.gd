@@ -36,7 +36,7 @@ func dissapear():
 	
 	hit_single.set_emitting(true)
 	var t = Timer.new()
-	t.set_wait_time(hit_single.get_lifetime())
+	t.set_wait_time(max(hit_single.get_lifetime(), 1))
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
@@ -57,8 +57,10 @@ func on_opacity_high ():
 	sprite.set_modulate(Color("00ffff"))
 
 func play_damage_sound():	
-	var sample_list = sound.get_sample_library().get_sample_list()	
-	sound.play(sample_list[rand_range(0, sample_list.size())], 0)
+	var sample_list = sound.get_sample_library().get_sample_list()
+	var sample = sample_list[rand_range(0, sample_list.size())]
+	sound.play(sample, 0)
+	
 
 func decrease_life (value):
 	play_damage_sound()

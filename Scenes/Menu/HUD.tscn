@@ -107,6 +107,8 @@ initial_heart_pos = Vector2( 32, 0 )
 "buttons_hud",
 ]]
 
+editor/display_folded = true
+visibility/visible = false
 script/script = ExtResource( 3 )
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
