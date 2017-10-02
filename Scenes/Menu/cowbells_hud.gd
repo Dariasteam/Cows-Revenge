@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 
-onready var label = get_node("LineEdit")
+onready var label = get_node("Counter")
 
 func set_counter (var quantity):
-	label.set_text(String(quantity))
+	label.set_bbcode(" " + String(quantity))

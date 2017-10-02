@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://Scenes/Menu/game_over.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Cave-Story.fnt" type="BitmapFont" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,6 +17,7 @@ margin/left = 64.0
 margin/top = 256.0
 margin/right = 1152.0
 margin/bottom = 448.0
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -32,22 +34,25 @@ margin/left = 64.0
 margin/top = 512.0
 margin/right = 1152.0
 margin/bottom = 704.0
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Ir al menú principal"
+text = "Ir al menu principal"
 flat = false
 
 [node name="Label" type="Label" parent="."]
 
+rect/scale = Vector2( 3, 3 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 576.0
-margin/top = 64.0
-margin/right = 704.0
-margin/bottom = 192.0
+margin/left = 275.0
+margin/top = -55.0
+margin/right = 520.0
+margin/bottom = 73.0
+custom_fonts/font = ExtResource( 2 )
 text = "Game over"
 valign = 1
 autowrap = true
