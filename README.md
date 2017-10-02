@@ -7,8 +7,8 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 ## Authors
   - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), dariasteam94@gmail.com
       Code, music, sprites
-  - **Yanara** [instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
-        Sprites
+  - **Yanara Carrasco Aristiguieta**[instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
+      Sprites
 
 ## Screenshots
 
