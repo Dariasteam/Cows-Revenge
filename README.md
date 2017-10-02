@@ -20,3 +20,6 @@ All resources have been created using the following FLOSS:
 - [krita](https://krita.org/en/)
 - [audacity](http://www.audacityteam.org/)
 - tuxguitar
+
+Font: [Cave Story-Regular by enigmansmp1824 
+(CC-BY-SA)](https://fontlibrary.org/en/font/cave-story#Cave%20Story-Regular)

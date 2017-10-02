@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Menu/bttn_play.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Menu/about_button.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/Cave-Story.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Scenes/Menu/bttn_play.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Menu/about_button.gd" type="Script" id=4]
+[ext_resource path="res://Music/dangerous_hills.ogg" type="AudioStream" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,7 +13,7 @@ transform/scale = Vector2( 20, 12 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0.399999, -14.1438 )
+transform/pos = Vector2( 0.392651, -18.6599 )
 transform/scale = Vector2( 0.0656018, 0.0941569 )
 texture = ExtResource( 1 )
 
@@ -19,21 +21,23 @@ texture = ExtResource( 1 )
 
 anchor/top = 3
 anchor/bottom = 3
-rect/scale = Vector2( 0.75, 0.25 )
+rect/rotation = 0.0736967
+rect/scale = Vector2( 0.1, 0.15 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -16.0
-margin/top = 30.0
-margin/right = 27.0
-margin/bottom = 10.0
+margin/left = -14.0
+margin/top = 34.0
+margin/right = 276.0
+margin/bottom = -14.0
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Jugar"
 flat = false
-script/script = ExtResource( 2 )
+script/script = ExtResource( 3 )
 
 [node name="settings_button" type="Button" parent="."]
 
@@ -41,21 +45,21 @@ anchor/left = 3
 anchor/top = 3
 anchor/right = 3
 anchor/bottom = 3
-rect/scale = Vector2( 0.75, 0.25 )
+rect/scale = Vector2( 0.1, 0.15 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 48.0
-margin/top = 22.0
-margin/right = 5.0
-margin/bottom = 2.0
+margin/left = 46.0
+margin/top = 25.0
+margin/right = -243.0
+margin/bottom = -23.0
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Ajustes"
 flat = false
-clip_text = true
 
 [node name="info_button" type="Button" parent="."]
 
@@ -63,22 +67,33 @@ anchor/left = 3
 anchor/top = 3
 anchor/right = 3
 anchor/bottom = 3
-rect/scale = Vector2( 0.75, 0.25 )
+rect/scale = Vector2( 0.1, 0.15 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 48.0
-margin/top = 14.0
-margin/right = 5.0
-margin/bottom = -6.0
+margin/left = 46.0
+margin/top = 16.0
+margin/right = -243.0
+margin/bottom = -32.0
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Info"
 flat = false
-clip_text = true
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 5 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 5.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="pressed" from="play_button" to="play_button" method="_on_Button_pressed"]
 

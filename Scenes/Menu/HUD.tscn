@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=2]
@@ -12,7 +12,8 @@
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Menu/cowbells_hud.gd" type="Script" id=12]
-[ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=13]
+[ext_resource path="res://Fonts/Cave-Story.fnt" type="BitmapFont" id=13]
+[ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=14]
 
 [sub_resource type="Environment" id=1]
 
@@ -277,11 +278,12 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 630.0
-margin/top = 9.0
-margin/right = 715.0
-margin/bottom = 81.0
-placeholder/text = "1"
+margin/left = 629.0
+margin/top = 18.0
+margin/right = 831.0
+margin/bottom = 70.0
+custom_fonts/font = ExtResource( 13 )
+placeholder/text = "0"
 placeholder/alpha = 1.0
 editable = false
 focus_mode = 2
@@ -292,7 +294,7 @@ caret/caret_blink_speed = 0.65
 
 transform/pos = Vector2( 586, 45 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 
