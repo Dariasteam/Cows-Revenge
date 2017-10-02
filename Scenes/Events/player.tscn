@@ -8,12 +8,12 @@
 [ext_resource path="res://Scenes/Events/cowbell_collector.gd" type="Script" id=6]
 [ext_resource path="res://Sound/player_jump_sound.ogg" type="AudioStream" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -13.2061, 7.63341, -13.1494, -10.328, 11.2943, -10.3627, 11.4077, 7.42536, 1.19923, 13.0773, -3.50803, 13.0773 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -2.43698, 6.86286, -10.0513, 0.602652, -10.0513, -10.186, 9.7198, -10, 9.7198, 0.41664, 1.64128, 6.92704 )
@@ -42,10 +42,10 @@ tracks/0/keys = {
 transform/scale = Vector2( 2, 2 )
 z/relative = false
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.10364, 2.93931, -4.91934 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 5 )
+shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 2.35192, 0, 0, 2.68801, 1.63985, 16.8801 )
 shapes/1/trigger = true
 collision/layers = 1057
@@ -56,7 +56,7 @@ max_milk = 100
 milk_level = 0
 max_life = 5
 MAX_JUMP_TIME = 20
-MAX_WALK_SPEED = 450
+MAX_WALK_SPEED = 500
 invulneravility_time = 8
 JUMP_SPEED = 620
 altitude = 0.5

@@ -16,8 +16,6 @@ func timer_timeout():
 
 func play_sound():
 	pitch += pitch_increment
-	print ("sound ", pitch)
-	
 	timer.start()
 	return pitch
 

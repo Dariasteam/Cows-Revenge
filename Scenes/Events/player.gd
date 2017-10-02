@@ -24,6 +24,7 @@ onready var sound = get_node("sound")
 
 onready var hud_milk = get_tree().get_nodes_in_group("milk_hud")[0]
 onready var hud_life = get_tree().get_nodes_in_group("life_hud")[0]
+onready var hud_cowbell = get_tree().get_nodes_in_group("cowbell_hud")[0]
 
 onready var JUMP_SOUND = ResourceLoader.load("Sound/player_jump_sound.ogg")
 onready var cowbell_collector = get_node("cowbell_collector")
@@ -57,6 +58,7 @@ export(int) var cowbells_collected = 0
 
 func add_cowbells(var number):
 	cowbells_collected += number
+	hud_cowbell.set_counter (cowbells_collected)
 	return cowbell_collector.play_sound()
 
 func is_falling ():
