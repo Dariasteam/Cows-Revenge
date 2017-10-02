@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Sprites/GUI/HUD/milbar_outter_2.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Menu/cowbells_hud.gd" type="Script" id=12]
+[ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=13]
 
 [sub_resource type="Environment" id=1]
 
@@ -77,6 +79,7 @@ margin/bottom = 768.0
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
+editor/display_folded = true
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = false
 world = SubResource( 2 )
@@ -261,6 +264,35 @@ initial_bottle_pos = Vector2( -10, -20 )
 sprite1 = ExtResource( 9 )
 sprite2 = ExtResource( 10 )
 sprite3 = ExtResource( 11 )
+
+[node name="Cowbells" type="Node2D" parent="Control" groups=[
+"cowbell_hud",
+]]
+
+script/script = ExtResource( 12 )
+
+[node name="LineEdit" type="LineEdit" parent="Control/Cowbells"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 630.0
+margin/top = 9.0
+margin/right = 715.0
+margin/bottom = 81.0
+placeholder/text = "1"
+placeholder/alpha = 1.0
+editable = false
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="Sprite" type="Sprite" parent="Control/Cowbells"]
+
+transform/pos = Vector2( 586, 45 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 
