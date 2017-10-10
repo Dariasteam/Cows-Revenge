@@ -112,6 +112,7 @@ initial_heart_pos = Vector2( 32, 0 )
 ]]
 
 editor/display_folded = true
+visibility/visible = false
 script/script = ExtResource( 3 )
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
@@ -270,6 +271,7 @@ sprite3 = ExtResource( 11 )
 "cowbell_hud",
 ]]
 
+transform/pos = Vector2( 3, 21 )
 script/script = ExtResource( 12 )
 
 [node name="Counter" type="RichTextLabel" parent="Control/Cowbells"]
@@ -293,6 +295,7 @@ percent_visible = 1.0
 transform/pos = Vector2( 586, 45 )
 transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 14 )
+hframes = 3
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 

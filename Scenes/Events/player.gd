@@ -31,11 +31,13 @@ onready var cowbell_collector = get_node("cowbell_collector")
 
 
 var can_jump = true
+var on_ground = true
 var jumping = false
 var velocity = Vector2()
 var final_velocity = Vector2()
 var jump_time = 0
 var jump_key_pressed = false
+var jump_key_released = true
 var colliding_in_jump = false
 
 var right = false
@@ -146,14 +148,16 @@ func _fixed_process(delta):
 	
 	# Salto
 	if (can_jump and jump_key_pressed):
-		#play_sound(JUMP_SOUND)
+		#play_sound(JUMP_SOUND)		
 		velocity.y = - JUMP_SPEED
 		jumping = true
 		jump_time = MAX_JUMP_TIME
 		can_jump = false
-	if (jumping and can_jump_more() and jump_key_pressed):		
-		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20		
 	
+	if (jumping and can_jump_more() and jump_key_pressed):
+		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
+		
+		
 	# Movimiento horizontal
 	if (!right and !left):
 		if (velocity.x > SLIDE_LEVEL): 
@@ -183,7 +187,8 @@ func _fixed_process(delta):
 		var normal = get_collision_normal()
 		if (normal.y < -0.35):
 			# Está en el suelo			
-			if (!jumping):
+			if (!jumping and jump_key_released):
+				on_ground = true
 				can_jump = true
 			jumping = false
 			motion.y = 0
@@ -192,7 +197,7 @@ func _fixed_process(delta):
 			motion = normal.slide(motion)
 			velocity.y = 0	
 		else:			
-			# Está chocándose contra techo o pared						
+			# Está chocándose contra techo o pared	
 			can_jump = false
 			colliding_in_jump = true
 			motion = normal.slide(motion)
@@ -275,9 +280,12 @@ func _input(ev):
 		set_collision_mask_bit(11, 1)
 		
 	# Saltar
-	if (ev.is_action_pressed("ui_jump")):
+	if (ev.is_action_pressed("ui_jump") and jump_key_released):
 		jump_key_pressed = true
 		
+		
+		
 	elif (ev.is_action_released("ui_jump")):
+		jump_key_released = true
 		jump_time = 0
 		jump_key_pressed = false
