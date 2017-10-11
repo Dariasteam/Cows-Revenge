@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=2]
@@ -63,6 +63,10 @@ srgb/enabled = false
 
 environment = SubResource( 1 )
 
+[sub_resource type="CanvasItemMaterial" id=3]
+
+shader/shading_mode = 0
+
 [node name="Node2D" type="Node2D" groups=[
 "control",
 ]]
@@ -80,7 +84,6 @@ margin/bottom = 768.0
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
-editor/display_folded = true
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = false
 world = SubResource( 2 )
@@ -292,6 +295,7 @@ percent_visible = 1.0
 
 [node name="Sprite" type="Sprite" parent="Control/Cowbells"]
 
+material/material = SubResource( 3 )
 transform/pos = Vector2( 586, 45 )
 transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 14 )

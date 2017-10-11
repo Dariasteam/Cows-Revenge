@@ -1,0 +1,13 @@
+[gd_resource type="SampleLibrary" load_steps=2 format=1]
+
+[ext_resource path="res://Sound/cowbell_sound.wav" type="Sample" id=1]
+
+[resource]
+
+samples/cowbell_sound = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+
