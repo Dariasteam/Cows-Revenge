@@ -39,7 +39,7 @@ tracks/0/keys = {
 "player",
 ]]
 
-transform/scale = Vector2( 2, 2 )
+transform/scale = Vector2( 1.8, 1.8 )
 z/relative = false
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -64,11 +64,11 @@ cowbells_collected = 0
 
 [node name="shooter" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 25.3282, 2.0993 )
 transform/scale = Vector2( 0.5, 0.5 )
 script/script = ExtResource( 2 )
 SHOOT_CADENCE = 0.1
+bullet_cost = 2
 
 [node name="ray" parent="shooter" instance=ExtResource( 3 )]
 

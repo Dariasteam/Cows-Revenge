@@ -16,6 +16,8 @@ var weapon = WEAPONS.regular
 var shoot = false
 var recharge = false
 
+export(int) var bullet_cost = 1
+
 onready var player = get_parent()
 onready var instanced_ray = get_node("ray")
 
@@ -63,7 +65,7 @@ func shoot_regular():
 	t.start()
 	yield(t, "timeout")
 	recharge = false
-	player.decrease_milk(1)
+	player.decrease_milk(bullet_cost)
 
 func shoot_laser():
 	player.decrease_milk(0.1)
