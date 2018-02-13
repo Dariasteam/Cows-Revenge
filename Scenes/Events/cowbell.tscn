@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Events/cowbell.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Events/cowbell_animations.tres" type="Animation" id=3]
+[ext_resource path="res://Scenes/Events/cowbell_animation_one_shot.tres" type="Animation" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,6 +30,7 @@ amount = 100
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 3
+frame = 2
 region_rect = Rect2( 0, 0, 24, 24 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]

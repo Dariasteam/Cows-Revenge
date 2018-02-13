@@ -36,6 +36,7 @@ func play_sound():
 	aux_timer.start()
 	
 	timer.start()
+	return pitch - base_pitch
 
 func _ready():	
 	timer.connect("timeout",self,"timer_timeout")

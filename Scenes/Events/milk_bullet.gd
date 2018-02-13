@@ -23,7 +23,7 @@ func destroy():
 	queue_free()
 
 func _ready():	
-	sound.play("bullet_sound")
+	sound.play("bullet_sound",0)
 	t.set_wait_time(LIFE_TIME)
 	t.set_one_shot(true)
 	self.add_child(t)
@@ -38,5 +38,5 @@ func _on_RigidBody2D_body_enter( body ):
 	elif (end):
 		destroy()
 	
-func _on_RigidBody2D_body_enter_shape( body_id, body, body_shape, local_shape ):
-	sound.play("bullet_sound")
+func _on_RigidBody2D_body_enter_shape( body_id, body, body_shape, local_shape ):	
+	sound.play("bullet_sound", 0)
