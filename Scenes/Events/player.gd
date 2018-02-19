@@ -211,8 +211,19 @@ func _fixed_process(delta):
 	else:		
 		can_jump = false
 
+
+func enable_player():
+	set_process_input(true)
+	set_fixed_process(true)
+	sprite.set_opacity(1)
+
+func disable_player():
+	set_process_input(false)
+	set_fixed_process(false)
+	sprite.set_opacity(0)
+
 func _ready():
-	
+	sprite.set_opacity(0)
 	connect("set_max_milk",hud_milk,"on_set_max_milk")
 	connect("update_milk",hud_milk,"on_update_milk_bar")
 	
@@ -225,8 +236,7 @@ func _ready():
 	emit_signal("set_max_life", life)
 	emit_signal("update_life", life)
 	
-	set_process_input(true)
-	set_fixed_process(true)
+	
 	
 
 func set_movement_left ():
