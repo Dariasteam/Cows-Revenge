@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://player_spawner.gd" type="Script" id=1]
+
+[node name="player_spawner" type="Node2D"]
+
+transform/pos = Vector2( -1250, -3000 )
+script/script = ExtResource( 1 )
+
+
