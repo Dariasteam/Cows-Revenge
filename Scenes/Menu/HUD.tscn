@@ -86,6 +86,7 @@ margin/bottom = 768.0
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
+editor/display_folded = true
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = false
 world = SubResource( 2 )
@@ -117,6 +118,7 @@ initial_heart_pos = Vector2( 32, 0 )
 ]]
 
 editor/display_folded = true
+visibility/visible = false
 script/script = ExtResource( 3 )
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
