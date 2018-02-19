@@ -6,9 +6,9 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 
 ## Authors
   - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), dariasteam94@gmail.com
-      Code, music, sprites
-  - **Yanara Carrasco Aristiguieta**[instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
-      Sprites
+      code, music, sprites
+  - **Yanara Aristiguieta** [instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
+      sprites
 
 ## Screenshots
 
@@ -19,7 +19,8 @@ All resources have been created using the following FLOSS:
 
 - [krita](https://krita.org/en/)
 - [audacity](http://www.audacityteam.org/)
-- tuxguitar
+- [tuxguitar](http://tuxguitar.com.ar/)
+- [inkscape](https://inkscape.org/en/)
 
-Font: [Cave Story-Regular by enigmansmp1824 
+Font: [Cave Story-Regular by enigmansmp1824
 (CC-BY-SA)](https://fontlibrary.org/en/font/cave-story#Cave%20Story-Regular)

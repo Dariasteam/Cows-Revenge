@@ -687,43 +687,43 @@ transform/pos = Vector2( -458, -3128 )
 
 [node name="Cowbell62" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 892, -3978 )
+transform/pos = Vector2( 900, -3980 )
 
 [node name="Cowbell63" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 952, -4048 )
+transform/pos = Vector2( 960, -4040 )
 
 [node name="Cowbell64" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1032, -4108 )
+transform/pos = Vector2( 1020, -4100 )
 
 [node name="Cowbell65" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1102, -4178 )
+transform/pos = Vector2( 1070, -4160 )
 
 [node name="Cowbell66" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1202, -4258 )
+transform/pos = Vector2( 1130, -4220 )
 
 [node name="Cowbell67" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1262, -4348 )
+transform/pos = Vector2( 1190, -4270 )
 
 [node name="Cowbell68" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1332, -4398 )
+transform/pos = Vector2( 1250, -4330 )
 
 [node name="Cowbell69" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1362, -4448 )
+transform/pos = Vector2( 1310, -4390 )
 
 [node name="Cowbell70" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1452, -4518 )
+transform/pos = Vector2( 1430, -4510 )
 
 [node name="Cowbell71" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 1452, -4518 )
+transform/pos = Vector2( 1370, -4450 )
 
 [node name="Cowbell72" parent="cowbells" instance=ExtResource( 10 )]
 
@@ -827,7 +827,7 @@ transform/pos = Vector2( 4800, -2470 )
 
 [node name="Cowbell98" parent="cowbells" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 4770, -2640 )
+transform/pos = Vector2( 4770, -2660 )
 
 [node name="Cowbell99" parent="cowbells" instance=ExtResource( 10 )]
 
@@ -2037,7 +2037,7 @@ transform/pos = Vector2( 0, 220 )
 [node name="death_line" parent="." instance=ExtResource( 11 )]
 
 editor/display_folded = false
-transform/pos = Vector2( 24192, -384 )
+transform/pos = Vector2( 24190, -350 )
 transform/scale = Vector2( 6889, 1 )
 
 [node name="Ovni" parent="." instance=ExtResource( 12 )]
