@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Cave-Story.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Scenes/Menu/bttn_play.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Menu/about_button.gd" type="Script" id=4]
 [ext_resource path="res://Music/dangerous_hills.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Sprites/GUI/title.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/GUI/title_base.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GUI/title_revenge.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -98,12 +99,18 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Sprite 2" type="Sprite" parent="."]
+[node name="Base" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1.07855, -1.84071 )
 transform/scale = Vector2( 0.0864583, 0.128739 )
 z/z = -1
 texture = ExtResource( 6 )
+
+[node name="Revenge" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1.07855, -1.84071 )
+transform/scale = Vector2( 0.0864583, 0.128739 )
+texture = ExtResource( 7 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 
@@ -111,11 +118,12 @@ visibility/blend_mode = 1
 transform/pos = Vector2( -32.6951, -11.8638 )
 transform/rot = 90.0
 transform/scale = Vector2( 0.0957527, 0.0615344 )
-config/amount = 16
-config/lifetime = 5.0
+z/z = 1
+config/amount = 8
+config/lifetime = 2.5
 config/preprocess = 1.0
 config/process_mode = 1
-config/texture = ExtResource( 7 )
+config/texture = ExtResource( 8 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 500.0
@@ -142,11 +150,76 @@ visibility/blend_mode = 1
 transform/pos = Vector2( -34.2293, -8.62984 )
 transform/rot = 90.0
 transform/scale = Vector2( 0.0957527, 0.0615344 )
-config/amount = 16
-config/lifetime = 5.0
+z/z = 1
+config/amount = 8
+config/lifetime = 2.5
 config/preprocess = 1.0
 config/process_mode = 1
-config/texture = ExtResource( 7 )
+config/texture = ExtResource( 8 )
+params/direction = 0.0
+params/spread = 1.0
+params/linear_velocity = 500.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 10.0
+randomness/linear_velocity = 0.5
+color/color = Color( 0.851562, 0.459045, 0.83623, 1 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+
+visibility/blend_mode = 1
+transform/pos = Vector2( -34.2293, -11.7693 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.0957527, 0.0615344 )
+z/z = -1
+config/amount = 6
+config/lifetime = 2.5
+config/preprocess = 1.0
+config/process_mode = 1
+config/texture = ExtResource( 8 )
+params/direction = 0.0
+params/spread = 1.0
+params/linear_velocity = 500.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 10.0
+randomness/linear_velocity = 0.5
+color/color = Color( 0.851562, 0.459045, 0.83623, 1 )
+
+[node name="Particles2D3" type="Particles2D" parent="."]
+
+visibility/blend_mode = 1
+transform/pos = Vector2( -34.2293, -8.62984 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.0957527, 0.0615344 )
+z/z = -1
+config/amount = 6
+config/lifetime = 2.5
+config/preprocess = 1.0
+config/process_mode = 1
+config/texture = ExtResource( 8 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 500.0

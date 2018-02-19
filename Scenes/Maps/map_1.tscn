@@ -2042,7 +2042,7 @@ transform/scale = Vector2( 6889, 1 )
 
 [node name="Ovni" parent="." instance=ExtResource( 12 )]
 
-transform/pos = Vector2( -1230, -3190 )
+transform/pos = Vector2( -1230, -3340 )
 transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
