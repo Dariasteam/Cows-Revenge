@@ -62,7 +62,6 @@ func add_cowbells(var number):
 	cowbells_collected += number
 	hud_cowbell.set_counter (cowbells_collected, cowbell_collector.play_sound())
 	
-
 func is_falling ():
 	return velocity.y > 0
 

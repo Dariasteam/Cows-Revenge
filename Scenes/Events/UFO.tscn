@@ -80,7 +80,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
-extents = Vector2( 28.4934, 48.5983 )
+extents = Vector2( 4.3399, 110.989 )
 
 [node name="UFO" type="Node2D"]
 
@@ -91,6 +91,7 @@ script/script = SubResource( 9 )
 editor/display_folded = true
 visibility/behind_parent = true
 transform/pos = Vector2( 0, 131 )
+z/z = 2
 
 [node name="ray_outter" type="Sprite" parent="Ray"]
 
@@ -432,6 +433,7 @@ trigger = false
 
 [node name="player_spawner" parent="." instance=ExtResource( 5 )]
 
+editor/display_folded = true
 transform/pos = Vector2( -1.5159, 199.14 )
 
 [node name="Sprite_cow" type="Sprite" parent="player_spawner"]
@@ -458,7 +460,7 @@ autoplay = ""
 
 [node name="Area2D" type="Area2D" parent="player_spawner"]
 
-transform/pos = Vector2( 1.00537, -0.359009 )
+transform/pos = Vector2( 1.00537, -57.1355 )
 input/pickable = true
 shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.263519, 0 )
@@ -477,7 +479,7 @@ _update_shape_index = 0
 
 [node name="Instancer" type="Node2D" parent="player_spawner"]
 
-transform/scale = Vector2( 0.6, 0.6 )
+transform/scale = Vector2( 0.5882, 0.5882 )
 
 [connection signal="body_enter" from="player_spawner/Area2D" to="player_spawner" method="_on_Area2D_body_enter"]
 

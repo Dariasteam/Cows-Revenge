@@ -278,6 +278,7 @@ sprite3 = ExtResource( 11 )
 
 transform/pos = Vector2( 3, 21 )
 script/script = ExtResource( 12 )
+bonus_threshold = 25
 
 [node name="Counter" type="RichTextLabel" parent="Control/Cowbells"]
 
@@ -294,6 +295,10 @@ bbcode/enabled = true
 bbcode/bbcode = "0"
 visible_characters = -1
 percent_visible = 1.0
+
+[node name="bonus_instancer" type="Node2D" parent="Control/Cowbells"]
+
+transform/pos = Vector2( 642, 43 )
 
 [node name="next_cowbell_timer" type="Timer" parent="Control/Cowbells"]
 
