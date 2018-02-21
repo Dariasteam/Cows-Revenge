@@ -8,7 +8,7 @@ onready var sprite = get_node("Sprite")
 func _ready():
 	sound.connect("finished",self,"queue_free")
 
-func _on_Area2D_body_enter( body ):
+func _on_Apple_body_enter( body ):
 	if(body.is_in_group("player")):
 		body.add_milk(amount)
 		disconnect("body_enter",self,"_on_Area2D_body_enter")
@@ -16,4 +16,4 @@ func _on_Area2D_body_enter( body ):
 		sprite.set_opacity(0)
 		
 		
-		
+

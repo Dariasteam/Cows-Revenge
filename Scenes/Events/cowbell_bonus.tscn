@@ -6,9 +6,6 @@
 
 script/source = "extends RichTextLabel
 
-func _ready(number):
-	set_text(str(\"+\", number))
-
 func _on_AnimationPlayer_finished():
 	queue_free()	
 "
@@ -51,7 +48,7 @@ margin/right = 202.0
 margin/bottom = 228.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode/enabled = true
-bbcode/bbcode = "+15"
+bbcode/bbcode = ""
 visible_characters = -1
 percent_visible = 1.0
 script/script = SubResource( 1 )

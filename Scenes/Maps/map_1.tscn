@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/Events/death_line.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Events/UFO.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Music/dangerous-hills-loop.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
 
 [node name="Level" type="Node2D"]
 
@@ -2049,5 +2050,42 @@ stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+
+[node name="Cages" type="Node2D" parent="."]
+
+[node name="jail" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -1410, -2210 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail1" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -1890, -2210 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail2" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -3170, -3080 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail3" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -2640, -470 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail4" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 1900, -1780 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail5" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 3690, -2760 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail6" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 4670, -1880 )
+transform/scale = Vector2( 1.7, 1.7 )
 
 

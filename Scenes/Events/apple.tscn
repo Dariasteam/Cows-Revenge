@@ -16,10 +16,9 @@ shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 2.49193, 0, 0, 2.79981, -2.22558, 5.41232 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
-gravity = 0.0
+gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-monitorable = false
 collision/layers = 16
 script/script = ExtResource( 1 )
 amount = 100
@@ -48,6 +47,6 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[connection signal="body_enter" from="." to="." method="_on_Area2D_body_enter"]
+[connection signal="body_enter" from="." to="." method="_on_Apple_body_enter"]
 
 
