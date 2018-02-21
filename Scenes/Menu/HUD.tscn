@@ -278,7 +278,6 @@ sprite3 = ExtResource( 11 )
 
 transform/pos = Vector2( 3, 21 )
 script/script = ExtResource( 12 )
-bonus_threshold = 25
 
 [node name="Counter" type="RichTextLabel" parent="Control/Cowbells"]
 

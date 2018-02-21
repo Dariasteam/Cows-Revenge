@@ -10,13 +10,26 @@ const SAMPLE_LIBRARY = preload("res://Scenes/Events/cowbell_sample_library.tres"
 export(float) var pitch_increment = 0.05
 export(float) var base_pitch = 1.5
 
+export(int) var bonus_threshold = 20
+export(int) var bonus_cowbells = 15
+
 var pitch = base_pitch
+var acumulator = 0;
+var multiplier = 1
 
 func timer_timeout():
 	pitch = base_pitch
+	acumulator = 0
+	multiplier = 1
 
 func play_sound():
 	pitch += pitch_increment
+	acumulator += pitch_increment
+		
+	if (acumulator >= (pitch_increment * bonus_threshold)):		
+		get_tree().get_nodes_in_group("player")[0].add_bonus(bonus_cowbells * multiplier)
+		acumulator = 0
+		multiplier += 1
 	
 	var sample_player = SamplePlayer.new()
 	sample_player.set_sample_library(SAMPLE_LIBRARY)

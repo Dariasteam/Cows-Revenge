@@ -14,11 +14,12 @@ onready var sprite = get_node("Sprite")
 onready var base_modulation = Color(1,1,1)
 onready var instancer = get_node("bonus_instancer")
 
-export(int) var bonus_threshold = 25
-
-var ac = 0
-
 var frame_number
+
+func bonus(quantity):
+	var bonus = BONUS.instance()
+	bonus.set_text(str("+",quantity))	
+	instancer.add_child(bonus)	
 
 func _ready():
 	animation.play("cowbell_animations")
@@ -29,8 +30,7 @@ func _ready():
 func set_counter (var quantity, var acumulated):	
 	sprite.set_modulate(Color (1,1 - acumulated * 2,1 - acumulated * 2))
 	label.set_bbcode(" " + String(quantity))
-	animation.set_active(true)
-	ac += 1
+	animation.set_active(true)	
 	next_cowbell_timer.start()
 	cold_down_timer.start()
 	
@@ -45,10 +45,4 @@ func _on_cold_down_timer_timeout():
 		sprite.set_modulate(base_modulation)
 		cold_down_timer.stop()		
 	else:		
-		sprite.set_modulate(Color (1,current_modulation.g + 0.02 ,current_modulation.b + 0.02))
-		if (ac >= bonus_threshold):			
-			instancer.add_child(BONUS.instance(1))
-			get_tree().get_nodes_in_group("player")[0].add_cowbells(15)
-			ac = 0
-	if (ac > 0):
-			ac -= 0.1
+		sprite.set_modulate(Color (1,current_modulation.g + 0.02 ,current_modulation.b + 0.02))		

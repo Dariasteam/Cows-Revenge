@@ -211,6 +211,7 @@ color/color = Color( 0.333827, 0.355469, 0.209671, 1 )
 
 editor/display_folded = true
 transform/pos = Vector2( 0, -4.66871 )
+z/z = 3
 texture = ExtResource( 4 )
 
 [node name="Smoke" type="Node2D" parent="Sprite_UFO"]
