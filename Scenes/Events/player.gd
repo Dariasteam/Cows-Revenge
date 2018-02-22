@@ -29,7 +29,6 @@ onready var hud_cowbell = get_tree().get_nodes_in_group("cowbell_hud")[0]
 onready var JUMP_SOUND = ResourceLoader.load("Sound/player_jump.ogg")
 onready var cowbell_collector = get_node("cowbell_collector")
 
-
 var can_jump = true
 var on_ground = true
 var jumping = false
@@ -57,6 +56,10 @@ export(int) var invulneravility_time = 16
 export var JUMP_SPEED = 400
 export var altitude = 0.5
 export(int) var cowbells_collected = 0
+export(int) var cages_open = 0
+
+func open_cage(var number):
+	cages_open += number
 
 func add_cowbells(var number):
 	cowbells_collected += number

@@ -1131,7 +1131,6 @@ trigger = false
 
 [node name="Tronco_rama_right" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
 texture = ExtResource( 1 )
@@ -1157,7 +1156,7 @@ shapes/3/shape = SubResource( 33 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
 shapes/3/trigger = false
 collision/layers = 2
-collision/mask = 12
+collision/mask = 15
 one_way_collision/direction = Vector2( 0, 1 )
 one_way_collision/max_depth = 1.0
 constant_linear_velocity = Vector2( 0, 0 )
@@ -1324,6 +1323,7 @@ _update_shape_index = 0
 
 [node name="Tronco_rama_doble" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
@@ -1451,6 +1451,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="hoja_8" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
 texture = ExtResource( 1 )

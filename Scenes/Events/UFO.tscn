@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://Sprites/Effects/UFO-ray_1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Effects/UFO-ray_2.png" type="Texture" id=2]
@@ -6,10 +6,8 @@
 [ext_resource path="res://Sprites/Charasets/UFO.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Events/player_spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=6]
-
-[sub_resource type="GDScript" id=9]
-
-script/source = ""
+[ext_resource path="res://Sound/UFO_abduct.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Fonts/Cave-Story-Regular.fnt" type="BitmapFont" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -43,7 +41,7 @@ points = Vector2Array( 66, 19.8991, 0, 23.8991, -57, -50.1009, -46, -67.1009, -2
 custom_solver_bias = 0.0
 points = Vector2Array( 134, -3.10092, 106, 12.8991, 66, 19.8991, 57, -50.1009, 83, -46.1009, 107, -39.1009, 123, -32.1009, 137, -19.1009, 139, -10.1009 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 resource/name = "appear"
 length = 1.0
@@ -60,7 +58,7 @@ tracks/0/keys = {
 "values": [ 0.0, 0.4, 0.1, 1.0, 0.1, 0.5, 0.8, 0.4, 1.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 resource/name = "unvanish"
 length = 1.0
@@ -77,14 +75,12 @@ tracks/0/keys = {
 "values": [ 1.0, 0.4, 0.8, 0.1, 0.5, 0.1, 1.0, 0.4, 0.0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 4.3399, 110.989 )
 
 [node name="UFO" type="Node2D"]
-
-script/script = SubResource( 9 )
 
 [node name="Ray" type="Node2D" parent="."]
 
@@ -434,11 +430,14 @@ trigger = false
 
 [node name="player_spawner" parent="." instance=ExtResource( 5 )]
 
-editor/display_folded = true
 transform/pos = Vector2( -1.5159, 199.14 )
+init_text = "Vuelve cuando hayas
+ salvado a todas las gallinas."
+append_text = "Te quedan "
 
 [node name="Sprite_cow" type="Sprite" parent="player_spawner"]
 
+editor/display_folded = true
 visibility/opacity = 0.0
 visibility/behind_parent = true
 transform/pos = Vector2( 1.00537, -0.359009 )
@@ -452,8 +451,8 @@ region_rect = Rect2( 0, 0, 96, 96 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/appear = SubResource( 6 )
-anims/unvanish = SubResource( 7 )
+anims/appear = SubResource( 5 )
+anims/unvanish = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -461,9 +460,10 @@ autoplay = ""
 
 [node name="Area2D" type="Area2D" parent="player_spawner"]
 
+editor/display_folded = true
 transform/pos = Vector2( 1.00537, -57.1355 )
 input/pickable = true
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.263519, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -474,13 +474,40 @@ angular_damp = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_spawner/Area2D"]
 
 transform/pos = Vector2( -0.263519, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Instancer" type="Node2D" parent="player_spawner"]
 
 transform/scale = Vector2( 0.5882, 0.5882 )
+
+[node name="Sound" type="StreamPlayer" parent="player_spawner"]
+
+stream/stream = ExtResource( 7 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="UFO_texts" type="Label" parent="player_spawner"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -206.484
+margin/top = -157.14
+margin/right = 201.516
+margin/bottom = -112.14
+custom_fonts/font = ExtResource( 8 )
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="body_enter" from="player_spawner/Area2D" to="player_spawner" method="_on_Area2D_body_enter"]
 

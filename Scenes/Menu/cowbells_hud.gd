@@ -16,6 +16,9 @@ onready var instancer = get_node("bonus_instancer")
 
 var frame_number
 
+func reset_values():
+	set_counter(0, 0)
+
 func bonus(quantity):
 	var bonus = BONUS.instance()
 	bonus.set_text(str("+",quantity))	
