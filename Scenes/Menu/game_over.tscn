@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://Scenes/Menu/game_over.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/Cave-Story.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Fonts/Cave-Story-Regular.fnt" type="BitmapFont" id=2]
+
 
 [node name="Node2D" type="Node2D"]
 
