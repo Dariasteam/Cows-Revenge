@@ -16,7 +16,9 @@ export(Texture) var sprite3
 onready var sprites = [sprite1, sprite2, sprite3]
 
 func reset_values():
-	on_update_milk_bar(0)
+	for element in get_children():
+		element.queue_free()
+	on_set_max_milk (max_value)
 
 func on_set_max_milk (maxm):
 	max_value = maxm

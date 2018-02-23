@@ -1,0 +1,473 @@
+[gd_scene load_steps=14 format=1]
+
+[ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
+[ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Background/night_outside_c.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Background/night_outside_b.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Background/night_outside_a.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Events/enemy_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Events/apple.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Events/heart.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Events/cowbell.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Events/death_line.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Events/UFO.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Music/dangerous-hills-loop.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+
+transform/pos = Vector2( 0, -1 )
+transform/scale = Vector2( 1.7, 1.7 )
+z/z = -2
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 2
+collision/mask = 15
+occluder/light_mask = 1
+tile_data = IntArray(  )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 1, 0 )
+scroll/limit_end = Vector2( 1, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="ParallaxLayerd" type="ParallaxLayer" parent="ParallaxBackground"]
+
+editor/display_folded = true
+transform/pos = Vector2( 0, -352 )
+z/z = -4
+motion/scale = Vector2( 0.15, 0 )
+motion/offset = Vector2( 1, 2000 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayerd"]
+
+transform/pos = Vector2( -3712, -2048 )
+transform/scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 1024, 128 )
+
+[node name="ParallaxLayerc" type="ParallaxLayer" parent="ParallaxBackground"]
+
+editor/display_folded = true
+transform/pos = Vector2( -500, -352 )
+z/z = -3
+motion/scale = Vector2( 0.3, 0 )
+motion/offset = Vector2( 1, 2000 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayerc"]
+
+transform/pos = Vector2( -3712, -2048 )
+transform/scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 1200, 128 )
+
+[node name="ParallaxLayerb" type="ParallaxLayer" parent="ParallaxBackground"]
+
+editor/display_folded = true
+transform/pos = Vector2( -736, -352 )
+z/z = -2
+motion/scale = Vector2( 0.5, 0 )
+motion/offset = Vector2( 1, 2000 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayerb"]
+
+transform/pos = Vector2( -3712, -2048 )
+transform/scale = Vector2( 6, 6 )
+texture = ExtResource( 4 )
+centered = false
+region = true
+region_rect = Rect2( 0, 0, 2048, 128 )
+
+[node name="ParallaxLayera" type="ParallaxLayer" parent="ParallaxBackground"]
+
+editor/display_folded = true
+transform/pos = Vector2( -736, -352 )
+z/z = -1
+motion/scale = Vector2( 0.8, 0 )
+motion/offset = Vector2( 1, 2000 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayera"]
+
+transform/pos = Vector2( -3712, -2048 )
+transform/scale = Vector2( 6, 6 )
+texture = ExtResource( 5 )
+centered = false
+region = true
+region_rect = Rect2( -1000, 0, 2048, 128 )
+
+[node name="enemies" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 2140, -960 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="Enemy3" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2240, -64 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="apples" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( -3140, -3460 )
+
+[node name="Apple 2" parent="apples" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -400, 370 )
+amount = 20
+
+[node name="hearts" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Heart" parent="hearts" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( -3320, -3640 )
+
+[node name="cowbells" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 500, 560 )
+
+[node name="Cowbell" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -16, -2301 )
+
+[node name="Block" type="Node2D" parent="cowbells"]
+
+editor/display_folded = true
+transform/pos = Vector2( -2550, -1250 )
+
+[node name="Col" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+
+[node name="Cowbell18173" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col1" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 50, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col2" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 100, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col3" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 150, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col4" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 200, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col5" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 250, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col6" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 300, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col7" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 350, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col8" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 400, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col9" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 450, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="Col10" type="Node2D" parent="cowbells/Block"]
+
+editor/display_folded = true
+transform/pos = Vector2( 500, 0 )
+
+[node name="Cowbell18173" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 20 )
+
+[node name="Cowbell18174" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 70 )
+
+[node name="Cowbell18175" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 120 )
+
+[node name="Cowbell18176" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 170 )
+
+[node name="Cowbell18177" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 0, 220 )
+
+[node name="death_line" parent="." instance=ExtResource( 10 )]
+
+editor/display_folded = false
+transform/pos = Vector2( 24240, -320 )
+transform/scale = Vector2( 6889, 1 )
+
+[node name="UFO" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( -1250, -3350 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 12 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 1.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Cages" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="jail" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -1410, -2210 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+

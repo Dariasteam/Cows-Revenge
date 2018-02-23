@@ -68,7 +68,7 @@ func shoot_regular():
 	player.decrease_milk(bullet_cost)
 
 func shoot_laser():
-	player.decrease_milk(0.1)
+	player.decrease_milk(0.3)
 
 func _process(delta):
 	if (check_can_shoot()):

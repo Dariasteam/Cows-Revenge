@@ -12,9 +12,8 @@ func _ready():
 	viewport.add_child(levels[0].instance())
 	
 func next_level():
-	if (level_index < levels.size()):
-		for element in viewport.get_children():
-			element.queue_free()
+	if (level_index < levels.size()):		
+		viewport.get_child(0).free()					
 		reset_hud()
 		viewport.add_child(levels[level_index].instance())
 		level_index += 1		

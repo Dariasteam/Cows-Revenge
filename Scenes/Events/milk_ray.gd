@@ -8,7 +8,7 @@ onready var sound = get_node("sound")
 
 var player
 
-export var damage = 50
+export var damage = 120
 
 var enabled = false
 const MAX_DISTANCE = 10000
