@@ -28,7 +28,7 @@ func _ready():
 	#set_fixed_process(true)
 	set_process(true)
 
-func dissapear():
+func disappear():
 	play_damage_sound()
 	sprite.set_opacity(0)
 	set_fixed_process(false)
@@ -45,10 +45,10 @@ func dissapear():
 
 func die_by_jump():
 	life = 0
-	dissapear()
+	disappear()
 
 func die():
-	dissapear()
+	disappear()
 
 func on_opacity_low ():
 	sprite.set_modulate(Color("fb12e7"))
@@ -61,7 +61,6 @@ func play_damage_sound():
 	var sample = sample_list[rand_range(0, sample_list.size())]
 	sound.play(sample, 0)
 	
-
 func decrease_life (value):
 	play_damage_sound()
 	hit_single.set_emitting(false)

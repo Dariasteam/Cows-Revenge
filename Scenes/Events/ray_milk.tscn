@@ -18,11 +18,10 @@ cast_to = Vector2( 10000, 0 )
 layer_mask = 63
 type_mask = 11
 script/script = ExtResource( 1 )
-damage = 50
+damage = 120
 
 [node name="end" parent="." instance=ExtResource( 2 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, -1 )
 transform/scale = Vector2( 0.5, 0.5 )
 z/z = 1

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export(String) var text
+export(Array) var text
 
 onready var foreground = get_node("Foreground")
 onready var background = get_node("Background")
@@ -17,7 +17,7 @@ func _ready():
 func open_cage():
 	sound.play()
 	
-	text_label.set_text(text)
+	text_label.set_text( text[rand_range(0, text.size())])
 	text_anim.play("Apear")
 	
 	get_node("Area2D").queue_free()

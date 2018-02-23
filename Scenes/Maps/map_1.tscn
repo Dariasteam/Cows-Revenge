@@ -114,7 +114,7 @@ collision/bounce = 0.0
 collision/layers = 2
 collision/mask = 15
 occluder/light_mask = 1
-tile_data = IntArray( -2097183, 32, -2031647, 38, -1966111, 31, -1900575, 38, -1835039, 31, -1179680, 32, -1114144, 31, -1048608, 38, -983072, 30 )
+tile_data = IntArray( -2359266, 31, -2097183, 32, -2031647, 38, -1966111, 31, -1900575, 38, -1835039, 31, -1179680, 32, -1114144, 31, -1048608, 38, -983072, 30 )
 
 [node name="tile_base" type="TileMap" parent="." groups=[
 "map",
@@ -465,7 +465,6 @@ transform/pos = Vector2( -710, -1390 )
 
 [node name="cowbells" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 500, 560 )
 
 [node name="Cowbell" parent="cowbells" instance=ExtResource( 9 )]
@@ -519,10 +518,6 @@ transform/pos = Vector2( -3270, -2670 )
 [node name="Cowbell20" parent="cowbells" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( -1418, -2238 )
-
-[node name="Cowbell21" parent="cowbells" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( -1228, -2238 )
 
 [node name="Cowbell22" parent="cowbells" instance=ExtResource( 9 )]
 
@@ -2032,7 +2027,7 @@ transform/pos = Vector2( 0, 220 )
 [node name="death_line" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = false
-transform/pos = Vector2( 24190, -350 )
+transform/pos = Vector2( 24240, -320 )
 transform/scale = Vector2( 6889, 1 )
 
 [node name="UFO" parent="." instance=ExtResource( 11 )]
@@ -2057,60 +2052,55 @@ stream/buffering_ms = 500
 
 transform/pos = Vector2( -1410, -2210 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "Wiii"
 
 [node name="jail1" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1890, -2210 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = ":D"
 
 [node name="jail2" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -3170, -3080 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "Thankius!"
 
 [node name="jail3" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -2640, -470 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "¡Ya era hora!"
 
 [node name="jail4" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1900, -1770 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "cocococo"
 
 [node name="jail5" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 3690, -2760 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "pio pio pio"
 
 [node name="jail6" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 4670, -1880 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "e=mc^2"
 
 [node name="jail7" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 2270, -3300 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "Zzz..."
+
+[node name="jail10" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -720, -1660 )
+transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="jail8" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 650, -2100 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "e_e"
 
 [node name="jail9" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 2550, -1530 )
 transform/scale = Vector2( 1.7, 1.7 )
-text = "jijiji"
 
 

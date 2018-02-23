@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Events/player_spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Charasets/cow.png" type="Texture" id=6]
 [ext_resource path="res://Sound/UFO_abduct.ogg" type="AudioStream" id=7]
-[ext_resource path="res://Fonts/Cave-Story-Regular.fnt" type="BitmapFont" id=8]
+[ext_resource path="res://Fonts/pixelated_regular.fnt" type="BitmapFont" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -499,10 +499,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -206.484
-margin/top = -157.14
-margin/right = 201.516
-margin/bottom = -112.14
+margin/left = -202.0
+margin/top = -154.0
+margin/right = 204.0
+margin/bottom = -112.0
 custom_fonts/font = ExtResource( 8 )
 align = 1
 percent_visible = 1.0

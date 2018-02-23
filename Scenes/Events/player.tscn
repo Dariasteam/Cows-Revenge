@@ -75,6 +75,7 @@ bullet_cost = 2
 
 transform/pos = Vector2( -4.25251, 3.87422 )
 layer_mask = 30
+damage = 120
 
 [node name="Collision_Normal" type="CollisionPolygon2D" parent="."]
 

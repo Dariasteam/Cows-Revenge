@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_selector.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Maps/map_2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Maps/map_0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Menu/buttons_hud.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/GUI/Buttons/bttn_arrow.png" type="Texture" id=6]
@@ -14,7 +14,7 @@
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Menu/cowbells_hud.gd" type="Script" id=14]
-[ext_resource path="res://Fonts/Cave-Story-Titles.fnt" type="BitmapFont" id=15]
+[ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=15]
 [ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Events/cowbell_animation_one_shot.tres" type="Animation" id=17]
 [ext_resource path="res://Scenes/Events/cowbell_animations.tres" type="Animation" id=18]
@@ -88,7 +88,7 @@ margin/top = 0.0
 margin/right = 1280.0
 margin/bottom = 768.0
 script/script = ExtResource( 1 )
-levels = [ ExtResource( 2 ), ExtResource( 3 ) ]
+levels = [ ExtResource( 2 ), ExtResource( 3 ), null ]
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
@@ -289,9 +289,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 630.0
-margin/top = 22.0
+margin/top = 30.0
 margin/right = 830.0
-margin/bottom = 73.0
+margin/bottom = 81.0
 custom_fonts/normal_font = ExtResource( 15 )
 bbcode/enabled = true
 bbcode/bbcode = "0"

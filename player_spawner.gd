@@ -33,7 +33,7 @@ func abduct():
 	sound.play()
 	player.disable_player()
 	anim.play("unvanish")
-	cow_is_abducted = true		
+	cow_is_abducted = true			
 	
 	var rest = total_cages - player.cages_open
 	if (rest > 0):

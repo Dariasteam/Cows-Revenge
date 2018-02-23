@@ -241,9 +241,6 @@ func _ready():
 	
 	emit_signal("set_max_life", life)
 	emit_signal("update_life", life)
-	
-	
-	
 
 func set_movement_left ():
 	animation.play("walk")
@@ -298,8 +295,6 @@ func _input(ev):
 	# Saltar
 	if (ev.is_action_pressed("ui_jump") and jump_key_released):
 		jump_key_pressed = true
-		
-		
 		
 	elif (ev.is_action_released("ui_jump")):
 		jump_key_released = true

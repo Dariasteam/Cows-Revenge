@@ -22,5 +22,6 @@ All resources have been created using the following FLOSS:
 - [tuxguitar](http://tuxguitar.com.ar/)
 - [inkscape](https://inkscape.org/en/)
 
-Font: [Cave Story-Regular by enigmansmp1824
-(CC-BY-SA)](https://fontlibrary.org/en/font/cave-story#Cave%20Story-Regular)
+Font: [Press Start 2P by CodeMan38 (Open Font License)](https://fonts.google.com/specimen/Press+Start+2P?selection.family=Press+Start+2P)
+
+
