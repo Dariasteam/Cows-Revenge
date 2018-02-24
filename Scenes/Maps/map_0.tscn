@@ -259,16 +259,6 @@ transform/pos = Vector2( -3140, -3460 )
 transform/pos = Vector2( 5140, 1240 )
 amount = 20
 
-[node name="Apple5" parent="apples" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 2070, 460 )
-amount = 20
-
-[node name="Apple6" parent="apples" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 2150, 460 )
-amount = 20
-
 [node name="Apple3" parent="apples" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 5140, 1150 )
