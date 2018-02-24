@@ -121,4 +121,10 @@ shortcut = null
 text = "Salir"
 flat = false
 
+[connection signal="pressed" from="Resume" to="." method="_on_Resume_pressed"]
+
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+
 
