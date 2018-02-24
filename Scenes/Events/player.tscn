@@ -16,7 +16,7 @@ points = Vector2Array( -13.26, -5.39603, -9.45393, -8.08105, 6.94148, -8.08105, 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -2.43698, 6.86286, -10.0513, 0.602652, -10.0513, -10.186, 9.7198, -10, 9.7198, 0.41664, 1.64128, 6.92704 )
+points = Vector2Array( -2.43698, 6.86286, -10.0513, 0.602652, -10.1458, -14.3403, 9.69616, -14.1336, 9.7198, 0.41664, 1.64128, 6.92704 )
 
 [sub_resource type="Animation" id=3]
 
@@ -86,7 +86,7 @@ trigger = false
 transform/pos = Vector2( 1.63985, 16.8801 )
 transform/scale = Vector2( 2.35192, 2.68801 )
 build_mode = 0
-polygon = Vector2Array( -2.43698, 6.86286, -10.0513, 0.602652, -10.0513, -10.186, 9.7198, -10, 9.7198, 0.41664, 1.64128, 6.92704 )
+polygon = Vector2Array( -2.43698, 6.86286, -10.0513, 0.602652, -10.1458, -14.3403, 9.69616, -14.1336, 9.7198, 0.41664, 1.64128, 6.92704 )
 shape_range = Vector2( 1, 1 )
 trigger = true
 

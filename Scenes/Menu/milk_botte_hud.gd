@@ -15,13 +15,14 @@ export(Texture) var sprite3
 
 onready var sprites = [sprite1, sprite2, sprite3]
 
-func reset_values():
-	for element in get_children():
-		element.queue_free()
+func reset_values():		
 	on_set_max_milk (global.max_milk)
 	on_update_milk_bar(global.milk_level)
 
 func on_set_max_milk (maxm):
+	for element in get_children():
+		element.free()	
+	
 	max_value = maxm
 	n_bottles = maxm / each_bottle_value
 	var next_bottle_pos = initial_bottle_pos
@@ -31,18 +32,19 @@ func on_set_max_milk (maxm):
 		add_child(next_bottle)
 		next_bottle_pos.x -= bottle_inter_distance
 
-func on_update_milk_bar(value):
+func on_update_milk_bar(value):	
 	var final = value / each_bottle_value
 	var bottle_int = floor (final)
 		
-	var bottle_float = final - bottle_int
+	var bottle_float = final - bottle_int	
+
+	print ("voy a ello", get_children().size())
+
+	for i in range(0, bottle_int):
+		get_children()[i].set_value(100)
 	
-	if (bottle_int >= 0):
-		for i in range(0, bottle_int):
-			get_children()[i].set_value(100)
-		
-		if (bottle_int < get_children().size()):
-			get_children()[bottle_int].set_value(bottle_float * 100)
+	if (bottle_int < get_children().size()):
+		get_children()[bottle_int].set_value(bottle_float * 100)
 		
 func on_set_bottle_sprite(number):
 	for progress_bar in get_children():
