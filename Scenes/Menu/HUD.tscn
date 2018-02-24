@@ -80,7 +80,8 @@ script/source = "extends Button
 
 func _on_Back_pressed():
 	get_tree().set_pause(true)
-	get_parent().get_node(\"in_game_menu\").set_hidden(false)"
+	get_node(\"in_game_menu\").show()
+"
 
 [node name="Global" type="Node2D" groups=[
 "control",
@@ -357,9 +358,13 @@ margin/bottom = 89.0
 text = "<"
 script/script = SubResource( 4 )
 
-[node name="in_game_menu" parent="Control" instance=ExtResource( 21 )]
+[node name="in_game_menu" parent="Control/Back" instance=ExtResource( 21 )]
 
 visibility/visible = false
+margin/left = -36.0
+margin/top = -34.0
+margin/right = 1244.0
+margin/bottom = 686.0
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 

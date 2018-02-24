@@ -254,6 +254,12 @@ func set_movement_right():
 	emit_signal("looking_right")
 	sprite.set_flip_h(false)
 
+func reset_inputs():
+	left = false
+	right = false
+	jump_key_pressed = false
+	jump_key_released = true
+
 func _input(ev):
 	# Movimiento horizontal	
 	if (ev.is_action_pressed("ui_left")):
@@ -278,9 +284,9 @@ func _input(ev):
 		animation.play("idle")
 	# Arriba
 	if (ev.is_action_pressed("ui_up")):
-		print("ui_up on")
+		pass
 	elif (ev.is_action_released("ui_up")):
-		print("ui_up off")
+		pass
 	
 	# Agacharse
 	if (ev.is_action_pressed("ui_down")):

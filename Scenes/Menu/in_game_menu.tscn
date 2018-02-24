@@ -1,22 +1,49 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=1]
-[ext_resource path="res://Scenes/Menu/resume_game.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Menu/back_button.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Menu/main_menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Menu/main_menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=2]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 
-script/source = "extends Button
+script/source = "extends Control
+
+export(PackedScene) var scene
+
+func _ready():
+	set_process_input(true)
+
+func show():	
+	set_hidden(false)
+	get_tree().set_pause(true)
+
+func hide():
+	set_hidden(true)
+	get_tree().set_pause(false)	
+	get_tree().get_nodes_in_group(\"player\")[0].reset_inputs()
+	
+
+func _input(ev):
+	if (ev.is_action_pressed(\"ui_cancel\")):
+		if (is_hidden()):
+			show()
+		else:
+			_on_Resume_pressed()
+
+func _on_Resume_pressed():	
+	hide()
 
 func _on_Reset_pressed():
 	get_tree().get_nodes_in_group(\"level_selector\")[0].reset_level()
-	get_tree().set_pause(false)
-	get_parent().set_hidden(true)
+	hide()
+
+func _on_Exit_pressed():
+	hide()
+	get_tree().change_scene_to(scene)
 "
 
 [node name="in_game_menu" type="Control"]
 
+process/pause_mode = 2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -25,6 +52,8 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 1280.0
 margin/bottom = 720.0
+script/script = SubResource( 2 )
+scene = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
 
@@ -49,13 +78,12 @@ margin/left = 452.0
 margin/top = 243.0
 margin/right = 847.0
 margin/bottom = 327.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Reanudar"
 flat = false
-script/script = ExtResource( 2 )
 
 [node name="Reset" type="Button" parent="."]
 
@@ -68,13 +96,12 @@ margin/left = 452.0
 margin/top = 338.0
 margin/right = 847.0
 margin/bottom = 422.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Reiniciar"
 flat = false
-script/script = SubResource( 1 )
 
 [node name="Exit" type="Button" parent="."]
 
@@ -87,19 +114,11 @@ margin/left = 452.0
 margin/top = 437.0
 margin/right = 847.0
 margin/bottom = 521.0
-custom_fonts/font = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "Salir"
 flat = false
-script/script = ExtResource( 3 )
-scene = ExtResource( 4 )
-
-[connection signal="pressed" from="Resume" to="Resume" method="_on_Resume_pressed"]
-
-[connection signal="pressed" from="Reset" to="Reset" method="_on_Reset_pressed"]
-
-[connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
 
 
