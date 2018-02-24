@@ -130,12 +130,14 @@ initial_heart_pos = Vector2( 32, 0 )
 
 [node name="Buttons" type="Node2D" parent="Control" groups=[
 "buttons_hud",
+"onscreen_controls",
 ]]
 
-editor/display_folded = true
 script/script = ExtResource( 6 )
 
-[node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.9
 transform/pos = Vector2( 160, 320 )
@@ -150,7 +152,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_A" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_A" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.8
 transform/pos = Vector2( 1088, 576 )
@@ -165,7 +169,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_AS" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.8
 transform/pos = Vector2( 1088, 384 )
@@ -180,7 +186,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_S" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_S" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.9
 transform/pos = Vector2( 896, 576 )
@@ -195,7 +203,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_D" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_D" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.9
 transform/pos = Vector2( 288, 704 )
@@ -211,7 +221,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_DR" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_DR" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.0
 transform/pos = Vector2( 288, 576 )
@@ -226,7 +238,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_DL" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_DL" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.0
 transform/pos = Vector2( 32, 576 )
@@ -241,7 +255,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_R" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_R" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.9
 transform/pos = Vector2( 416, 448 )
@@ -257,7 +273,9 @@ passby_press = true
 action = ""
 visibility_mode = 0
 
-[node name="Bttn_L" type="TouchScreenButton" parent="Control/Buttons"]
+[node name="Bttn_L" type="TouchScreenButton" parent="Control/Buttons" groups=[
+"onscreen_controls",
+]]
 
 visibility/opacity = 0.9
 transform/pos = Vector2( 32, 576 )

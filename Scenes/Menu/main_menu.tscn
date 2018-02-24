@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=2]
@@ -8,6 +8,14 @@
 [ext_resource path="res://Sprites/GUI/title_base.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/GUI/title_revenge.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=8]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Button
+
+func _on_settings_button_pressed():
+	get_tree().change_scene(\"res://Scenes/Menu/settings.tscn\")
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -64,6 +72,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "Ajustes"
 flat = false
+script/script = SubResource( 1 )
 
 [node name="info_button" type="Button" parent="."]
 
@@ -241,6 +250,8 @@ randomness/linear_velocity = 0.5
 color/color = Color( 0.851562, 0.459045, 0.83623, 1 )
 
 [connection signal="pressed" from="play_button" to="play_button" method="_on_Button_pressed"]
+
+[connection signal="pressed" from="settings_button" to="settings_button" method="_on_settings_button_pressed"]
 
 [connection signal="pressed" from="info_button" to="info_button" method="_on_info_button_pressed"]
 
