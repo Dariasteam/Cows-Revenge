@@ -11,6 +11,7 @@ script/source = "extends Button
 
 func _on_Reset_pressed():
 	get_tree().get_nodes_in_group(\"level_selector\")[0].reset_level()
+	get_tree().set_pause(false)
 	get_parent().set_hidden(true)
 "
 
@@ -39,6 +40,7 @@ margin/bottom = 721.0
 
 [node name="Resume" type="Button" parent="."]
 
+process/pause_mode = 2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -57,6 +59,7 @@ script/script = ExtResource( 2 )
 
 [node name="Reset" type="Button" parent="."]
 
+process/pause_mode = 2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -75,6 +78,7 @@ script/script = SubResource( 1 )
 
 [node name="Exit" type="Button" parent="."]
 
+process/pause_mode = 2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
