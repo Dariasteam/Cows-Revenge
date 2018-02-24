@@ -1,9 +1,5 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 const BONUS = preload("res://Scenes/Events/cowbell_bonus.tscn")
 
 onready var label = get_node("Counter")
@@ -37,7 +33,6 @@ func set_counter (var quantity, var acumulated):
 	animation.set_active(true)	
 	next_cowbell_timer.start()
 	cold_down_timer.start()
-	
 
 func _on_next_cowbell_timer_timeout():
 	sprite.set_frame(0)

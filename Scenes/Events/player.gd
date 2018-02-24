@@ -210,14 +210,15 @@ func enable_player():
 	set_process_input(true)
 	set_fixed_process(true)
 	sprite.set_opacity(1)
+	reset_inputs()
 
 func disable_player():
 	set_process_input(false)
 	set_fixed_process(false)
-	sprite.set_opacity(0)
+	sprite.set_opacity(0)		
 
 func _ready():
-	global.reset_player()	
+	global.reset_player()
 	sprite.set_opacity(0)
 	connect("set_max_milk",hud_milk,"on_set_max_milk")
 	connect("update_milk",hud_milk,"on_update_milk_bar")

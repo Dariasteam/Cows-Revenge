@@ -7,7 +7,8 @@ export var heart_inter_distance = 64
 export var initial_heart_pos = Vector2(32, 0)
 
 func reset_values():
-	pass
+	on_set_max_life(global.max_life)
+	on_update_life(global.life)
 
 func on_set_max_life(value):
 	n_hearts = value
