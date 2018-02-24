@@ -227,8 +227,7 @@ func _ready():
 	connect("set_max_life",hud_life,"on_set_max_life")
 		
 	emit_signal("update_milk", global.milk_level)
-	
-	emit_signal("set_max_life", global.max_life)
+		
 	emit_signal("update_life", global.life)
 
 func set_movement_left ():

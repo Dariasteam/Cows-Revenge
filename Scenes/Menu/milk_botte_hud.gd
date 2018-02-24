@@ -36,9 +36,7 @@ func on_update_milk_bar(value):
 	var final = value / each_bottle_value
 	var bottle_int = floor (final)
 		
-	var bottle_float = final - bottle_int	
-
-	print ("voy a ello", get_children().size())
+	var bottle_float = final - bottle_int		
 
 	for i in range(0, bottle_int):
 		get_children()[i].set_value(100)
