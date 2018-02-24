@@ -15,8 +15,10 @@ var player
 onready var cow_is_abducted = false
 
 var mission_acomplished = false
+var rest = total_cages
 
-func _ready():
+
+func _ready():	
 	texts.set_text(str(init_text, "\n", append_text, total_cages, "."))
 	sound.play()
 	anim.play("appear")
@@ -25,20 +27,14 @@ func _ready():
 	yield(anim, "finished")	
 	player.enable_player()	
 	
-func _on_Area2D_body_enter( body ):
-	if (body.is_in_group("player")):
-		set_process_input(true)
 
 func abduct():
 	sound.play()
 	player.disable_player()
 	anim.play("unvanish")
-	cow_is_abducted = true			
-	
-	var rest = total_cages - player.cages_open
-	if (rest > 0):
-		texts.set_text(str(init_text, "\n", append_text, rest, "."))
-	else:
+	cow_is_abducted = true
+	print ("rest:", rest)
+	if (rest == 0):
 		get_tree().get_nodes_in_group("level_selector")[0].next_level()
 		
 func deploy():	
@@ -48,11 +44,21 @@ func deploy():
 	player.enable_player()
 	cow_is_abducted = false
 	
+func update_text():
+	rest = total_cages - player.cages_open
+	texts.set_text(str(init_text, "\n", append_text, rest, "."))
+
 func _input(ev):
 	if (ev.is_action_pressed("ui_up") and !cow_is_abducted):
 		abduct()
 	if (ev.is_action_pressed("ui_down") and cow_is_abducted):		
 		deploy()
+	
+func _on_Area2D_body_enter( body ):
+	if (body.is_in_group("player")):
+		update_text()
+		set_process_input(true)
+	
 func _on_Area2D_body_exit(body):
 	if (body.is_in_group("player") and !cow_is_abducted):
 		set_process_input(false)	

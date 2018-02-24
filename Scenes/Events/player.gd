@@ -10,7 +10,7 @@ signal set_max_life
 const GRAVITY = 4000.0
 
 const FLYING_MOVEMENT_SPEED = 1
-const SLIDE_LEVEL = 40
+const SLIDE_LEVEL = 80
 const WALK_SPEED_INCREMENT = 20
 
 var walk_speed = 0

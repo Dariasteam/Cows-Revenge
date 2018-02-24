@@ -33,7 +33,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -2031646, 40, -2031645, 35, -1900577, 41, -1900576, 46, -1900574, 40, -1900573, 41, -1900572, 41, -1048609, 41, -1048608, 39, -1048607, 39, -1048606, 35, -1048598, 46, -917481, 40, -917480, 35 )
+tile_data = IntArray( -2031646, 40, -2031645, 35, -1900576, 46, -1900574, 40, -1900573, 41, -1900572, 41, -1048609, 41, -1048608, 39, -1048607, 39, -1048606, 35, -1048598, 46, -917481, 40, -917480, 35 )
 
 [node name="tile_leaves_background" type="TileMap" parent="."]
 
@@ -73,7 +73,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -2162663, 21, -2162662, 21, -2162661, 21, -2162660, 21, -2162659, 21, -2162658, 21, -2162657, 21, -2162656, 21, -2162655, 21, -2031638, 26, -1769503, 28, -1769501, 23, -1769500, 24, -1769495, 19, -1703969, 18, -1638433, 19, -1638405, 19, -1703909, 26, -1572882, 26, -1638369, 26, -1507361, 26, -1507291, 23, -1507290, 22, -1507289, 22, -1507288, 22, -1507287, 24, -1441784, 21, -1441770, 21, -1441769, 25, -1179643, -1073741802, -983062, 28, -1048527, 26, -917536, 28, -917535, 23, -917534, 22, -917533, 24, -917516, 26, -786410, 28, -786408, 28, -786406, 28, -786404, 28, -720888, 26, -720879, 26, -524305, 19, -524293, 28, -524292, 25, -524284, 23, -524283, 22, -524282, 22, -524281, 24, -524280, 19, -458737, 23, -458736, 22, -458735, 22, -458734, 22, -458733, 22, -458732, 24, -458726, 19, -458724, 28, -458722, 28, -393179, 23, -393178, 22, -393177, 22, -393176, 22, -393175, 24, -196631, 23, -196630, 22, -196629, 24 )
+tile_data = IntArray( -2162663, 21, -2162662, 21, -2162661, 21, -2162660, 21, -2162659, 21, -2162658, 21, -2162657, 21, -2162656, 21, -2162655, 21, -2031638, 26, -1769503, 28, -1769501, 23, -1769500, 24, -1769495, 19, -1703969, 18, -1638433, 19, -1638405, 19, -1703909, 26, -1572882, 26, -1638369, 26, -1507361, 26, -1507291, 23, -1507290, 22, -1507289, 22, -1507288, 22, -1507287, 24, -1441784, 21, -1441770, 21, -1441769, 25, -983062, 28, -1048527, 26, -917536, 28, -917535, 23, -917534, 22, -917533, 24, -917516, 26, -786410, 28, -786408, 28, -786406, 28, -786404, 28, -720888, 26, -720879, 26, -524305, 19, -524293, 28, -524292, 25, -524284, 23, -524283, 22, -524282, 22, -524281, 24, -524280, 19, -458737, 23, -458736, 22, -458735, 22, -458734, 22, -458733, 22, -458732, 24, -458726, 19, -458724, 28, -458722, 28, -393179, 23, -393178, 22, -393177, 22, -393176, 22, -393175, 24, -196631, 23, -196630, 22, -196629, 24 )
 
 [node name="tile_one_way_platforms" type="TileMap" parent="."]
 
@@ -114,7 +114,7 @@ collision/bounce = 0.0
 collision/layers = 2
 collision/mask = 15
 occluder/light_mask = 1
-tile_data = IntArray( -2097183, 32, -2031647, 38, -1966111, 31, -1900575, 38, -1835039, 31, -1179680, 32, -1114144, 31, -1048608, 38, -983072, 30 )
+tile_data = IntArray( -2359266, 31, -2097183, 32, -2031647, 38, -1966111, 31, -1900575, 38, -1835039, 31, -1179680, 32, -1114144, 31, -1048608, 38, -983072, 30 )
 
 [node name="tile_base" type="TileMap" parent="." groups=[
 "map",
@@ -226,7 +226,6 @@ region_rect = Rect2( -1000, 0, 2048, 128 )
 
 [node name="enemies" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 2140, -960 )
 transform/scale = Vector2( 1.7, 1.7 )
 
@@ -282,7 +281,7 @@ transform/scale = Vector2( 1, 1 )
 
 [node name="Enemy8" parent="enemies" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( -2400, -1472 )
+transform/pos = Vector2( -2505.88, -1535.29 )
 transform/scale = Vector2( 1, 1 )
 
 [node name="Enemy9" parent="enemies" instance=ExtResource( 6 )]
@@ -519,10 +518,6 @@ transform/pos = Vector2( -3270, -2670 )
 [node name="Cowbell20" parent="cowbells" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( -1418, -2238 )
-
-[node name="Cowbell21" parent="cowbells" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( -1228, -2238 )
 
 [node name="Cowbell22" parent="cowbells" instance=ExtResource( 9 )]
 
@@ -994,7 +989,7 @@ transform/pos = Vector2( -1826, -3616 )
 
 [node name="Cowbell131" parent="cowbells" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( -2040, -3810 )
+transform/pos = Vector2( -2038, -3808 )
 
 [node name="Cowbell196" parent="cowbells" instance=ExtResource( 9 )]
 
@@ -2032,12 +2027,12 @@ transform/pos = Vector2( 0, 220 )
 [node name="death_line" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = false
-transform/pos = Vector2( 24190, -350 )
+transform/pos = Vector2( 24240, -320 )
 transform/scale = Vector2( 6889, 1 )
 
 [node name="UFO" parent="." instance=ExtResource( 11 )]
 
-transform/pos = Vector2( -4070, -1920 )
+transform/pos = Vector2( -1250, -3350 )
 transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
@@ -2052,6 +2047,8 @@ stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
 [node name="Cages" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="jail" parent="Cages" instance=ExtResource( 13 )]
 
@@ -2091,6 +2088,11 @@ transform/scale = Vector2( 1.7, 1.7 )
 [node name="jail7" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 2270, -3300 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail10" parent="Cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -720, -1660 )
 transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="jail8" parent="Cages" instance=ExtResource( 13 )]
