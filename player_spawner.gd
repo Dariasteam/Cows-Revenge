@@ -26,14 +26,13 @@ func _ready():
 	instancer.call_deferred("add_child", player)	
 	yield(anim, "finished")	
 	player.enable_player()	
-	
 
 func abduct():
 	sound.play()
 	player.disable_player()
 	anim.play("unvanish")
-	cow_is_abducted = true
-	print ("rest:", rest)
+	cow_is_abducted = true	
+	global.save_cowbells()
 	if (rest == 0):
 		get_tree().get_nodes_in_group("level_selector")[0].next_level()
 		

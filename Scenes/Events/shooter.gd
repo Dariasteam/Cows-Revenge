@@ -49,7 +49,7 @@ func _input(ev):
 	
 		
 func check_can_shoot():
-	return player.get_milk_level() > 0
+	return global.milk_level  > 0
 
 func shoot_regular():
 	

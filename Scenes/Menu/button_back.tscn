@@ -3,7 +3,6 @@
 [ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://Scenes/Menu/back_button.gd" type="Script" id=2]
 
-
 [node name="Button" type="Button"]
 
 focus/ignore_mouse = false
@@ -21,6 +20,7 @@ shortcut = null
 text = "Volver"
 flat = false
 script/script = ExtResource( 2 )
+scene = null
 
 [connection signal="pressed" from="." to="." method="_on_Button_pressed"]
 

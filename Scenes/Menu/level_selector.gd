@@ -5,15 +5,15 @@ onready var life = get_node("Life")
 onready var milk = get_node("Milk_Bar")
 onready var cowbells = get_node("Cowbells")
 
-export(Array) var levels
+export(Array) var levels 
 
 func _ready():
-	global.save_game()
 	viewport.add_child(levels[global.level].instance())
 	if (global.onscreen_controls == false):
 		var nodes = get_tree().get_nodes_in_group("onscreen_controls")
 		for element in nodes:
 			element.set_hidden(true)
+	reset_hud()
 	
 func next_level():	
 	if (global.level < levels.size()):		
