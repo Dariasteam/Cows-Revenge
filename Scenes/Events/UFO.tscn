@@ -428,7 +428,9 @@ polygon = Vector2Array( -57, -50.1009, -46, -67.1009, -23, -81.1009, 0, -83.1009
 shape_range = Vector2( 0, 2 )
 trigger = false
 
-[node name="player_spawner" parent="." instance=ExtResource( 5 )]
+[node name="player_spawner" parent="." groups=[
+"player_spawner",
+] instance=ExtResource( 5 )]
 
 transform/pos = Vector2( -1.5159, 199.14 )
 init_text = "Vuelve cuando hayas

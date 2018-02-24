@@ -19,6 +19,7 @@ func reset_values():
 	for element in get_children():
 		element.queue_free()
 	on_set_max_milk (global.max_milk)
+	on_update_milk_bar(global.milk_level)
 
 func on_set_max_milk (maxm):
 	max_value = maxm

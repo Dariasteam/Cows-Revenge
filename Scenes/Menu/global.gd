@@ -2,6 +2,15 @@ extends Node
 
 const MENU_MUSIC = preload ("res://Music/dangerous_hills.ogg")
 
+var base_price_heart = 1000
+var base_price_milk = 1000
+
+var increment_price_heart = 2
+var increment_price_milk = 2
+
+var hearts_buyed = 0
+var milk_buyed = 0
+
 var level = 0
 var unlocked_levels = 1
 var onscreen_controls = true
@@ -11,6 +20,20 @@ var milk_level = 0
 var max_milk = 100
 var max_life = 3
 var saved_cowbells
+
+func buy_milk(price):
+	milk_buyed += 1
+	saved_cowbells -= price
+	max_milk += 33
+	save_game()
+	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
+	
+func buy_heart(price):
+	hearts_buyed += 1
+	saved_cowbells -= price
+	max_life += 1
+	save_game()
+	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
 
 func release_all():
 	pass
@@ -26,8 +49,7 @@ func save_cowbells():
 	saved_cowbells = cowbells
 	save_game()
 
-func reset_player():
-	print ("reset")
+func reset_player():	
 	global.life = global.max_life
 	milk_level = 0
 	cowbells = saved_cowbells
@@ -43,7 +65,9 @@ func save_game():
 		max_milk = max_milk,
 		milk_level = milk_level,
 		max_life = max_life,
-		life = life
+		life = life,
+		milk_buyed = milk_buyed,
+		hearts_buyed = hearts_buyed
 	}
 	save_game.store_line(data.to_json())
 	save_game.close()	
@@ -62,5 +86,12 @@ func load_game():
 	onscreen_controls = current_line["onscreen_controls"]
 	cowbells = current_line["saved_cowbells"]
 	saved_cowbells = cowbells
+	
+	max_milk = current_line["max_milk"]
+	milk_level = current_line["milk_level"]
+	max_life = current_line["max_life"]
+	life = current_line["life"]
+	milk_buyed = current_line["milk_buyed"]
+	hearts_buyed = current_line["hearts_buyed"]
 	
 	

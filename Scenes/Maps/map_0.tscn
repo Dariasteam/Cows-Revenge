@@ -1164,7 +1164,6 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Tips" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -1890, -3020 )
 
 [node name="Area2D" parent="Tips" instance=ExtResource( 14 )]
@@ -1199,7 +1198,8 @@ text = "Puedes volver a bajar pulsando abajo"
 [node name="Area2D6" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 3570, -60 )
-text = "Recoge cencerros para obtener mejoras"
+text = "Recoge cencerros para obtener mejoras. 
+"
 
 [node name="Area2D7" parent="Tips" instance=ExtResource( 14 )]
 
@@ -1210,6 +1210,12 @@ text = "Bien hecho!"
 
 transform/pos = Vector2( 4010, 370 )
 text = "Si recoges muchos cencerros en muy poco tiempo conseguirás bonificaciones!
+"
+
+[node name="Area2D19" parent="Tips" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 4340, 730 )
+text = "Puedes guardar los cencerros en la nave volviendo a ella para ser abducido en cualquier momento.
 "
 
 [node name="Area2D9" parent="Tips" instance=ExtResource( 14 )]

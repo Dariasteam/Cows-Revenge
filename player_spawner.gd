@@ -30,28 +30,29 @@ func _ready():
 func abduct():
 	sound.play()
 	player.disable_player()
-	anim.play("unvanish")
-	cow_is_abducted = true	
+	anim.play("unvanish")	
 	global.save_cowbells()
-	if (rest == 0):
-		get_tree().get_nodes_in_group("level_selector")[0].next_level()
+	get_tree().get_nodes_in_group("ufo_store")[0].show()
+
+func liftoff():	
+	get_tree().get_nodes_in_group("level_selector")[0].next_level()
 		
 func deploy():	
 	sound.play()
 	anim.play("appear")
 	yield(anim, "finished")
 	player.enable_player()
-	cow_is_abducted = false
 	
+func can_liftoff():
+	return rest == 0
+		
 func update_text():
 	rest = total_cages - player.cages_open
 	texts.set_text(str(init_text, "\n", append_text, rest, "."))
 
 func _input(ev):
-	if (ev.is_action_pressed("ui_up") and !cow_is_abducted):
+	if (ev.is_action_pressed("ui_up")):
 		abduct()
-	if (ev.is_action_pressed("ui_down") and cow_is_abducted):		
-		deploy()
 	
 func _on_Area2D_body_enter( body ):
 	if (body.is_in_group("player")):
@@ -59,5 +60,5 @@ func _on_Area2D_body_enter( body ):
 		set_process_input(true)
 	
 func _on_Area2D_body_exit(body):
-	if (body.is_in_group("player") and !cow_is_abducted):
+	if (body.is_in_group("player")):
 		set_process_input(false)	

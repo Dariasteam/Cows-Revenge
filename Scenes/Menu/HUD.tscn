@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=1]
+[gd_scene load_steps=28 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_selector.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Maps/map_0.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Scenes/Events/cowbell_animations.tres" type="Animation" id=20]
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Menu/in_game_menu.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Menu/ufo_store.tscn" type="PackedScene" id=23]
 
 [sub_resource type="Environment" id=1]
 
@@ -300,7 +301,7 @@ visibility_mode = 0
 transform/pos = Vector2( 1205, 73 )
 transform/scale = Vector2( 2, 2 )
 script/script = ExtResource( 12 )
-each_bottle_value = 20.0
+each_bottle_value = 33.0
 bottle_inter_distance = 32
 initial_bottle_pos = Vector2( -10, -20 )
 sprite1 = ExtResource( 13 )
@@ -323,7 +324,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 630.0
 margin/top = 30.0
-margin/right = 830.0
+margin/right = 876.0
 margin/bottom = 81.0
 custom_fonts/normal_font = ExtResource( 17 )
 bbcode/enabled = true
@@ -385,6 +386,8 @@ margin/left = -36.0
 margin/top = -34.0
 margin/right = 1244.0
 margin/bottom = 686.0
+
+[node name="Control" parent="Control" instance=ExtResource( 23 )]
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 
