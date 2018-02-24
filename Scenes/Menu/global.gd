@@ -19,21 +19,21 @@ var life = 3
 var milk_level = 0
 var max_milk = 100
 var max_life = 3
-var saved_cowbells
+var saved_cowbells = 0
 
 func buy_milk(price):
 	milk_buyed += 1
 	saved_cowbells -= price
-	max_milk += 33
-	save_game()
+	max_milk += 33	
 	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
+	save_game()
 	
 func buy_heart(price):
 	hearts_buyed += 1
 	saved_cowbells -= price
-	max_life += 1
-	save_game()
+	max_life += 1	
 	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
+	save_game()
 
 func release_all():
 	pass
@@ -62,8 +62,7 @@ func save_game():
 		unlocked_levels=unlocked_levels,
 		onscreen_controls=onscreen_controls,
 		saved_cowbells = saved_cowbells,
-		max_milk = max_milk,
-		milk_level = milk_level,
+		max_milk = max_milk,		
 		max_life = max_life,
 		life = life,
 		milk_buyed = milk_buyed,
@@ -87,8 +86,7 @@ func load_game():
 	cowbells = current_line["saved_cowbells"]
 	saved_cowbells = cowbells
 	
-	max_milk = current_line["max_milk"]
-	milk_level = current_line["milk_level"]
+	max_milk = current_line["max_milk"]	
 	max_life = current_line["max_life"]
 	life = current_line["life"]
 	milk_buyed = current_line["milk_buyed"]
