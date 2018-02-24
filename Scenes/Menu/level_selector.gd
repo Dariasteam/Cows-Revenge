@@ -6,18 +6,25 @@ onready var milk = get_node("Milk_Bar")
 onready var cowbells = get_node("Cowbells")
 
 export(Array) var levels
-var level_index = 1
 
-func _ready():	
-	viewport.add_child(levels[0].instance())
+func _ready():
+	global.save_game()
+	viewport.add_child(levels[global.level].instance())	
 	
-func next_level():
-	if (level_index < levels.size()):		
-		viewport.get_child(0).free()					
+func next_level():	
+	if (global.level < levels.size()):		
+		global.level += 1		
+		global.unlocked_levels += 1
+		global.save_game()
+		viewport.get_child(0).queue_free()
 		reset_hud()
-		viewport.add_child(levels[level_index].instance())
-		level_index += 1		
-	
+		viewport.add_child(levels[global.level].instance())
+
+func reset_level():
+	viewport.get_child(0).queue_free()
+	reset_hud()
+	viewport.add_child(levels[global.level].instance())	
+
 func reset_hud():
 	life.reset_values()
 	milk.reset_values()

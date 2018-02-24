@@ -11,8 +11,7 @@ func _ready():
 
 func _on_reset_pressed():
 	global.release_all()
-	get_tree().change_scene(global.level)
-
+	get_tree().change_scene("res://Scenes/Menu/HUD.tscn")
 
 func _on_main_menu_pressed():	
 	get_tree().change_scene("res://Scenes/Menu/main_menu.tscn")

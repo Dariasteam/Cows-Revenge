@@ -8,8 +8,8 @@ onready var particles_a = get_node("Bars")
 onready var particles_b = get_node("Dust")
 onready var sound = get_node("StreamPlayer")
 
-onready var text_label = get_node("Text")
-onready var text_anim = get_node("Text/AnimationPlayer")
+onready var text_label = get_node("Node2D/Text")
+onready var text_anim = get_node("Node2D/Text/AnimationPlayer")
 
 func _ready():	
 	pass
@@ -26,6 +26,8 @@ func open_cage():
 	particles_b.set_emitting(true)
 	foreground.queue_free()
 	background.queue_free()
+	
+	remove_from_group("cages")
 	
 
 func _on_Area2D_body_enter( body ):
