@@ -10,11 +10,12 @@ script/source = "extends Control
 export(PackedScene) var scene
 
 func _ready():
-	set_process_input(true)
+	set_process_input(true)	
 
 func show():	
 	set_hidden(false)
 	get_tree().set_pause(true)
+	get_node(\"Resume\").grab_focus()
 
 func hide():
 	set_hidden(true)

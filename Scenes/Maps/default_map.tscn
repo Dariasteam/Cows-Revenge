@@ -36,7 +36,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -1572833, 35, -1179621, 35 )
+tile_data = IntArray(  )
 
 [node name="leaves_background" type="TileMap" parent="."]
 

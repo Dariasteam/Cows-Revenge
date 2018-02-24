@@ -17,17 +17,18 @@ onready var instancer = get_node("bonus_instancer")
 var frame_number
 
 func reset_values():
-	set_counter(0, 0)
+	set_counter(global.saved_cowbells, 0)
 
 func bonus(quantity):
 	var bonus = BONUS.instance()
 	bonus.set_text(str("+",quantity))	
 	instancer.add_child(bonus)	
 
-func _ready():
+func _ready():	
 	animation.play("cowbell_animations")
 	var anim = animation.get_animation("cowbell_animations")
 	next_cowbell_timer.set_wait_time(anim.get_length() / animation.get_speed() )
+	set_counter(global.cowbells, 0)
 	animation.set_active(false)		
 
 func set_counter (var quantity, var acumulated):	

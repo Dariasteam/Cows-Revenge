@@ -44,60 +44,48 @@ var left = false
 
 var receive_damage = true
 
-onready var life = max_life
-
-export(int) var max_milk = 100
-export(int) var milk_level = 0
-export(int) var max_life = 3
 export(int) var MAX_JUMP_TIME = 20
 export(int) var MAX_WALK_SPEED = 450
 export(int) var invulneravility_time = 16
 
 export var JUMP_SPEED = 400
 export var altitude = 0.5
-export(int) var cowbells_collected = 0
 export(int) var cages_open = 0
 
 func open_cage(var number):
 	cages_open += number
 
 func add_cowbells(var number):
-	cowbells_collected += number
-	hud_cowbell.set_counter (cowbells_collected, cowbell_collector.play_sound())
+	global.cowbells += number
+	hud_cowbell.set_counter (global.cowbells, cowbell_collector.play_sound())
 	
 func add_bonus (var quantity):
-	cowbells_collected += quantity
+	global.cowbells += quantity
 	hud_cowbell.bonus(quantity)
 	
 func is_falling ():
 	return velocity.y > 0
 
-func get_max_milk():
-	return max_milk
-
 func add_milk(amount):
-	if (milk_level + amount > max_milk):
-		milk_level = max_milk
+	if (global.milk_level + amount > global.max_milk):
+		global.milk_level = global.max_milk
 	else:
-		milk_level += amount
-	emit_signal("update_milk", get_milk_level());
+		global.milk_level += amount
+	emit_signal("update_milk", global.milk_level);
 
 func can_add_life():
-	if (life < max_life):
+	if (global.life < global.max_life):
 		return true
 	else:
 		return false
 
 func add_life():
-	life += 1
-	emit_signal ("update_life", life)
-
-func get_milk_level():
-	return milk_level
+	global.life += 1
+	emit_signal ("update_life", global.life)
 
 func decrease_milk(amount):
-	milk_level = milk_level - amount
-	emit_signal("update_milk", get_milk_level());
+	global.milk_level = global.milk_level - amount
+	emit_signal("update_milk", global.milk_level );
 
 func on_opacity_low ():
 	sprite.set_modulate(Color("fb12e7"))
@@ -107,8 +95,8 @@ func on_opacity_high ():
 
 func on_receive_damage (amount):
 	if (can_receive_damage()):
-		life = life - amount
-		emit_signal ("update_life", life)
+		global.life = global.life - amount
+		emit_signal ("update_life", global.life)
 		show_damage()
 
 func can_receive_damage ():
@@ -229,6 +217,7 @@ func disable_player():
 	sprite.set_opacity(0)
 
 func _ready():
+	global.reset_player()	
 	sprite.set_opacity(0)
 	connect("set_max_milk",hud_milk,"on_set_max_milk")
 	connect("update_milk",hud_milk,"on_update_milk_bar")
@@ -236,11 +225,11 @@ func _ready():
 	connect("update_life",hud_life,"on_update_life")
 	connect("set_max_life",hud_life,"on_set_max_life")
 	
-	emit_signal("set_max_milk", get_max_milk())
-	emit_signal("update_milk", get_milk_level())
+	emit_signal("set_max_milk", global.max_milk)
+	emit_signal("update_milk", global.milk_level)
 	
-	emit_signal("set_max_life", life)
-	emit_signal("update_life", life)
+	emit_signal("set_max_life", global.max_life)
+	emit_signal("update_life", global.life)
 
 func set_movement_left ():
 	animation.play("walk")

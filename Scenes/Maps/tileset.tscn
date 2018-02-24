@@ -1288,7 +1288,6 @@ _update_shape_index = 0
 
 [node name="Rama" type="Sprite" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
