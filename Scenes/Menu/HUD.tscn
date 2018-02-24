@@ -79,6 +79,7 @@ shader/shading_mode = 0
 script/source = "extends Button
 
 func _on_Back_pressed():
+	get_tree().set_pause(true)
 	get_parent().get_node(\"in_game_menu\").set_hidden(false)"
 
 [node name="Global" type="Node2D" groups=[
