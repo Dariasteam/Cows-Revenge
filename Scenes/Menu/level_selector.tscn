@@ -44,7 +44,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 885.0
-margin/bottom = 920.0
+margin/bottom = 500.0
 custom_constants/separation = 25
 alignment = 0
 
@@ -151,91 +151,7 @@ shortcut = null
 text = "Siempre fiel"
 flat = false
 script/script = ExtResource( 3 )
-id = 2
-
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
-
-rect/min_size = Vector2( 50, 80 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 525.0
-margin/right = 885.0
-margin/bottom = 605.0
-custom_fonts/font = ExtResource( 2 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Siempre fiel"
-flat = false
-script/script = ExtResource( 3 )
-id = 2
-
-[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer"]
-
-rect/min_size = Vector2( 50, 80 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 630.0
-margin/right = 885.0
-margin/bottom = 710.0
-custom_fonts/font = ExtResource( 2 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Siempre fiel"
-flat = false
-script/script = ExtResource( 3 )
-id = 2
-
-[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer"]
-
-rect/min_size = Vector2( 50, 80 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 735.0
-margin/right = 885.0
-margin/bottom = 815.0
-custom_fonts/font = ExtResource( 2 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Siempre fiel"
-flat = false
-script/script = ExtResource( 3 )
-id = 2
-
-[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer"]
-
-rect/min_size = Vector2( 50, 80 )
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 3
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 840.0
-margin/right = 885.0
-margin/bottom = 920.0
-custom_fonts/font = ExtResource( 2 )
-disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "Siempre fiel"
-flat = false
-script/script = ExtResource( 3 )
-id = 2
+id = 4
 
 [node name="Label" type="Label" parent="."]
 
