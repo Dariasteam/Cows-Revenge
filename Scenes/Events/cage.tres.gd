@@ -15,6 +15,9 @@ func _ready():
 	pass
 
 func open_cage():
+	
+	get_tree().get_nodes_in_group("player_spawner")[0].update_text()
+	
 	sound.play()
 	
 	text_label.set_text( text[rand_range(0, text.size())])

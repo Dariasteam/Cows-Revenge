@@ -1,0 +1,86 @@
+id,es,en
+PLAY_GAME,Jugar,Play
+SETTINGS,Ajustes,Settings
+ABOUT,Info,About
+SWITCH_SCREEN_CONTROLS,Usar botones táctiles,Use onsceen controls
+BTTN_BACK,Volver,Back
+TEXT_LICENSE,"El código fuente de este juego está licenciado bajo Geneal Public License versión 3. Todos los recursos gráficos, sonidos y música han sido creados por nosotos y están licenciados como Creative Commons Attribution-NonCommercial-ShareAlike 4.0. La tipografía utilizada es Press Start 2P creada por CodeMan38 (Open Font License)
+
+Puedes obtener el código fuente y los recusos en gitlab.com/dariasteam/cows-revenge
+
+Hecho en Godot Engine 2.1.5 (MIT)","This game's code is licensed under General Public License version 3. All the graphics, sounds and music resources were made by us and are published under Creative Commons Attribution-onCommercial-ShareAlike 4.0 International. Font is Press Start 2P by CodeMan38 (Open Font License)
+
+You can get the source code and assets at gitlab.com/dariasteam/cows-revenge
+
+Made with Godot Engine 2.1.5 (MIT)
+"
+CHAPTERS,Capítulos,Chapters
+EP1,La escuela,The school
+EP2,Gatear antes de caminar,Crawl before you walk
+EP3,Independizándose,Independence
+EP4,Una ubre y sus consecuencias,An udder and her consequences
+EP5,Siempre fiel,Always faithful
+UFO_JAIL_COUNTER,Vuelve cuando hayas salvado a todas las gallinas. Te quedan: ,Come back when you have rescued all chickens. You are left:
+DANIEL_INFO,"dariasteam94@gmail.com
+Mastodo.social/@darias
+
+- Código
+- Gráficos
+- Música
+- Animaciones","dariasteam94@gmail.com
+Mastodo.social/@darias
+
+- Code
+- Sprites
+- Music
+- Animations"
+YANARA_INFO,"needafreefall-@hotmail.com
+twitter.com/yanarona
+instagam.com/yanarona
+
+
+- Gráficos
+- Animaciones
+- Diseño de personajes","needafreefall-@hotmail.com
+twitter.com/yanarona
+instagam.com/yanarona
+
+- Sprites
+- Animations
+- Character design"
+BUY_HEART,Corazón,Heart
+BUY_MILK,Leche,Milk
+BTTN_LIFTOFF,Despegar,Liftoff
+BTTN_RESUME,Reanudar,Resume
+BTTN_RESET,Reiniciar,Reset
+BTTN_EXIT,Salir,Exit
+BTTN_RESET_LEVEL,Reinicia nivel,Reset level
+BTTN_MAIN_MENU,Ir al menú principal,Go to main menu
+TUT_0,Este camino está bloqueado. Busca otra forma de desplazarte.,This way is blocked. Find another path.
+TUT_1,Utiliza las teclas de dirección para moverte,Use arrows buttons to move
+TUT_7,Pulsa A o el botón del resorte para saltar por encima de estos bloques.,Press A or the spring button to jump above these blocks
+TUT_8,Puedes subir a las ramas de los árboles saltando desde abajo,You can climb to the branches jumping from below
+TUT_4,Salta!,Jump!
+TUT_5,Puedes volver a bajar pulsando abajo,You can go down by pessing down button
+TUT_6,"Recoge cencerros para obtener mejoras. 
+",Collect cowbells to obtain upgrades
+TUT_7,Bien hecho!,Well done!
+TUT_8,"Si recoges muchos cencerros en muy poco tiempo conseguirás bonificaciones!
+",If you collect a lot of cowbells quickly you'll obtain bonifications
+TUT_9,"Puedes guardar los cencerros en la nave volviendo a ella para ser abducido en cualquier momento.
+",You can store the cowbells in the space ship by going back to it to be abducted anytime
+TUT_10,"A veces es más seguro no continuar avanzando si nada indica que el camino continúa
+",Sometimes is safer to stop if you see the path finishing
+TUT_11,"Esta vez era broma, pero no vuelvas a hacerlo!",It was joke 
+TUT_12,"¡Cuidado! Eso que ves es un carnicero, para aniquilarlo salta sobre su cabeza","Cuation! That is a butcher, jump on his head to annihilate him."
+TUT_13,"Si has perdido vida puedes recuperarla recogiendo corazones
+",You can restore your life taking hearts
+TUT_14,"Recoge manzanas para poder producir leche con la que atacar
+",Collect apples to produce milk to attack
+TUT_15,"Ataca con la tecla S o el botón de la ubre. Conmuta entre leche desnatada o semidesnatada con R o el botón en blanco.
+",Press S or the udder button to attack. Change between skimmed and semi skimmed milk with R or the black button
+TUT_16,"Menudo pasillo más largo, ¿eh?","Such a long corridor, uh?"
+TUT_17,Rompe la jaula acercándote a ella para liberar a los animales,Break the cage by touching it to free the animals
+TUT_18,Vuelve a la nave y pulsa la tecla arriba para ser abducido,Get back to the ship and press up to be abducted
+TUT_19,En este juego NO respetamos las leyes de la física. Puedes saltar y en el aire modificar tu dirección.,In this game we DON'T obey the laws of physics. You can jump and change your direction in the air.
+TUT_20,,

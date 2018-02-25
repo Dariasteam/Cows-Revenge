@@ -1,6 +1,6 @@
 extends Button
 
-func _ready():
+func _ready():	
 	grab_focus()
 
 func _on_Button_pressed():	

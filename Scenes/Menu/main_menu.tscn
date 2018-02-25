@@ -62,7 +62,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Jugar"
+text = "PLAY_GAME"
 flat = false
 script/script = ExtResource( 3 )
 
@@ -85,7 +85,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Ajustes"
+text = "SETTINGS"
 flat = false
 script/script = SubResource( 1 )
 
@@ -108,7 +108,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Info"
+text = "ABOUT"
 flat = false
 script/script = ExtResource( 4 )
 

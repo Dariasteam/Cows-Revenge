@@ -28,7 +28,7 @@ margin/top = 96.0
 margin/right = 1214.0
 margin/bottom = -387.0
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="Yanara Panel"]
+[node name="RichTextLabel1" type="Label" parent="Yanara Panel"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -38,17 +38,11 @@ margin/left = 37.0
 margin/top = 160.0
 margin/right = 480.0
 margin/bottom = 307.0
-custom_fonts/normal_font = ExtResource( 1 )
-bbcode/enabled = true
-bbcode/bbcode = "needafreefall-@hotmail.com
-twitter.com/yanaronna
-instagram.com/yanaronna
-
-- Sprites
-- Animations
-- Character design"
-visible_characters = -1
+custom_fonts/font = ExtResource( 1 )
+text = "YANARA_INFO"
 percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Label1" type="Label" parent="Yanara Panel"]
 
@@ -85,7 +79,7 @@ margin/top = 96.0
 margin/right = 586.0
 margin/bottom = -387.0
 
-[node name="RichTextLabel1" type="RichTextLabel" parent="Daniel Panel"]
+[node name="RichTextLabel1" type="Label" parent="Daniel Panel"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -95,17 +89,11 @@ margin/left = 33.0
 margin/top = 160.0
 margin/right = 481.0
 margin/bottom = 307.0
-custom_fonts/normal_font = ExtResource( 1 )
-bbcode/enabled = true
-bbcode/bbcode = "dariasteam94@gmail.com
-mastodon.social/@dariasteam
-
-- Code
-- Sprites
-- Music
-- Animations"
-visible_characters = -1
+custom_fonts/font = ExtResource( 1 )
+text = "DANIEL_INFO"
 percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Label1" type="Label" parent="Daniel Panel"]
 
@@ -143,28 +131,23 @@ size_flags/vertical = 2
 margin/left = 74.0
 margin/top = 438.0
 margin/right = 1215.0
-margin/bottom = 634.0
+margin/bottom = 643.0
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel 2"]
+[node name="Label" type="Label" parent="Panel 2"]
 
-focus/ignore_mouse = false
+focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 18.0
-margin/top = 13.0
-margin/right = 1135.0
-margin/bottom = 189.0
-custom_fonts/normal_font = ExtResource( 1 )
-bbcode/enabled = true
-bbcode/bbcode = "This game's code is licensed under General Public License version 3. 
-All the graphics, sounds and music resources were made by us and are published under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. Font is Press Start 2P by CodeMan38 (Open Font License) 
-
-You can get the source code and assets at gitlab.com/dariasteam/cows-revenge
-
-Made with Godot Engine 2.1.5 (MIT)
-"
-visible_characters = -1
+size_flags/vertical = 0
+margin/left = 10.0
+margin/top = 11.0
+margin/right = 1128.0
+margin/bottom = 192.0
+custom_fonts/font = ExtResource( 1 )
+text = "TEXT_LICENSE"
+autowrap = true
 percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
