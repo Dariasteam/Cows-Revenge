@@ -99,7 +99,9 @@ func change_velocity(amount, right):
 	
 
 func _process(delta):
+	#return
 	var motion = v * delta
+	
 	motion = move(motion)
 	v.y += delta * GRAVITY
     

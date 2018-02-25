@@ -2,9 +2,8 @@ extends Button
 
 export(PackedScene) var scene
 
-func _ready():
-	connect("pressed", self, "_on_Button_pressed")	
-	set_process_input(true)		
+func _ready():	
+	set_process_input(true)	
 
 func _on_Button_pressed():		
 	get_tree().set_pause(false)
