@@ -26,7 +26,6 @@ onready var hud_milk = get_tree().get_nodes_in_group("milk_hud")[0]
 onready var hud_life = get_tree().get_nodes_in_group("life_hud")[0]
 onready var hud_cowbell = get_tree().get_nodes_in_group("cowbell_hud")[0]
 
-onready var JUMP_SOUND = ResourceLoader.load("Sound/player_jump.ogg")
 onready var cowbell_collector = get_node("cowbell_collector")
 
 var can_jump = true
@@ -130,8 +129,7 @@ func show_damage ():
 func can_jump_more ():
 	return jump_time > 0
 	
-func play_sound(stream):
-	sound.set_stream(stream)
+func play_sound():	
 	sound.play()
 
 func _fixed_process(delta):
@@ -142,7 +140,7 @@ func _fixed_process(delta):
 	
 	# Salto
 	if (can_jump and jump_key_pressed):
-		play_sound(JUMP_SOUND)
+		play_sound()
 		velocity.y = - JUMP_SPEED
 		jumping = true
 		jump_time = MAX_JUMP_TIME
