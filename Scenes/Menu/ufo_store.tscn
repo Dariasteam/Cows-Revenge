@@ -80,7 +80,7 @@ disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Despegar"
+text = "BTTN_LIFTOFF"
 flat = false
 script/script = ExtResource( 3 )
 
@@ -98,7 +98,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Volver"
+text = "BTTN_BACK"
 flat = false
 
 [node name="Heart_button" type="Button" parent="Panel"]
@@ -109,13 +109,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 86.0
 margin/top = 141.0
-margin/right = 343.0
+margin/right = 368.0
 margin/bottom = 373.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Corazón"
+text = "BUY_HEART"
 flat = false
 script/script = ExtResource( 4 )
 
@@ -150,7 +150,7 @@ custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-text = "Leche"
+text = "BUY_MILK"
 flat = false
 script/script = ExtResource( 5 )
 

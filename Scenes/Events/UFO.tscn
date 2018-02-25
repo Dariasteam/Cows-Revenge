@@ -433,9 +433,6 @@ trigger = false
 ] instance=ExtResource( 5 )]
 
 transform/pos = Vector2( -1.5159, 199.14 )
-init_text = "Vuelve cuando hayas
- salvado a todas las gallinas."
-append_text = "Te quedan "
 
 [node name="Sprite_cow" type="Sprite" parent="player_spawner"]
 
@@ -504,9 +501,10 @@ size_flags/vertical = 0
 margin/left = -202.0
 margin/top = -154.0
 margin/right = 204.0
-margin/bottom = -112.0
+margin/bottom = -96.0
 custom_fonts/font = ExtResource( 8 )
 align = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
