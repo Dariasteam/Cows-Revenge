@@ -60,5 +60,5 @@ func _on_Area2D_body_enter( body ):
 		set_process_input(true)
 	
 func _on_Area2D_body_exit(body):
-	if (body.is_in_group("player")):
+	if (body != null and body.is_in_group("player")):
 		set_process_input(false)	

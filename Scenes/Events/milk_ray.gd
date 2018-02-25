@@ -18,14 +18,14 @@ func set_player(p):
 	player = p
 
 func look_left():
-	force_raycast_update()
+	#force_raycast_update()
 	distance = -MAX_DISTANCE
 	origin.set_param(Particles2D.PARAM_DIRECTION, 270)
 	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))
 	middle.set_rot(PI)
 	
 func look_right():
-	force_raycast_update()
+#	force_raycast_update()
 	distance = MAX_DISTANCE
 	origin.set_param(Particles2D.PARAM_DIRECTION, 90)
 	middle.set_region_rect(Rect2(Vector2(0,0),Vector2(0,0)))

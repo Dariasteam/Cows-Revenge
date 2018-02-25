@@ -2,8 +2,8 @@ extends Node
 
 const MENU_MUSIC = preload ("res://Music/dangerous_hills.ogg")
 
-var base_price_heart = 1000
-var base_price_milk = 1000
+var base_price_heart = 500
+var base_price_milk = 500
 
 var increment_price_heart = 2
 var increment_price_milk = 2

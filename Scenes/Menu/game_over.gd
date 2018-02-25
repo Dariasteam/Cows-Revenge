@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():	
+	print ("a")
 	pass
 
 func _on_reset_pressed():
