@@ -1,7 +1,5 @@
 # Cow's Revenge ![](Sprites/Charasets/Player/idle/player_idle1.png)
 
-<iframe src="https://itch.io/embed/228972?dark=true" width="552" height="167" frameborder="0"></iframe>
-
 Casual platform game project for learning purposes. Made with [godot engine 2.1.5](https://godotengine.org/).
 
 Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
