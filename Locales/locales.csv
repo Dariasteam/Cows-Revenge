@@ -20,7 +20,7 @@ EP2,Gatear antes de caminar,Crawl before you walk
 EP3,Independizándose,Independence
 EP4,Una ubre y sus consecuencias,An udder and her consequences
 EP5,Siempre fiel,Always faithful
-UFO_JAIL_COUNTER,Vuelve cuando hayas salvado a todas las gallinas. Te quedan: ,Come back when you have rescued all chickens. You are left:
+UFO_JAIL_COUNTER,Vuelve cuando hayas salvado a todas las gallinas. Te quedan: ,Come back when you have rescued all the hen. Remaining:
 DANIEL_INFO,"dariasteam94@gmail.com
 Mastodo.social/@darias
 
@@ -58,8 +58,8 @@ BTTN_RESET_LEVEL,Reinicia nivel,Reset level
 BTTN_MAIN_MENU,Ir al menú principal,Go to main menu
 TUT_0,Este camino está bloqueado. Busca otra forma de desplazarte.,This way is blocked. Find another path.
 TUT_1,Utiliza las teclas de dirección para moverte,Use arrows buttons to move
-TUT_7,Pulsa A o el botón del resorte para saltar por encima de estos bloques.,Press A or the spring button to jump above these blocks
-TUT_8,Puedes subir a las ramas de los árboles saltando desde abajo,You can climb to the branches jumping from below
+TUT_2,Pulsa A o el botón del resorte para saltar por encima de estos bloques.,Press A or the spring button to jump above these blocks
+TUT_3,Puedes subir a las ramas de los árboles saltando desde abajo,You can climb to the branches jumping from below
 TUT_4,Salta!,Jump!
 TUT_5,Puedes volver a bajar pulsando abajo,You can go down by pessing down button
 TUT_6,"Recoge cencerros para obtener mejoras. 
@@ -83,4 +83,4 @@ TUT_16,"Menudo pasillo más largo, ¿eh?","Such a long corridor, uh?"
 TUT_17,Rompe la jaula acercándote a ella para liberar a los animales,Break the cage by touching it to free the animals
 TUT_18,Vuelve a la nave y pulsa la tecla arriba para ser abducido,Get back to the ship and press up to be abducted
 TUT_19,En este juego NO respetamos las leyes de la física. Puedes saltar y en el aire modificar tu dirección.,In this game we DON'T obey the laws of physics. You can jump and change your direction in the air.
-TUT_20,,
+MAP3_TEXT0,A veces la maleza es tan densa que te impide ver. ¡Abre bien los ojos!,Sometimes the bushes is so dense don't allow you to see beyond. Keep your ayes open!
