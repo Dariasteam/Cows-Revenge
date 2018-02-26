@@ -26,8 +26,7 @@ func _on_focus_change():
 	var scrolled_bottom = scrolled_top + scroll_container.get_size().y - focused.get_size().y
 	
 	if focus_offset < scrolled_top or focus_offset >= scrolled_bottom - 200:
-		scroll_container.set_v_scroll(focus_offset)
-	"
+		scroll_container.set_v_scroll(focus_offset)"
 
 [node name="Node2D" type="Node2D"]
 
