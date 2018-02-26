@@ -277,15 +277,13 @@ amount = 20
 
 [node name="hearts" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="Heart" parent="hearts" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1250, -1230 )
 
 [node name="Heart1" parent="hearts" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 270, -1370 )
+transform/pos = Vector2( 272.425, -1396.37 )
 
 [node name="cowbells" type="Node2D" parent="."]
 

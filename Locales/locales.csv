@@ -55,7 +55,7 @@ BTTN_LIFTOFF,Despegar,Liftoff
 BTTN_RESUME,Reanudar,Resume
 BTTN_RESET,Reiniciar,Reset
 BTTN_EXIT,Salir,Exit
-BTTN_RESET_LEVEL,Reinicia nivel,Reset level
+BTTN_RESET_LEVEL,Reiniciar nivel,Reset level
 BTTN_MAIN_MENU,Ir al menú principal,Go to main menu
 TUT_0,Este camino está bloqueado. Busca otra forma de desplazarte.,This way is blocked. Find another path.
 TUT_1,Utiliza las teclas de dirección para moverte,Use arrows buttons to move
