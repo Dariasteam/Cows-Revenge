@@ -230,7 +230,7 @@ func disable_player():
 	sprite.set_opacity(0)		
 
 func _ready():
-	global.reset_player()
+	#global.reset_player()
 	sprite.set_opacity(0)
 	connect("set_max_milk",hud_milk,"on_set_max_milk")
 	connect("update_milk",hud_milk,"on_update_milk_bar")
