@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Scenes/Events/UFO.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Music/dangerous-hills-loop.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Events/flying_platform.tscn" type="PackedScene" id=14]
 
 [node name="Level" type="Node2D" groups=[
 "level",
@@ -1619,17 +1618,4 @@ transform/pos = Vector2( -1890, -3020 )
 
 [node name="moving_platforms" type="Node2D" parent="."]
 
-[node name="Node2D" parent="moving_platforms" instance=ExtResource( 14 )]
 
-transform/pos = Vector2( -638.025, -2683.9 )
-
-[node name="PathFollow2D" parent="moving_platforms/Node2D/Path2D"]
-
-transform/pos = Vector2( 317.777, -141.948 )
-
-[node name="AnimationPlayer" parent="moving_platforms/Node2D/Path2D/PathFollow2D"]
-
-playback/speed = 0.2
-
-
-[editable path="moving_platforms/Node2D"]
