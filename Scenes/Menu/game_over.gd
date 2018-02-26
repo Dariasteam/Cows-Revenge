@@ -1,6 +1,7 @@
 extends Node2D
 
-func _ready():	
+func _ready():
+	get_node("VButtonArray/reset").grab_focus()
 	pass
 
 func _on_reset_pressed():

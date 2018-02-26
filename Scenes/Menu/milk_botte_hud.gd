@@ -18,27 +18,26 @@ onready var sprites = [sprite1, sprite2, sprite3]
 func reset_values():
 	for element in get_children():
 		element.set_value(0)
-		
 	on_set_max_milk (global.max_milk)
 	on_update_milk_bar(global.milk_level)
 
 func on_set_max_milk (maxm):
 	for element in get_children():
-		element.queue_free()
+		element.free()
 
 	max_value = maxm
 	n_bottles = maxm / each_bottle_value
 	var next_bottle_pos = initial_bottle_pos
 	for i in range(0, n_bottles):
-		var next_bottle = MILK_BOTLE_INDICATOR.instance()
+		var next_bottle = MILK_BOTLE_INDICATOR.instance()		
 		next_bottle.set_pos(next_bottle_pos)
 		add_child(next_bottle)
-		next_bottle_pos.x -= bottle_inter_distance
+		next_bottle_pos.x -= bottle_inter_distance	
 
 func on_update_milk_bar(value):
 	var final = value / each_bottle_value
 	var bottle_int = floor (final)
-	var bottle_float = final - bottle_int
+	var bottle_float = final - bottle_int	
 
 	for i in range(0, bottle_int):
 		get_children()[i].set_value(100)

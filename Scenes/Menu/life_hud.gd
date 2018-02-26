@@ -8,7 +8,7 @@ export var initial_heart_pos = Vector2(32, 0)
 
 func reset_values():
 	on_set_max_life(global.max_life)	
-
+	
 func on_set_max_life(value):
 	for element in get_children():
 		element.free()
@@ -21,7 +21,7 @@ func on_set_max_life(value):
 		add_child(next_heart)
 		next_heart_pos.x += heart_inter_distance
 	
-	on_update_life(global.max_life)
+	on_update_life(global.life)
 
 func on_update_life (var n):
 	if (n <= 0):

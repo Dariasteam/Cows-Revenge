@@ -286,7 +286,13 @@ amount = 20
 
 [node name="Apple5" parent="apples" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 3383.08, 1853.15 )
+transform/pos = Vector2( 3383.08, 1767.97 )
+z/z = -2
+amount = 20
+
+[node name="Apple6" parent="apples" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 3383.08, 1684.46 )
 z/z = -2
 amount = 20
 
