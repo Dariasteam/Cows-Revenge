@@ -11,6 +11,8 @@ var increment_price_milk = 2
 var hearts_buyed = 0
 var milk_buyed = 0
 
+var can_show_in_game_menu = true
+
 var level = 0
 var unlocked_levels = 1
 var onscreen_controls = true
@@ -21,21 +23,25 @@ var max_milk = 100
 var max_life = 3
 var saved_cowbells = 0
 
-func buy_milk(price):
-	milk_buyed += 1
+func buy(price):
 	saved_cowbells -= price
-	max_milk += 33
-	milk_level = max_milk
-	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
+	cowbells = saved_cowbells
 	save_game()
 	
-func buy_heart(price):
-	hearts_buyed += 1
-	saved_cowbells -= price
-	max_life += 1	
-	life = max_life
+func buy_milk(price):
+	milk_buyed += 1	
+	max_milk += 33	
+	milk_level = max_milk
+	buy(price)
 	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
-	save_game()
+	
+func buy_heart(price):
+	hearts_buyed += 1	
+	max_life += 1
+	life = max_life
+	buy(price)
+	get_tree().get_nodes_in_group("level_selector")[0].reset_hud()
+	
 
 func release_all():
 	pass
