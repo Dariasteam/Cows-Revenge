@@ -23,7 +23,7 @@ func next_level():
 		global.unlocked_levels += 1
 		global.save_game()
 		viewport.get_child(0).queue_free()
-		reset_hud()
+		#reset_hud()
 		viewport.add_child(levels[global.level].instance())
 
 func reset_level():

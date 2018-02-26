@@ -24,7 +24,7 @@ func reset_values():
 
 func on_set_max_milk (maxm):
 	for element in get_children():
-		element.free()
+		element.queue_free()
 
 	max_value = maxm
 	n_bottles = maxm / each_bottle_value
