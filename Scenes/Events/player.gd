@@ -51,6 +51,11 @@ export var JUMP_SPEED = 400
 export var altitude = 0.5
 export(int) var cages_open = 0
 
+func _integrate_forces(s):
+	print ("a")
+	var lv = s.get_linear_velocity()
+	var step = s.get_step()
+
 func open_cage(var number):
 	cages_open += number
 
@@ -149,7 +154,6 @@ func _fixed_process(delta):
 	if (jumping and can_jump_more() and jump_key_pressed):
 		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
 		
-		
 	# Movimiento horizontal
 	if (!right and !left):
 		if (velocity.x > SLIDE_LEVEL): 
@@ -158,7 +162,6 @@ func _fixed_process(delta):
 			velocity.x += SLIDE_LEVEL
 		else:		
 			velocity.x = 0
-			walk_speed = 0
 	
 	var motion = velocity * delta
 
@@ -176,8 +179,16 @@ func _fixed_process(delta):
 	
 	# Control de colisiones		
 	if (is_colliding()):
-		var normal = get_collision_normal()
+		var normal = get_collision_normal()				
+		
 		if (normal.y < -0.35):
+						
+			var floor_velocity =  get_collider_velocity()
+			if (floor_velocity != Vector2()):
+				move(Vector2(floor_velocity.x / 60, 0))
+				motion.y = 0
+				velocity.y = 0		
+			
 			# Está en el suelo			
 			if (!jumping and jump_key_released):
 				on_ground = true
@@ -188,6 +199,7 @@ func _fixed_process(delta):
 				motion.x += motion.x * (-normal.y)
 			motion = normal.slide(motion)
 			velocity.y = 0	
+			
 		else:			
 			# Está chocándose contra techo o pared	
 			can_jump = false

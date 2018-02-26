@@ -226,6 +226,7 @@ region_rect = Rect2( -1000, 0, 2048, 128 )
 
 [node name="enemies" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 2140, -960 )
 transform/scale = Vector2( 1.7, 1.7 )
 

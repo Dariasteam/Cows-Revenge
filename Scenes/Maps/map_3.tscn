@@ -1410,6 +1410,6 @@ transform/pos = Vector2( -1890, -3020 )
 [node name="Area2D" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4340, 1360 )
-text = "A veces la maleza es tan densa que te impide ver. ¡Abre bien los ojos!"
+text = "MAP3_TEXT0"
 
 

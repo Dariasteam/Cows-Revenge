@@ -8,12 +8,12 @@
 [ext_resource path="res://Scenes/Events/cowbell_collector.gd" type="Script" id=6]
 [ext_resource path="res://Sound/player_jump.ogg" type="AudioStream" id=7]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -13.26, -5.39603, -9.45393, -8.08105, 6.94148, -8.08105, 11.3331, -5.21703, 11.3331, 4.27004, 9.28368, 8.56607, 1.37875, 13.0411, -3.59843, 13.0411, -11.7961, 8.38707, -13.26, 4.44904 )
 
-[sub_resource type="ConvexPolygonShape2D" id=5]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
 points = Vector2Array( -2.35073, 6.94769, -10.0513, 0.602652, -10.1458, -14.3403, 9.69616, -14.1336, 9.7198, 0.41664, 1.64128, 6.92704 )
@@ -42,10 +42,10 @@ tracks/0/keys = {
 transform/scale = Vector2( 1.8, 1.8 )
 z/relative = false
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1.89755, 0, 0, 3.10364, 2.93931, -4.91934 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 5 )
+shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 2.35192, 0, 0, 2.68801, 1.63985, 16.8801 )
 shapes/1/trigger = true
 collision/layers = 1057

@@ -1168,108 +1168,101 @@ transform/pos = Vector2( -1890, -3020 )
 
 [node name="Area2D" parent="Tips" instance=ExtResource( 14 )]
 
-text = "Este camino está bloqueado. Busca otra forma de desplazarte."
+text = "TUT_0"
 
 [node name="Area2D1" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 640, 20 )
-text = "Utiliza las teclas de dirección para moverte"
+text = "TUT_1"
 
 [node name="Area2D2" parent="Tips" instance=ExtResource( 14 )]
 
-transform/pos = Vector2( 1524.07, 44.6611 )
+transform/pos = Vector2( 1520, 30 )
 text = "Pulsa A o el botón del resorte para saltar por encima de estos bloques."
 
 [node name="Area2D3" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 2110, 30 )
-text = "Puedes subir a las ramas de los árboles saltando desde abajo"
+text = "TUT_3"
 
 [node name="Area2D4" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 2550, 30 )
-text = "Salta!"
+text = "TUT_4"
 
 [node name="Area2D5" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 2550, -370 )
-text = "Puedes volver a bajar pulsando abajo"
+text = "TUT_5"
 
 [node name="Area2D6" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 3570, -60 )
-text = "Recoge cencerros para obtener mejoras. 
-"
+text = "TUT_6"
 
 [node name="Area2D7" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 3900, -60 )
-text = "Bien hecho!"
+text = "TUT_7"
 
 [node name="Area2D8" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4010, 370 )
-text = "Si recoges muchos cencerros en muy poco tiempo conseguirás bonificaciones!
-"
+text = "TUT_8"
 
 [node name="Area2D19" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4340, 730 )
-text = "Puedes guardar los cencerros en la nave volviendo a ella para ser abducido en cualquier momento.
-"
+text = "TUT_9"
 
 [node name="Area2D9" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4790, 1050 )
-text = "A veces es más seguro no continuar avanzando si nada indica que el camino continúa
-"
+text = "TUT_10"
 
 [node name="Area2D10" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4920, 1340 )
-text = "Esta vez era broma, pero no vuelvas a hacerlo!"
+text = "TUT_11"
 
 [node name="Area2D11" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4300, 1790 )
-text = "¡Cuidado! Eso que ves es un carnicero, para aniquilarlo salta sobre su cabeza"
+text = "TUT_12"
 
 [node name="Area2D12" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 3560, 1790 )
-text = "Si has perdido vida puedes recuperarla recogiendo corazones
-"
+text = "TUT_13"
 
 [node name="Area2D13" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 3590, 700 )
-text = "Recoge manzanas para poder producir leche con la que atacar
-"
+text = "TUT_14"
 
 [node name="Area2D14" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 2940, 370 )
-text = "Ataca con la tecla S o el botón de la ubre. Conmuta entre leche desnatada o semidesnatada con R o el botón en blanco.
-"
+text = "TUT_15"
 
 [node name="Area2D15" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1380, 500 )
-text = "Menudo pasillo más largo, ¿eh?"
+text = "TUT_16"
 
 [node name="Area2D16" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 380, 370 )
-text = "Rompe la jaula acercándote a ella para liberar a los animales"
+text = "TUT_17"
 
 [node name="Area2D17" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -340, -710 )
-text = "Vuelve a la nave y pulsa la tecla arriba para ser abducido"
+text = "TUT_18"
 
 [node name="Area2D18" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -340, -60 )
-text = "En este juego NO respetamos las leyes de la física. Puedes saltar y en el aire modificar tu dirección."
+text = "TUT_19"
 
 
