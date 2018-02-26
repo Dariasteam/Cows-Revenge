@@ -4,15 +4,15 @@ Casual platform game project for learning purposes. Made with [godot engine](htt
 
 Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Authors
-  - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), dariasteam94@gmail.com
-      code, music, sprites
-  - **Yanara Aristiguieta** [instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
-      sprites
-
 ## Screenshots
 
-![](Screenshots/1.png)
+![](Screenshots/2.png)
+
+## Authors
+  - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), dariasteam94@gmail.com
+      code, music, sprites, aniamtions
+  - **Yanara Aristiguieta** [instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
+      sprites, character design, animations
 
 ## Additional information
 All resources have been created using the following FLOSS:
@@ -21,6 +21,7 @@ All resources have been created using the following FLOSS:
 - [audacity](http://www.audacityteam.org/)
 - [tuxguitar](http://tuxguitar.com.ar/)
 - [inkscape](https://inkscape.org/en/)
+- [sfxr](http://www.drpetter.se/project_sfxr.html)
 
 Font: [Press Start 2P by CodeMan38 (Open Font License)](https://fonts.google.com/specimen/Press+Start+2P?selection.family=Press+Start+2P)
 
