@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=1]
+[gd_scene load_steps=39 format=1]
 
 [ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=1]
 
@@ -147,55 +147,15 @@ points = Vector2Array( 16, -34, 16, 30, -9, 30, -9, -34 )
 custom_solver_bias = 0.0
 points = Vector2Array( 16, -31, 16, 30, -9, 30, -9, -31 )
 
-[sub_resource type="ConvexPolygonShape2D" id=30]
+[sub_resource type="RectangleShape2D" id=39]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -9, -34, 16, -34, 16, -12, -9, 30 )
-
-[sub_resource type="ConvexPolygonShape2D" id=31]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 23, -12, 35, -12, 35, -1, 24, 3 )
-
-[sub_resource type="ConvexPolygonShape2D" id=32]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 16, 17, 16, 30, -9, 30 )
-
-[sub_resource type="ConvexPolygonShape2D" id=33]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 24, 3, 16, 17, -9, 30, 16, -12, 23, -12 )
-
-[sub_resource type="ConvexPolygonShape2D" id=46]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -9, -34, 16, -34, 16, 30, -9, -12 )
-
-[sub_resource type="ConvexPolygonShape2D" id=47]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 16, 30, -9, 30, -9, 14 )
-
-[sub_resource type="ConvexPolygonShape2D" id=48]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -9, -12, 16, 30, -9, 14, -15, 4, -16, -12 )
-
-[sub_resource type="ConvexPolygonShape2D" id=49]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -16, -12, -15, 4, -29, -1, -29, -12 )
+extents = Vector2( 32, 6 )
 
 [sub_resource type="RectangleShape2D" id=38]
 
 custom_solver_bias = 0.0
 extents = Vector2( 2, 6 )
-
-[sub_resource type="RectangleShape2D" id=39]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 6 )
 
 [sub_resource type="ConvexPolygonShape2D" id=40]
 
@@ -1131,7 +1091,6 @@ trigger = false
 
 [node name="Tronco_rama_right" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
 texture = ExtResource( 1 )
@@ -1142,21 +1101,11 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="StaticBody2D1" type="StaticBody2D" parent="Tronco_rama_right"]
 
-visibility/visible = false
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 30 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/shape = SubResource( 39 )
+shapes/0/transform = Matrix32( 0.357143, 0, 0, 1, 24, -4 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 31 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 32 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 33 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
-shapes/3/trigger = false
 collision/layers = 2
 collision/mask = 15
 one_way_collision/direction = Vector2( 0, 1 )
@@ -1166,13 +1115,13 @@ constant_angular_velocity = 0.0
 friction = 0.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_rama_right/StaticBody2D1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tronco_rama_right/StaticBody2D1"]
 
-transform/pos = Vector2( 0, 2 )
-build_mode = 0
-polygon = Vector2Array( 16, -34, 16, -12, 23, -12, 35, -12, 35, -1, 24, 3, 16, 17, 16, 30, -9, 30, -9, -34 )
-shape_range = Vector2( 0, 3 )
+transform/pos = Vector2( 24, -4 )
+transform/scale = Vector2( 0.357143, 1 )
+shape = SubResource( 39 )
 trigger = false
+_update_shape_index = 0
 
 [node name="Tronco_rama_left" type="Sprite" parent="."]
 
@@ -1188,20 +1137,11 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 46 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/shape = SubResource( 39 )
+shapes/0/transform = Matrix32( 0.357143, 0, 0, 1, -17.5, -4 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 47 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
-shapes/1/trigger = false
-shapes/2/shape = SubResource( 48 )
-shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
-shapes/2/trigger = false
-shapes/3/shape = SubResource( 49 )
-shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
-shapes/3/trigger = false
-collision/layers = 2
-collision/mask = 15
+collision/layers = 0
+collision/mask = 0
 one_way_collision/direction = Vector2( 0, 1 )
 one_way_collision/max_depth = 1.0
 constant_linear_velocity = Vector2( 0, 0 )
@@ -1209,13 +1149,13 @@ constant_angular_velocity = 0.0
 friction = 0.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_rama_left/StaticBody2D1"]
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="Tronco_rama_left/StaticBody2D1"]
 
-transform/pos = Vector2( 0, 2 )
-build_mode = 0
-polygon = Vector2Array( 16, -34, 16, 30, -9, 30, -9, 14, -15, 4, -29, -1, -29, -12, -16, -12, -9, -12, -9, -34 )
-shape_range = Vector2( 0, 3 )
+transform/pos = Vector2( -17.5, -4 )
+transform/scale = Vector2( 0.357143, 1 )
+shape = SubResource( 39 )
 trigger = false
+_update_shape_index = 0
 
 [node name="Rama_end_right" type="Sprite" parent="."]
 
