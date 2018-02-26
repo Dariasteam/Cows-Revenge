@@ -6,7 +6,10 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 
 ## Screenshots
 
+![](Screenshots/0.png)
+![](Screenshots/1.png)
 ![](Screenshots/2.png)
+![](Screenshots/3.png)
 
 ## Authors
   - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), [email](dariasteam94@gmail.com)
