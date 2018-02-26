@@ -1571,46 +1571,64 @@ editor/display_folded = true
 
 transform/pos = Vector2( -1250, -2410 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail1" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1450, -2100 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail2" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -950, -2100 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail3" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -640, -2100 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail4" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -2000, -2100 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail5" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1850, -1560 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail6" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1520, -1560 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail7" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1090, -1560 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail8" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -660, -1560 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="Tips" type="Node2D" parent="."]
 

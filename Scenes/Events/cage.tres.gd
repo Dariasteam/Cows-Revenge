@@ -1,6 +1,8 @@
 extends StaticBody2D
 
-export(Array) var text
+export(String) var base_key_texts = "CHICKEN_ADVICE_"
+
+var texts = []
 
 onready var foreground = get_node("Foreground")
 onready var background = get_node("Background")
@@ -12,7 +14,8 @@ onready var text_label = get_node("Node2D/Text")
 onready var text_anim = get_node("Node2D/Text/AnimationPlayer")
 
 func _ready():	
-	pass
+	for i in range(0, 56):
+		texts.push_back(str(base_key_texts, i))
 
 func open_cage():
 	
@@ -20,7 +23,7 @@ func open_cage():
 	
 	sound.play()
 	
-	text_label.set_text( text[rand_range(0, text.size())])
+	text_label.set_text( texts[rand_range(0, texts.size())])
 	text_anim.play("Apear")
 	
 	get_node("Area2D").queue_free()
