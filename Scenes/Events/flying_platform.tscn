@@ -6,7 +6,7 @@
 
 bake_interval = 5.0
 _data = {
-"points": Vector2Array( 0, 0, -230.834, 2.30383, 938.809, -146.193, 0, 0, -123.884, 6.53277, 628.191, -146.193, 0, 0, -313.991, 8.94618, 30.2831, -142.51, 0, 0, 0, 0, -514.832, -133.916 )
+"points": Vector2Array( 0, 0, 1.67447, -1.07495, 1488.21, -138.305, 0, 0, 0, 0, -322.454, -132.864 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -39,9 +39,9 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 67.9999, 7 )
+extents = Vector2( 78.6534, 9.26797 )
 
-[node name="Node2D" type="Node2D"]
+[node name="moving_platform" type="Node2D"]
 
 transform/pos = Vector2( 640, 320 )
 
@@ -52,7 +52,7 @@ curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 
-transform/pos = Vector2( 317.777, -141.948 )
+transform/pos = Vector2( 864.909, -136.896 )
 transform/rot = -179.531
 offset = 620.742
 h_offset = 0.0
@@ -76,7 +76,8 @@ autoplay = "Nueva animación"
 [node name="platform" type="Node2D" parent="Path2D/PathFollow2D"]
 
 transform/pos = Vector2( 19.9257, 9.16351 )
-transform/rot = -180.0
+transform/rot = 180.0
+transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/platform"]
 
@@ -118,22 +119,23 @@ vframes = 13
 hframes = 5
 frame = 50
 
-[node name="RigidBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D/platform"]
+[node name="RigidBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 
-transform/pos = Vector2( -187.449, 81.4165 )
-transform/rot = -0.469333
+transform/pos = Vector2( 207.375, -72.253 )
+transform/rot = 179.531
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, -5.95581e-06, 5.95581e-06, 1, 154.999, -88.001 )
+shapes/0/transform = Matrix32( 1.48754, -8.85949e-06, 5.95581e-06, 1, 133.769, -90.2688 )
 shapes/0/trigger = false
 collision/layers = 2
 collision/mask = 15
 collision/margin = 0.08
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/platform/RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D"]
 
-transform/pos = Vector2( 154.999, -88.001 )
+transform/pos = Vector2( 133.769, -90.2688 )
 transform/rot = 0.000341243
+transform/scale = Vector2( 1.48754, 1 )
 shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0

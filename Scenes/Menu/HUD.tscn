@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=1]
+[gd_scene load_steps=30 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_selector.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Maps/map_0.tscn" type="PackedScene" id=2]
@@ -6,24 +6,25 @@
 [ext_resource path="res://Scenes/Maps/map_1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Maps/map_2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Maps/map_4.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Menu/buttons_hud.gd" type="Script" id=8]
-[ext_resource path="res://Sprites/GUI/Buttons/bttn_arrow.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/GUI/Buttons/bttn_jump.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/GUI/Buttons/bttn.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=12]
-[ext_resource path="res://Scenes/Menu/milk_botte_hud.gd" type="Script" id=13]
-[ext_resource path="res://Sprites/GUI/HUD/milbar_outter_2.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Menu/cowbells_hud.gd" type="Script" id=17]
-[ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=18]
-[ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/Events/cowbell_animation_one_shot.tres" type="Animation" id=20]
-[ext_resource path="res://Scenes/Events/cowbell_animations.tres" type="Animation" id=21]
-[ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Menu/in_game_menu.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Menu/ufo_store.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Maps/map_5.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Menu/life_hud.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Menu/buttons_hud.gd" type="Script" id=9]
+[ext_resource path="res://Sprites/GUI/Buttons/bttn_arrow.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/GUI/Buttons/bttn_jump.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/GUI/Buttons/bttn.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Menu/milk_botte_hud.gd" type="Script" id=14]
+[ext_resource path="res://Sprites/GUI/HUD/milbar_outter_2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_3.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/GUI/HUD/milkbar_outter_1.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Menu/cowbells_hud.gd" type="Script" id=18]
+[ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=19]
+[ext_resource path="res://Sprites/Charasets/cowbell.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/Events/cowbell_animation_one_shot.tres" type="Animation" id=21]
+[ext_resource path="res://Scenes/Events/cowbell_animations.tres" type="Animation" id=22]
+[ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Menu/in_game_menu.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Menu/ufo_store.tscn" type="PackedScene" id=25]
 
 [sub_resource type="Environment" id=1]
 
@@ -103,7 +104,7 @@ margin/top = 0.0
 margin/right = 1280.0
 margin/bottom = 768.0
 script/script = ExtResource( 1 )
-levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
@@ -127,17 +128,17 @@ gui/disable_input = false
 ]]
 
 transform/pos = Vector2( 120, 58 )
-script/script = ExtResource( 7 )
+script/script = ExtResource( 8 )
 heart_inter_distance = 64
 initial_heart_pos = Vector2( 32, 0 )
 
 [node name="Buttons" type="Node2D" parent="Control" groups=[
-"buttons_hud",
 "onscreen_controls",
+"buttons_hud",
 ]]
 
 editor/display_folded = true
-script/script = ExtResource( 8 )
+script/script = ExtResource( 9 )
 
 [node name="Bttn_U" type="TouchScreenButton" parent="Control/Buttons" groups=[
 "onscreen_controls",
@@ -146,7 +147,7 @@ script/script = ExtResource( 8 )
 visibility/opacity = 0.9
 transform/pos = Vector2( 160, 320 )
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -163,7 +164,7 @@ visibility_mode = 0
 visibility/opacity = 0.8
 transform/pos = Vector2( 1088, 576 )
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 10 )
+normal = ExtResource( 11 )
 pressed = null
 bitmask = null
 shape = null
@@ -180,7 +181,7 @@ visibility_mode = 0
 visibility/opacity = 0.8
 transform/pos = Vector2( 1088, 384 )
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 11 )
+normal = ExtResource( 12 )
 pressed = null
 bitmask = null
 shape = null
@@ -197,7 +198,7 @@ visibility_mode = 0
 visibility/opacity = 0.9
 transform/pos = Vector2( 896, 576 )
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 12 )
+normal = ExtResource( 13 )
 pressed = null
 bitmask = null
 shape = null
@@ -215,7 +216,7 @@ visibility/opacity = 0.9
 transform/pos = Vector2( 288, 704 )
 transform/rot = 180.0
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -232,7 +233,7 @@ visibility_mode = 0
 visibility/opacity = 0.0
 transform/pos = Vector2( 288, 576 )
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -249,7 +250,7 @@ visibility_mode = 0
 visibility/opacity = 0.0
 transform/pos = Vector2( 32, 576 )
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -267,7 +268,7 @@ visibility/opacity = 0.9
 transform/pos = Vector2( 416, 448 )
 transform/rot = -90.0
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -285,7 +286,7 @@ visibility/opacity = 0.9
 transform/pos = Vector2( 32, 576 )
 transform/rot = 90.0
 transform/scale = Vector2( 0.474074, 0.481203 )
-normal = ExtResource( 9 )
+normal = ExtResource( 10 )
 pressed = null
 bitmask = null
 shape = null
@@ -301,13 +302,13 @@ visibility_mode = 0
 
 transform/pos = Vector2( 1205, 73 )
 transform/scale = Vector2( 2, 2 )
-script/script = ExtResource( 13 )
+script/script = ExtResource( 14 )
 each_bottle_value = 33.0
 bottle_inter_distance = 32
 initial_bottle_pos = Vector2( -10, -20 )
-sprite1 = ExtResource( 14 )
-sprite2 = ExtResource( 15 )
-sprite3 = ExtResource( 16 )
+sprite1 = ExtResource( 15 )
+sprite2 = ExtResource( 16 )
+sprite3 = ExtResource( 17 )
 
 [node name="Cowbells" type="Node2D" parent="Control" groups=[
 "cowbell_hud",
@@ -315,7 +316,7 @@ sprite3 = ExtResource( 16 )
 
 editor/display_folded = true
 transform/pos = Vector2( 3, 21 )
-script/script = ExtResource( 17 )
+script/script = ExtResource( 18 )
 
 [node name="Counter" type="RichTextLabel" parent="Control/Cowbells"]
 
@@ -327,7 +328,7 @@ margin/left = 630.0
 margin/top = 30.0
 margin/right = 876.0
 margin/bottom = 81.0
-custom_fonts/normal_font = ExtResource( 18 )
+custom_fonts/normal_font = ExtResource( 19 )
 bbcode/enabled = true
 bbcode/bbcode = "0"
 visible_characters = -1
@@ -356,7 +357,7 @@ autostart = false
 material/material = SubResource( 3 )
 transform/pos = Vector2( 586, 45 )
 transform/scale = Vector2( 3, 3 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 hframes = 3
 
 [node name="Animation" type="AnimationPlayer" parent="Control/Cowbells/Sprite"]
@@ -364,14 +365,14 @@ hframes = 3
 playback/process_mode = 0
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/cowbell_animation_one_shot = ExtResource( 20 )
-anims/cowbell_animations = ExtResource( 21 )
+anims/cowbell_animation_one_shot = ExtResource( 21 )
+anims/cowbell_animations = ExtResource( 22 )
 playback/active = false
 playback/speed = 2.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Back" parent="Control" instance=ExtResource( 22 )]
+[node name="Back" parent="Control" instance=ExtResource( 23 )]
 
 margin/left = 36.0
 margin/top = 34.0
@@ -380,7 +381,7 @@ margin/bottom = 89.0
 text = "<"
 script/script = SubResource( 4 )
 
-[node name="in_game_menu" parent="Control/Back" instance=ExtResource( 23 )]
+[node name="in_game_menu" parent="Control/Back" instance=ExtResource( 24 )]
 
 visibility/visible = false
 margin/left = -36.0
@@ -388,7 +389,7 @@ margin/top = -34.0
 margin/right = 1244.0
 margin/bottom = 686.0
 
-[node name="Control" parent="Control" instance=ExtResource( 24 )]
+[node name="Control" parent="Control" instance=ExtResource( 25 )]
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 

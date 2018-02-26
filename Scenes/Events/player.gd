@@ -181,7 +181,7 @@ func _fixed_process(delta):
 	
 	# Control de colisiones		
 	if (is_colliding()):
-		var normal = get_collision_normal()				
+		var normal = get_collision_normal()
 		
 		if (normal.y < -0.35):
 						
