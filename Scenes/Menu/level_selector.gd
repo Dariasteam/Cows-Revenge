@@ -35,3 +35,4 @@ func reset_hud():
 	life.reset_values()
 	milk.reset_values()
 	cowbells.reset_values()
+	
