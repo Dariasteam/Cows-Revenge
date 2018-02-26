@@ -14,6 +14,7 @@ const SLIDE_LEVEL = 80
 const WALK_SPEED_INCREMENT = 20
 
 var walk_speed = 0
+var floor_velocity = Vector2()
 
 onready var shooter = get_node("shooter")
 onready var sprite = get_node("sprite")
@@ -147,6 +148,7 @@ func _fixed_process(delta):
 	if (can_jump and jump_key_pressed):
 		play_sound()
 		velocity.y = - JUMP_SPEED
+		velocity += floor_velocity
 		jumping = true
 		jump_time = MAX_JUMP_TIME
 		can_jump = false
@@ -183,9 +185,9 @@ func _fixed_process(delta):
 		
 		if (normal.y < -0.35):
 						
-			var floor_velocity =  get_collider_velocity()
+			floor_velocity =  get_collider_velocity()
 			if (floor_velocity != Vector2()):
-				move(Vector2(floor_velocity.x / 60, 0))
+				move(Vector2(floor_velocity.x / 60, floor_velocity.y / 60))
 				motion.y = 0
 				velocity.y = 0		
 			
