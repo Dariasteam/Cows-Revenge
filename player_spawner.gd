@@ -51,7 +51,7 @@ func _input(ev):
 		abduct()
 	
 func _on_Area2D_body_enter( body ):
-	if (body.is_in_group("player")):		
+	if (body.is_in_group("player")):
 		set_process_input(true)
 	
 func _on_Area2D_body_exit(body):

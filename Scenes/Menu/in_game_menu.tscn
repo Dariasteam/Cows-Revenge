@@ -24,7 +24,7 @@ func hide():
 	
 
 func _input(ev):
-	if (ev.is_action_pressed(\"ui_cancel\")):
+	if (ev.is_action_pressed(\"ui_menu\") and global.can_show_in_game_menu):
 		if (is_hidden()):
 			show()
 		else:
