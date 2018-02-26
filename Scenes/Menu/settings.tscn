@@ -73,15 +73,15 @@ enabled_focus_mode = 2
 shortcut = null
 text = "SWITCH_SCREEN_CONTROLS"
 flat = false
+align = 0
 script/script = SubResource( 1 )
 
-[node name="Button" parent="." instance=ExtResource( 2 )]
+[node name="Button" parent="Panel/VButtonArray" instance=ExtResource( 2 )]
 
-margin/left = 513.0
-margin/top = 659.0
-margin/right = 795.0
-margin/bottom = 707.0
-text = "BTTN_BACK"
+margin/left = 372.0
+margin/top = 471.0
+margin/right = 654.0
+margin/bottom = 519.0
 scene = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]

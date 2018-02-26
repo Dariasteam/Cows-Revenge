@@ -3,8 +3,8 @@
 [ext_resource path="res://Scenes/Menu/ufo_store.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Scenes/Menu/liftoff.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Menu/buy_heart.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Menu/buy_milk.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Menu/buy_milk.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Menu/buy_heart.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -65,7 +65,22 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Liftoff" type="Button" parent="Panel"]
+[node name="VButtonArray" type="VButtonArray" parent="Panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+flat = false
+button/count = 0
+button/min_button_size = -1.0
+button/align = 1065353216
+
+[node name="Liftoff" type="Button" parent="Panel/VButtonArray"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -73,7 +88,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 107.0
 margin/top = 475.0
-margin/right = 380.0
+margin/right = 378.0
 margin/bottom = 525.0
 custom_fonts/font = ExtResource( 2 )
 disabled = true
@@ -82,9 +97,10 @@ enabled_focus_mode = 2
 shortcut = null
 text = "BTTN_LIFTOFF"
 flat = false
+clip_text = true
 script/script = ExtResource( 3 )
 
-[node name="Return" type="Button" parent="Panel"]
+[node name="Return" type="Button" parent="Panel/VButtonArray"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -92,7 +108,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 402.0
 margin/top = 475.0
-margin/right = 675.0
+margin/right = 684.0
 margin/bottom = 525.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
@@ -101,42 +117,7 @@ shortcut = null
 text = "BTTN_BACK"
 flat = false
 
-[node name="Heart_button" type="Button" parent="Panel"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 86.0
-margin/top = 141.0
-margin/right = 368.0
-margin/bottom = 373.0
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "BUY_HEART"
-flat = false
-script/script = ExtResource( 4 )
-
-[node name="Heart_Label" type="Label" parent="Panel/Heart_button"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 2.0
-margin/top = 246.0
-margin/right = 257.0
-margin/bottom = 322.0
-custom_fonts/font = ExtResource( 2 )
-text = "0000"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Milk_button" type="Button" parent="Panel"]
+[node name="Milk_button" type="Button" parent="Panel/VButtonArray"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -152,9 +133,9 @@ enabled_focus_mode = 2
 shortcut = null
 text = "BUY_MILK"
 flat = false
-script/script = ExtResource( 5 )
+script/script = ExtResource( 4 )
 
-[node name="Milk_Label" type="Label" parent="Panel/Milk_button"]
+[node name="Milk_Label" type="Label" parent="Panel/VButtonArray/Milk_button"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -163,6 +144,41 @@ size_flags/vertical = 0
 margin/left = -1.0
 margin/top = 246.0
 margin/right = 254.0
+margin/bottom = 322.0
+custom_fonts/font = ExtResource( 2 )
+text = "0000"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Heart_button" type="Button" parent="Panel/VButtonArray"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 86.0
+margin/top = 141.0
+margin/right = 368.0
+margin/bottom = 373.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "BUY_HEART"
+flat = false
+script/script = ExtResource( 5 )
+
+[node name="Heart_Label" type="Label" parent="Panel/VButtonArray/Heart_button"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 2.0
+margin/top = 246.0
+margin/right = 257.0
 margin/bottom = 322.0
 custom_fonts/font = ExtResource( 2 )
 text = "0000"
@@ -182,12 +198,12 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[connection signal="pressed" from="Panel/Liftoff" to="Panel/Liftoff" method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/VButtonArray/Liftoff" to="Panel/VButtonArray/Liftoff" method="_on_Button_pressed"]
 
-[connection signal="pressed" from="Panel/Return" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Panel/VButtonArray/Return" to="." method="_on_Button1_pressed"]
 
-[connection signal="pressed" from="Panel/Heart_button" to="Panel/Heart_button" method="_on_Heart_button_pressed"]
+[connection signal="pressed" from="Panel/VButtonArray/Milk_button" to="Panel/VButtonArray/Milk_button" method="_on_Milk_button_pressed"]
 
-[connection signal="pressed" from="Panel/Milk_button" to="Panel/Milk_button" method="_on_Milk_button_pressed"]
+[connection signal="pressed" from="Panel/VButtonArray/Heart_button" to="Panel/VButtonArray/Heart_button" method="_on_Heart_button_pressed"]
 
 
