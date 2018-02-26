@@ -9,9 +9,9 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 ![](Screenshots/2.png)
 
 ## Authors
-  - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), dariasteam94@gmail.com
+  - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), [email](dariasteam94@gmail.com)
       code, music, sprites, aniamtions
-  - **Yanara Aristiguieta** [instagram](https://www.instagram.com/needafreefall/), needafreefall-@hotmail.com
+  - **Yanara Aristiguieta** [instagram](https://www.instagram.com/yanaronna/), [twitter](twitter.com/yanaronna), [email](needafreefall-@hotmail.com)
       sprites, character design, animations
 
 ## Additional information
