@@ -1385,21 +1385,29 @@ stream/buffering_ms = 500
 
 transform/pos = Vector2( 1910, -790 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail1" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 2650, -790 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail2" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 604.4, -1095.6 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="jail3" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 1360, -880 )
 transform/scale = Vector2( 1.7, 1.7 )
+base_key_texts = "CHICKEN_ADVICE_"
+text = null
 
 [node name="Tips" type="Node2D" parent="."]
 

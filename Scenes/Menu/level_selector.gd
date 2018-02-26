@@ -16,7 +16,6 @@ func _ready():
 			element.set_hidden(true)
 	reset_hud()	
 	
-	
 func next_level():	
 	if (global.level < levels.size()):		
 		global.level += 1		

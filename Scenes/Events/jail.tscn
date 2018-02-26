@@ -59,7 +59,7 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
-text = [ "Vamos señores wuuu!", "Los astronautas no existen", "e=mc^2", "e_e", "Wiii", "cocococo", "Zzz...", "¡Ya era hora!", ":D", "Pos coman pinocha", "Aléjate primo aléjate", "Efectivamente", "Porque quiero que sepas que tú para mi eres un amigo pa siempre", "La gravedad no existe", "La caida de la gran babilonia", "FUAAAA!!", "Tú no me mandas", ":C", "No te pongas nervioso", "¿Dónde está la contaminacion que yo la vea?", "seh seh seh seh", "Tu crees que arcadio va a llevar el coche al para?", "La psicología es útil", "C++ > Java", "GNU Not Unix", "Salchichas comodoro", "Ostia el workbook!", "Macarrones con tomatico ", "Yo soy tu padre", "No quiero hablar contigo", "Déjame en paz", "...", "La oronja verde o amanita palloides es el hongo más venenoso del mundo", "Poesía eres tú", "Illuminati confirmed", "Soy dueño de la canaca", "Yo soy un pollo cobarde", "¡Rayos y centellas!", "Para pasar a binario solo debes dividir entre 2, el resultado son los restos ordenados al revés", "Si no estás conmigo eres mi enemigo", "Mírame a los ojos cuando te hablo", "¡Duro con ellos!", "Rambo está en la trinchera, tiene una herida de bala en la pierna", "Sosio aflójate un eurito ahí", "Mira no más, esta cara, este cuerpo. Tú jamás tendrás este cuerpo", "¡Mi pueblo se muere por falta de conocimiento!", "Y volé de él, y él voló allá por la arbolada", "Yo soy un pirata y tu mente es el mar y la psicología es mi barco", "Si recomiendas a la gente usar homeopatía, te sugiero amablemente que te vayas a hacer puñetas", "Si estás en un bosque y gritas y nadie te oye, ¿Por qué sigo suspendiendo Álgebra?", "Deja de xorfirar anda", "Para mí será un placer vencerte", "No me toques que yo no te he tocao", "A que no adivinas quién fue primero, ¿Mi huevo o yo?", "¡Ay vida mía, soy taaan desdichada!", "Ay quién tuviera la dicha que tiene el gallo" ]
+base_key_texts = "CHICKEN_ADVICE_"
 
 [node name="Foreground" type="Sprite" parent="."]
 
@@ -98,7 +98,7 @@ stream/buffering_ms = 500
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Bars" type="Particles2D" parent="."]
