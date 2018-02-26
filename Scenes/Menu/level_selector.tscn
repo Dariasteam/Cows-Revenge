@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_unlock.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://Scenes/Menu/select_level.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Menu/main_menu.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "# jackmakesthing on godot Q&A
+
+extends VBoxContainer
+
+onready var scroll_container = get_parent()
+
+func _ready():	
+	for child in get_children():
+		child.connect(\"focus_enter\", self, \"_on_focus_change\")
+		
+func _on_focus_change():	
+	var focused = get_focus_owner() 
+	var focus_offset = focused.get_pos().y - 100
+	
+	var scrolled_top = scroll_container.get_v_scroll() 
+	var scrolled_bottom = scrolled_top + scroll_container.get_size().y - focused.get_size().y
+	
+	if focus_offset < scrolled_top or focus_offset >= scrolled_bottom - 200:
+		scroll_container.set_v_scroll(focus_offset)
+	"
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,20 +44,35 @@ margin/top = 33.0
 margin/right = 1248.0
 margin/bottom = 694.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="VButtonArray" type="VButtonArray" parent="."]
 
-focus/ignore_mouse = true
+focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 197.0
 margin/top = 203.0
-margin/right = 1094.0
-margin/bottom = 625.0
+margin/right = 197.0
+margin/bottom = 203.0
+flat = false
+button/count = 0
+button/min_button_size = -1.0
+button/align = 1065353216
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VButtonArray"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 897.0
+margin/bottom = 422.0
 scroll/horizontal = false
 scroll/vertical = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VButtonArray/ScrollContainer"]
 
 visibility/behind_parent = true
 focus/ignore_mouse = false
@@ -47,8 +85,9 @@ margin/right = 885.0
 margin/bottom = 605.0
 custom_constants/separation = 25
 alignment = 0
+script/script = SubResource( 1 )
 
-[node name="Button1" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button1" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
 
 rect/min_size = Vector2( 50, 80 )
 focus/ignore_mouse = false
@@ -69,7 +108,7 @@ flat = false
 script/script = ExtResource( 3 )
 id = 0
 
-[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
 
 rect/min_size = Vector2( 50, 80 )
 focus/ignore_mouse = false
@@ -90,7 +129,7 @@ flat = false
 script/script = ExtResource( 3 )
 id = 1
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
 
 rect/min_size = Vector2( 50, 80 )
 focus/ignore_mouse = false
@@ -111,7 +150,7 @@ flat = false
 script/script = ExtResource( 3 )
 id = 2
 
-[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button4" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
 
 rect/min_size = Vector2( 50, 80 )
 focus/ignore_mouse = false
@@ -132,7 +171,7 @@ flat = false
 script/script = ExtResource( 3 )
 id = 3
 
-[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button5" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
 
 rect/min_size = Vector2( 50, 80 )
 focus/ignore_mouse = false
@@ -153,7 +192,7 @@ flat = false
 script/script = ExtResource( 3 )
 id = 4
 
-[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Button6" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
 
 rect/min_size = Vector2( 50, 80 )
 focus/ignore_mouse = false
@@ -174,6 +213,14 @@ flat = false
 script/script = ExtResource( 3 )
 id = 5
 
+[node name="Button" parent="VButtonArray" instance=ExtResource( 4 )]
+
+margin/left = 293.0
+margin/top = 461.0
+margin/right = 575.0
+margin/bottom = 509.0
+scene = ExtResource( 5 )
+
 [node name="Label" type="Label" parent="."]
 
 rect/scale = Vector2( 2, 2 )
@@ -191,13 +238,5 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[node name="Button" parent="." instance=ExtResource( 4 )]
-
-margin/left = 490.0
-margin/top = 664.0
-margin/right = 772.0
-margin/bottom = 712.0
-scene = ExtResource( 5 )
 
 
