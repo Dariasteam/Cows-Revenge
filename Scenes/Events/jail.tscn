@@ -60,6 +60,7 @@ friction = 1.0
 bounce = 0.0
 script/script = ExtResource( 1 )
 base_key_texts = "CHICKEN_ADVICE_"
+keys_size = 62
 
 [node name="Foreground" type="Sprite" parent="."]
 
@@ -98,7 +99,7 @@ stream/buffering_ms = 500
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 8
+frame = 14
 playing = true
 
 [node name="Bars" type="Particles2D" parent="."]
