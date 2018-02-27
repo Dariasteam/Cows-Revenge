@@ -23,7 +23,7 @@ points = Vector2Array( -3.29861, -5.99431, 2.63889, -0.899147, 0.989584, 8.09231
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13.0125, 38.3532 )
+extents = Vector2( 7.54856, 38.3532 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 

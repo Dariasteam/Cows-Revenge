@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Events/on_map_text_dialog.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Events/flying_platform.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Events/poison_smoke.tscn" type="PackedScene" id=16]
 
 [node name="Level" type="Node2D" groups=[
 "level",
@@ -559,5 +560,9 @@ text = "Este camino está bloqueado. Busca otra forma de desplazarte."
 [node name="moving_paltforms" type="Node2D" parent="."]
 
 [node name="Node2D" parent="moving_paltforms" instance=ExtResource( 15 )]
+
+[node name="smoke" type="Node2D" parent="."]
+
+[node name="smoke" parent="smoke" instance=ExtResource( 16 )]
 
 

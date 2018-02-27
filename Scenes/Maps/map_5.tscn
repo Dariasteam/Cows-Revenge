@@ -2666,7 +2666,7 @@ curve = SubResource( 4 )
 [node name="PathFollow2D" type="PathFollow2D" parent="moving_paltforms/platform2/Path2D 2"]
 
 editor/display_folded = true
-transform/pos = Vector2( 189.679, -150 )
+transform/pos = Vector2( 270.939, -150 )
 transform/rot = -179.531
 offset = 620.742
 h_offset = 0.0
@@ -2765,7 +2765,7 @@ curve = SubResource( 4 )
 [node name="PathFollow2D" type="PathFollow2D" parent="moving_paltforms/platform5/Path2D 2"]
 
 editor/display_folded = true
-transform/pos = Vector2( 189.679, -150 )
+transform/pos = Vector2( 270.939, -150 )
 transform/rot = -179.531
 offset = 620.742
 h_offset = 0.0
