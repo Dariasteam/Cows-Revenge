@@ -436,7 +436,6 @@ transform/pos = Vector2( -1.5159, 199.14 )
 
 [node name="Sprite_cow" type="Sprite" parent="player_spawner"]
 
-editor/display_folded = true
 visibility/opacity = 0.0
 visibility/behind_parent = true
 transform/pos = Vector2( 1.00537, -0.359009 )
@@ -453,7 +452,7 @@ root/root = NodePath("..")
 anims/appear = SubResource( 5 )
 anims/unvanish = SubResource( 6 )
 playback/active = true
-playback/speed = 1.0
+playback/speed = 5.0
 blend_times = [  ]
 autoplay = ""
 

@@ -33,7 +33,7 @@ func disappear():
 	sprite.set_opacity(0)
 	set_fixed_process(false)
 	set_layer_mask_bit(2,false)
-	
+
 	hit_single.set_emitting(true)
 	var t = Timer.new()
 	t.set_wait_time(max(hit_single.get_lifetime(), 1))
@@ -56,11 +56,11 @@ func on_opacity_low ():
 func on_opacity_high ():
 	sprite.set_modulate(Color("00ffff"))
 
-func play_damage_sound():	
+func play_damage_sound():
 	var sample_list = sound.get_sample_library().get_sample_list()
 	var sample = sample_list[rand_range(0, sample_list.size())]
 	sound.play(sample, 0)
-	
+
 func decrease_life (value):
 	play_damage_sound()
 	hit_single.set_emitting(false)
@@ -78,13 +78,13 @@ func decrease_life (value):
 	t1.start()
 	yield(t1, "timeout")
 	t2.start()
-	yield(t2, "timeout")	
+	yield(t2, "timeout")
 	sprite.set_modulate(Color("ffffff"))
 	if (life > 0):
 		life -= value
 		if (life <= 0):
 			die()
-	
+
 func restore_velocity():
 	if(dir_left):
 		v.x = -velocity
@@ -96,16 +96,16 @@ func change_velocity(amount, right):
 		v.x = ((!dir_left * -1) + (dir_left * 1)) * amount
 	else:
 		v.x += ((dir_left * -1) + (!dir_left * 1)) * amount
-	
+
 
 func _process(delta):
 	var motion = v * delta
 	motion = move(motion)
 	v.y += delta * GRAVITY
-    
+
 	if (is_colliding()):
 		var normal = get_collision_normal();
-		
+
 		if (normal.y < 0):
 			if (normal.y > -1):
 				v.y = -velocity

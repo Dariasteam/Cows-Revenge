@@ -63,11 +63,11 @@ func open_cage(var number):
 func add_cowbells(var number):
 	global.cowbells += number
 	hud_cowbell.set_counter (global.cowbells, cowbell_collector.play_sound())
-	
+
 func add_bonus (var quantity):
 	global.cowbells += quantity
 	hud_cowbell.bonus(quantity)
-	
+
 func is_falling ():
 	return velocity.y > 0
 
@@ -134,16 +134,16 @@ func show_damage ():
 
 func can_jump_more ():
 	return jump_time > 0
-	
-func play_sound():	
+
+func play_sound():
 	sound.play()
 
 func _fixed_process(delta):
 	if (jumping):
 		jump_time -= altitude
-	
-	velocity.y += delta * GRAVITY	
-	
+
+	velocity.y += delta * GRAVITY
+
 	# Salto
 	if (can_jump and jump_key_pressed):
 		play_sound()
@@ -152,19 +152,19 @@ func _fixed_process(delta):
 		jumping = true
 		jump_time = MAX_JUMP_TIME
 		can_jump = false
-	
+
 	if (jumping and can_jump_more() and jump_key_pressed):
 		velocity.y = - JUMP_SPEED + (MAX_JUMP_TIME - jump_time) * 20
-		
+
 	# Movimiento horizontal
 	if (!right and !left):
-		if (velocity.x > SLIDE_LEVEL): 
+		if (velocity.x > SLIDE_LEVEL):
 			velocity.x -= SLIDE_LEVEL
 		elif (velocity.x < -SLIDE_LEVEL):
 			velocity.x += SLIDE_LEVEL
-		else:		
+		else:
 			velocity.x = 0
-	
+
 	var motion = velocity * delta
 
 	if (jumping and test_move(motion)):
@@ -172,26 +172,26 @@ func _fixed_process(delta):
 			motion.x = 0.15
 		else:
 			motion.x = -0.15
-			
+
 	if (!colliding_in_jump):
 		motion = move(motion)
 	else:
 		motion = move(Vector2(0, motion.y))
 		colliding_in_jump = false
-	
-	# Control de colisiones		
+
+	# Control de colisiones
 	if (is_colliding()):
 		var normal = get_collision_normal()
-		
+
 		if (normal.y < -0.35):
-						
+
 			floor_velocity =  get_collider_velocity()
 			if (floor_velocity != Vector2()):
 				move(Vector2(floor_velocity.x / 60, floor_velocity.y / 60))
 				motion.y = 0
-				velocity.y = 0		
-			
-			# Está en el suelo			
+				velocity.y = 0
+
+			# Está en el suelo
 			if (!jumping and jump_key_released):
 				on_ground = true
 				can_jump = true
@@ -200,10 +200,10 @@ func _fixed_process(delta):
 			if (normal.y > -0.9):
 				motion.x += motion.x * (-normal.y)
 			motion = normal.slide(motion)
-			velocity.y = 0	
-			
-		else:			
-			# Está chocándose contra techo o pared	
+			velocity.y = 0
+
+		else:
+			# Está chocándose contra techo o pared
 			can_jump = false
 			colliding_in_jump = true
 			motion = normal.slide(motion)
@@ -211,10 +211,10 @@ func _fixed_process(delta):
 			# Si está chocando contra el techo hacerlo caer
 			if (normal.y > 0.2):
 				velocity.y = 0
-			
-		
+
+
 		move(motion)
-	else:		
+	else:
 		can_jump = false
 
 
@@ -227,19 +227,19 @@ func enable_player():
 func disable_player():
 	set_process_input(false)
 	set_fixed_process(false)
-	sprite.set_opacity(0)		
+	sprite.set_opacity(0)
 
 func _ready():
 	#global.reset_player()
 	sprite.set_opacity(0)
 	connect("set_max_milk",hud_milk,"on_set_max_milk")
 	connect("update_milk",hud_milk,"on_update_milk_bar")
-	
+
 	connect("update_life",hud_life,"on_update_life")
 	connect("set_max_life",hud_life,"on_set_max_life")
-		
+
 	#emit_signal("update_milk", global.milk_level)
-		
+
 	emit_signal("update_life", global.life)
 
 func set_movement_left ():
@@ -261,7 +261,7 @@ func reset_inputs():
 	jump_key_released = true
 
 func _input(ev):
-	# Movimiento horizontal	
+	# Movimiento horizontal
 	if (ev.is_action_pressed("ui_left")):
 		left = true
 		if (!right):
@@ -270,7 +270,7 @@ func _input(ev):
 		left = false
 		if (right):
 			set_movement_right()
-			
+
 	if (ev.is_action_pressed("ui_right")):
 		right = true
 		if (!left):
@@ -287,7 +287,7 @@ func _input(ev):
 		pass
 	elif (ev.is_action_released("ui_up")):
 		pass
-	
+
 	# Agacharse
 	if (ev.is_action_pressed("ui_down")):
 		get_node("Collision_Agachado").set_trigger(false)
@@ -297,11 +297,11 @@ func _input(ev):
 		get_node("Collision_Normal").set_trigger(false)
 		get_node("Collision_Agachado").set_trigger(true)
 		set_collision_mask_bit(11, 1)
-		
+
 	# Saltar
 	if (ev.is_action_pressed("ui_jump") and jump_key_released):
 		jump_key_pressed = true
-		
+
 	elif (ev.is_action_released("ui_jump")):
 		jump_key_released = true
 		jump_time = 0
