@@ -23,7 +23,7 @@ time = null
 
 visibility/opacity = 0.5
 transform/pos = Vector2( 2.51537, 48.5533 )
-config/amount = 40
+config/amount = 20
 config/lifetime = 0.5
 config/process_mode = 1
 config/half_extents = Vector2( 10, 0 )
@@ -50,10 +50,10 @@ color/color_ramp = SubResource( 1 )
 
 [node name="P2" type="Particles2D" parent="."]
 
-visibility/opacity = 0.1
+visibility/opacity = 0.2
 visibility/blend_mode = 1
 transform/pos = Vector2( 2.51537, 48.5533 )
-config/amount = 40
+config/amount = 20
 config/lifetime = 0.5
 config/process_mode = 1
 config/half_extents = Vector2( 10, 0 )
@@ -93,6 +93,7 @@ collision/mask = 34
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 
+visibility/visible = false
 transform/pos = Vector2( 0.88028, -21.13 )
 shape = SubResource( 2 )
 trigger = false
