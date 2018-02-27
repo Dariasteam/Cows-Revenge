@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Scenes/Events/poison_smoke.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=2]
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 0.67174, 0.828125, 0.11322, 1, 0.03125, 1, 0, 0 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.8522, 63.9617 )
+
+[node name="smoke" type="Node2D"]
+
+transform/scale = Vector2( 1.7, 1.7 )
+script/script = ExtResource( 1 )
+time = null
+
+[node name="P1" type="Particles2D" parent="."]
+
+visibility/opacity = 0.5
+transform/pos = Vector2( 2.51537, 48.5533 )
+config/amount = 40
+config/lifetime = 0.5
+config/process_mode = 1
+config/half_extents = Vector2( 10, 0 )
+config/texture = ExtResource( 2 )
+params/direction = 180.0
+params/spread = 5.0
+params/linear_velocity = 350.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 3.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/hue_variation = 0.07
+color/color = Color( 0.769531, 0.739847, 0.294586, 1 )
+color/color_ramp = SubResource( 1 )
+
+[node name="P2" type="Particles2D" parent="."]
+
+visibility/opacity = 0.1
+visibility/blend_mode = 1
+transform/pos = Vector2( 2.51537, 48.5533 )
+config/amount = 40
+config/lifetime = 0.5
+config/process_mode = 1
+config/half_extents = Vector2( 10, 0 )
+config/texture = ExtResource( 2 )
+params/direction = 180.0
+params/spread = 5.0
+params/linear_velocity = 350.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 3.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/hue_variation = 0.07
+color/color = Color( 0.699219, 0.294983, 0.294983, 1 )
+color/color_ramp = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.88028, -27.728 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 0
+collision/mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+transform/pos = Vector2( 0.88028, -27.728 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+

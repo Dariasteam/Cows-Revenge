@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 export(String) var base_key_texts = "CHICKEN_ADVICE_"
-
+export(int) var keys_size = 56
 var texts = []
 
 onready var foreground = get_node("Foreground")
@@ -14,7 +14,7 @@ onready var text_label = get_node("Node2D/Text")
 onready var text_anim = get_node("Node2D/Text/AnimationPlayer")
 
 func _ready():	
-	for i in range(0, 56):
+	for i in range(0, keys_size):
 		texts.push_back(str(base_key_texts, i))
 
 func open_cage():
