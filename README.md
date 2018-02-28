@@ -1,4 +1,4 @@
-# Cow's Revenge ![](Sprites/Charasets/Player/idle/player_idle1.png)
+# Cow's Revenge ![](Sprites/Charasets/Player/idle/player_idle1.png) ![https://pipoypipagames.itch.io/cows-revenge](https://github.com/itchio/itch.io/blob/master/logos/badge1.png?raw=true)
 
 Casual platform game project for learning purposes. Made with [godot engine 2.1.5](https://godotengine.org/).
 
