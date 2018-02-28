@@ -1,5 +1,8 @@
 # Cow's Revenge ![]() [![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
 
+> You are a cow abducted and genetically improved by aliens which now have the opportunity to rebel against livestock industry by freeing the encaged hens and killing butchers. You used to be a regular cow raised as a dairy cow, but you ain't that anymore. You have become better. You are... THE COWEST.
+
+
 Casual platform game project for learning purposes. Made with [godot engine 2.1.5](https://godotengine.org/).
 
 Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -26,4 +29,5 @@ All resources have been created using the following FLOSS:
 - [inkscape](https://inkscape.org/en/)
 - [sfxr](http://www.drpetter.se/project_sfxr.html)
 
+Shaders: [Enrique Lalves](https://github.com/henriquelalves/SimpleGodotCRTShader)
 Font: [Press Start 2P by CodeMan38 (Open Font License)](https://fonts.google.com/specimen/Press+Start+2P?selection.family=Press+Start+2P)
