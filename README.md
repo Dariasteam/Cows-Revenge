@@ -1,4 +1,4 @@
-# Cow's Revenge ![]() [![Download](itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
+# Cow's Revenge ![]() [![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
 
 Casual platform game project for learning purposes. Made with [godot engine 2.1.5](https://godotengine.org/).
 

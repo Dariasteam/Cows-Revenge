@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=1]
+[gd_scene load_steps=32 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_selector.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Maps/map_0.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/Menu/in_game_menu.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/Menu/ufo_store.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Effects/scan_lines.tscn" type="PackedScene" id=27]
 
 [sub_resource type="Environment" id=1]
 
@@ -391,6 +392,10 @@ margin/right = 1244.0
 margin/bottom = 686.0
 
 [node name="Control" parent="Control" instance=ExtResource( 26 )]
+
+[node name="ScanLine" parent="." instance=ExtResource( 27 )]
+
+visibility/visible = false
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 
