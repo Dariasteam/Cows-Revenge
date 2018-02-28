@@ -22,10 +22,6 @@ func _on_CheckButton_toggled( pressed ):
 
 script/source = "extends CheckButton
 
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
-
 func _ready():
 	set_pressed(!global.retro_effect)
 
