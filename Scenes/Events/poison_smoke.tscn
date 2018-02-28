@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scenes/Events/poison_smoke.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Charasets/gas_deployer.png" type="Texture" id=3]
 
 [sub_resource type="ColorRamp" id=1]
 
@@ -22,7 +23,7 @@ time = null
 [node name="P1" type="Particles2D" parent="."]
 
 visibility/opacity = 0.5
-transform/pos = Vector2( 2.51537, 48.5533 )
+transform/pos = Vector2( -1.86014, 42.8179 )
 config/amount = 20
 config/lifetime = 0.5
 config/process_mode = 1
@@ -52,7 +53,7 @@ color/color_ramp = SubResource( 1 )
 
 visibility/opacity = 0.2
 visibility/blend_mode = 1
-transform/pos = Vector2( 2.51537, 48.5533 )
+transform/pos = Vector2( -1.86014, 42.8179 )
 config/amount = 20
 config/lifetime = 0.5
 config/process_mode = 1
@@ -105,6 +106,13 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 0, 52.8254 )
+transform/scale = Vector2( 1, 1 )
+z/z = -1
+texture = ExtResource( 3 )
 
 [connection signal="body_enter" from="Area2D" to="." method="_on_Area2D_body_enter"]
 

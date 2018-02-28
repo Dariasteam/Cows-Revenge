@@ -376,6 +376,7 @@ transform/pos = Vector2( -930, -3300 )
 
 [node name="cowbells" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 500, 560 )
 
 [node name="Cowbell" parent="cowbells" instance=ExtResource( 9 )]
@@ -1796,6 +1797,8 @@ stream/buffering_ms = 500
 
 [node name="cages" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="jail" parent="cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1570, -2640 )
@@ -2192,12 +2195,12 @@ time = 2.0
 
 [node name="smoke1" parent="poison_smoke" instance=ExtResource( 16 )]
 
-transform/pos = Vector2( -605.375, -3015.33 )
+transform/pos = Vector2( -600, -3030 )
 time = 1.0
 
 [node name="smoke2" parent="poison_smoke" instance=ExtResource( 16 )]
 
-transform/pos = Vector2( -383.767, -3015.33 )
+transform/pos = Vector2( -380, -3030 )
 time = 2.0
 
 [node name="smoke4" parent="poison_smoke" instance=ExtResource( 16 )]
@@ -2207,17 +2210,17 @@ time = 1.0
 
 [node name="smoke5" parent="poison_smoke" instance=ExtResource( 16 )]
 
-transform/pos = Vector2( -500, -1710 )
+transform/pos = Vector2( -490, -1720 )
 time = 0.5
 
 [node name="smoke6" parent="poison_smoke" instance=ExtResource( 16 )]
 
-transform/pos = Vector2( -380, -1710 )
+transform/pos = Vector2( -380, -1720 )
 time = 1.0
 
 [node name="smoke7" parent="poison_smoke" instance=ExtResource( 16 )]
 
-transform/pos = Vector2( -2750, -820 )
+transform/pos = Vector2( -2740, -810 )
 transform/rot = -90.0
 time = 2.0
 
