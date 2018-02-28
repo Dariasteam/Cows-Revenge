@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=33 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_selector.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Maps/map_0.tscn" type="PackedScene" id=2]
@@ -87,6 +87,18 @@ script/source = "extends Button
 func _on_Back_pressed():
 	get_tree().set_pause(true)
 	get_node(\"in_game_menu\").show()
+"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends TextureFrame
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	set_hidden(global.retro_effect)
 "
 
 [node name="Global" type="Node2D" groups=[
@@ -396,6 +408,7 @@ margin/bottom = 686.0
 [node name="ScanLine" parent="." instance=ExtResource( 27 )]
 
 visibility/visible = false
+script/script = SubResource( 5 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Fonts/pixelated_regular.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=2]
@@ -15,6 +15,24 @@ func _ready():
 
 func _on_CheckButton_toggled( pressed ):
 	global.toggle_on_screen_buttons(pressed)
+
+"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends CheckButton
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	set_pressed(!global.retro_effect)
+
+
+func _on_CheckButton1_toggled( pressed ):
+	global.retro_effect = !pressed
+	
 "
 
 [node name="Control" type="Control"]
@@ -76,6 +94,26 @@ flat = false
 align = 0
 script/script = SubResource( 1 )
 
+[node name="CheckButton1" type="CheckButton" parent="Panel/VButtonArray"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 96.0
+margin/top = 54.0
+margin/right = 502.0
+margin/bottom = 93.0
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "SWITCH_RETRO_EFFECT"
+flat = false
+align = 0
+script/script = SubResource( 2 )
+
 [node name="Button" parent="Panel/VButtonArray" instance=ExtResource( 2 )]
 
 margin/left = 372.0
@@ -103,5 +141,7 @@ lines_skipped = 0
 max_lines_visible = -1
 
 [connection signal="toggled" from="Panel/VButtonArray/CheckButton" to="Panel/VButtonArray/CheckButton" method="_on_CheckButton_toggled"]
+
+[connection signal="toggled" from="Panel/VButtonArray/CheckButton1" to="Panel/VButtonArray/CheckButton1" method="_on_CheckButton1_toggled"]
 
 
