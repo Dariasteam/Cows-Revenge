@@ -12,6 +12,7 @@ var hearts_buyed = 0
 var milk_buyed = 0
 
 var can_show_in_game_menu = true
+var retro_effect = true
 
 var level = 0
 var unlocked_levels = 1
@@ -74,7 +75,8 @@ func save_game():
 		max_life = max_life,
 		life = life,
 		milk_buyed = milk_buyed,
-		hearts_buyed = hearts_buyed
+		hearts_buyed = hearts_buyed,
+		retro_effect=retro_effect
 	}
 	save_game.store_line(data.to_json())
 	save_game.close()	
@@ -99,5 +101,7 @@ func load_game():
 	life = current_line["life"]
 	milk_buyed = current_line["milk_buyed"]
 	hearts_buyed = current_line["hearts_buyed"]
+	
+	retro_effect = current_line["retro_effect"]
 	
 	
