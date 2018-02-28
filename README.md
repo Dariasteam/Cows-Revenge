@@ -1,4 +1,4 @@
-# Cow's Revenge ![](Sprites/Charasets/Player/idle/player_idle1.png) ![https://pipoypipagames.itch.io/cows-revenge](https://github.com/itchio/itch.io/blob/master/logos/badge1.png?raw=true)
+# Cow's Revenge ![]() [![Download](itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
 
 Casual platform game project for learning purposes. Made with [godot engine 2.1.5](https://godotengine.org/).
 
@@ -27,4 +27,3 @@ All resources have been created using the following FLOSS:
 - [sfxr](http://www.drpetter.se/project_sfxr.html)
 
 Font: [Press Start 2P by CodeMan38 (Open Font License)](https://fonts.google.com/specimen/Press+Start+2P?selection.family=Press+Start+2P)
-
