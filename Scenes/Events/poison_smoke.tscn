@@ -110,7 +110,6 @@ autostart = true
 [node name="Sprite" type="Sprite" parent="."]
 
 transform/pos = Vector2( 0, 52.8254 )
-transform/scale = Vector2( 1, 1 )
 z/z = -1
 texture = ExtResource( 3 )
 
