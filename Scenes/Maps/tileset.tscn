@@ -117,35 +117,35 @@ points = Vector2Array( 17, 24, 27, 30, -21, 30, -11, 24 )
 custom_solver_bias = 0.0
 points = Vector2Array( 14, 13, 17, 24, -11, 24, -8, 13 )
 
-[sub_resource type="ConvexPolygonShape2D" id=24]
+[sub_resource type="ConvexPolygonShape2D" id=40]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 16, 23, 27, 30, -21, 30, -10, 23 )
+points = Vector2Array( 27, 30, -21, 30, -9, 23, 16, 23 )
 
-[sub_resource type="ConvexPolygonShape2D" id=25]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 16, 23, -10, 23, -9, -31, 16, -31 )
-
-[sub_resource type="ConvexPolygonShape2D" id=26]
+[sub_resource type="ConvexPolygonShape2D" id=41]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 16, 23, 27, 30, -21, 30, -10, 23 )
+points = Vector2Array( -9, -31, 16, -31, 16, 23, -9, 23 )
 
-[sub_resource type="ConvexPolygonShape2D" id=27]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 16, 23, -10, 23, -9, -34, 16, -34 )
-
-[sub_resource type="ConvexPolygonShape2D" id=28]
+[sub_resource type="ConvexPolygonShape2D" id=38]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 16, -34, 16, 30, -9, 30, -9, -34 )
+points = Vector2Array( 27, 30, -21, 30, -9, 23, 16, 23 )
 
-[sub_resource type="ConvexPolygonShape2D" id=29]
+[sub_resource type="ConvexPolygonShape2D" id=39]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 16, -31, 16, 30, -9, 30, -9, -31 )
+points = Vector2Array( -9, -34, 16, -34, 16, 23, -9, 23 )
+
+[sub_resource type="RectangleShape2D" id=28]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.0968, 32 )
+
+[sub_resource type="RectangleShape2D" id=42]
+
+custom_solver_bias = 0.0
+extents = Vector2( 12.0968, 30 )
 
 [sub_resource type="RectangleShape2D" id=30]
 
@@ -902,7 +902,6 @@ region_rect = Rect2( 0, 256, 64, 64 )
 [node name="Tocon2_up" type="Sprite" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
 texture = ExtResource( 1 )
@@ -963,10 +962,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 24 )
+shapes/0/shape = SubResource( 40 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 25 )
+shapes/1/shape = SubResource( 41 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
 shapes/1/trigger = false
 collision/layers = 2
@@ -980,7 +979,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 0, 2 )
 build_mode = 0
-polygon = Vector2Array( 16, -31, 16, 23, 27, 30, -21, 30, -10, 23, -9, -31 )
+polygon = Vector2Array( 16, -31, 16, 23, 27, 30, -21, 30, -9, 23, -9, -31 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
@@ -1000,10 +999,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 26 )
+shapes/0/shape = SubResource( 38 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 27 )
+shapes/1/shape = SubResource( 39 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
 shapes/1/trigger = false
 collision/layers = 2
@@ -1017,7 +1016,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 0, 2 )
 build_mode = 0
-polygon = Vector2Array( 16, -34, 16, 23, 27, 30, -21, 30, -10, 23, -9, -34 )
+polygon = Vector2Array( 16, -34, 16, 23, 27, 30, -21, 30, -9, 23, -9, -34 )
 shape_range = Vector2( 0, 1 )
 trigger = false
 
@@ -1038,7 +1037,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
 shapes/0/shape = SubResource( 28 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/transform = Matrix32( 1.03333, 0, 0, 1, 3.5, 0 )
 shapes/0/trigger = false
 collision/layers = 2
 collision/mask = 15
@@ -1047,17 +1046,16 @@ constant_angular_velocity = 0.0
 friction = 0.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_largo_tiling/StaticBody2D1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tronco_largo_tiling/StaticBody2D1"]
 
-transform/pos = Vector2( 0, 2 )
-build_mode = 0
-polygon = Vector2Array( 16, -34, 16, 30, -9, 30, -9, -34 )
-shape_range = Vector2( 0, 0 )
+transform/pos = Vector2( 3.5, 0 )
+transform/scale = Vector2( 1.03333, 1 )
+shape = SubResource( 28 )
 trigger = false
+_update_shape_index = 0
 
 [node name="Tronco_largo_end" type="Sprite" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
@@ -1071,8 +1069,8 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 29 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 2 )
+shapes/0/shape = SubResource( 42 )
+shapes/0/transform = Matrix32( 1.03333, 0, 0, 1, 3.5, 2 )
 shapes/0/trigger = false
 collision/layers = 2
 collision/mask = 15
@@ -1081,16 +1079,18 @@ constant_angular_velocity = 0.0
 friction = 0.0
 bounce = 0.0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tronco_largo_end/StaticBody2D1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tronco_largo_end/StaticBody2D1"]
 
-transform/pos = Vector2( 0, 2 )
-build_mode = 0
-polygon = Vector2Array( 16, -31, 16, 30, -9, 30, -9, -31 )
-shape_range = Vector2( 0, 0 )
+transform/pos = Vector2( 3.5, 2 )
+transform/scale = Vector2( 1.03333, 1 )
+shape = SubResource( 42 )
 trigger = false
+_update_shape_index = 0
 
 [node name="Tronco_rama_right" type="Sprite" parent="."]
 
+editor/display_folded = true
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2
 texture = ExtResource( 1 )
@@ -1125,6 +1125,7 @@ _update_shape_index = 0
 
 [node name="Tronco_rama_left" type="Sprite" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 2

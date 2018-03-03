@@ -28,7 +28,7 @@
 [ext_resource path="res://Scenes/Menu/ufo_store.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Effects/scan_lines.tscn" type="PackedScene" id=27]
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=2]
 
 ambient_light/enabled = false
 ambient_light/color = Color( 0, 0, 0, 1 )
@@ -72,15 +72,15 @@ bcs/contrast = 1.0
 bcs/saturation = 1.0
 srgb/enabled = false
 
-[sub_resource type="World" id=2]
+[sub_resource type="World" id=3]
 
-environment = SubResource( 1 )
+environment = SubResource( 2 )
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=4]
 
 shader/shading_mode = 0
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends Button
 
@@ -89,7 +89,7 @@ func _on_Back_pressed():
 	get_node(\"in_game_menu\").show()
 "
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends TextureFrame
 
@@ -124,7 +124,7 @@ levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 
 
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = false
-world = SubResource( 2 )
+world = SubResource( 3 )
 transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
@@ -368,7 +368,7 @@ autostart = false
 
 [node name="Sprite" type="Sprite" parent="Control/Cowbells"]
 
-material/material = SubResource( 3 )
+material/material = SubResource( 4 )
 transform/pos = Vector2( 586, 45 )
 transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 21 )
@@ -393,7 +393,7 @@ margin/top = 34.0
 margin/right = 97.0
 margin/bottom = 89.0
 text = "<"
-script/script = SubResource( 4 )
+script/script = SubResource( 5 )
 
 [node name="in_game_menu" parent="Control/Back" instance=ExtResource( 25 )]
 
@@ -407,8 +407,7 @@ margin/bottom = 686.0
 
 [node name="ScanLine" parent="." instance=ExtResource( 27 )]
 
-visibility/visible = false
-script/script = SubResource( 5 )
+script/script = SubResource( 1 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 

@@ -76,14 +76,14 @@
 		<vector2_array name="points" len="4"> 			14, 13, 17, 24, -11, 24, -8, 13 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://24">
+	<resource type="ConvexPolygonShape2D" path="local://40">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, 23, 27, 30, -21, 30, -10, 23 </vector2_array>
+		<vector2_array name="points" len="4"> 			27, 30, -21, 30, -9, 23, 16, 23 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://25">
+	<resource type="ConvexPolygonShape2D" path="local://41">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, 23, -10, 23, -9, -31, 16, -31 </vector2_array>
+		<vector2_array name="points" len="4"> 			-9, -31, 16, -31, 16, 23, -9, 23 </vector2_array>
 
 	</resource>
 	<resource type="ConvexPolygonShape2D" path="local://4">
@@ -91,62 +91,62 @@
 		<vector2_array name="points" len="4"> 			32, -32, 32, 32, -28, 32, -27.4817, -32.0967 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://26">
+	<resource type="ConvexPolygonShape2D" path="local://38">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, 23, 27, 30, -21, 30, -10, 23 </vector2_array>
+		<vector2_array name="points" len="4"> 			27, 30, -21, 30, -9, 23, 16, 23 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://27">
+	<resource type="ConvexPolygonShape2D" path="local://39">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, 23, -10, 23, -9, -34, 16, -34 </vector2_array>
+		<vector2_array name="points" len="4"> 			-9, -34, 16, -34, 16, 23, -9, 23 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://28">
+	<resource type="RectangleShape2D" path="local://28">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, -34, 16, 30, -9, 30, -9, -34 </vector2_array>
+		<vector2 name="extents"> 12.0968, 32 </vector2>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://29">
+	<resource type="RectangleShape2D" path="local://42">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2_array name="points" len="4"> 			16, -31, 16, 30, -9, 30, -9, -31 </vector2_array>
+		<vector2 name="extents"> 12.0968, 30 </vector2>
 
 	</resource>
-	<resource type="RectangleShape2D" path="local://39">
+	<resource type="RectangleShape2D" path="local://30">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 32, 6 </vector2>
 
 	</resource>
-	<resource type="RectangleShape2D" path="local://38">
+	<resource type="RectangleShape2D" path="local://31">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 2, 6 </vector2>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://40">
+	<resource type="ConvexPolygonShape2D" path="local://32">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-9, -18, -9, -34, 16, -34, 16, -18 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://41">
+	<resource type="ConvexPolygonShape2D" path="local://33">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="5"> 			23, -12, 35, -12, 35, -1, 23, 4, -14, 6 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://42">
+	<resource type="ConvexPolygonShape2D" path="local://34">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			16, 19, 16, 30, -9, 30, -9, 18 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://43">
+	<resource type="ConvexPolygonShape2D" path="local://35">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			-24, -1, -29, -1, -29, -12, -17, -12 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://44">
+	<resource type="ConvexPolygonShape2D" path="local://36">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="6"> 			-14, 6, -24, -1, -17, -12, -9, -18, 16, -18, 23, -12 </vector2_array>
 
 	</resource>
-	<resource type="ConvexPolygonShape2D" path="local://45">
+	<resource type="ConvexPolygonShape2D" path="local://37">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="4"> 			23, 4, 16, 19, -9, 18, -14, 6 </vector2_array>
 
@@ -567,8 +567,8 @@
 		<resource name="29/occluder"></resource>		<vector2 name="29/navigation_offset"> 29, 32 </vector2>
 		<resource name="29/navigation"></resource>		<vector2 name="29/shape_offset"> 29, 32 </vector2>
 		<array name="29/shapes" len="2" shared="false">
-			<resource  resource_type="Shape2D" path="local://24">  </resource>
-			<resource  resource_type="Shape2D" path="local://25">  </resource>
+			<resource  resource_type="Shape2D" path="local://40">  </resource>
+			<resource  resource_type="Shape2D" path="local://41">  </resource>
 		</array>
 		<vector2 name="29/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="29/one_way_collision_max_depth"> 0 </real>
@@ -581,8 +581,8 @@
 		<resource name="30/occluder"></resource>		<vector2 name="30/navigation_offset"> 29, 32 </vector2>
 		<resource name="30/navigation"></resource>		<vector2 name="30/shape_offset"> 29, 32 </vector2>
 		<array name="30/shapes" len="2" shared="false">
-			<resource  resource_type="Shape2D" path="local://26">  </resource>
-			<resource  resource_type="Shape2D" path="local://27">  </resource>
+			<resource  resource_type="Shape2D" path="local://38">  </resource>
+			<resource  resource_type="Shape2D" path="local://39">  </resource>
 		</array>
 		<vector2 name="30/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="30/one_way_collision_max_depth"> 0 </real>
@@ -608,7 +608,7 @@
 		<resource name="32/occluder"></resource>		<vector2 name="32/navigation_offset"> 29, 32 </vector2>
 		<resource name="32/navigation"></resource>		<vector2 name="32/shape_offset"> 29, 32 </vector2>
 		<array name="32/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://29">  </resource>
+			<resource  resource_type="Shape2D" path="local://42">  </resource>
 		</array>
 		<vector2 name="32/one_way_collision_direction"> 0, 0 </vector2>
 		<real name="32/one_way_collision_max_depth"> 0 </real>
@@ -621,7 +621,7 @@
 		<resource name="33/occluder"></resource>		<vector2 name="33/navigation_offset"> 29, 32 </vector2>
 		<resource name="33/navigation"></resource>		<vector2 name="33/shape_offset"> 29, 32 </vector2>
 		<array name="33/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://39">  </resource>
+			<resource  resource_type="Shape2D" path="local://30">  </resource>
 		</array>
 		<vector2 name="33/one_way_collision_direction"> 0, 1 </vector2>
 		<real name="33/one_way_collision_max_depth"> 1 </real>
@@ -634,7 +634,7 @@
 		<resource name="34/occluder"></resource>		<vector2 name="34/navigation_offset"> 29, 32 </vector2>
 		<resource name="34/navigation"></resource>		<vector2 name="34/shape_offset"> 29, 32 </vector2>
 		<array name="34/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://39">  </resource>
+			<resource  resource_type="Shape2D" path="local://30">  </resource>
 		</array>
 		<vector2 name="34/one_way_collision_direction"> 0, 1 </vector2>
 		<real name="34/one_way_collision_max_depth"> 1 </real>
@@ -647,7 +647,7 @@
 		<resource name="35/occluder"></resource>		<vector2 name="35/navigation_offset"> 29, 32 </vector2>
 		<resource name="35/navigation"></resource>		<vector2 name="35/shape_offset"> 29, 32 </vector2>
 		<array name="35/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://38">  </resource>
+			<resource  resource_type="Shape2D" path="local://31">  </resource>
 		</array>
 		<vector2 name="35/one_way_collision_direction"> 0, 1 </vector2>
 		<real name="35/one_way_collision_max_depth"> 20 </real>
@@ -660,7 +660,7 @@
 		<resource name="36/occluder"></resource>		<vector2 name="36/navigation_offset"> 29, 32 </vector2>
 		<resource name="36/navigation"></resource>		<vector2 name="36/shape_offset"> 29, 32 </vector2>
 		<array name="36/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://38">  </resource>
+			<resource  resource_type="Shape2D" path="local://31">  </resource>
 		</array>
 		<vector2 name="36/one_way_collision_direction"> 0, 1 </vector2>
 		<real name="36/one_way_collision_max_depth"> 20 </real>
@@ -673,7 +673,7 @@
 		<resource name="37/occluder"></resource>		<vector2 name="37/navigation_offset"> 29, 32 </vector2>
 		<resource name="37/navigation"></resource>		<vector2 name="37/shape_offset"> 29, 32 </vector2>
 		<array name="37/shapes" len="1" shared="false">
-			<resource  resource_type="Shape2D" path="local://39">  </resource>
+			<resource  resource_type="Shape2D" path="local://30">  </resource>
 		</array>
 		<vector2 name="37/one_way_collision_direction"> 0, 1 </vector2>
 		<real name="37/one_way_collision_max_depth"> 1 </real>
@@ -686,12 +686,12 @@
 		<resource name="38/occluder"></resource>		<vector2 name="38/navigation_offset"> 29, 32 </vector2>
 		<resource name="38/navigation"></resource>		<vector2 name="38/shape_offset"> 29, 32 </vector2>
 		<array name="38/shapes" len="6" shared="false">
-			<resource  resource_type="Shape2D" path="local://40">  </resource>
-			<resource  resource_type="Shape2D" path="local://41">  </resource>
-			<resource  resource_type="Shape2D" path="local://42">  </resource>
-			<resource  resource_type="Shape2D" path="local://43">  </resource>
-			<resource  resource_type="Shape2D" path="local://44">  </resource>
-			<resource  resource_type="Shape2D" path="local://45">  </resource>
+			<resource  resource_type="Shape2D" path="local://32">  </resource>
+			<resource  resource_type="Shape2D" path="local://33">  </resource>
+			<resource  resource_type="Shape2D" path="local://34">  </resource>
+			<resource  resource_type="Shape2D" path="local://35">  </resource>
+			<resource  resource_type="Shape2D" path="local://36">  </resource>
+			<resource  resource_type="Shape2D" path="local://37">  </resource>
 		</array>
 		<vector2 name="38/one_way_collision_direction"> 0, 1 </vector2>
 		<real name="38/one_way_collision_max_depth"> 1 </real>
