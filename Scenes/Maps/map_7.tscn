@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=20 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
@@ -14,8 +14,47 @@
 [ext_resource path="res://Music/dangerous-hills-loop.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Events/on_map_text_dialog.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Events/flying_platform.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Events/poison_smoke.tscn" type="PackedScene" id=16]
+
+[sub_resource type="Curve2D" id=1]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 800, -159, 0, 0, 0, 0, 800, 891 )
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "Nueva animación"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray(  ),
+"transitions": FloatArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:unit_offset")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 1, 2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.99, 0.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 78.6534, 9.26797 )
 
 [node name="Level" type="Node2D" groups=[
 "level",
@@ -38,7 +77,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -1966087, 23, -1966086, 22, -1966085, 22, -1966084, 24, -1703946, 48, -1703945, 50, -1638414, 26, -1441806, 20, -1310725, 31, -1179654, 52, -1179652, 56, -1179651, 55, -1114118, 53, -1114116, 47, -1114115, 47, -983043, 52, -917507, 53 )
+tile_data = IntArray( -2031640, 42, -2031639, 43, -2031638, 46, -2097151, 40, -1966087, 23, -1966086, 22, -1966085, 22, -1966084, 24, -1966082, 40, -2031612, 23, -2031611, 22, -2031610, 24, -1900568, 39, -1900541, 41, -1703946, 48, -1703945, 50, -1703937, 41, -1638423, 41, -1638414, 26, -1572869, 64, -1507351, 26, -1507331, 42, -1507330, 46, -1572862, 42, -1572861, 43, -1572860, 46, -1572858, 39, -1441806, 20, -1441798, 41, -1441791, 64, -1441785, 41, -1310725, 31, -1179654, 52, -1114118, 53, -1114115, 47, -1179644, 41, -983043, 52, -917507, 53, -655387, 64, -655384, 41, -655380, 23, -655379, 22, -655378, 22, -655377, 22, -655376, 22, -655375, 22, -655374, 24, -458779, 39, -458772, 26, -327701, 42, -327700, 43, -327699, 44, -327698, 44, -327697, 43, -327696, 43, -327695, 44, -327694, 46, -327689, 41, -327681, 39, -393214, 39, -262148, 26, -196620, 26 )
 
 [node name="leaves_background" type="TileMap" parent="."]
 
@@ -58,7 +97,7 @@ collision/bounce = 0.0
 collision/layers = 0
 collision/mask = 0
 occluder/light_mask = 1
-tile_data = IntArray( -1966087, 54, -1966083, 54, -1900551, 54, -1835011, 53, -1769477, 32, -1572874, 48, -1572873, 50, -1376269, 54, -1310733, 52, -1245197, 52, -1179661, 52, -1179656, 52, -1114120, 53, -983044, 52, -983043, 52, -917508, 53, -917507, 53 )
+tile_data = IntArray( -1966087, 54, -1966083, 54, -1900551, 54, -1769477, 32, -1834999, 54, -1572874, 48, -1572873, 50, -1638384, 48, -1507329, 36, -1376269, 54, -1376257, 36, -1310735, 48, -1310734, 48, -1310733, 52, -1376247, 54, -1245197, 52, -1179661, 63, -1179656, 52, -1179651, 55, -1114120, 53, -1114116, 52, -1048597, 53, -1114108, 26, -983044, 52, -983043, 52, -983042, 50, -917524, 51, -917520, 51, -917508, 53, -917507, 53, -851983, 54, -720891, 47, -720888, 50, -720882, 49, -589846, 53 )
 
 [node name="one_way_platforms1" type="TileMap" parent="."]
 
@@ -78,7 +117,7 @@ collision/bounce = 0.0
 collision/layers = 2048
 collision/mask = 14
 occluder/light_mask = 1
-tile_data = IntArray( -1703944, 36, -1703943, 37, -1703942, 37, -1703941, 34, -1572871, 36, -1572870, 37, -1572869, 34, -1507331, 33, -1507330, 37, -1507329, 35, -1441799, 36, -1441798, 37, -1441797, 34, -1376259, 33, -1376258, 37, -1376257, 35, -1179656, 36, -1179655, 37, -1179654, 35, -851955, 35 )
+tile_data = IntArray( -2031640, 33, -2031639, 37, -2031638, 35, -1966083, 36, -1966082, 37, -1966081, 37, -2031616, 37, -2031615, 38, -2031614, 37, -2031613, 37, -2031612, 35, -1900568, 33, -1900567, 37, -1900566, 35, -1835011, 36, -1835010, 37, -1835009, 38, -1900544, 37, -1900543, 38, -1900542, 37, -1900541, 37, -1900540, 35, -1769496, 33, -1769495, 37, -1769494, 35, -1769491, 36, -1769490, 37, -1769489, 35, -1703944, 36, -1703943, 37, -1703942, 37, -1703941, 34, -1703938, 33, -1703937, 37, -1769472, 37, -1769471, 37, -1769470, 35, -1638424, 33, -1638423, 37, -1638422, 35, -1638419, 36, -1638418, 37, -1638417, 35, -1572871, 36, -1572870, 37, -1572869, 34, -1507331, 33, -1507330, 37, -1507329, 35, -1572864, 37, -1572863, 37, -1572862, 37, -1572861, 37, -1572860, 34, -1441799, 36, -1441798, 37, -1441797, 34, -1376259, 33, -1376258, 37, -1376257, 35, -1441792, 37, -1441791, 37, -1441790, 37, -1441789, 37, -1441788, 34, -1441786, 33, -1441785, 37, -1441784, 35, -1376250, 26, -1179656, 36, -1179655, 37, -1179654, 35, -917516, 36, -917515, 37, -917514, 35, -655387, 33, -655386, 37, -655385, 37, -655384, 37, -655383, 35, -524315, 33, -524314, 37, -524313, 37, -524312, 37, -524311, 35, -327707, 36, -327706, 37, -327705, 37, -327704, 37, -327703, 37, -327702, 37, -327701, 37, -327700, 37, -327699, 37, -327698, 37, -327697, 37, -327696, 37, -327695, 37, -327694, 37, -327693, 37, -327692, 37, -327691, 37, -327690, 37, -327689, 37, -327688, 37, -327687, 37, -327686, 37, -327685, 37, -327684, 37, -327683, 37, -327682, 37, -327681, 37, -393216, 37, -393215, 37, -393214, 37 )
 
 [node name="trees" type="TileMap" parent="."]
 
@@ -98,7 +137,7 @@ collision/bounce = 0.0
 collision/layers = 2
 collision/mask = 15
 occluder/light_mask = 1
-tile_data = IntArray( -1376270, 21, -1245187, 28, -1179653, 28 )
+tile_data = IntArray( -2359289, 28, -1769473, 28, -1638402, 28, -1441816, 28, -1376270, 21, -1376250, 28, -1245187, 28, -1179653, 28, -1245183, 28, -1114108, 28, -655377, 19, -393243, 28 )
 
 [node name="base" type="TileMap" parent="."]
 
@@ -118,11 +157,10 @@ collision/bounce = 0.0
 collision/layers = 2
 collision/mask = 15
 occluder/light_mask = 1
-tile_data = IntArray( -2097172, 48, -2097171, 48, -2097170, 48, -2097169, 48, -2097168, 50, -2097167, 55, -2031631, 47, -2031623, 56, -2031622, 49, -2031621, 48, -2031620, 50, -2031619, 55, -1966098, 56, -1966097, 55, -1966095, 53, -1966088, 0, -1966087, 1, -1966086, 1, -1966085, 1, -1966084, 1, -1966083, 2, -1900563, 56, -1900562, 61, -1900561, 61, -1900560, 49, -1900559, 58, -1900552, 6, -1900551, 7, -1900550, 7, -1900549, 7, -1900548, 10, -1900547, 5, -1835027, 47, -1835018, 49, -1835017, 48, -1835016, 48, -1835015, 61, -1835014, 51, -1835013, 55, -1835012, 17, -1835011, 16, -1769491, 52, -1769489, 56, -1769477, 57, -1769476, 55, -1769475, 47, -1703955, 52, -1703953, 62, -1703952, 51, -1703951, 60, -1703950, 49, -1703949, 48, -1703948, 48, -1703947, 48, -1703946, 0, -1703945, 2, -1703944, 51, -1703943, 55, -1703941, 31, -1703940, 54, -1703939, 53, -1638419, 52, -1638417, 54, -1638415, 54, -1638414, 13, -1638410, 3, -1638409, 5, -1638407, 54, -1638405, 31, -1638404, 62, -1638403, 58, -1572883, 52, -1572881, 62, -1572880, 51, -1572879, 58, -1572876, 56, -1572875, 49, -1572874, 17, -1572873, 8, -1572872, 55, -1572871, 52, -1572869, 31, -1572868, 47, -1572867, 32, -1507347, 52, -1507345, 54, -1507341, 56, -1507340, 63, -1507336, 53, -1507335, 53, -1507333, 31, -1507332, 52, -1507331, 31, -1507329, 13, -1441811, 53, -1441809, 57, -1441808, 60, -1441807, 49, -1441806, 50, -1441805, 59, -1441804, 59, -1441803, 49, -1441802, 48, -1441801, 50, -1441800, 61, -1441799, 58, -1441797, 31, -1441796, 52, -1441795, 31, -1376275, 57, -1376274, 49, -1376273, 50, -1376272, 58, -1376271, 0, -1376270, 1, -1376269, 2, -1376268, 57, -1376267, 55, -1376261, 31, -1376260, 53, -1376259, 31, -1376257, 13, -1310735, 3, -1310734, 4, -1310733, 12, -1310732, 15, -1310731, 57, -1310730, 49, -1310729, 50, -1310728, 55, -1310726, 56, -1310725, 51, -1310724, 58, -1310723, 30, -1245199, 6, -1245198, 7, -1245197, 10, -1245196, 12, -1245195, 15, -1245192, 47, -1245190, 47, -1245189, 30, -1245188, 0, -1245187, 2, -1179661, 17, -1179660, 7, -1179659, 12, -1179658, 1, -1179657, 1, -1179656, 2, -1179654, 0, -1179653, 1, -1179652, 9, -1179651, 5, -1114125, 53, -1114123, 6, -1114122, 7, -1114121, 7, -1114120, 8, -1114118, 6, -1114117, 7, -1114116, 7, -1114115, 8, -1048589, 61, -1048588, 48, -1048587, 48, -1048586, 48, -1048585, 50, -1048584, 61, -1048583, 51, -1048582, 58, -1048580, 52, -1048579, 52, -983045, 14, -983044, 1, -983043, 1, -983042, 2, -917509, 17, -917508, 7, -917507, 7, -917506, 8, -851972, 57, -851971, 58 )
+tile_data = IntArray( -2424825, 27, -2359289, 0, -2359288, 2, -2293753, 3, -2293752, 5, -2293749, 13, -2228217, 3, -2228216, 5, -2097176, 32, -2097173, 56, -2097172, 49, -2097171, 48, -2097170, 48, -2097169, 48, -2097168, 50, -2097167, 55, -2162681, 3, -2162680, 5, -2162675, 13, -2031640, 31, -2031637, 54, -2031631, 47, -2031623, 56, -2031622, 49, -2031621, 48, -2031620, 50, -2031619, 55, -2097151, 32, -2097145, 6, -2097144, 8, -1966104, 31, -1966102, 56, -1966101, 59, -1966100, 49, -1966099, 50, -1966098, 55, -1966095, 53, -1966088, 0, -1966087, 1, -1966086, 1, -1966085, 1, -1966084, 1, -1966083, 2, -2031615, 31, -2031612, 0, -2031611, 1, -2031610, 2, -2031605, 13, -1900568, 31, -1900566, 54, -1900565, 54, -1900563, 56, -1900562, 61, -1900561, 49, -1900560, 50, -1900559, 58, -1900552, 6, -1900551, 7, -1900550, 7, -1900549, 7, -1900548, 7, -1900547, 8, -1900545, 32, -1966079, 31, -1966076, 3, -1966075, 4, -1966074, 5, -1966070, 13, -1835032, 31, -1835030, 62, -1835029, 58, -1835027, 47, -1835018, 49, -1835017, 48, -1835016, 48, -1835015, 61, -1835014, 51, -1835013, 55, -1835009, 30, -1900543, 31, -1900540, 6, -1900539, 7, -1900538, 8, -1900535, 56, -1900534, 55, -1900533, 13, -1900532, 0, -1900531, 15, -1769496, 31, -1769494, 62, -1769493, 55, -1769491, 52, -1769489, 56, -1769477, 57, -1769476, 60, -1769475, 55, -1769474, 32, -1769473, 13, -1835007, 31, -1835006, 13, -1835005, 13, -1835001, 13, -1835000, 0, -1834999, 2, -1834998, 47, -1834996, 3, -1834995, 12, -1834994, 15, -1703960, 31, -1703958, 57, -1703957, 63, -1703955, 52, -1703953, 62, -1703952, 51, -1703951, 60, -1703950, 49, -1703949, 48, -1703948, 48, -1703947, 48, -1703946, 0, -1703945, 2, -1703944, 51, -1703943, 55, -1703941, 31, -1703940, 54, -1703939, 53, -1703938, 30, -1769471, 31, -1769464, 6, -1769463, 8, -1769462, 53, -1769460, 3, -1769459, 10, -1769458, 12, -1769457, 15, -1638424, 31, -1638421, 57, -1638420, 55, -1638419, 52, -1638417, 54, -1638415, 54, -1638414, 13, -1638410, 3, -1638409, 5, -1638407, 54, -1638405, 31, -1638404, 62, -1638403, 58, -1638402, 13, -1703936, 13, -1703935, 31, -1703928, 56, -1703927, 51, -1703926, 58, -1703924, 17, -1703923, 10, -1703922, 10, -1703921, 12, -1703920, 15, -1572888, 31, -1572884, 52, -1572883, 53, -1572881, 62, -1572880, 51, -1572879, 58, -1572876, 56, -1572875, 49, -1572874, 17, -1572873, 8, -1572872, 55, -1572871, 52, -1572869, 31, -1572868, 47, -1572867, 32, -1638399, 31, -1638396, 32, -1638395, 47, -1638394, 32, -1638392, 54, -1638387, 17, -1638386, 7, -1638385, 7, -1638384, 8, -1638383, 48, -1638382, 48, -1638381, 50, -1638380, 55, -1507352, 30, -1507351, 13, -1507348, 52, -1507347, 57, -1507346, 51, -1507345, 63, -1507341, 56, -1507340, 63, -1507336, 53, -1507335, 53, -1507333, 31, -1507332, 52, -1507331, 31, -1507329, 13, -1572863, 31, -1572860, 31, -1572859, 52, -1572858, 31, -1572856, 57, -1572855, 51, -1572854, 55, -1572844, 47, -1441816, 13, -1441812, 52, -1441809, 57, -1441808, 49, -1441807, 48, -1441806, 50, -1441805, 59, -1441804, 59, -1441803, 49, -1441802, 48, -1441801, 50, -1441800, 61, -1441799, 58, -1441798, 13, -1441797, 31, -1441796, 52, -1441795, 31, -1441793, 13, -1507327, 31, -1507324, 31, -1507323, 52, -1507322, 31, -1507320, 0, -1507319, 2, -1507318, 47, -1507308, 53, -1376276, 53, -1376271, 0, -1376270, 1, -1376269, 2, -1376268, 57, -1376267, 55, -1376261, 31, -1376260, 53, -1376259, 31, -1376257, 13, -1441791, 31, -1441788, 31, -1441787, 52, -1441786, 30, -1441784, 3, -1441783, 5, -1441782, 52, -1441780, 56, -1441779, 49, -1441778, 48, -1441777, 48, -1441776, 48, -1441775, 48, -1441774, 48, -1441773, 50, -1441772, 58, -1310743, 0, -1310742, 15, -1310740, 57, -1310739, 49, -1310738, 48, -1310737, 48, -1310736, 48, -1310735, 3, -1310734, 4, -1310733, 12, -1310732, 15, -1310731, 57, -1310730, 49, -1310729, 50, -1310728, 55, -1310726, 56, -1310725, 51, -1310724, 58, -1310723, 30, -1310721, 13, -1376255, 31, -1376252, 31, -1376251, 52, -1376250, 13, -1376248, 6, -1376247, 8, -1376246, 53, -1376244, 47, -1245207, 3, -1245206, 5, -1245199, 6, -1245198, 7, -1245197, 10, -1245196, 12, -1245195, 15, -1245192, 47, -1245190, 47, -1245189, 30, -1245188, 0, -1245187, 2, -1245185, 13, -1310720, 13, -1310719, 30, -1310718, 13, -1310716, 31, -1310715, 52, -1310711, 57, -1310710, 58, -1310708, 52, -1179671, 6, -1179670, 12, -1179669, 1, -1179668, 15, -1179667, 56, -1179666, 49, -1179665, 48, -1179664, 48, -1179663, 48, -1179662, 50, -1179661, 17, -1179660, 10, -1179659, 12, -1179658, 1, -1179657, 1, -1179656, 2, -1179654, 0, -1179653, 1, -1179652, 9, -1179651, 16, -1179649, 0, -1245184, 1, -1245183, 2, -1245180, 31, -1245179, 52, -1245175, 13, -1245172, 52, -1114134, 6, -1114133, 10, -1114132, 5, -1114131, 54, -1114125, 54, -1114124, 17, -1114123, 7, -1114122, 7, -1114121, 7, -1114120, 8, -1114118, 6, -1114117, 7, -1114116, 16, -1114113, 6, -1179648, 7, -1179647, 8, -1179645, 13, -1179644, 30, -1179643, 52, -1179641, 13, -1179640, 13, -1179639, 13, -1179636, 53, -1048597, 6, -1048596, 8, -1048595, 57, -1048594, 49, -1048593, 48, -1048592, 48, -1048591, 48, -1048590, 50, -1048589, 61, -1048588, 48, -1048587, 48, -1048586, 48, -1048585, 50, -1048584, 61, -1048583, 51, -1048582, 58, -1048580, 52, -1048579, 52, -1114108, 13, -1114107, 53, -1114101, 51, -1114100, 58, -983061, 63, -983045, 14, -983044, 1, -983043, 1, -983042, 2, -983041, 49, -1048576, 48, -1048575, 48, -1048574, 48, -1048573, 48, -1048572, 50, -1048571, 61, -1048570, 60, -1048569, 51, -917529, 47, -917525, 57, -917524, 0, -917523, 1, -917522, 1, -917521, 1, -917520, 1, -917519, 1, -917518, 1, -917517, 1, -917516, 2, -917514, 0, -917513, 1, -917512, 1, -917511, 1, -917510, 1, -917509, 9, -917508, 7, -917507, 7, -917506, 8, -917505, 13, -983034, 47, -983026, 0, -983025, 2, -851993, 52, -851988, 6, -851987, 7, -851986, 7, -851985, 7, -851984, 7, -851983, 7, -851982, 7, -851981, 7, -851980, 16, -851978, 17, -851977, 7, -851976, 7, -851975, 7, -851974, 7, -851973, 16, -851972, 57, -851971, 58, -917498, 53, -917490, 3, -917489, 5, -786459, 32, -786457, 52, -786447, 57, -786446, 49, -786445, 48, -786444, 48, -786443, 48, -786442, 48, -786441, 48, -786440, 48, -786439, 48, -786438, 48, -786437, 48, -786436, 48, -786435, 48, -786434, 48, -786433, 48, -851968, 48, -851967, 48, -851966, 48, -851965, 48, -851964, 48, -851963, 60, -851962, 58, -851960, 13, -851959, 13, -851958, 13, -851957, 13, -851956, 13, -851954, 3, -851953, 5, -720923, 31, -720921, 52, -720919, 13, -720913, 18, -720908, 14, -720907, 1, -720906, 15, -786427, 54, -786418, 3, -786417, 5, -655387, 31, -655385, 52, -655383, 0, -655382, 1, -655381, 1, -655380, 1, -655379, 1, -655378, 1, -655377, 1, -655376, 1, -655375, 1, -655374, 1, -655373, 1, -655372, 9, -655371, 4, -655370, 12, -655369, 1, -655368, 1, -655367, 1, -655366, 1, -655365, 1, -655364, 1, -655363, 1, -655362, 1, -655361, 1, -720896, 1, -720895, 1, -720894, 1, -720893, 1, -720892, 1, -720891, 2, -720889, 14, -720888, 2, -720887, 49, -720886, 48, -720885, 48, -720884, 48, -720883, 50, -720882, 3, -720881, 5, -589851, 31, -589849, 53, -589847, 6, -589846, 7, -589845, 7, -589844, 7, -589843, 7, -589842, 7, -589841, 7, -589840, 7, -589839, 7, -589838, 7, -589837, 7, -589836, 7, -589835, 7, -589834, 7, -589833, 7, -589832, 7, -589831, 7, -589830, 7, -589829, 7, -589828, 7, -589827, 7, -589826, 7, -589825, 7, -655360, 7, -655359, 7, -655358, 7, -655357, 7, -655356, 7, -655355, 8, -655353, 6, -655352, 8, -655346, 6, -655345, 8, -524315, 31, -524313, 57, -524312, 49, -524311, 50, -524310, 58, -458779, 30, -458772, 13, -458771, 13, -458770, 13, -524284, 14, -524283, 1, -524282, 1, -524281, 1, -524280, 2, -393243, 13, -458751, 13, -458749, 14, -458748, 9, -458747, 10, -458746, 10, -458745, 10, -458744, 5, -327693, 13, -327684, 13, -393213, 6, -393212, 7, -393211, 7, -393210, 7, -393209, 7, -393208, 8, -262173, 0, -262172, 1, -262171, 1, -262170, 1, -262169, 1, -262168, 1, -262167, 1, -262166, 2, -262157, 13, -262148, 13, -196637, 17, -196636, 7, -196635, 7, -196634, 7, -196633, 7, -196632, 7, -196631, 7, -196630, 16, -196620, 13, -196619, 13, -196618, 13, -196617, 13, -196616, 13, -196615, 13, -196614, 13, -196613, 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -190,7 +228,6 @@ region_rect = Rect2( 0, 0, 2048, 128 )
 
 [node name="ParallaxLayera" type="ParallaxLayer" parent="ParallaxBackground"]
 
-editor/display_folded = true
 transform/pos = Vector2( -736, -352 )
 z/z = -1
 motion/scale = Vector2( 0.8, 0 )
@@ -199,7 +236,7 @@ motion/mirroring = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayera"]
 
-transform/pos = Vector2( -3712, -2048 )
+transform/pos = Vector2( -3714, -2048 )
 transform/scale = Vector2( 6, 6 )
 texture = ExtResource( 5 )
 centered = false
@@ -213,7 +250,47 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Enemy" parent="enemies" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( -35.2942, -176.471 )
+transform/pos = Vector2( -1611.76, -429.412 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy1" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1049.41, -176.471 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy3" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2433.53, -176.471 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy4" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2337.06, -431.176 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy5" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2808.24, 127.647 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy6" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -2147.65, 132.941 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy7" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1547.65, 135.882 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy8" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1572.35, 261.765 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Enemy9" parent="enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -1972.35, 258.824 )
 transform/scale = Vector2( 1, 1 )
 
 [node name="apples" type="Node2D" parent="."]
@@ -222,7 +299,17 @@ transform/pos = Vector2( -3140, -3460 )
 
 [node name="Apple" parent="apples" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 5140, 1240 )
+transform/pos = Vector2( 1370, 400 )
+amount = 20
+
+[node name="Apple1" parent="apples" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 3196, 1241 )
+amount = 20
+
+[node name="Apple2" parent="apples" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 2719, 389 )
 amount = 20
 
 [node name="hearts" type="Node2D" parent="."]
@@ -231,23 +318,1948 @@ amount = 20
 
 transform/pos = Vector2( 1480, -1230 )
 
+[node name="Heart1" parent="hearts" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 490, -2760 )
+
+[node name="Heart2" parent="hearts" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( -540, -1820 )
+
+[node name="Heart3" parent="hearts" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( -354, -3068 )
+
 [node name="cowbells" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 500, 560 )
 
 [node name="Cowbell" parent="cowbells" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( 1510, -3640 )
+transform/pos = Vector2( -700, -3940 )
+
+[node name="Cowbell14" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3004, -3817 )
+
+[node name="Cowbell119" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 750, -3960 )
+
+[node name="Cowbell120" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 790, -4070 )
+
+[node name="Cowbell122" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 870, -3880 )
+
+[node name="Cowbell132" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 870, -3780 )
+
+[node name="Cowbell121" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 860, -4170 )
+
+[node name="Cowbell123" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 960, -4170 )
+
+[node name="Cowbell124" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 890, -4290 )
+
+[node name="Cowbell125" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 820, -4400 )
+
+[node name="Cowbell126" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 740, -4390 )
+
+[node name="Cowbell127" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 680, -4490 )
+
+[node name="Cowbell128" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 580, -4560 )
+
+[node name="Cowbell129" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 470, -4560 )
+
+[node name="Cowbell130" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 390, -4510 )
+
+[node name="Cowbell131" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 390, -4510 )
+
+[node name="Cowbell17 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3004, -3604 )
+
+[node name="Cowbell174" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3004, -3380 )
+
+[node name="Cowbell175" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2560, -2838 )
+
+[node name="Cowbell176" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2408, -2838 )
+
+[node name="Cowbell177" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2258, -2838 )
+
+[node name="Cowbell178" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2268, -2408 )
+
+[node name="Cowbell179" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2118, -2408 )
+
+[node name="Cowbell180" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2118, -2458 )
+
+[node name="Cowbell181" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2268, -2458 )
+
+[node name="Cowbell182" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2268, -2508 )
+
+[node name="Cowbell183" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2118, -2508 )
+
+[node name="Cowbell184" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -488, -3168 )
+
+[node name="Cowbell185" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -728, -3168 )
+
+[node name="Cowbell186" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -488, -3488 )
+
+[node name="Cowbell261" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -498, -3708 )
+
+[node name="Cowbell262" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -478, -2938 )
+
+[node name="Cowbell263" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -718, -2938 )
+
+[node name="Cowbell264" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1138, -3268 )
+
+[node name="Cowbell265" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1138, -3048 )
+
+[node name="Cowbell266" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1138, -3488 )
+
+[node name="Cowbell267" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2458, -3378 )
+
+[node name="Cowbell268" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2458, -3598 )
+
+[node name="Cowbell269" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -708, -3698 )
+
+[node name="Cowbell270" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 252, -2938 )
+
+[node name="Cowbell271" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -278, -3168 )
+
+[node name="Cowbell272" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -278, -3168 )
+
+[node name="Cowbell187" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -438, -1968 )
+
+[node name="Cowbell260 7" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 432, -1998 )
+
+[node name="Cowbell188" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -288, -1968 )
+
+[node name="Cowbell260 10" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 582, -1998 )
+
+[node name="Cowbell189" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -138, -1968 )
+
+[node name="Cowbell260 5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 732, -1998 )
+
+[node name="Cowbell190" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -138, -2018 )
+
+[node name="Cowbell260 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 732, -2048 )
+
+[node name="Cowbell191" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -288, -2018 )
+
+[node name="Cowbell260 8" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 582, -2048 )
+
+[node name="Cowbell192" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -438, -2018 )
+
+[node name="Cowbell260 11" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 432, -2048 )
+
+[node name="Cowbell193" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -438, -2068 )
+
+[node name="Cowbell260 12" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 432, -2098 )
+
+[node name="Cowbell194" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -288, -2068 )
+
+[node name="Cowbell260 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 582, -2098 )
+
+[node name="Cowbell195" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -138, -2068 )
+
+[node name="Cowbell260 9" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 732, -2098 )
+
+[node name="Cowbell196" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -138, -2118 )
+
+[node name="Cowbell260 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 732, -2148 )
+
+[node name="Cowbell197" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -288, -2118 )
+
+[node name="Cowbell260 6" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 582, -2148 )
+
+[node name="Cowbell198" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -438, -2118 )
+
+[node name="Cowbell260" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 432, -2148 )
+
+[node name="Cowbell199" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 492, -1758 )
+
+[node name="Cowbell200" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 642, -1758 )
+
+[node name="Cowbell201" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 792, -1758 )
+
+[node name="Cowbell202" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -3948 )
+
+[node name="Cowbell249 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -108, -3838 )
+
+[node name="Cowbell2499" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4098 )
+
+[node name="Cowbell2500" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4248 )
+
+[node name="Cowbell2501" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4398 )
+
+[node name="Cowbell2502" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1012, -3048 )
+
+[node name="Cowbell2503" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1212, -3048 )
+
+[node name="Cowbell2493" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -108, -3788 )
+
+[node name="Cowbell2499 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4048 )
+
+[node name="Cowbell24994" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4198 )
+
+[node name="Cowbell24995" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4348 )
+
+[node name="Cowbell24996" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1012, -2998 )
+
+[node name="Cowbell24997" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1212, -2998 )
+
+[node name="Cowbell2494" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -108, -3738 )
+
+[node name="Cowbell2499 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -3998 )
+
+[node name="Cowbell24993" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4148 )
+
+[node name="Cowbell24995 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 242, -4298 )
+
+[node name="Cowbell249953" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1012, -2948 )
+
+[node name="Cowbell249954" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1212, -2948 )
+
+[node name="Cowbell2495" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -578, -2328 )
+
+[node name="Cowbell2496" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -378, -2328 )
+
+[node name="Cowbell2497" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -178, -2328 )
+
+[node name="Cowbell2498" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -79, -2328 )
+
+[node name="Cowbell203" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -8, -3948 )
+
+[node name="Cowbell249" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -258, -3838 )
+
+[node name="Cowbell255 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4098 )
+
+[node name="Cowbell2553" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4248 )
+
+[node name="Cowbell2555" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4398 )
+
+[node name="Cowbell2556" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 862, -3048 )
+
+[node name="Cowbell2557" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1062, -3048 )
+
+[node name="Cowbell250" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -258, -3788 )
+
+[node name="Cowbell255" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4048 )
+
+[node name="Cowbell256" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4198 )
+
+[node name="Cowbell257" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4348 )
+
+[node name="Cowbell258" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 862, -2998 )
+
+[node name="Cowbell259" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1062, -2998 )
+
+[node name="Cowbell251" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -258, -3738 )
+
+[node name="Cowbell255 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -3998 )
+
+[node name="Cowbell2554" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4148 )
+
+[node name="Cowbell2555 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 92, -4298 )
+
+[node name="Cowbell25553" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 862, -2948 )
+
+[node name="Cowbell25554" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1062, -2948 )
+
+[node name="Cowbell252" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -728, -2328 )
+
+[node name="Cowbell253" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -528, -2328 )
+
+[node name="Cowbell254" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -328, -2328 )
+
+[node name="Cowbell204" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1448, -1778 )
+
+[node name="Cowbell205" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1298, -1778 )
+
+[node name="Cowbell206" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1148, -1778 )
+
+[node name="Cowbell207" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -998, -1778 )
+
+[node name="Cowbell208" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -848, -1778 )
+
+[node name="Cowbell209" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -698, -1778 )
+
+[node name="Cowbell210" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -548, -1778 )
+
+[node name="Cowbell211" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -398, -1778 )
+
+[node name="Cowbell212" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -248, -1778 )
+
+[node name="Cowbell213" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -108, -1778 )
+
+[node name="Cowbell214" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2868, -1778 )
+
+[node name="Cowbell215" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2718, -1778 )
+
+[node name="Cowbell216" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2568, -1778 )
+
+[node name="Cowbell217" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2418, -1778 )
+
+[node name="Cowbell218" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2268, -1778 )
+
+[node name="Cowbell219" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2118, -1778 )
+
+[node name="Cowbell220" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1968, -1778 )
+
+[node name="Cowbell221" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1128 )
+
+[node name="Cowbell222" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1178 )
+
+[node name="Cowbell223" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1228 )
+
+[node name="Cowbell224" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1278 )
+
+[node name="Cowbell225" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1328 )
+
+[node name="Cowbell226" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1378 )
+
+[node name="Cowbell227" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1428 )
+
+[node name="Cowbell228" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1478 )
+
+[node name="Cowbell229" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1528 )
+
+[node name="Cowbell230" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1578 )
+
+[node name="Cowbell231" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1628 )
+
+[node name="Cowbell232" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1678 )
+
+[node name="Cowbell233" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1728 )
+
+[node name="Cowbell234" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1778 )
+
+[node name="Cowbell235" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1828 )
+
+[node name="Cowbell236" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1878 )
+
+[node name="Cowbell237" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1928 )
+
+[node name="Cowbell238" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3608, -1978 )
+
+[node name="Cowbell239" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -668, -1258 )
+
+[node name="Cowbell244 5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1028, -1258 )
+
+[node name="Cowbell2446" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1388, -1258 )
+
+[node name="Cowbell2447 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1708, -1258 )
+
+[node name="Cowbell24475" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1258 )
+
+[node name="Cowbell24476" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1258 )
+
+[node name="Cowbell240" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -668, -1308 )
+
+[node name="Cowbell244 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1028, -1308 )
+
+[node name="Cowbell2445" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1388, -1308 )
+
+[node name="Cowbell2447" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1708, -1308 )
+
+[node name="Cowbell2448" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1308 )
+
+[node name="Cowbell2449" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1308 )
+
+[node name="Cowbell241" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -668, -1358 )
+
+[node name="Cowbell244 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1028, -1358 )
+
+[node name="Cowbell2444" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1388, -1358 )
+
+[node name="Cowbell2447 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1708, -1358 )
+
+[node name="Cowbell24474" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1358 )
+
+[node name="Cowbell24476 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1358 )
+
+[node name="Cowbell242" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -668, -1408 )
+
+[node name="Cowbell244" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1028, -1408 )
+
+[node name="Cowbell245" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1388, -1408 )
+
+[node name="Cowbell246" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1708, -1408 )
+
+[node name="Cowbell247" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1408 )
+
+[node name="Cowbell248" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1408 )
+
+[node name="Cowbell243" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -668, -1458 )
+
+[node name="Cowbell244 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1028, -1458 )
+
+[node name="Cowbell2443" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1388, -1458 )
+
+[node name="Cowbell2447 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1708, -1458 )
+
+[node name="Cowbell24473" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1458 )
+
+[node name="Cowbell24476 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2108, -1458 )
+
+[node name="Cowbell15" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2954, -3817 )
+
+[node name="Cowbell17 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2954, -3604 )
+
+[node name="Cowbell173" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2954, -3380 )
+
+[node name="Cowbell175 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2510, -2838 )
+
+[node name="Cowbell1753" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2358, -2838 )
+
+[node name="Cowbell1754" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2208, -2838 )
+
+[node name="Cowbell1755" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2218, -2408 )
+
+[node name="Cowbell1756" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2068, -2408 )
+
+[node name="Cowbell1757" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2068, -2458 )
+
+[node name="Cowbell1758" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2218, -2458 )
+
+[node name="Cowbell1759" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2218, -2508 )
+
+[node name="Cowbell1760" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2068, -2508 )
+
+[node name="Cowbell1761" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -438, -3168 )
+
+[node name="Cowbell1762" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -678, -3168 )
+
+[node name="Cowbell1763" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -438, -3488 )
+
+[node name="Cowbell1838" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -448, -3708 )
+
+[node name="Cowbell1839" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -428, -2938 )
+
+[node name="Cowbell1840" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -668, -2938 )
+
+[node name="Cowbell1841" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1088, -3268 )
+
+[node name="Cowbell1842" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1088, -3048 )
+
+[node name="Cowbell1843" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1088, -3488 )
+
+[node name="Cowbell1844" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2408, -3378 )
+
+[node name="Cowbell1845" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2408, -3598 )
+
+[node name="Cowbell1846" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -658, -3698 )
+
+[node name="Cowbell1847" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 302, -2938 )
+
+[node name="Cowbell1848" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -228, -3168 )
+
+[node name="Cowbell1849" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -228, -3168 )
+
+[node name="Cowbell1850" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -128, -3168 )
+
+[node name="Cowbell1764" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -388, -1968 )
+
+[node name="Cowbell1837" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 482, -1998 )
+
+[node name="Cowbell1765" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -238, -1968 )
+
+[node name="Cowbell1837 6" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 632, -1998 )
+
+[node name="Cowbell1766" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -88, -1968 )
+
+[node name="Cowbell1837 11" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 782, -1998 )
+
+[node name="Cowbell1767" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -88, -2018 )
+
+[node name="Cowbell1837 5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 782, -2048 )
+
+[node name="Cowbell1768" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -238, -2018 )
+
+[node name="Cowbell1837 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 632, -2048 )
+
+[node name="Cowbell1769" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -388, -2018 )
+
+[node name="Cowbell1837 12" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 482, -2048 )
+
+[node name="Cowbell1770" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -388, -2068 )
+
+[node name="Cowbell1837 8" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 482, -2098 )
+
+[node name="Cowbell1771" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -238, -2068 )
+
+[node name="Cowbell1837 9" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 632, -2098 )
+
+[node name="Cowbell1772" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -88, -2068 )
+
+[node name="Cowbell1837 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 782, -2098 )
+
+[node name="Cowbell1773" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -88, -2118 )
+
+[node name="Cowbell1837 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 782, -2148 )
+
+[node name="Cowbell1774" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -238, -2118 )
+
+[node name="Cowbell1837 7" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 632, -2148 )
+
+[node name="Cowbell1775" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -388, -2118 )
+
+[node name="Cowbell1837 10" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 482, -2148 )
+
+[node name="Cowbell1776" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 542, -1758 )
+
+[node name="Cowbell1777" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 692, -1758 )
+
+[node name="Cowbell1778" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 842, -1758 )
+
+[node name="Cowbell1779" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 192, -3948 )
+
+[node name="Cowbell1780" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 42, -3948 )
+
+[node name="Cowbell1826" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -208, -3838 )
+
+[node name="Cowbell1832 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4098 )
+
+[node name="Cowbell18323" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4248 )
+
+[node name="Cowbell18325 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4398 )
+
+[node name="Cowbell183253" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 912, -3048 )
+
+[node name="Cowbell183254" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1112, -3048 )
+
+[node name="Cowbell1827" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -208, -3788 )
+
+[node name="Cowbell1832" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4048 )
+
+[node name="Cowbell1833" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4198 )
+
+[node name="Cowbell1834" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4348 )
+
+[node name="Cowbell1835" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 912, -2998 )
+
+[node name="Cowbell1836" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1112, -2998 )
+
+[node name="Cowbell1828" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -208, -3738 )
+
+[node name="Cowbell1832 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -3998 )
+
+[node name="Cowbell18324" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4148 )
+
+[node name="Cowbell18325" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 142, -4298 )
+
+[node name="Cowbell18326" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 912, -2948 )
+
+[node name="Cowbell18327" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1112, -2948 )
+
+[node name="Cowbell1829" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -678, -2328 )
+
+[node name="Cowbell1830" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -478, -2328 )
+
+[node name="Cowbell1831" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -278, -2328 )
+
+[node name="Cowbell1781" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1398, -1778 )
+
+[node name="Cowbell1782" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1248, -1778 )
+
+[node name="Cowbell1783" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1098, -1778 )
+
+[node name="Cowbell1784" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -948, -1778 )
+
+[node name="Cowbell1785" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -798, -1778 )
+
+[node name="Cowbell1786" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -648, -1778 )
+
+[node name="Cowbell1787" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -498, -1778 )
+
+[node name="Cowbell1788" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -348, -1778 )
+
+[node name="Cowbell1789" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -198, -1778 )
+
+[node name="Cowbell1790" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -58, -1778 )
+
+[node name="Cowbell1791" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2818, -1778 )
+
+[node name="Cowbell1792" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2668, -1778 )
+
+[node name="Cowbell1793" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2518, -1778 )
+
+[node name="Cowbell1794" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2368, -1778 )
+
+[node name="Cowbell1795" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2218, -1778 )
+
+[node name="Cowbell1796" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2068, -1778 )
+
+[node name="Cowbell1797" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1918, -1778 )
+
+[node name="Cowbell1798" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1128 )
+
+[node name="Cowbell1799" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1178 )
+
+[node name="Cowbell1800" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1228 )
+
+[node name="Cowbell1801" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1278 )
+
+[node name="Cowbell1802" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1328 )
+
+[node name="Cowbell1803" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1378 )
+
+[node name="Cowbell1804" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1428 )
+
+[node name="Cowbell1805" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1478 )
+
+[node name="Cowbell1806" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1528 )
+
+[node name="Cowbell1807" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1578 )
+
+[node name="Cowbell1808" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1628 )
+
+[node name="Cowbell1809" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1678 )
+
+[node name="Cowbell1810" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1728 )
+
+[node name="Cowbell1811" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1778 )
+
+[node name="Cowbell1812" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1828 )
+
+[node name="Cowbell1813" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1878 )
+
+[node name="Cowbell1814" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1928 )
+
+[node name="Cowbell1815" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3558, -1978 )
+
+[node name="Cowbell1816" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -618, -1258 )
+
+[node name="Cowbell1821 5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -978, -1258 )
+
+[node name="Cowbell18216" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1338, -1258 )
+
+[node name="Cowbell18217 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1658, -1258 )
+
+[node name="Cowbell182175" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1258 )
+
+[node name="Cowbell182176 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1258 )
+
+[node name="Cowbell1817" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -618, -1308 )
+
+[node name="Cowbell1821 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -978, -1308 )
+
+[node name="Cowbell18215" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1338, -1308 )
+
+[node name="Cowbell18217 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1658, -1308 )
+
+[node name="Cowbell182174" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1308 )
+
+[node name="Cowbell182176 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1308 )
+
+[node name="Cowbell1818" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -618, -1358 )
+
+[node name="Cowbell1821 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -978, -1358 )
+
+[node name="Cowbell18214" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1338, -1358 )
+
+[node name="Cowbell18217 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1658, -1358 )
+
+[node name="Cowbell182173" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1358 )
+
+[node name="Cowbell182176" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1358 )
+
+[node name="Cowbell1819" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -618, -1408 )
+
+[node name="Cowbell1821" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -978, -1408 )
+
+[node name="Cowbell1822" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1338, -1408 )
+
+[node name="Cowbell1823" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1658, -1408 )
+
+[node name="Cowbell1824" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1408 )
+
+[node name="Cowbell1825" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1408 )
+
+[node name="Cowbell1820" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -618, -1458 )
+
+[node name="Cowbell1821 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -978, -1458 )
+
+[node name="Cowbell18213" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1338, -1458 )
+
+[node name="Cowbell18217" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1658, -1458 )
+
+[node name="Cowbell18218" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1458 )
+
+[node name="Cowbell18219" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2058, -1458 )
+
+[node name="Cowbell16" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2903, -3817 )
+
+[node name="Cowbell17" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2903, -3604 )
+
+[node name="Cowbell18" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2903, -3380 )
+
+[node name="Cowbell19" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2459, -2838 )
+
+[node name="Cowbell20" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2307, -2838 )
+
+[node name="Cowbell21" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2157, -2838 )
+
+[node name="Cowbell22" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2167, -2408 )
+
+[node name="Cowbell23" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2017, -2408 )
+
+[node name="Cowbell24" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2017, -2458 )
+
+[node name="Cowbell25" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2167, -2458 )
+
+[node name="Cowbell26" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2167, -2508 )
+
+[node name="Cowbell27" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2017, -2508 )
+
+[node name="Cowbell28" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -387, -3168 )
+
+[node name="Cowbell29" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -627, -3168 )
+
+[node name="Cowbell30" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -387, -3488 )
+
+[node name="Cowbell106" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -397, -3708 )
+
+[node name="Cowbell107" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -377, -2938 )
+
+[node name="Cowbell108" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -617, -2938 )
+
+[node name="Cowbell109" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1037, -3268 )
+
+[node name="Cowbell110" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1037, -3048 )
+
+[node name="Cowbell111" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1037, -3488 )
+
+[node name="Cowbell112" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2357, -3378 )
+
+[node name="Cowbell113" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2357, -3598 )
+
+[node name="Cowbell114" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -607, -3698 )
+
+[node name="Cowbell115" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 353, -2938 )
+
+[node name="Cowbell116" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -177, -3168 )
+
+[node name="Cowbell117" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -177, -3168 )
+
+[node name="Cowbell118" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -77, -3168 )
+
+[node name="Cowbell31" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -337, -1968 )
+
+[node name="Cowbell105 8" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 533, -1998 )
+
+[node name="Cowbell32" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -187, -1968 )
+
+[node name="Cowbell105" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 683, -1998 )
+
+[node name="Cowbell33" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -37, -1968 )
+
+[node name="Cowbell105 9" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 833, -1998 )
+
+[node name="Cowbell34" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -37, -2018 )
+
+[node name="Cowbell105 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 833, -2048 )
+
+[node name="Cowbell35" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -187, -2018 )
+
+[node name="Cowbell105 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 683, -2048 )
+
+[node name="Cowbell36" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -337, -2018 )
+
+[node name="Cowbell105 7" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 533, -2048 )
+
+[node name="Cowbell37" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -337, -2068 )
+
+[node name="Cowbell105 11" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 533, -2098 )
+
+[node name="Cowbell38" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -187, -2068 )
+
+[node name="Cowbell105 5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 683, -2098 )
+
+[node name="Cowbell39" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -37, -2068 )
+
+[node name="Cowbell105 10" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 833, -2098 )
+
+[node name="Cowbell40" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -37, -2118 )
+
+[node name="Cowbell105 12" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 833, -2148 )
+
+[node name="Cowbell41" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -187, -2118 )
+
+[node name="Cowbell105 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 683, -2148 )
+
+[node name="Cowbell42" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -337, -2118 )
+
+[node name="Cowbell105 6" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 533, -2148 )
+
+[node name="Cowbell43" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 593, -1758 )
+
+[node name="Cowbell44" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 743, -1758 )
+
+[node name="Cowbell45" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 893, -1758 )
+
+[node name="Cowbell46" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 243, -3948 )
+
+[node name="Cowbell47" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 93, -3948 )
+
+[node name="Cowbell93" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -157, -3838 )
+
+[node name="Cowbell100" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4098 )
+
+[node name="Cowbell101" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4248 )
+
+[node name="Cowbell102" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4398 )
+
+[node name="Cowbell103" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 963, -3048 )
+
+[node name="Cowbell104" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1163, -3048 )
+
+[node name="Cowbell94" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -157, -3788 )
+
+[node name="Cowbell100 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4048 )
+
+[node name="Cowbell1004" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4198 )
+
+[node name="Cowbell1005 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4348 )
+
+[node name="Cowbell10053" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 963, -2998 )
+
+[node name="Cowbell10054" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1163, -2998 )
+
+[node name="Cowbell95" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -157, -3738 )
+
+[node name="Cowbell100 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -3998 )
+
+[node name="Cowbell1003" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4148 )
+
+[node name="Cowbell1005" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 193, -4298 )
+
+[node name="Cowbell1006" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 963, -2948 )
+
+[node name="Cowbell1007" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1163, -2948 )
+
+[node name="Cowbell96" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -627, -2328 )
+
+[node name="Cowbell97" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -427, -2328 )
+
+[node name="Cowbell98" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -227, -2328 )
+
+[node name="Cowbell99" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -128, -2328 )
+
+[node name="Cowbell48" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1347, -1778 )
+
+[node name="Cowbell49" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1197, -1778 )
+
+[node name="Cowbell50" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1047, -1778 )
+
+[node name="Cowbell51" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -897, -1778 )
+
+[node name="Cowbell52" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -747, -1778 )
+
+[node name="Cowbell53" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -597, -1778 )
+
+[node name="Cowbell54" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -447, -1778 )
+
+[node name="Cowbell55" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -297, -1778 )
+
+[node name="Cowbell56" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -147, -1778 )
+
+[node name="Cowbell57" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -7, -1778 )
+
+[node name="Cowbell58" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2767, -1778 )
+
+[node name="Cowbell59" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2617, -1778 )
+
+[node name="Cowbell60" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2467, -1778 )
+
+[node name="Cowbell61" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2317, -1778 )
+
+[node name="Cowbell62" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2167, -1778 )
+
+[node name="Cowbell63" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2017, -1778 )
+
+[node name="Cowbell64" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1867, -1778 )
+
+[node name="Cowbell65" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1128 )
+
+[node name="Cowbell66" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1178 )
+
+[node name="Cowbell67" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1228 )
+
+[node name="Cowbell68" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1278 )
+
+[node name="Cowbell69" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1328 )
+
+[node name="Cowbell70" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1378 )
+
+[node name="Cowbell71" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1428 )
+
+[node name="Cowbell72" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1478 )
+
+[node name="Cowbell73" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1528 )
+
+[node name="Cowbell74" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1578 )
+
+[node name="Cowbell75" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1628 )
+
+[node name="Cowbell76" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1678 )
+
+[node name="Cowbell77" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1728 )
+
+[node name="Cowbell78" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1778 )
+
+[node name="Cowbell79" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1828 )
+
+[node name="Cowbell80" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1878 )
+
+[node name="Cowbell81" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1928 )
+
+[node name="Cowbell82" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -3507, -1978 )
+
+[node name="Cowbell83" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -567, -1258 )
+
+[node name="Cowbell88" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -927, -1258 )
+
+[node name="Cowbell89" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1287, -1258 )
+
+[node name="Cowbell90" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1607, -1258 )
+
+[node name="Cowbell91" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1258 )
+
+[node name="Cowbell92" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1258 )
+
+[node name="Cowbell84" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -567, -1308 )
+
+[node name="Cowbell88 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -927, -1308 )
+
+[node name="Cowbell885" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1287, -1308 )
+
+[node name="Cowbell887 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1607, -1308 )
+
+[node name="Cowbell8874" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1308 )
+
+[node name="Cowbell8876" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1308 )
+
+[node name="Cowbell85" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -567, -1358 )
+
+[node name="Cowbell88 5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -927, -1358 )
+
+[node name="Cowbell886" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1287, -1358 )
+
+[node name="Cowbell887 4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1607, -1358 )
+
+[node name="Cowbell8875" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1358 )
+
+[node name="Cowbell8876 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1358 )
+
+[node name="Cowbell86" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -567, -1408 )
+
+[node name="Cowbell88 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -927, -1408 )
+
+[node name="Cowbell883" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1287, -1408 )
+
+[node name="Cowbell887" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1607, -1408 )
+
+[node name="Cowbell888" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1408 )
+
+[node name="Cowbell889" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1408 )
+
+[node name="Cowbell87" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -567, -1458 )
+
+[node name="Cowbell88 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -927, -1458 )
+
+[node name="Cowbell884" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1287, -1458 )
+
+[node name="Cowbell887 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1607, -1458 )
+
+[node name="Cowbell8873" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1458 )
+
+[node name="Cowbell8876 3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -2007, -1458 )
+
+[node name="Cowbell1" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -650, -3940 )
+
+[node name="Cowbell2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -600, -3940 )
+
+[node name="Cowbell3" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -550, -3940 )
+
+[node name="Cowbell4" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -500, -3940 )
+
+[node name="Cowbell5" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -450, -3940 )
+
+[node name="Cowbell6" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -400, -3940 )
+
+[node name="Cowbell7" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1518, -3058 )
+
+[node name="Cowbell8" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1468, -3058 )
+
+[node name="Cowbell9" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1418, -3058 )
+
+[node name="Cowbell13 2" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1368, -3058 )
+
+[node name="Cowbell10" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1418, -3108 )
+
+[node name="Cowbell13" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1368, -3108 )
+
+[node name="Cowbell11" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1468, -3108 )
+
+[node name="Cowbell12" parent="cowbells" instance=ExtResource( 9 )]
+
+transform/pos = Vector2( -1518, -3108 )
 
 [node name="Block" type="Node2D" parent="cowbells"]
 
 editor/display_folded = true
-transform/pos = Vector2( 2350, -3400 )
+transform/pos = Vector2( -2240, -3190 )
 
 [node name="Col" type="Node2D" parent="cowbells/Block"]
-
-editor/display_folded = true
 
 [node name="Cowbell18173" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
 
@@ -260,14 +2272,6 @@ transform/pos = Vector2( 0, 70 )
 [node name="Cowbell18175" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
 
 [node name="Col1" type="Node2D" parent="cowbells/Block"]
 
@@ -286,14 +2290,6 @@ transform/pos = Vector2( 0, 70 )
 
 transform/pos = Vector2( 0, 120 )
 
-[node name="Cowbell18176" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col1" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="Col2" type="Node2D" parent="cowbells/Block"]
 
 editor/display_folded = true
@@ -310,14 +2306,6 @@ transform/pos = Vector2( 0, 70 )
 [node name="Cowbell18175" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col2" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
 
 [node name="Col3" type="Node2D" parent="cowbells/Block"]
 
@@ -336,14 +2324,6 @@ transform/pos = Vector2( 0, 70 )
 
 transform/pos = Vector2( 0, 120 )
 
-[node name="Cowbell18176" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col3" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="Col4" type="Node2D" parent="cowbells/Block"]
 
 editor/display_folded = true
@@ -361,17 +2341,8 @@ transform/pos = Vector2( 0, 70 )
 
 transform/pos = Vector2( 0, 120 )
 
-[node name="Cowbell18176" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col4" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="Col5" type="Node2D" parent="cowbells/Block"]
 
-editor/display_folded = true
 transform/pos = Vector2( 250, 0 )
 
 [node name="Cowbell18173" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
@@ -385,14 +2356,6 @@ transform/pos = Vector2( 0, 70 )
 [node name="Cowbell18175" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col5" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
 
 [node name="Col6" type="Node2D" parent="cowbells/Block"]
 
@@ -411,14 +2374,6 @@ transform/pos = Vector2( 0, 70 )
 
 transform/pos = Vector2( 0, 120 )
 
-[node name="Cowbell18176" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col6" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="Col7" type="Node2D" parent="cowbells/Block"]
 
 editor/display_folded = true
@@ -428,101 +2383,28 @@ transform/pos = Vector2( 350, 0 )
 
 transform/pos = Vector2( 0, 20 )
 
-[node name="Cowbell18174" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 70 )
-
-[node name="Cowbell18175" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col7" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="Col8" type="Node2D" parent="cowbells/Block"]
 
-editor/display_folded = true
 transform/pos = Vector2( 400, 0 )
 
 [node name="Cowbell18173" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 0, 20 )
 
-[node name="Cowbell18174" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 70 )
-
-[node name="Cowbell18175" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col8" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="Col9" type="Node2D" parent="cowbells/Block"]
 
 editor/display_folded = true
 transform/pos = Vector2( 450, 0 )
-
-[node name="Cowbell18173" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 20 )
-
-[node name="Cowbell18174" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 70 )
-
-[node name="Cowbell18175" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col9" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
 
 [node name="Col10" type="Node2D" parent="cowbells/Block"]
 
 editor/display_folded = true
 transform/pos = Vector2( 500, 0 )
 
-[node name="Cowbell18173" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 20 )
-
-[node name="Cowbell18174" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 70 )
-
-[node name="Cowbell18175" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 120 )
-
-[node name="Cowbell18176" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 170 )
-
-[node name="Cowbell18177" parent="cowbells/Block/Col10" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 0, 220 )
-
 [node name="death_line" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = false
-transform/pos = Vector2( 24550, -940 )
+transform/pos = Vector2( 24520, -142 )
 transform/scale = Vector2( 6889, 1 )
 
 [node name="UFO" parent="." instance=ExtResource( 11 )]
@@ -543,6 +2425,8 @@ stream/buffering_ms = 500
 
 [node name="cages" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="jail" parent="cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1690, -2730 )
@@ -558,18 +2442,271 @@ transform/scale = Vector2( 1.7, 1.7 )
 transform/pos = Vector2( -1113, -2516 )
 transform/scale = Vector2( 1.7, 1.7 )
 
+[node name="jail3" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 336, -2402 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail4" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -30, -1420 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail5" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 580, -1420 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail6" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -1869, -1859 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail7" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 1270, -1870 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail8" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 1635, -1666 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail9" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -1902, -2623 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail10" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 817, -3078 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail11" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -2012, -912 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail12" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( -818, -472 )
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="jail13" parent="cages" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 1030, -2620 )
+transform/scale = Vector2( 1.7, 1.7 )
+
 [node name="tips" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -1890, -3020 )
 
 [node name="Area2D" parent="tips" instance=ExtResource( 14 )]
 
+transform/pos = Vector2( -306, 72 )
 text = "Este camino está bloqueado. Busca otra forma de desplazarte."
 
 [node name="moving_paltforms" type="Node2D" parent="."]
 
-[node name="Node2D" parent="moving_paltforms" instance=ExtResource( 15 )]
+editor/display_folded = true
+
+[node name="Node2D" type="Node2D" parent="moving_paltforms"]
+
+editor/display_folded = true
+transform/pos = Vector2( -3348, -2059 )
+
+[node name="Path2D" type="Path2D" parent="moving_paltforms/Node2D"]
+
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="moving_paltforms/Node2D/Path2D"]
+
+transform/pos = Vector2( 884.909, -127.896 )
+transform/rot = -179.531
+offset = 620.742
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="moving_paltforms/Node2D/Path2D/PathFollow2D"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+"anims/Nueva animación" = SubResource( 2 )
+playback/active = true
+playback/speed = 0.3
+blend_times = [  ]
+autoplay = "Nueva animación"
+
+[node name="platform" type="Node2D" parent="moving_paltforms/Node2D/Path2D/PathFollow2D"]
+
+transform/pos = Vector2( 19.9257, 9.16351 )
+transform/rot = 180.0
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="Sprite" type="Sprite" parent="moving_paltforms/Node2D/Path2D/PathFollow2D/platform"]
+
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 45
+
+[node name="Sprite3" type="Sprite" parent="moving_paltforms/Node2D/Path2D/PathFollow2D/platform"]
+
+transform/pos = Vector2( -63.9978, -0.524231 )
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 45
+
+[node name="Sprite1" type="Sprite" parent="moving_paltforms/Node2D/Path2D/PathFollow2D/platform"]
+
+transform/pos = Vector2( 63.9979, 0.524231 )
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 43
+
+[node name="Sprite2" type="Sprite" parent="moving_paltforms/Node2D/Path2D/PathFollow2D/platform"]
+
+transform/pos = Vector2( -127.996, -1.04849 )
+transform/rot = 3.57518e-06
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 39
+
+[node name="Sprite4" type="Sprite" parent="moving_paltforms/Node2D/Path2D/PathFollow2D/platform"]
+
+transform/rot = 3.57518e-06
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 50
+
+[node name="RigidBody2D" type="KinematicBody2D" parent="moving_paltforms/Node2D/Path2D/PathFollow2D"]
+
+transform/pos = Vector2( 207.375, -72.253 )
+transform/rot = 179.531
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1.48754, -8.85949e-06, 5.95581e-06, 1, 133.769, -90.2688 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 15
+collision/margin = 0.08
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moving_paltforms/Node2D/Path2D/PathFollow2D/RigidBody2D"]
+
+transform/pos = Vector2( 133.769, -90.2688 )
+transform/rot = 0.000341243
+transform/scale = Vector2( 1.48754, 1 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Node2D1" type="Node2D" parent="moving_paltforms"]
+
+editor/display_folded = true
+transform/pos = Vector2( 1280, -2540 )
+
+[node name="Path2D" type="Path2D" parent="moving_paltforms/Node2D1"]
+
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="moving_paltforms/Node2D1/Path2D"]
+
+transform/pos = Vector2( 800, 464.588 )
+transform/rot = -179.531
+offset = 620.742
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+"anims/Nueva animación" = SubResource( 2 )
+playback/active = true
+playback/speed = 0.3
+blend_times = [  ]
+autoplay = "Nueva animación"
+
+[node name="platform" type="Node2D" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D"]
+
+transform/pos = Vector2( 19.9257, 9.16351 )
+transform/rot = 180.0
+transform/scale = Vector2( 1.7, 1.7 )
+
+[node name="Sprite" type="Sprite" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D/platform"]
+
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 45
+
+[node name="Sprite3" type="Sprite" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D/platform"]
+
+transform/pos = Vector2( -63.9978, -0.524231 )
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 45
+
+[node name="Sprite1" type="Sprite" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D/platform"]
+
+transform/pos = Vector2( 63.9979, 0.524231 )
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 43
+
+[node name="Sprite2" type="Sprite" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D/platform"]
+
+transform/pos = Vector2( -127.996, -1.04849 )
+transform/rot = 3.57518e-06
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 39
+
+[node name="Sprite4" type="Sprite" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D/platform"]
+
+transform/rot = 3.57518e-06
+texture = ExtResource( 15 )
+vframes = 13
+hframes = 5
+frame = 50
+
+[node name="RigidBody2D" type="KinematicBody2D" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D"]
+
+transform/pos = Vector2( 207.375, -72.253 )
+transform/rot = 179.531
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1.48754, -8.85949e-06, 5.95581e-06, 1, 133.769, -90.2688 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 15
+collision/margin = 0.08
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="moving_paltforms/Node2D1/Path2D/PathFollow2D/RigidBody2D"]
+
+transform/pos = Vector2( 133.769, -90.2688 )
+transform/rot = 0.000341243
+transform/scale = Vector2( 1.48754, 1 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
 
 [node name="smoke" type="Node2D" parent="."]
 
@@ -585,5 +2722,25 @@ transform/pos = Vector2( -1188, -3100 )
 transform/rot = 90.0
 transform/scale = Vector2( -1.7, 1.7 )
 time = 10.0
+
+[node name="smoke2" parent="smoke" instance=ExtResource( 16 )]
+
+transform/pos = Vector2( 598, -2820 )
+transform/scale = Vector2( -1.7, 1.7 )
+time = 1.0
+
+[node name="smoke3" parent="smoke" instance=ExtResource( 16 )]
+
+transform/pos = Vector2( 970, -1688 )
+transform/rot = 270.0
+transform/scale = Vector2( -1.7, 1.7 )
+time = 1.0
+
+[node name="smoke4" parent="smoke" instance=ExtResource( 16 )]
+
+transform/pos = Vector2( -2383, -1686 )
+transform/rot = 90.0
+transform/scale = Vector2( -1.7, 1.7 )
+time = 0.8
 
 
