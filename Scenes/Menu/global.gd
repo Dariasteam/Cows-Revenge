@@ -104,4 +104,6 @@ func load_game():
 	
 	retro_effect = current_line["retro_effect"]
 	
+	unlocked_levels = 100
+	
 	

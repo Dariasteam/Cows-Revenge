@@ -81,7 +81,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 885.0
-margin/bottom = 815.0
+margin/bottom = 920.0
 custom_constants/separation = 25
 alignment = 0
 script/script = SubResource( 1 )
@@ -253,6 +253,27 @@ text = "EP8"
 flat = false
 script/script = ExtResource( 3 )
 id = 7
+
+[node name="Button9" type="Button" parent="VButtonArray/ScrollContainer/VBoxContainer"]
+
+rect/min_size = Vector2( 50, 80 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 840.0
+margin/right = 885.0
+margin/bottom = 920.0
+custom_fonts/font = ExtResource( 2 )
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "EP9"
+flat = false
+script/script = ExtResource( 3 )
+id = 8
 
 [node name="Button" parent="VButtonArray" instance=ExtResource( 4 )]
 

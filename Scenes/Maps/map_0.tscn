@@ -252,6 +252,7 @@ transform/scale = Vector2( 1, 1 )
 
 [node name="apples" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -3140, -3460 )
 
 [node name="Apple 2" parent="apples" instance=ExtResource( 7 )]
@@ -271,6 +272,8 @@ amount = 20
 
 [node name="hearts" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Heart" parent="hearts" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 1480, -1230 )
@@ -289,6 +292,7 @@ transform/pos = Vector2( -1240, -2510 )
 
 [node name="cowbells" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 500, 560 )
 
 [node name="Cowbell" parent="cowbells" instance=ExtResource( 9 )]
@@ -1156,6 +1160,8 @@ stream/buffering_ms = 500
 
 [node name="Cages" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="jail" parent="Cages" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( -1920, -2640 )
@@ -1163,6 +1169,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Tips" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -1890, -3020 )
 
 [node name="Area2D" parent="Tips" instance=ExtResource( 14 )]

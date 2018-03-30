@@ -1,0 +1,146 @@
+[gd_scene load_steps=3 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "export (NodePath) var START
+export (NodePath) var END
+export(int) var divisor = 4
+
+onready var start = get_node(START)
+onready var end = get_node(END)
+
+onready var x1 = start.get_pos().x
+onready var x2 = end.get_pos().x
+onready var y1 = start.get_pos().y
+onready var y2 = end.get_pos().y
+
+onready var A = abs(x2 - x1)
+onready var B = abs(y2 - y1)
+
+onready var H = sqrt(pow(A, 2) + pow(B, 2))
+onready var angle = asin(A / H / sin(deg2rad(90)))
+onready var x_sign = ((start.get_pos().x - end.get_pos().x < 0) * -2) +1
+
+const segment = preload(\"res://Scenes/Events/chain_segment.tscn\")
+
+func next_segment_y(x):
+	return Vector2(x , ((x - x1) * (y2 - y1) / (x2 - x1)) + y1)
+
+func generate_segment (index):
+	var aux_segment = segment.instance()	
+	var position_x = start.get_pos().x - (x_sign * (divisor * index)) * angle
+	aux_segment.set_pos(next_segment_y(position_x))
+	return aux_segment
+
+func _ready():
+	print (angle)
+	
+	var distance = start.get_pos().distance_to(end.get_pos()) 
+	var n_segments = distance / divisor
+	var last_segment = start
+	
+	for i in range(1, n_segments - 1):
+		var aux_segment = generate_segment(i)
+		add_child(aux_segment)
+		last_segment.get_node(\"joint\").set_node_a(last_segment.get_path())
+		last_segment.get_node(\"joint\").set_node_b(aux_segment.get_path())
+		last_segment = aux_segment
+	
+	last_segment.get_node(\"joint\").set_node_a(last_segment.get_path())
+	last_segment.get_node(\"joint\").set_node_b(end.get_path())
+	"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 4.05118, 3.93616 )
+
+[node name="Node2D" type="Node2D"]
+
+transform/pos = Vector2( 589.086, 309.696 )
+script/script = SubResource( 1 )
+START = NodePath("Start")
+END = NodePath("End")
+divisor = 1
+
+[node name="Start" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 225.344, 1.77942 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 1
+mass = 10.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="joint" type="PinJoint2D" parent="Start"]
+
+transform/pos = Vector2( -6.01813, -0.0238342 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D18")
+bias/bias = 0.0
+collision/exclude_nodes = true
+softness = 0.0
+
+[node name="End" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 125.865, 0.659424 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 1
+mass = 10.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
+
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="joint" type="PinJoint2D" parent="End"]
+
+transform/pos = Vector2( -6.01813, -0.0238342 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D18")
+bias/bias = 0.0
+collision/exclude_nodes = true
+softness = 0.0
+
+

@@ -16,4 +16,5 @@ func update_price():
 func _on_Heart_button_pressed():
 	global.buy_heart(price)
 	update_price()
+	get_parent().get_node("Milk_button").update_price()
 	

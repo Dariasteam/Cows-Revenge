@@ -1,0 +1,466 @@
+[gd_scene load_steps=13 format=1]
+
+[ext_resource path="res://Sprites/Boss/body.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Boss/leg_back_up.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Boss/leg_back_down.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Boss/foot_back.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Boss/leg_front_up.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Boss/leg_front_down.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Boss/foot_front.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Boss/head.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Boss/wire.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Boss/finger.png" type="Texture" id=10]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "export (NodePath) var START
+export (NodePath) var END
+
+onready var start = get_node(START)
+onready var end = get_node(END)
+
+onready var x1 = start.get_pos().x
+onready var x2 = end.get_pos().x
+onready var y1 = start.get_pos().y
+onready var y2 = end.get_pos().y
+
+const segment = preload(\"res://Scenes/Events/chain_segment.tscn\")
+
+func next_segment(x):
+	return Vector2(x , ((x - x1) * (y2 - y1) / (x2 - x1)) + y1)
+
+func _ready():
+	var distance = start.get_pos().distance_to(end.get_pos())
+	#var angle = start.get_pos().angle_to(end.get_pos())
+	#print (angle)
+	var n_segments = distance / 2 
+	var position = start.get_pos()
+	var last_segment = start
+	
+	for i in range(0, n_segments - 1):
+		var aux_segment = segment.instance()
+		position -= Vector2(2, 0)
+		aux_segment.set_pos(next_segment(position.x))
+		#aux_segment.set_rotd(angle)
+		add_child(aux_segment)
+		last_segment.get_node(\"joint\").set_node_a(last_segment.get_path())
+		last_segment.get_node(\"joint\").set_node_b(aux_segment.get_path())
+		last_segment = aux_segment
+	
+	end.get_node(\"joint\").set_node_a(end.get_path())
+	end.get_node(\"joint\").set_node_b(last_segment.get_path())"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.87903, 3.93616 )
+
+[node name="Node2D" type="Node2D"]
+
+transform/pos = Vector2( 636.567, 381.293 )
+
+[node name="Body" type="Sprite" parent="."]
+
+transform/pos = Vector2( 40.0902, 8.82797 )
+transform/rot = -7.09402
+texture = ExtResource( 1 )
+offset = Vector2( -35.4693, -3.91888 )
+__meta__ = {
+"_edit_ik_": true
+}
+
+[node name="Leg_Back_Up" type="Sprite" parent="Body"]
+
+editor/display_folded = true
+transform/pos = Vector2( 4.04352, 5.63336 )
+transform/rot = -5.66237
+transform/scale = Vector2( 1, 1 )
+z/z = -1
+texture = ExtResource( 2 )
+offset = Vector2( -40.4423, -11.1284 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Leg_Back_Down" type="Sprite" parent="Body/Leg_Back_Up"]
+
+transform/pos = Vector2( -24.7578, 20.5191 )
+transform/rot = 2.29481
+transform/scale = Vector2( 1, 1 )
+z/z = -1
+texture = ExtResource( 3 )
+offset = Vector2( -16.3306, -34.5348 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Foot_Back" type="Sprite" parent="Body/Leg_Back_Up/Leg_Back_Down"]
+
+transform/pos = Vector2( 12.0957, 36.1506 )
+transform/rot = 3.37345
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+offset = Vector2( -28.4257, -72.6998 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D" type="Position2D" parent="Body/Leg_Back_Up/Leg_Back_Down/Foot_Back"]
+
+transform/pos = Vector2( -23.415, 2.88678 )
+transform/rot = 9.20492
+transform/scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D" type="Position2D" parent="Body/Leg_Back_Up/Leg_Back_Down/Foot_Back/Position2D"]
+
+transform/pos = Vector2( -11.8035, 1.51938 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Leg_Front_Up" type="Sprite" parent="Body"]
+
+editor/display_folded = true
+transform/pos = Vector2( 4.23431, 5.69522 )
+transform/rot = 41.402
+texture = ExtResource( 5 )
+offset = Vector2( -40.3387, -11.0942 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Leg_Front_Down" type="Sprite" parent="Body/Leg_Front_Up"]
+
+transform/pos = Vector2( -23.4612, 22.1521 )
+transform/rot = -7.82368
+z/z = -1
+texture = ExtResource( 6 )
+offset = Vector2( -17.9009, -35.8193 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Foot_Front" type="Sprite" parent="Body/Leg_Front_Up/Leg_Front_Down"]
+
+transform/pos = Vector2( 10.2595, 33.1961 )
+transform/rot = -31.5029
+texture = ExtResource( 7 )
+offset = Vector2( -27.9519, -70.4521 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D" type="Position2D" parent="Body/Leg_Front_Up/Leg_Front_Down/Foot_Front"]
+
+transform/pos = Vector2( -24.865, 2.81232 )
+transform/rot = -3.13296
+transform/scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D1" type="Position2D" parent="Body/Leg_Front_Up/Leg_Front_Down/Foot_Front/Position2D"]
+
+transform/pos = Vector2( -12.7146, -0.980713 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Head" type="Sprite" parent="Body"]
+
+transform/pos = Vector2( -35.4153, -51.9812 )
+transform/rot = 9.44869
+texture = ExtResource( 8 )
+offset = Vector2( 1.37228, 49.4121 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D" type="Position2D" parent="Body/Head"]
+
+transform/pos = Vector2( -3.45715, -6.41968 )
+transform/rot = -61.5417
+transform/scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D1" type="Position2D" parent="Body/Head/Position2D"]
+
+transform/pos = Vector2( -25.1898, 0.367554 )
+transform/rot = -8.35903
+transform/scale = Vector2( 1.09817, 1.15621 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Position2D2" type="Position2D" parent="Body/Head/Position2D/Position2D1"]
+
+transform/pos = Vector2( -17.3925, 3.50458 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="Hand_Back" type="Position2D" parent="."]
+
+transform/pos = Vector2( -37.5853, -14.0595 )
+transform/rot = 75.6957
+transform/scale = Vector2( 0.999999, 0.999999 )
+z/z = -1
+
+[node name="Wire_Back" type="Node2D" parent="Hand_Back"]
+
+transform/pos = Vector2( -3.67201, -2.14014 )
+transform/rot = -75.6957
+transform/scale = Vector2( 0.5, 0.5 )
+z/z = -5
+script/script = SubResource( 1 )
+START = NodePath("Start")
+END = NodePath("End")
+
+[node name="End" type="RigidBody2D" parent="Hand_Back/Wire_Back"]
+
+editor/display_folded = true
+transform/pos = Vector2( 15.6561, -16.9876 )
+transform/rot = 172.627
+z/z = -3
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Hand_Back/Wire_Back/End"]
+
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand_Back/Wire_Back/End"]
+
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="joint" type="PinJoint2D" parent="Hand_Back/Wire_Back/End"]
+
+transform/pos = Vector2( -0.638733, 0.000701904 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D")
+bias/bias = 0.0
+collision/exclude_nodes = true
+softness = 1.0
+
+[node name="Start" type="RigidBody2D" parent="Hand_Back/Wire_Back"]
+
+editor/display_folded = true
+transform/pos = Vector2( 128.498, -49.2625 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Hand_Back/Wire_Back/Start"]
+
+visibility/visible = false
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand_Back/Wire_Back/Start"]
+
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="joint" type="PinJoint2D" parent="Hand_Back/Wire_Back/Start"]
+
+transform/pos = Vector2( -7.43176, 0.104675 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D2")
+bias/bias = 0.0
+collision/exclude_nodes = true
+softness = 1.0
+
+[node name="Sprite2" type="Sprite" parent="Hand_Back"]
+
+transform/pos = Vector2( 8.87546, 49.2749 )
+transform/rot = -80.9607
+texture = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Hand_Back"]
+
+transform/pos = Vector2( 16.9435, 51.6866 )
+transform/rot = -80.9607
+z/z = 1
+texture = ExtResource( 10 )
+
+[node name="Sprite1" type="Sprite" parent="Hand_Back"]
+
+transform/pos = Vector2( 10.0309, 59.491 )
+transform/rot = -80.9607
+z/z = 1
+texture = ExtResource( 10 )
+
+[node name="Hand_Front" type="Position2D" parent="."]
+
+transform/pos = Vector2( -27.3054, -3.51297 )
+transform/rot = 79.1726
+transform/scale = Vector2( 0.999999, 0.999999 )
+
+[node name="Wire_Front" type="Node2D" parent="Hand_Front"]
+
+transform/pos = Vector2( 3.30298, 2.57446 )
+transform/rot = -79.1726
+transform/scale = Vector2( 0.5, 0.5 )
+script/script = SubResource( 1 )
+START = NodePath("Start")
+END = NodePath("End")
+
+[node name="End" type="RigidBody2D" parent="Hand_Front/Wire_Front"]
+
+editor/display_folded = true
+transform/pos = Vector2( -5.75891, -9.81091 )
+transform/rot = -178.701
+transform/scale = Vector2( 1, 1 )
+z/z = -3
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Hand_Front/Wire_Front/End"]
+
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand_Front/Wire_Front/End"]
+
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="joint" type="PinJoint2D" parent="Hand_Front/Wire_Front/End"]
+
+transform/pos = Vector2( -0.638733, 0.000701904 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D")
+bias/bias = 0.0
+collision/exclude_nodes = true
+softness = 1.0
+
+[node name="Start" type="RigidBody2D" parent="Hand_Front/Wire_Front"]
+
+editor/display_folded = true
+transform/pos = Vector2( 103.764, -59.2512 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+collision/layers = 1
+collision/mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Sprite" type="Sprite" parent="Hand_Front/Wire_Front/Start"]
+
+visibility/visible = false
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand_Front/Wire_Front/Start"]
+
+shape = SubResource( 2 )
+trigger = true
+_update_shape_index = 0
+
+[node name="joint" type="PinJoint2D" parent="Hand_Front/Wire_Front/Start"]
+
+transform/pos = Vector2( -7.43176, 0.104675 )
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D2")
+bias/bias = 0.0
+collision/exclude_nodes = true
+softness = 1.0
+
+[node name="Sprite2" type="Sprite" parent="Hand_Front"]
+
+transform/pos = Vector2( 8.87546, 49.2749 )
+transform/rot = -80.9607
+texture = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="Hand_Front"]
+
+transform/pos = Vector2( 16.9435, 51.6866 )
+transform/rot = -80.9607
+z/z = 1
+texture = ExtResource( 10 )
+
+[node name="Sprite1" type="Sprite" parent="Hand_Front"]
+
+transform/pos = Vector2( 10.0309, 59.491 )
+transform/rot = -80.9607
+z/z = 1
+texture = ExtResource( 10 )
+
+

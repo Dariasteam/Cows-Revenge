@@ -6,10 +6,14 @@ var vertical
 export var velocity = 350
 var v = Vector2(-velocity, 0)
 
+const MACHETE = preload("res://Scenes/Events/machete.tscn") 
+
 onready var sprite = get_node("sprite")
 onready var area_head = get_node("area_head")
 onready var hit_single = get_node("hit_ray_particle")
 onready var sound = get_node("sound")
+onready var shooter = get_node("shooter")
+onready var shooter_pos = get_node("shooter").get_pos()
 
 export(bool) var dir_left = true;
 
@@ -21,6 +25,7 @@ func reverse_direction():
 	sprite.set_flip_h(v.x < 0)
 	dir_left = !dir_left
 	v = Vector2(-v.x,0)	
+	shooter.set_pos(Vector2(-shooter_pos.x, shooter_pos.y))
 
 func _ready():	
 	if (!dir_left):
@@ -29,6 +34,7 @@ func _ready():
 	set_process(true)
 
 func disappear():
+	get_node("shooter/Timer").disconnect("timeout", self, "_on_Timer_timeout")
 	play_damage_sound()
 	sprite.set_opacity(0)
 	set_fixed_process(false)
@@ -126,3 +132,9 @@ func _on_area_head_body_enter( body ):
 		if (body.foots.get_global_pos().y > area_head.get_global_pos().y and body.is_falling()):
 			life = 0
 			die_by_jump()
+
+func _on_Timer_timeout():
+	var machete = MACHETE.instance()
+	machete.set_global_pos(shooter.get_global_pos())
+	machete.set_right(!dir_left)
+	get_parent().add_child(machete)	

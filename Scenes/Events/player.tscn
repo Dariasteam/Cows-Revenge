@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://Scenes/Events/player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Events/shooter.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Events/player_animations.tres" type="Animation" id=5]
 [ext_resource path="res://Scenes/Events/cowbell_collector.gd" type="Script" id=6]
 [ext_resource path="res://Sound/player_jump.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Events/map_light.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -165,6 +166,8 @@ stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+
+[node name="Light2D" parent="." instance=ExtResource( 8 )]
 
 [connection signal="looking_left" from="." to="shooter" method="_on_KinematicBody2D_looking_left"]
 
