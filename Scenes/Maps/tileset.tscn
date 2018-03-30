@@ -1,7 +1,8 @@
-[gd_scene load_steps=74 format=1]
+[gd_scene load_steps=75 format=1]
 
 [ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Tilesets/pipes.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tilesets/tile_back.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Tilesets/pipes.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -188,172 +189,172 @@ points = Vector2Array( -14, 6, -24, -1, -17, -12, -9, -18, 16, -18, 23, -12 )
 custom_solver_bias = 0.0
 points = Vector2Array( 23, 4, 16, 19, -9, 18, -14, 6 )
 
-[sub_resource type="RectangleShape2D" id=67]
+[sub_resource type="RectangleShape2D" id=38]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 32 )
 
-[sub_resource type="RectangleShape2D" id=72]
+[sub_resource type="RectangleShape2D" id=39]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 12 )
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=40]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 32 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=41]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 32 )
 
-[sub_resource type="RectangleShape2D" id=71]
+[sub_resource type="RectangleShape2D" id=42]
 
 custom_solver_bias = 0.0
 extents = Vector2( 12, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=38]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 15, -2, -10, 12, -29, 12, -29, -13, 5, -13, 13, -9 )
-
-[sub_resource type="ConvexPolygonShape2D" id=39]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 15, -2, 15, 32, -10, 32, -10, 12 )
-
-[sub_resource type="ConvexPolygonShape2D" id=40]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -1, -13, 35, -13, 35, 12, 15, 12, -10, -7, -6, -11 )
-
-[sub_resource type="ConvexPolygonShape2D" id=41]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 15, 12, 15, 32, -10, 32, -10, -7 )
-
-[sub_resource type="ConvexPolygonShape2D" id=42]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -10, 2, 15, -13, 35, -13, 35, 12, -1, 12, -7, 9 )
 
 [sub_resource type="ConvexPolygonShape2D" id=43]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, 2, -10, -32, 15, -32, 15, -13 )
+points = Vector2Array( 15, -2, -10, 12, -29, 12, -29, -13, 5, -13, 13, -9 )
 
 [sub_resource type="ConvexPolygonShape2D" id=44]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 6, 12, -29, 12, -29, -13, -10, -13, 16, 2, 13, 9 )
+points = Vector2Array( 15, -2, 15, 32, -10, 32, -10, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=45]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, -13, -10, -32, 16, -32, 16, 2 )
+points = Vector2Array( -1, -13, 35, -13, 35, 12, 15, 12, -10, -7, -6, -11 )
 
 [sub_resource type="ConvexPolygonShape2D" id=46]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, -13, -10, -32, 15, -32, 15, -13 )
+points = Vector2Array( 15, 12, 15, 32, -10, 32, -10, -7 )
 
 [sub_resource type="ConvexPolygonShape2D" id=47]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, -13, 35, -13, 35, 12, 15, 12 )
+points = Vector2Array( -10, 2, 15, -13, 35, -13, 35, 12, -1, 12, -7, 9 )
 
 [sub_resource type="ConvexPolygonShape2D" id=48]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, -13, 15, -13, 15, 12, -10, 12 )
+points = Vector2Array( -10, 2, -10, -32, 15, -32, 15, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=49]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, 12, 15, 32, -10, 32, -10, 12 )
+points = Vector2Array( 6, 12, -29, 12, -29, -13, -10, -13, 16, 2, 13, 9 )
 
 [sub_resource type="ConvexPolygonShape2D" id=50]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, -13, -10, 12, -29, 12, -29, -13 )
+points = Vector2Array( -10, -13, -10, -32, 16, -32, 16, 2 )
 
 [sub_resource type="ConvexPolygonShape2D" id=51]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -29, 12, -29, -13, 35, -13, -10, 12 )
+points = Vector2Array( -10, -13, -10, -32, 15, -32, 15, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=52]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 35, -13, 35, 12, 15, 12 )
+points = Vector2Array( 15, -13, 35, -13, 35, 12, 15, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=53]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, 12, 35, -13, 15, 12 )
+points = Vector2Array( -10, -13, 15, -13, 15, 12, -10, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=54]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, 12, 15, 12, 15, 32, -10, 32 )
+points = Vector2Array( 15, 12, 15, 32, -10, 32, -10, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=55]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -29, 12, -29, -13, -10, -13, 35, 12 )
+points = Vector2Array( -10, -13, -10, 12, -29, 12, -29, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, -13, -10, -32, 15, -32, 15, -13 )
+points = Vector2Array( -29, 12, -29, -13, 35, -13, -10, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=57]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 35, 12, -10, -13, 15, -13 )
+points = Vector2Array( 35, -13, 35, 12, 15, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=58]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 35, 12, 15, -13, 35, -13 )
+points = Vector2Array( -10, 12, 35, -13, 15, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=59]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, 32, -10, 32, -10, -32, 15, 12 )
+points = Vector2Array( -10, 12, 15, 12, 15, 32, -10, 32 )
 
 [sub_resource type="ConvexPolygonShape2D" id=60]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, -32, 15, -32, 15, -13 )
+points = Vector2Array( -29, 12, -29, -13, -10, -13, 35, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=61]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, 12, -10, -32, 15, -13 )
+points = Vector2Array( -10, -13, -10, -32, 15, -32, 15, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=62]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, 12, 15, -13, 35, -13, 35, 12 )
+points = Vector2Array( 35, 12, -10, -13, 15, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=63]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, 32, -10, 32, -10, 12, 15, -32 )
+points = Vector2Array( 35, 12, 15, -13, 35, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=64]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -10, 12, -29, 12, -29, -13, -10, -13 )
+points = Vector2Array( 15, 32, -10, 32, -10, -32, 15, 12 )
 
 [sub_resource type="ConvexPolygonShape2D" id=65]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 15, -32, -10, 12, -10, -13 )
+points = Vector2Array( -10, -32, 15, -32, 15, -13 )
 
 [sub_resource type="ConvexPolygonShape2D" id=66]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15, 12, -10, -32, 15, -13 )
+
+[sub_resource type="ConvexPolygonShape2D" id=67]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15, 12, 15, -13, 35, -13, 35, 12 )
+
+[sub_resource type="ConvexPolygonShape2D" id=68]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15, 32, -10, 32, -10, 12, 15, -32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=69]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -10, 12, -29, 12, -29, -13, -10, -13 )
+
+[sub_resource type="ConvexPolygonShape2D" id=70]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15, -32, -10, 12, -10, -13 )
+
+[sub_resource type="ConvexPolygonShape2D" id=71]
 
 custom_solver_bias = 0.0
 points = Vector2Array( 15, -32, -10, -13, -10, -32 )
@@ -637,6 +638,214 @@ build_mode = 0
 polygon = Vector2Array( 27, -32, 27, 15, 25, 21, 21.115, 25.3147, 11.2565, 26.8224, -32, 28, -32, -32 )
 shape_range = Vector2( 0, 0 )
 trigger = false
+
+[node name="back_arriba_izquierda" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_arriba" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 1
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_arriba_derecha" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 2
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_arriba_blup" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 3
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_izquierda" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 5
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 6
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_derecha" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 7
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_single" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 8
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_abajo_izquierda" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 10
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_abajo" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 11
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_abajo_derecha" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 12
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_rampa_1" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 15
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_rampa_2" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 16
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_rampa_3" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 20
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_rampa_4" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 21
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_inner_1" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 18
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_inner_2" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 19
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_inner_3" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 23
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_inner_4" type="Sprite" parent="."]
+
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 24
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_izquierda6" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 5
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
+
+[node name="back_izquierda7" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 5
+frame = 5
+modulate = Color( 0.804688, 0.804688, 0.804688, 1 )
 
 [node name="Inner_Derecha_Abajo" type="Sprite" parent="."]
 
@@ -1576,6 +1785,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 [node name="hoja_10" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
 texture = ExtResource( 1 )
@@ -1589,7 +1799,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 5
@@ -1600,7 +1810,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 visibility/visible = false
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 67 )
+shapes/0/shape = SubResource( 38 )
 shapes/0/transform = Matrix32( 1.03333, 0, 0, 1, 2.5, 0 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -1615,7 +1825,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 2.5, 0 )
 transform/scale = Vector2( 1.03333, 1 )
-shape = SubResource( 67 )
+shape = SubResource( 38 )
 trigger = false
 _update_shape_index = 0
 
@@ -1624,7 +1834,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 1
@@ -1658,7 +1868,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 2
@@ -1692,7 +1902,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 3
@@ -1726,7 +1936,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 region_rect = Rect2( 0, 256, 64, 64 )
@@ -1735,7 +1945,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 72 )
+shapes/0/shape = SubResource( 39 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1.03333, 3, -0.5 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -1751,7 +1961,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 3, -0.5 )
 transform/scale = Vector2( 1, 1.03333 )
-shape = SubResource( 72 )
+shape = SubResource( 39 )
 trigger = false
 _update_shape_index = 0
 
@@ -1760,7 +1970,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 6
@@ -1770,7 +1980,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 69 )
+shapes/0/shape = SubResource( 40 )
 shapes/0/transform = Matrix32( 1.03333, 0, 0, 1, 2.5, 0 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -1785,7 +1995,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 2.5, 0 )
 transform/scale = Vector2( 1.03333, 1 )
-shape = SubResource( 69 )
+shape = SubResource( 40 )
 trigger = false
 _update_shape_index = 0
 
@@ -1794,7 +2004,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 7
@@ -1804,7 +2014,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 70 )
+shapes/0/shape = SubResource( 41 )
 shapes/0/transform = Matrix32( 1.03333, 0, 0, 1, 2.5, 0 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -1819,7 +2029,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 2.5, 0 )
 transform/scale = Vector2( 1.03333, 1 )
-shape = SubResource( 70 )
+shape = SubResource( 41 )
 trigger = false
 _update_shape_index = 0
 
@@ -1828,7 +2038,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 9
@@ -1838,7 +2048,7 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 71 )
+shapes/0/shape = SubResource( 42 )
 shapes/0/transform = Matrix32( 1.03333, 0, 0, 1, 2.5, 0 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -1853,7 +2063,7 @@ bounce = 0.0
 
 transform/pos = Vector2( 2.5, 0 )
 transform/scale = Vector2( 1.03333, 1 )
-shape = SubResource( 71 )
+shape = SubResource( 42 )
 trigger = false
 _update_shape_index = 0
 
@@ -1862,7 +2072,7 @@ _update_shape_index = 0
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 4
@@ -1872,10 +2082,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 38 )
+shapes/0/shape = SubResource( 43 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 39 )
+shapes/1/shape = SubResource( 44 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 0
@@ -1898,7 +2108,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 8
@@ -1908,10 +2118,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 40 )
+shapes/0/shape = SubResource( 45 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 41 )
+shapes/1/shape = SubResource( 46 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 0
@@ -1934,7 +2144,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 13
@@ -1944,10 +2154,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 42 )
+shapes/0/shape = SubResource( 47 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 43 )
+shapes/1/shape = SubResource( 48 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 0
@@ -1970,7 +2180,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 14
@@ -1980,10 +2190,10 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 44 )
+shapes/0/shape = SubResource( 49 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 45 )
+shapes/1/shape = SubResource( 50 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
 collision/layers = 0
@@ -2006,7 +2216,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 10
@@ -2016,19 +2226,19 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 46 )
+shapes/0/shape = SubResource( 51 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 47 )
+shapes/1/shape = SubResource( 52 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 48 )
+shapes/2/shape = SubResource( 53 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 49 )
+shapes/3/shape = SubResource( 54 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 50 )
+shapes/4/shape = SubResource( 55 )
 shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/4/trigger = false
 collision/layers = 0
@@ -2051,7 +2261,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 11
@@ -2061,16 +2271,16 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 51 )
+shapes/0/shape = SubResource( 56 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 52 )
+shapes/1/shape = SubResource( 57 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 53 )
+shapes/2/shape = SubResource( 58 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 54 )
+shapes/3/shape = SubResource( 59 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/3/trigger = false
 collision/layers = 0
@@ -2093,7 +2303,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 12
@@ -2103,16 +2313,16 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 55 )
+shapes/0/shape = SubResource( 60 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 56 )
+shapes/1/shape = SubResource( 61 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 57 )
+shapes/2/shape = SubResource( 62 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 58 )
+shapes/3/shape = SubResource( 63 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/3/trigger = false
 collision/layers = 0
@@ -2135,7 +2345,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 15
@@ -2145,16 +2355,16 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 59 )
+shapes/0/shape = SubResource( 64 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 60 )
+shapes/1/shape = SubResource( 65 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 61 )
+shapes/2/shape = SubResource( 66 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 62 )
+shapes/3/shape = SubResource( 67 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/3/trigger = false
 collision/layers = 0
@@ -2177,7 +2387,7 @@ trigger = false
 visibility/visible = false
 transform/pos = Vector2( -64, -64 )
 z/z = 3
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 vframes = 6
 hframes = 5
 frame = 16
@@ -2187,16 +2397,16 @@ region_rect = Rect2( 0, 256, 64, 64 )
 
 transform/pos = Vector2( -3, 0 )
 input/pickable = false
-shapes/0/shape = SubResource( 63 )
+shapes/0/shape = SubResource( 68 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 64 )
+shapes/1/shape = SubResource( 69 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 65 )
+shapes/2/shape = SubResource( 70 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 66 )
+shapes/3/shape = SubResource( 71 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/3/trigger = false
 collision/layers = 0
@@ -2213,5 +2423,27 @@ build_mode = 0
 polygon = Vector2Array( -10, 32, -10, 12, -29, 12, -29, -13, -10, -13, -10, -32, 15, -32, 15, 32 )
 shape_range = Vector2( 0, 3 )
 trigger = false
+
+[node name="pipe18" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 3
+texture = ExtResource( 3 )
+vframes = 6
+hframes = 5
+frame = 19
+region_rect = Rect2( 0, 256, 64, 64 )
+
+[node name="pipe19" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -64, -64 )
+z/z = 3
+texture = ExtResource( 3 )
+vframes = 6
+hframes = 5
+frame = 18
+region_rect = Rect2( 0, 256, 64, 64 )
 
 

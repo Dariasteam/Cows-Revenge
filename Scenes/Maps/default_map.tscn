@@ -118,7 +118,27 @@ collision/bounce = 0.0
 collision/layers = 2
 collision/mask = 15
 occluder/light_mask = 1
-tile_data = IntArray(  )
+tile_data = IntArray( -1572880, 0, -1572879, 1, -1572878, 1, -1572877, 2, -1507344, 6, -1507343, 7, -1507342, 7, -1507341, 8, -1376271, 0, -1376270, 1, -1376269, 1, -1376268, 2, -1310735, 6, -1310734, 7, -1310733, 7, -1310732, 8 )
+
+[node name="back" type="TileMap" parent="."]
+
+transform/scale = Vector2( 1.7, 1.7 )
+z/z = -3
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 2
+collision/mask = 15
+occluder/light_mask = 1
+tile_data = IntArray( -1507344, 67, -1507343, 67, -1507342, 67, -1507341, 67, -1507340, 67, -1507339, 67, -1441808, 67, -1441807, 67, -1441806, 67, -1441805, 67, -1441804, 67, -1441803, 67, -1376272, 67, -1376271, 67, -1376270, 67, -1376269, 67, -1376268, 67, -1376267, 67, -1310736, 67, -1310735, 67, -1310734, 67, -1310733, 67, -1310732, 67, -1310731, 67 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
