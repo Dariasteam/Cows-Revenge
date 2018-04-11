@@ -3387,7 +3387,6 @@ time = 1.0
 
 [node name="fog_border" type="Sprite" parent="."]
 
-visibility/visible = false
 visibility/light_mask = 14
 transform/pos = Vector2( -190, -2570 )
 transform/scale = Vector2( 114.865, 2.36304 )
