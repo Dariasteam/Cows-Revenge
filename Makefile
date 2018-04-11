@@ -18,11 +18,11 @@ install:
 	mkdir -p $(prefix)/share/metainfo/
 	mkdir -p $(prefix)/share/icons/hicolor/64x64/apps/
 	mkdir -p $(prefix)/share/icons/hicolor/128x128/apps/
-	cp cowsrevenge $(prefix)/bin/
-	cp com.github.dariasteam.cowsrevenge.desktop $(prefix)/share/applications/
-	cp com.github.dariasteam.cowsrevenge.appdata.xml $(prefix)/share/metainfo/
-	cp cowsrevenge_icon_64.png $(prefix)/share/icons/hicolor/64x64/apps/com.github.dariasteam.cowsrevenge.png
-	cp cowsrevenge_icon_128.png $(prefix)/share/icons/hicolor/128x128/apps/com.github.dariasteam.cowsrevenge.png
+	cp build/cowsrevenge $(prefix)/bin/
+	cp linux_build/com.github.dariasteam.cowsrevenge.desktop $(prefix)/share/applications/
+	cp linux_build/com.github.dariasteam.cowsrevenge.appdata.xml $(prefix)/share/metainfo/
+	cp linux_build/cowsrevenge_icon_64.png $(prefix)/share/icons/hicolor/64x64/apps/com.github.dariasteam.cowsrevenge.png
+	cp linux_build/cowsrevenge_icon_128.png $(prefix)/share/icons/hicolor/128x128/apps/com.github.dariasteam.cowsrevenge.png
 
 clean:
 	rm -rf build
