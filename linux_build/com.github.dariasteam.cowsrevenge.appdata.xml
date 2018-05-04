@@ -14,10 +14,10 @@
   <id>com.github.dariasteam.cowsrevenge.desktop</id>
 
   <name>Cow's Revenge</name>
-  <name lang="es">Cow's Revenge</name>
+  <name xml:lang="es">Cow's Revenge</name>
 
   <summary>Indie Platformer Pixel Art Game</summary>
-  <summary lang="es">Juego de plataformas indie con estética pixel art</summary>
+  <summary xml:lang="es">Juego de plataformas indie con estética pixel art</summary>
 
   <developer_name>Pipo y Pipa Games</developer_name>
 
@@ -28,10 +28,8 @@
       killing butchers. You used to be a regular cow raised as a dairy cow, but you
       ain't that anymore. You have become better. You are... THE COWEST.
     </p>
-  </description>
 
-  <description lang="es">
-    <p>
+    <p xml:lang="es">
       Eres una vaca que ha sido abducida y mejorada genéticamente por alienígenas que
       ahora tiene la oprtunidad de rebelarse   contra la industrica ganadera liberando a
       las gallinas enjauladas y matando a los carniceros. Solías ser una vaca normal
@@ -57,8 +55,8 @@
   <keyword>2D</keyword>
   <keyword>pixelart</keyword>
 
-  <keyword lang="es">juego</keyword>
-  <keyword lang="es">platformas</keyword>
+  <keyword xml:lang="es">juego</keyword>
+  <keyword xml:lang="es">platformas</keyword>
 
   <releases>
     <release version="1.3" date="2018-04-9" urgency="low" type="stable">
@@ -68,7 +66,7 @@
           gamepad support.
         </p>
       </description>
-      <description lang="es">
+      <description xml:lang="es">
         <p>
           Primera versión linux empaquetada, ofrece 8 niveles jugables
           y soporte para mandos.
