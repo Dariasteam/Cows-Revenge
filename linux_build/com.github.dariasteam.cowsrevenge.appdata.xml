@@ -50,13 +50,19 @@
     <binary>cowsrevenge</binary>
   </provides>
 
-  <keyword>game</keyword>
-  <keyword>platform</keyword>
-  <keyword>2D</keyword>
-  <keyword>pixelart</keyword>
+  <keywords>
+    <keyword>game</keyword>
+    <keyword>platform</keyword>
+    <keyword>2D</keyword>
+    <keyword>pixelart</keyword>
+  </keywords>
 
-  <keyword xml:lang="es">juego</keyword>
-  <keyword xml:lang="es">platformas</keyword>
+  <keywords xml:lang="es">
+    <keyword>juego</keyword>
+    <keyword>platformas</keyword>
+    <keyword>pixelart</keyword>
+    <keyword>2D</keyword>
+  </keywords>
 
   <releases>
     <release version="1.3" date="2018-04-9" urgency="low" type="stable">
