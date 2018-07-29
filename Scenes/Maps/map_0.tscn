@@ -1169,7 +1169,6 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Tips" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -1890, -3020 )
 
 [node name="Area2D" parent="Tips" instance=ExtResource( 14 )]
@@ -1184,7 +1183,7 @@ text = "TUT_1"
 [node name="Area2D2" parent="Tips" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1520, 30 )
-text = "Pulsa A o el botón del resorte para saltar por encima de estos bloques."
+text = "TUT_2"
 
 [node name="Area2D3" parent="Tips" instance=ExtResource( 14 )]
 
