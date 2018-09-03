@@ -29,5 +29,9 @@ All resources have been created using the following FLOSS:
 - [inkscape](https://inkscape.org/en/)
 - [sfxr](http://www.drpetter.se/project_sfxr.html)
 
+# Contributors and third party stuff
+
 Shaders: [Enrique Lalves](https://github.com/henriquelalves/SimpleGodotCRTShader)
 Font: [Press Start 2P by CodeMan38 (Open Font License)](https://fonts.google.com/specimen/Press+Start+2P?selection.family=Press+Start+2P)
+
+- [Basxto](https://github.com/basxto)
