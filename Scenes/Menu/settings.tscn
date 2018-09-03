@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Fonts/pixelated_regular.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=2]
@@ -28,6 +28,34 @@ func _ready():
 
 func _on_CheckButton1_toggled( pressed ):
 	global.retro_effect = !pressed
+	
+
+
+func _on_CheckButton3_toggled( pressed ):
+	pass # replace with function body
+"
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends CheckButton
+
+func _ready():
+	set_pressed(global.music)
+
+func _on_CheckButton2_toggled( pressed ):
+	global.music = !global.music
+	
+"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends CheckButton
+
+func _ready():
+	set_pressed(global.sound)
+
+func _on_CheckButton2_toggled( pressed ):
+	global.sound = !global.sound
 	
 "
 
@@ -110,6 +138,46 @@ flat = false
 align = 0
 script/script = SubResource( 2 )
 
+[node name="CheckButton2" type="CheckButton" parent="Panel/VButtonArray"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 96.0
+margin/top = 134.0
+margin/right = 502.0
+margin/bottom = 173.0
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "SWITCH_MUSIC"
+flat = false
+align = 0
+script/script = SubResource( 3 )
+
+[node name="CheckButton3" type="CheckButton" parent="Panel/VButtonArray"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 95.0
+margin/top = 207.0
+margin/right = 501.0
+margin/bottom = 246.0
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "SWITCH_SOUND"
+flat = false
+align = 0
+script/script = SubResource( 4 )
+
 [node name="Button" parent="Panel/VButtonArray" instance=ExtResource( 2 )]
 
 margin/left = 372.0
@@ -139,5 +207,9 @@ max_lines_visible = -1
 [connection signal="toggled" from="Panel/VButtonArray/CheckButton" to="Panel/VButtonArray/CheckButton" method="_on_CheckButton_toggled"]
 
 [connection signal="toggled" from="Panel/VButtonArray/CheckButton1" to="Panel/VButtonArray/CheckButton1" method="_on_CheckButton1_toggled"]
+
+[connection signal="toggled" from="Panel/VButtonArray/CheckButton2" to="Panel/VButtonArray/CheckButton2" method="_on_CheckButton2_toggled"]
+
+[connection signal="toggled" from="Panel/VButtonArray/CheckButton3" to="Panel/VButtonArray/CheckButton3" method="_on_CheckButton3_toggled"]
 
 

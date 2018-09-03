@@ -13,6 +13,8 @@ var milk_buyed = 0
 
 var can_show_in_game_menu = true
 var retro_effect = true
+var music = true
+var sound = true
 
 var level = 0
 var unlocked_levels = 1
@@ -76,7 +78,10 @@ func save_game():
 		life = life,
 		milk_buyed = milk_buyed,
 		hearts_buyed = hearts_buyed,
-		retro_effect=retro_effect
+		retro_effect=retro_effect,
+		# NEW STUFF
+		sound=sound,
+		music=music
 	}
 	save_game.store_line(data.to_json())
 	save_game.close()	
@@ -104,4 +109,7 @@ func load_game():
 	
 	retro_effect = current_line["retro_effect"]
 	
+	if (current_line.has("sound")):
+		sound = current_line["sound"]
+		music = current_line["music"]
 	
