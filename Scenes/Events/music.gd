@@ -1,6 +1,5 @@
 extends StreamPlayer
 
-func _ready():
-	print (global.music)
+func _ready():	
 	if global.music:
 		play(0)

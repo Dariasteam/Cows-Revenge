@@ -63,8 +63,8 @@ offsets = FloatArray( 0, 1 )
 colors = ColorArray( 0.773438, 0.773438, 0.773438, 1, 0.1875, 0.1875, 0.1875, 1 )
 
 [node name="KinematicBody2D 2" type="KinematicBody2D" groups=[
-"enemy_1",
 "enemy",
+"enemy_1",
 ]]
 
 transform/pos = Vector2( 64.3, -80 )

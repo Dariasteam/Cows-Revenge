@@ -16,7 +16,8 @@ var rest = total_cages
 
 func _ready():	
 	texts.set_text(str(init_text, total_cages, "."))
-	sound.play()
+	if global.sound:
+		sound.play()
 	anim.play("appear")
 	player = PLAYER.instance()
 	instancer.call_deferred("add_child", player)	
@@ -24,7 +25,8 @@ func _ready():
 	player.enable_player()	
 
 func abduct():
-	sound.play()
+	if global.sound:
+		sound.play()
 	player.disable_player()
 	anim.play("unvanish")	
 	global.save_cowbells()
@@ -34,7 +36,8 @@ func liftoff():
 	get_tree().get_nodes_in_group("level_selector")[0].next_level()
 		
 func deploy():	
-	sound.play()
+	if global.sound:
+		sound.play()
 	anim.play("appear")
 	yield(anim, "finished")
 	player.enable_player()

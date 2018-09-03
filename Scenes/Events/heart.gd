@@ -14,4 +14,5 @@ func _on_Area2D_body_enter( body ):
 			sprite.set_opacity(0)
 			disconnect("body_enter",self,"_on_Area2D_body_enter")
 			body.add_life()
-			sound.play()
+			if global.sound:
+				sound.play()

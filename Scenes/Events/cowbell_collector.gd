@@ -45,7 +45,9 @@ func play_sound():
 	add_child(sample_player)
 	sample_player.add_child(aux_timer)	
 	
-	sample_player.play("cowbell_sound")
+	if global.sound:
+		sample_player.play("cowbell_sound")
+		
 	aux_timer.start()
 	
 	timer.start()
