@@ -1,4 +1,6 @@
-# Cow's Revenge ![]() [![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
+# Cow's Revenge
+![]()[![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
+<a href='https://flathub.org/apps/details/com.github.dariasteam.cowsrevenge'><img width='120' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 > You are a cow abducted and genetically improved by aliens which now have the opportunity to rebel against livestock industry by freeing the encaged hens and killing butchers. You used to be a regular cow raised as a dairy cow, but you ain't that anymore. You have become better. You are... THE COWEST.
 
