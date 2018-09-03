@@ -6,15 +6,17 @@ define \n
 
 endef
 
-build/cowsrevenge:
-	mkdir -p build
-	cd build; git clone -b 2.1 --single-branch https://github.com/godotengine/godot || true
-	cd build/godot; scons -j `nproc` platform=server target=release_debug use_llvm=yes unix_global_settings_path=".."
+build/cowsrevenge: build/godot/bin/godot_server.server.opt.tools.64
 	cd build/godot; scons platform=x11 tools=no target=release bits=`getconf LONG_BIT` use_llvm=yes -j `nproc`
 	mkdir -p build/templates/
 	cp build/godot/bin/godot.x11*.llvm build/templates/linux_x11_`getconf LONG_BIT`_release
-	build/godot/bin/godot_server.server.tools.64 -export "Linux X11" build/cowsrevenge
+	build/godot/bin/godot_server.server.opt.tools.64 -export "Linux X11" build/cowsrevenge
 
+#build engine
+build/godot/bin/godot_server.server.opt.tools.64:
+	mkdir -p build
+	cd build; git clone -b 2.1 --single-branch https://github.com/godotengine/godot || true
+	cd build/godot; scons -j `nproc` platform=server target=release_debug use_llvm=yes unix_global_settings_path=".."
 
 .PHONY: install
 install: build/cowsrevenge
