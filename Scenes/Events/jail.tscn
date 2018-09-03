@@ -99,7 +99,7 @@ stream/buffering_ms = 500
 
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 4
+frame = 15
 playing = true
 
 [node name="Bars" type="Particles2D" parent="."]

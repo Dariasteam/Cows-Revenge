@@ -54,10 +54,8 @@ script/source = "extends CheckButton
 func _ready():
 	set_pressed(global.sound)
 
-func _on_CheckButton2_toggled( pressed ):
-	global.sound = !global.sound
-	
-"
+func _on_CheckButton3_toggled( pressed ):		
+	global.sound = !global.sound"
 
 [node name="Control" type="Control"]
 
