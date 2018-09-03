@@ -1,8 +1,6 @@
 # Cow's Revenge
 ![]()[![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
-
 <a href='https://flathub.org/apps/details/com.github.dariasteam.cowsrevenge'><img width='120' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
-
 <a href="https://f-droid.org/app/org.pipoypipagames.cowsrevenge">
 <img src="https://f-droid.org/badge/get-it-on.png"
 alt="Get it on F-Droid" height="60">
