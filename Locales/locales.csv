@@ -1,12 +1,12 @@
-id,es,en,de
-PLAY_GAME,Jugar,Play,Starten
-SETTINGS,Ajustes,Settings,Optionen
-ABOUT,Info,About,Über
-SWITCH_SCREEN_CONTROLS,Usar botones táctiles,Use onscreen controls,Touch-Steuerung anzeigen
-SWITCH_RETRO_EFFECT,Simular pantalla retro,Simulate retro TV,Röhrenfernseher simulieren
-SWITCH_MUSIC,Música,Music,Musik
-SWITCH_SOUND,Sonidos,Sound,Ton
-BTTN_BACK,Volver,Back,Zurück
+id,es,en,de,EXPLANATIONS
+PLAY_GAME,Jugar,Play,Starten,
+SETTINGS,Ajustes,Settings,Optionen,
+ABOUT,Info,About,Über,
+SWITCH_SCREEN_CONTROLS,Usar botones táctiles,Use onscreen controls,Touch-Steuerung anzeigen,
+SWITCH_RETRO_EFFECT,Simular pantalla retro,Simulate retro TV,Röhrenfernseher simulieren,
+SWITCH_MUSIC,Música,Music,Musik,
+SWITCH_SOUND,Sonidos,Sound,Ton,
+BTTN_BACK,Volver,Back,Zurück,
 TEXT_LICENSE,"El código fuente de este juego está licenciado bajo Geneal Public License versión 3. Todos los recursos gráficos, sonidos y música han sido creados por nosotos y están licenciados como Creative Commons Attribution-Non Commercial-Share Alike 4.0. La tipografía utilizada es Press Start 2P creada por CodeMan38 (Open Font License)
 
 Puedes obtener el código fuente y los recusos en gitlab.com/dariasteam/cows-revenge
@@ -20,18 +20,18 @@ Made with Godot Engine 2.1.5 (MIT)
 
 Der Quell-Code und alle weiteren Materialien stehen unter gitlab.com/dariasteam/cows-revenge zur Verfügung.
 
-Erstellt mit Godot Engine 2.1.5 (MIT)"
-CHAPTERS,Capítulos,Chapters,Kapitel
-EP1,La escuela,The school,Die Schule
-EP2,Gatear antes de caminar,Crawl before you walk,"Erst krabbeln, dann laufen"
-EP3,Independizándose,Independence,Unabhängigkeit
-EP4,Una ubre y sus consecuencias,An udder and her consequences,Ein Euter und seine Folgen
-EP5,Siempre fiel,Always faithful,Immer treu
-EP6,Ucronía,Uchronia,Uchronie
-EP7,Sístole y Diástole,Systole and Diastole,Systole und Diastole
-EP8,Anfibios,Amphibious,Amphibisch
-EP9,R.U.B.E.N,R.U.B.E.N,R.U.B.E.N
-UFO_JAIL_COUNTER,Vuelve cuando hayas salvado a todas las gallinas. Te quedan: ,Come back when you have rescued all the hens. Remaining:,Komm wieder wenn du alle Hennen gerettet hast. Verbleibend: 
+Erstellt mit Godot Engine 2.1.5 (MIT)",
+CHAPTERS,Capítulos,Chapters,Kapitel,
+EP1,La escuela,The school,Die Schule,
+EP2,Gatear antes de caminar,Crawl before you walk,"Erst krabbeln, dann laufen",
+EP3,Independizándose,Independence,Unabhängigkeit,
+EP4,Una ubre y sus consecuencias,An udder and her consequences,Ein Euter und seine Folgen,
+EP5,Siempre fiel,Always faithful,Immer treu,
+EP6,Ucronía,Uchronia,Uchronie,
+EP7,Sístole y Diástole,Systole and Diastole,Systole und Diastole,
+EP8,Anfibios,Amphibious,Amphibisch,
+EP9,R.U.B.E.N,R.U.B.E.N,R.U.B.E.N,
+UFO_JAIL_COUNTER,Vuelve cuando hayas salvado a todas las gallinas. Te quedan: ,Come back when you have rescued all the hens. Remaining:,Komm wieder wenn du alle Hennen gerettet hast. Verbleibend: ,
 DANIEL_INFO,"dariasteam94@gmail.com
 Mastodo.social/@darias
 
@@ -50,7 +50,7 @@ Mastodo.social/@darias
 - Code
 - Sprites
 - Musik
-- Animationen"
+- Animationen",
 YANARA_INFO,"needafreefall-@hotmail.com
 twitter.com/yanaronna
 instagam.com/yanaronna
@@ -70,107 +70,107 @@ instagam.com/yanaronna
 
 - Sprites
 - Animationen
-- Charaktergestaltung"
-BUY_HEART,Corazón,Heart,Herz
-BUY_MILK,Leche,Milk,Milch
-BTTN_LIFTOFF,Despegar,Liftoff,Abheben
-BTTN_RESUME,Reanudar,Resume,Fortfahren
-BTTN_RESET,Reiniciar,Reset,Zurücksetzen
-BTTN_EXIT,Salir,Exit,Verlassen
-BTTN_RESET_LEVEL,Reiniciar nivel,Reset level,Ebene zurücksetzen
-BTTN_MAIN_MENU,Ir al menú principal,Go to main menu,Zum Hauptmenü
-TUT_0,Este camino está bloqueado. Busca otra forma de desplazarte.,This way is blocked. Find another path.,Dieser weg ist versperrt. Finde einen anderen.
-TUT_1,Utiliza las teclas de dirección para moverte,Use arrows buttons to move,Laufe mit den Pfeiltasten
-TUT_2,Pulsa A o el botón del resorte para saltar por encima de estos bloques.,Press A or the space button to jump above these blocks,Drücke A oder die Leertaste um über diese Blöcke zu springen
-TUT_3,Puedes subir a las ramas de los árboles saltando desde abajo,You can climb to the branches jumping from below,Kletter auf Zweige indem du von unten hochspringst
-TUT_4,Salta!,Jump!,Spring!
-TUT_5,Puedes volver a bajar pulsando abajo,You can go down by pressing down button,Drücke nach unten um dich fallen zu lassen
+- Charaktergestaltung",
+BUY_HEART,Corazón,Heart,Herz,
+BUY_MILK,Leche,Milk,Milch,
+BTTN_LIFTOFF,Despegar,Liftoff,Abheben,
+BTTN_RESUME,Reanudar,Resume,Fortfahren,
+BTTN_RESET,Reiniciar,Reset,Zurücksetzen,
+BTTN_EXIT,Salir,Exit,Verlassen,
+BTTN_RESET_LEVEL,Reiniciar nivel,Reset level,Ebene zurücksetzen,
+BTTN_MAIN_MENU,Ir al menú principal,Go to main menu,Zum Hauptmenü,
+TUT_0,Este camino está bloqueado. Busca otra forma de desplazarte.,This way is blocked. Find another path.,Dieser weg ist versperrt. Finde einen anderen.,
+TUT_1,Utiliza las teclas de dirección para moverte,Use arrows buttons to move,Laufe mit den Pfeiltasten,
+TUT_2,Pulsa A o el botón del resorte para saltar por encima de estos bloques.,Press A or the space button to jump above these blocks,Drücke A oder die Leertaste um über diese Blöcke zu springen,
+TUT_3,Puedes subir a las ramas de los árboles saltando desde abajo,You can climb to the branches jumping from below,Kletter auf Zweige indem du von unten hochspringst,
+TUT_4,Salta!,Jump!,Spring!,
+TUT_5,Puedes volver a bajar pulsando abajo,You can go down by pressing down button,Drücke nach unten um dich fallen zu lassen,
 TUT_6,"Recoge cencerros para comprar mejoras. 
-",Collect cowbells and buy upgrades,Sammel Kuhglocken um dir Verbesserungen zu kaufen
-TUT_7,Bien hecho!,Well done!,Gut gemacht!
+",Collect cowbells and buy upgrades,Sammel Kuhglocken um dir Verbesserungen zu kaufen,
+TUT_7,Bien hecho!,Well done!,Gut gemacht!,
 TUT_8,"Si recoges muchos cencerros en muy poco tiempo conseguirás bonificaciones!
-",If you collect a lot of cowbells quickly you'll gain a bonus,"Wenn du schnell viele Kuhglocken sammelst, erhältst du einen Bonus"
+",If you collect a lot of cowbells quickly you'll gain a bonus,"Wenn du schnell viele Kuhglocken sammelst, erhältst du einen Bonus",
 TUT_9,"Puedes guardar los cencerros en la nave volviendo a ella para ser abducido en cualquier momento.
-",You can store the cowbells in the space ship by going back to it to be abducted anytime,Du kannst Kuhglocken im UFO bunkern wenn du zurückkehrst und dich erneut entführen lässt
+",You can store the cowbells in the space ship by going back to it to be abducted anytime,Du kannst Kuhglocken im UFO bunkern wenn du zurückkehrst und dich erneut entführen lässt,
 TUT_10,"A veces es más seguro no continuar avanzando si nada indica que el camino continúa
-",Sometimes is safer to stop if you see the path finishing,"Manchmal ist es sicherer anzuhalten, wenn du merkst dass der Weg endet"
-TUT_11,"Esta vez era broma, pero no vuelvas a hacerlo!",It was joke ,"War nur ein Scherz, aber pass nächstes Mal mehr auf"
-TUT_12,"¡Cuidado! Eso que ves es un carnicero, para aniquilarlo salta sobre su cabeza","Caution! That is a butcher, jump on his head to defeat him.","Achtung! Dort ist ein Metzger, springe auf seinen Kopf um ihn zu besiegen"
+",Sometimes is safer to stop if you see the path finishing,"Manchmal ist es sicherer anzuhalten, wenn du merkst dass der Weg endet",
+TUT_11,"Esta vez era broma, pero no vuelvas a hacerlo!",It was joke ,"War nur ein Scherz, aber pass nächstes Mal mehr auf",
+TUT_12,"¡Cuidado! Eso que ves es un carnicero, para aniquilarlo salta sobre su cabeza","Caution! That is a butcher, jump on his head to defeat him.","Achtung! Dort ist ein Metzger, springe auf seinen Kopf um ihn zu besiegen",
 TUT_13,"Si has perdido vida puedes recuperarla recogiendo corazones
-",You can recover your life with hearts,Du kannst deine Leben mit Herzen widerherstellen
+",You can recover your life with hearts,Du kannst deine Leben mit Herzen widerherstellen,
 TUT_14,"Recoge manzanas para poder producir leche con la que atacar
-",Collect apples to produce milk and being able to attack,Sammel Äpfel um Milch zu produzieren and angreifen zu können
+",Collect apples to produce milk and being able to attack,Sammel Äpfel um Milch zu produzieren and angreifen zu können,
 TUT_15,"Ataca con la tecla S o el botón de la ubre. Conmuta entre leche desnatada o semidesnatada con R o el botón en blanco.
-",Press S or the udder button to attack. Change between skimmed and semi-skimmed milk with R or the black button,Drücke S oder den Euter-Knopf um anzugreifen. Wechsel zwischen Magermilch und fettarmer Milch mit R oder dem schwarzen Knopf
-TUT_16,"Menudo pasillo más largo, ¿eh?","Such a long corridor, uh?","Was ein langer Gang, ne?"
-TUT_17,Rompe la jaula acercándote a ella para liberar a los animales,Break the cage by touching it and free the animals,Breche den Käfig auf indem du ihn berührst und befreie die Tiere
-TUT_18,Vuelve a la nave y pulsa la tecla arriba para ser abducido,Get back to the ship and press up to be abducted,Gehe zurück ins UFO indem du Hoch drückst und dich entführen lässt
-TUT_19,En este juego NO respetamos las leyes de la física. Puedes saltar y en el aire modificar tu dirección.,In this game we DON'T obey the laws of physics. You can jump and change your direction in the air.,In diesem Spiel folgen wir den Gesetzen der Physik NICHT. Während du springst kannst du in der Luft die Richtung ändern
-MAP3_TEXT0,A veces la maleza es tan densa que te impide ver. ¡Abre bien los ojos!,Sometimes the bushes is so dense don't allow you to see beyond. Keep your eyes open!,"Manche Büsche sind so dicht, dass man nicht durch sie hindurchsehen kann. Halte die Augen offen!"
-,,,
-,,,
-,,,
-CHICKEN_ADVICE_0,Vamos señores wuuu!,C’mon! Yeehaw,Auf geht’s! Vollgas!
-CHICKEN_ADVICE_1,Los astronautas no existen,Nasa is a lie,Die Mondlandung war nachgedreht
-CHICKEN_ADVICE_2,e=mc²,e=mc²,e=mc²
-CHICKEN_ADVICE_3,e_e,e_e,e_e
-CHICKEN_ADVICE_4,Wiii,Wii,Wii
-CHICKEN_ADVICE_5,cocococo,cluck cluck cluck cluck,gack gack gack gack
-CHICKEN_ADVICE_6,Zzz...,Zzz…,-
-CHICKEN_ADVICE_7,¡Ya era hora!,It was about time!,Wurde aber auch Zeit!
-CHICKEN_ADVICE_8,:D,:D,:D
-CHICKEN_ADVICE_9,#NotAllMen,#NotAllMen,#NotAllMen
-CHICKEN_ADVICE_10,Aléjate primo aléjate,Get out of this place,Verpiss dich von meinem Körper!
-CHICKEN_ADVICE_11,Efectivamente,Indeed,Tatsächlich
-CHICKEN_ADVICE_12,Porque quiero que sepas que tú para mi eres un amigo pa siempre,I want you to know that for me you are a true friend forever,"Du musst wissen, wirst "
-CHICKEN_ADVICE_13,La gravedad no existe,The earth is flat,Die Erde ist eine Scheibe
-CHICKEN_ADVICE_14,La caida de la gran babilonia,Tim's your uncle,
-CHICKEN_ADVICE_15,FUAAAA!!,Zzz…,
-CHICKEN_ADVICE_16,Tú no me mandas,I don’t receive orders from you,Ich lass mir von dir nichts sagen
-CHICKEN_ADVICE_17,:C,:C,:C
-CHICKEN_ADVICE_18,No te pongas nervioso,Don’t get nervous,Nicht nervös werden
-CHICKEN_ADVICE_19,¿Dónde está la contaminacion que yo la vea?,"Will, will Will will Will Will’s will?",
-CHICKEN_ADVICE_20,seh seh seh seh,yep yep yep,
-CHICKEN_ADVICE_21,Tu crees que arcadio va a llevar el coche al para?,,
-CHICKEN_ADVICE_22,La psicología es útil,The psychology is useful,Die Psychologie ist nützlich
-CHICKEN_ADVICE_23,C++ > Java,C++ > Java,C++ > Java
-CHICKEN_ADVICE_24,GNU‘s Not Unix,GNU‘s Not Unix,GNU‘s Not Unix
-CHICKEN_ADVICE_25,Salchichas comodoro,Are you talkin‘ to me?,
-CHICKEN_ADVICE_26,Ostia el workbook!,And I say HEEEEEEEYYYY Whats going on?,
-CHICKEN_ADVICE_27,Macarrones con tomatico ,ring ring ring ring ring ring ring BANANA PHONE!,Ich esse gerne Sauerkraut und tanze gerne Polka
-CHICKEN_ADVICE_28,Yo soy tu padre,I am your father,Ich bin dein Vater
-CHICKEN_ADVICE_29,No quiero hablar contigo,I don’t wanna talk to you,Ich will nicht mit dir reden
-CHICKEN_ADVICE_30,Déjame en paz,Let me alone,Lass mich in Frieden
-CHICKEN_ADVICE_31,...,…,…
-CHICKEN_ADVICE_32,La oronja verde o amanita phalloides es el hongo más venenoso del mundo,Amanita phalloides or death cap is the most poisonous fungi in the world,Der Grüne Knollenblätterpilz oder Grüne Gift-Wulstling ist der giftigste Pilz der Welt
-CHICKEN_ADVICE_33,Poesía eres tú,You are poetry,
-CHICKEN_ADVICE_34,Illuminati confirmed,Illuminati confirmed,
-CHICKEN_ADVICE_35,Soy dueño de la canaca,I have to go to Walmart,
-CHICKEN_ADVICE_36,Yo soy un pollo cobarde,But will it blend?,
-CHICKEN_ADVICE_37,"¡Macrocéfalo, anfitrión, Rocambole, ectoplasma, filoxera, caníbal!",Billions of blue blistering boiled and barbecued barnacles!,
-CHICKEN_ADVICE_38,"Para pasar a binario solo debes dividir entre 2,  el resultado son los restos ordenados al revés","To change a number to binary you only have to divide it by 2, the result are the remainings in inverse order",
-CHICKEN_ADVICE_39,Si no estás conmigo eres mi enemigo,If you are not with me then you are my enemy,
-CHICKEN_ADVICE_40,Mírame a los ojos cuando te hablo,Look at my eyes when i'm talking to you,
-CHICKEN_ADVICE_41,¡Duro con ellos!,Go and get hard on them!,
-CHICKEN_ADVICE_42,"Rambo está en la trinchera, tiene una herida de bala en la pierna",I can’t feel my legs!,
-CHICKEN_ADVICE_43,Sosio aflójate un eurito ahí,Hey man give me a buck plz,
-CHICKEN_ADVICE_44,"Mira no más, esta cara, este cuerpo. Tú jamás tendrás este cuerpo","Oh dear look at my pretty face, isn't it fabulous?",
-CHICKEN_ADVICE_45,¡Mi pueblo se muere por falta de conocimiento!,Checkmate atheist!,
-CHICKEN_ADVICE_46,"Y volé de él, y él voló allá por la arbolada",I believe I can flyyy,
-CHICKEN_ADVICE_47,Yo soy un pirata y tu mente es el mar y la psicología es mi barco,I’m a pirate and your mind is the sea and the psichology is my boat,
-CHICKEN_ADVICE_48,"Si recomiendas a la gente usar homeopatía, te sugiero amablemente que te vayas a hacer puñetas",If water has memory then homeopathy is full of shit,
-CHICKEN_ADVICE_49,"Si estás en un bosque y gritas y nadie te oye, ¿Por qué sigo suspendiendo Álgebra?","If you are in a forest a shout and no one hears you, why I keep failing Algebra?",
-CHICKEN_ADVICE_50,Deja de xorfirar anda,Stop xorfiring now,
-CHICKEN_ADVICE_51,Para mí será un placer vencerte,For me it would be a pleasure to defeat you,
-CHICKEN_ADVICE_52,No me toques que yo no te he tocao,Don’t touch me cause I didn't touched you!,
-CHICKEN_ADVICE_53,"A que no adivinas quién fue primero, ¿Mi huevo o yo?","I bet you can answer this, which was first, my egg or me?",
-CHICKEN_ADVICE_54,"¡Ay vida mía, soy taaan desdichada!",I am soo unfortunate!,
-CHICKEN_ADVICE_55,Ay quién tuviera la dicha que tiene el gallo,What does the fox say?,
-CHICKEN_ADVICE_56,"¡Tengo miedo, tengo miedo, tengo miego, tengo muchísimo miedo!",I’m so so so afraid!,
-CHICKEN_ADVICE_57,"¿Y qué hago mi niño, me lo cargo al hombro?",Look at my horse my horse is amazing,
-CHICKEN_ADVICE_58,Eres un mago Harry,You're a wizard harry,Du bist ein Zauberer Harry
-CHICKEN_ADVICE_59,Me hago pipí :/,I have to wee :/,Ich muss Pipi machen :/
-CHICKEN_ADVICE_60,Dime algo que no sepa ya,Tell me something I didn’t know,
-CHICKEN_ADVICE_61,No puedo ni confirmar ni desmentir que yo sea un pollo,I can neither confirm nor deny I’m a chicken,
-CHICKEN_ADVICE_62,Pienso luego existo,I think therefore I exist,
-CHICKEN_ADVICE_63,Pos coman pinocha,Yolooo,
+",Press S or the udder button to attack. Change between skimmed and semi-skimmed milk with R or the black button,Drücke S oder den Euter-Knopf um anzugreifen. Wechsel zwischen Magermilch und fettarmer Milch mit R oder dem schwarzen Knopf,
+TUT_16,"Menudo pasillo más largo, ¿eh?","Such a long corridor, uh?","Was ein langer Gang, ne?",
+TUT_17,Rompe la jaula acercándote a ella para liberar a los animales,Break the cage by touching it and free the animals,Breche den Käfig auf indem du ihn berührst und befreie die Tiere,
+TUT_18,Vuelve a la nave y pulsa la tecla arriba para ser abducido,Get back to the ship and press up to be abducted,Gehe zurück ins UFO indem du Hoch drückst und dich entführen lässt,
+TUT_19,En este juego NO respetamos las leyes de la física. Puedes saltar y en el aire modificar tu dirección.,In this game we DON'T obey the laws of physics. You can jump and change your direction in the air.,In diesem Spiel folgen wir den Gesetzen der Physik NICHT. Während du springst kannst du in der Luft die Richtung ändern,
+MAP3_TEXT0,A veces la maleza es tan densa que te impide ver. ¡Abre bien los ojos!,Sometimes the bushes is so dense don't allow you to see beyond. Keep your eyes open!,"Manche Büsche sind so dicht, dass man nicht durch sie hindurchsehen kann. Halte die Augen offen!",
+,,,,
+,,,,
+,,,,
+CHICKEN_ADVICE_0,Vamos señores wuuu!,C’mon! Yeehaw,Auf geht’s! Vollgas!,LITERAL_TRANSLATION
+CHICKEN_ADVICE_1,Los astronautas no existen,Nasa is a lie,Die Mondlandung war nachgedreht,MEME (flat eartch and nasa conspiracy)
+CHICKEN_ADVICE_2,e=mc²,e=mc²,e=mc²,KEEP
+CHICKEN_ADVICE_3,e_e,e_e,e_e,KEEP
+CHICKEN_ADVICE_4,Wiii,Wiii,Wiii,"LITERAL_TRANSLATION (its like a sound, not the console)"
+CHICKEN_ADVICE_5,cocococo,cluck cluck cluck cluck,gack gack gack gack,LITERAL_TRANSLATION (sound made by a hen)
+CHICKEN_ADVICE_6,Zzz...,Zzz…,-,LITERAL_TRANSLATION (sound for sleep)
+CHICKEN_ADVICE_7,¡Ya era hora!,It was about time!,Wurde aber auch Zeit!,LITERAL_TRANSLATION
+CHICKEN_ADVICE_8,:D,:D,:D,KEEP
+CHICKEN_ADVICE_9,#NotAllMen,#NotAllMen,#NotAllMen,KEEP
+CHICKEN_ADVICE_10,Aléjate primo aléjate,Get out of this place,Verpiss dich von meinem Körper!,LITERAL_TRANSLATION
+CHICKEN_ADVICE_11,Efectivamente,Indeed,Tatsächlich,LITERAL_TRANSLATION
+CHICKEN_ADVICE_12,Porque quiero que sepas que tú para mi eres un amigo pa siempre,I want you to know that for me you are a true friend forever,"Du musst wissen, wirst ",SIMILAR_TRANSLATION (what a drunk person would say to his best friend)
+CHICKEN_ADVICE_13,La gravedad no existe,The earth is flat,Die Erde ist eine Scheibe,MEME (flat eartch and nasa conspiracy)
+CHICKEN_ADVICE_14,La caida de la gran babilonia,Tim's your uncle,,MEME (random)
+CHICKEN_ADVICE_15,FUAAAA!!,Zzz…,,MEME (random)
+CHICKEN_ADVICE_16,Tú no me mandas,I don’t receive orders from you,Ich lass mir von dir nichts sagen,LITERAL_TRANSLATION
+CHICKEN_ADVICE_17,:C,:C,:C,KEEP
+CHICKEN_ADVICE_18,No te pongas nervioso,Don’t get nervous,Nicht nervös werden,LITERAL_TRANSLATION
+CHICKEN_ADVICE_19,¿Dónde está la contaminacion que yo la vea?,"Will, will Will will Will Will’s will?",,MEME (random)
+CHICKEN_ADVICE_20,seh seh seh seh,yep yep yep,,LITERAL_TRANSLATION (say yes a lot of times)
+CHICKEN_ADVICE_21,Tu crees que arcadio va a llevar el coche al para?,,,MEME (random)
+CHICKEN_ADVICE_22,La psicología es útil,The psychology is useful,Die Psychologie ist nützlich,MEME (random)
+CHICKEN_ADVICE_23,C++ > Java,C++ > Java,C++ > Java,KEEP
+CHICKEN_ADVICE_24,GNU‘s Not Unix,GNU‘s Not Unix,GNU‘s Not Unix,KEEP
+CHICKEN_ADVICE_25,Salchichas comodoro,Are you talkin‘ to me?,,MEME (random)
+CHICKEN_ADVICE_26,Ostia el workbook!,And I say HEEEEEEEYYYY Whats going on?,,MEME (random)
+CHICKEN_ADVICE_27,Macarrones con tomatico ,ring ring ring ring ring ring ring BANANA PHONE!,Ich esse gerne Sauerkraut und tanze gerne Polka,MEME (random)
+CHICKEN_ADVICE_28,Yo soy tu padre,I am your father,Ich bin dein Vater,LITERAL_TRANSLATION
+CHICKEN_ADVICE_29,No quiero hablar contigo,I don’t wanna talk to you,Ich will nicht mit dir reden,LITERAL_TRANSLATION
+CHICKEN_ADVICE_30,Déjame en paz,Let me alone,Lass mich in Frieden,LITERAL_TRANSLATION
+CHICKEN_ADVICE_31,...,…,…,KEEP
+CHICKEN_ADVICE_32,La oronja verde o amanita phalloides es el hongo más venenoso del mundo,Amanita phalloides or death cap is the most poisonous fungi in the world,Der Grüne Knollenblätterpilz oder Grüne Gift-Wulstling ist der giftigste Pilz der Welt,LITERAL_TRANSLATION
+CHICKEN_ADVICE_33,Poesía eres tú,You are poetry,,SIMILAR_TRANSLATION (the original is a sentence from a spanish poem)
+CHICKEN_ADVICE_34,Illuminati confirmed,Illuminati confirmed,,KEEP
+CHICKEN_ADVICE_35,Soy dueño de la canaca,I have to go to Walmart,,MEME (random)
+CHICKEN_ADVICE_36,Yo soy un pollo cobarde,But will it blend?,,MEME (random)
+CHICKEN_ADVICE_37,"¡Macrocéfalo, anfitrión, Rocambole, ectoplasma, filoxera, caníbal!",Billions of blue blistering boiled and barbecued barnacles!,,SIMILAR_TRANSLATION (some random insults of Captain Haddock from tintin series )
+CHICKEN_ADVICE_38,"Para pasar a binario solo debes dividir entre 2,  el resultado son los restos ordenados al revés","To change a number to binary you only have to divide it by 2, the result are the remainings in inverse order",,LITERAL_TRANSLATION
+CHICKEN_ADVICE_39,Si no estás conmigo eres mi enemigo,If you are not with me then you are my enemy,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_40,Mírame a los ojos cuando te hablo,Look at my eyes when i'm talking to you,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_41,¡Duro con ellos!,Go and get hard on them!,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_42,"Rambo está en la trinchera, tiene una herida de bala en la pierna",I can’t feel my legs!,,SIMILAR_TRANSLATION (a sentence from the rambo saga)
+CHICKEN_ADVICE_43,Sosio aflójate un eurito ahí,Hey man give me a buck plz,,SIMILAR_TRANSLATION (the thing a yonki would say asking you money)
+CHICKEN_ADVICE_44,"Mira no más, esta cara, este cuerpo. Tú jamás tendrás este cuerpo","Oh dear look at my pretty face, isn't it fabulous?",,SIMILAR_TRANSLATION (the thing a very egotistical person would say about how beautifull face or body has)
+CHICKEN_ADVICE_45,¡Mi pueblo se muere por falta de conocimiento!,Checkmate atheist!,,MEME (random)
+CHICKEN_ADVICE_46,"Y volé de él, y él voló allá por la arbolada",I believe I can flyyy,,MEME (random)
+CHICKEN_ADVICE_47,Yo soy un pirata y tu mente es el mar y la psicología es mi barco,I’m a pirate and your mind is the sea and the psichology is my boat,,MEME (random)
+CHICKEN_ADVICE_48,"Si recomiendas a la gente usar homeopatía, te sugiero amablemente que te vayas a hacer puñetas",If water has memory then homeopathy is full of shit,,SIMILAR_TRANSLATION (homeopathy is a serious scam and health problem)
+CHICKEN_ADVICE_49,"Si estás en un bosque y gritas y nadie te oye, ¿Por qué sigo suspendiendo Álgebra?","If you are in a forest a shout and no one hears you, why I keep failing Algebra?",,LITERAL_TRANSLATION (the phylosophicall problem of forest and sound but with my own problems in it)
+CHICKEN_ADVICE_50,Deja de xorfirar anda,Stop xorfiring now,,MEME (random)
+CHICKEN_ADVICE_51,Para mí será un placer vencerte,For me it would be a pleasure to defeat you,,SIMILAR_TRANSLATION (the thing a classic bad guy from a comic would say to the hero)
+CHICKEN_ADVICE_52,No me toques que yo no te he tocao,Don’t touch me cause I didn't touched you!,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_53,"A que no adivinas quién fue primero, ¿Mi huevo o yo?","I bet you can answer this, which was first, my egg or me?",,LITERAL_TRANSLATION (another phylosophicall question but tweaked to be said by a hen)
+CHICKEN_ADVICE_54,"¡Ay vida mía, soy taaan desdichada!",I am soo unfortunate!,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_55,Ay quién tuviera la dicha que tiene el gallo,What does the fox say?,,MEME (veguely related with hens if possible)
+CHICKEN_ADVICE_56,"¡Tengo miedo, tengo miedo, tengo miego, tengo muchísimo miedo!",I’m so so so afraid!,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_57,"¿Y qué hago mi niño, me lo cargo al hombro?",Look at my horse my horse is amazing,,MEME (random)
+CHICKEN_ADVICE_58,Eres un mago Harry,You're a wizard harry,Du bist ein Zauberer Harry,LITERAL_TRANSLATION
+CHICKEN_ADVICE_59,Me hago pipí :/,I have to wee :/,Ich muss Pipi machen :/,LITERAL_TRANSLATION
+CHICKEN_ADVICE_60,Dime algo que no sepa ya,Tell me something I didn’t know,,LITERAL_TRANSLATION
+CHICKEN_ADVICE_61,No puedo ni confirmar ni desmentir que yo sea un pollo,I can neither confirm nor deny I’m a chicken,,LITERAL_TRANSLATION (joke with the CIA first tweet)
+CHICKEN_ADVICE_62,Pienso luego existo,I think therefore I exist,,LITERAL_TRANSLATION (Cogito ergo sum)
+CHICKEN_ADVICE_63,Pos coman pinocha,Yolooo,,MEME (random)
