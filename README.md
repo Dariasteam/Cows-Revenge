@@ -1,4 +1,10 @@
-# Cow's Revenge ![]() [![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
+# Cow's Revenge
+![]()[![Download](Misc/itch.io_badge.png)](https://pipoypipagames.itch.io/cows-revenge)
+<a href='https://flathub.org/apps/details/com.github.dariasteam.cowsrevenge'><img width='120' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+<a href="https://f-droid.org/app/org.pipoypipagames.cowsrevenge">
+<img src="https://f-droid.org/badge/get-it-on.png"
+alt="Get it on F-Droid" height="60">
+</a>
 
 > You are a cow abducted and genetically improved by aliens which now have the opportunity to rebel against livestock industry by freeing the encaged hens and killing butchers. You used to be a regular cow raised as a dairy cow, but you ain't that anymore. You have become better. You are... THE COWEST.
 
@@ -29,5 +35,9 @@ All resources have been created using the following FLOSS:
 - [inkscape](https://inkscape.org/en/)
 - [sfxr](http://www.drpetter.se/project_sfxr.html)
 
+# Contributors and third party stuff
+
 Shaders: [Enrique Lalves](https://github.com/henriquelalves/SimpleGodotCRTShader)
 Font: [Press Start 2P by CodeMan38 (Open Font License)](https://fonts.google.com/specimen/Press+Start+2P?selection.family=Press+Start+2P)
+
+- [Basxto](https://github.com/basxto)

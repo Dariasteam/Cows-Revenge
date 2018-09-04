@@ -70,6 +70,7 @@ margin/right = 897.0
 margin/bottom = 422.0
 scroll/horizontal = false
 scroll/vertical = true
+scroll/deadzone = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VButtonArray/ScrollContainer"]
 

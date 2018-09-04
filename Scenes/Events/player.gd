@@ -135,8 +135,9 @@ func show_damage ():
 func can_jump_more ():
 	return jump_time > 0
 
-func play_sound():
-	sound.play()
+func play_sound():	
+	if global.sound:
+		sound.play()
 
 func _fixed_process(delta):
 	if (jumping):

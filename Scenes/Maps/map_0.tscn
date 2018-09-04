@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://Scenes/Events/death_line.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Events/UFO.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Music/dangerous-hills-loop.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Events/on_map_text_dialog.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Events/music.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Events/on_map_text_dialog.tscn" type="PackedScene" id=15]
 
 [node name="Level" type="Node2D" groups=[
 "level",
@@ -1153,119 +1154,119 @@ stream/stream = ExtResource( 12 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 1.0
-stream/autoplay = true
+stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+script/script = ExtResource( 13 )
 
 [node name="Cages" type="Node2D" parent="."]
 
-editor/display_folded = true
-
-[node name="jail" parent="Cages" instance=ExtResource( 13 )]
+[node name="jail" parent="Cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -1920, -2640 )
 transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Tips" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -1890, -3020 )
 
-[node name="Area2D" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D" parent="Tips" instance=ExtResource( 15 )]
 
 text = "TUT_0"
 
-[node name="Area2D1" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D1" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 640, 20 )
 text = "TUT_1"
 
-[node name="Area2D2" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D2" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 1520, 30 )
 text = "TUT_2"
 
-[node name="Area2D3" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D3" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 2110, 30 )
 text = "TUT_3"
 
-[node name="Area2D4" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D4" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 2550, 30 )
 text = "TUT_4"
 
-[node name="Area2D5" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D5" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 2550, -370 )
 text = "TUT_5"
 
-[node name="Area2D6" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D6" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 3570, -60 )
 text = "TUT_6"
 
-[node name="Area2D7" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D7" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 3900, -60 )
 text = "TUT_7"
 
-[node name="Area2D8" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D8" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 4010, 370 )
 text = "TUT_8"
 
-[node name="Area2D19" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D19" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 4340, 730 )
 text = "TUT_9"
 
-[node name="Area2D9" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D9" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 4790, 1050 )
 text = "TUT_10"
 
-[node name="Area2D10" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D10" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 4920, 1340 )
 text = "TUT_11"
 
-[node name="Area2D11" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D11" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 4300, 1790 )
 text = "TUT_12"
 
-[node name="Area2D12" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D12" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 3560, 1790 )
 text = "TUT_13"
 
-[node name="Area2D13" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D13" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 3590, 700 )
 text = "TUT_14"
 
-[node name="Area2D14" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D14" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 2940, 370 )
 text = "TUT_15"
 
-[node name="Area2D15" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D15" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 1380, 500 )
 text = "TUT_16"
 
-[node name="Area2D16" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D16" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 380, 370 )
 text = "TUT_17"
 
-[node name="Area2D17" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D17" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( -340, -710 )
 text = "TUT_18"
 
-[node name="Area2D18" parent="Tips" instance=ExtResource( 14 )]
+[node name="Area2D18" parent="Tips" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( -340, -60 )
 text = "TUT_19"

@@ -37,7 +37,8 @@ func enable():
 	end.get_node("Area2D").enable()
 	origin.set_emitting(true)
 	middle.set_opacity(1)
-	sound.play()
+	if global.sound:
+		sound.play()
 	set_process(true)
 	
 func disable():
@@ -45,7 +46,8 @@ func disable():
 	end.set_emitting(false)
 	end.get_node("Area2D").disable()
 	middle.set_opacity(0)
-	sound.stop()
+	if global.sound:
+		sound.stop()
 	set_process(false)
 	
 func _process(delta):

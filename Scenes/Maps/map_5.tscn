@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=20 format=1]
 
 [ext_resource path="res://Scenes/Maps/tileset.xml" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Background/night_outside_d.png" type="Texture" id=2]
@@ -12,8 +12,9 @@
 [ext_resource path="res://Scenes/Events/death_line.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Events/UFO.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Music/dangerous-hills-loop.ogg" type="AudioStream" id=12]
-[ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Events/music.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Events/jail.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Sprites/Tilesets/tile full.png" type="Texture" id=15]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -2167,79 +2168,80 @@ stream/stream = ExtResource( 12 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 1.0
-stream/autoplay = true
+stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+script/script = ExtResource( 13 )
 
 [node name="cages" type="Node2D" parent="."]
 
-[node name="jail" parent="cages" instance=ExtResource( 13 )]
+[node name="jail" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -280, -3300 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail1" parent="cages" instance=ExtResource( 13 )]
+[node name="jail1" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 820, -3300 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail7" parent="cages" instance=ExtResource( 13 )]
+[node name="jail7" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1800, -3080 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail8" parent="cages" instance=ExtResource( 13 )]
+[node name="jail8" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 4.4, -5355.6 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail9" parent="cages" instance=ExtResource( 13 )]
+[node name="jail9" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1314.4, -5355.6 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail11" parent="cages" instance=ExtResource( 13 )]
+[node name="jail11" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -1200, -5360 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail12" parent="cages" instance=ExtResource( 13 )]
+[node name="jail12" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -840, -5360 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail2" parent="cages" instance=ExtResource( 13 )]
+[node name="jail2" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -870, -4170 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail3" parent="cages" instance=ExtResource( 13 )]
+[node name="jail3" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -870, -3840 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail10" parent="cages" instance=ExtResource( 13 )]
+[node name="jail10" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 2180, -4160 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail4" parent="cages" instance=ExtResource( 13 )]
+[node name="jail4" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -1460, -2670 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail5" parent="cages" instance=ExtResource( 13 )]
+[node name="jail5" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -920, -2670 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail6" parent="cages" instance=ExtResource( 13 )]
+[node name="jail6" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -2500, -3840 )
 transform/scale = Vector2( 1.7, 1.7 )
 
-[node name="jail13" parent="cages" instance=ExtResource( 13 )]
+[node name="jail13" parent="cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 1900, -3840 )
 transform/scale = Vector2( 1.7, 1.7 )
@@ -2292,7 +2294,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="moving_paltforms/platform1/Path2D/PathFollow2D/platform"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2300,7 +2302,7 @@ frame = 45
 [node name="Sprite3" type="Sprite" parent="moving_paltforms/platform1/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( -63.9978, -0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2308,7 +2310,7 @@ frame = 45
 [node name="Sprite1" type="Sprite" parent="moving_paltforms/platform1/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( 63.9979, 0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 43
@@ -2317,7 +2319,7 @@ frame = 43
 
 transform/pos = Vector2( -127.996, -1.04849 )
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 39
@@ -2325,7 +2327,7 @@ frame = 39
 [node name="Sprite4" type="Sprite" parent="moving_paltforms/platform1/Path2D/PathFollow2D/platform"]
 
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 50
@@ -2393,7 +2395,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="moving_paltforms/platform3/Path2D/PathFollow2D/platform"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2401,7 +2403,7 @@ frame = 45
 [node name="Sprite3" type="Sprite" parent="moving_paltforms/platform3/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( -63.9978, -0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2409,7 +2411,7 @@ frame = 45
 [node name="Sprite1" type="Sprite" parent="moving_paltforms/platform3/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( 63.9979, 0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 43
@@ -2418,7 +2420,7 @@ frame = 43
 
 transform/pos = Vector2( -127.996, -1.04849 )
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 39
@@ -2426,7 +2428,7 @@ frame = 39
 [node name="Sprite4" type="Sprite" parent="moving_paltforms/platform3/Path2D/PathFollow2D/platform"]
 
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 50
@@ -2494,7 +2496,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="moving_paltforms/platform4/Path2D/PathFollow2D/platform"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2502,7 +2504,7 @@ frame = 45
 [node name="Sprite3" type="Sprite" parent="moving_paltforms/platform4/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( -63.9978, -0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2510,7 +2512,7 @@ frame = 45
 [node name="Sprite1" type="Sprite" parent="moving_paltforms/platform4/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( 63.9979, 0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 43
@@ -2519,7 +2521,7 @@ frame = 43
 
 transform/pos = Vector2( -127.996, -1.04849 )
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 39
@@ -2527,7 +2529,7 @@ frame = 39
 [node name="Sprite4" type="Sprite" parent="moving_paltforms/platform4/Path2D/PathFollow2D/platform"]
 
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 50
@@ -2595,7 +2597,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="moving_paltforms/platform6/Path2D/PathFollow2D/platform"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2603,7 +2605,7 @@ frame = 45
 [node name="Sprite3" type="Sprite" parent="moving_paltforms/platform6/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( -63.9978, -0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2611,7 +2613,7 @@ frame = 45
 [node name="Sprite1" type="Sprite" parent="moving_paltforms/platform6/Path2D/PathFollow2D/platform"]
 
 transform/pos = Vector2( 63.9979, 0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 43
@@ -2620,7 +2622,7 @@ frame = 43
 
 transform/pos = Vector2( -127.996, -1.04849 )
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 39
@@ -2628,7 +2630,7 @@ frame = 39
 [node name="Sprite4" type="Sprite" parent="moving_paltforms/platform6/Path2D/PathFollow2D/platform"]
 
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 50
@@ -2695,7 +2697,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="moving_paltforms/platform2/Path2D 2/PathFollow2D/platform"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2703,7 +2705,7 @@ frame = 45
 [node name="Sprite3" type="Sprite" parent="moving_paltforms/platform2/Path2D 2/PathFollow2D/platform"]
 
 transform/pos = Vector2( -63.9978, -0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2711,7 +2713,7 @@ frame = 45
 [node name="Sprite1" type="Sprite" parent="moving_paltforms/platform2/Path2D 2/PathFollow2D/platform"]
 
 transform/pos = Vector2( 63.9979, 0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 43
@@ -2720,7 +2722,7 @@ frame = 43
 
 transform/pos = Vector2( -127.996, -1.04849 )
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 39
@@ -2728,7 +2730,7 @@ frame = 39
 [node name="Sprite4" type="Sprite" parent="moving_paltforms/platform2/Path2D 2/PathFollow2D/platform"]
 
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 50
@@ -2794,7 +2796,7 @@ transform/scale = Vector2( 1.7, 1.7 )
 
 [node name="Sprite" type="Sprite" parent="moving_paltforms/platform5/Path2D 2/PathFollow2D/platform"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2802,7 +2804,7 @@ frame = 45
 [node name="Sprite3" type="Sprite" parent="moving_paltforms/platform5/Path2D 2/PathFollow2D/platform"]
 
 transform/pos = Vector2( -63.9978, -0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 45
@@ -2810,7 +2812,7 @@ frame = 45
 [node name="Sprite1" type="Sprite" parent="moving_paltforms/platform5/Path2D 2/PathFollow2D/platform"]
 
 transform/pos = Vector2( 63.9979, 0.524231 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 43
@@ -2819,7 +2821,7 @@ frame = 43
 
 transform/pos = Vector2( -127.996, -1.04849 )
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 39
@@ -2827,7 +2829,7 @@ frame = 39
 [node name="Sprite4" type="Sprite" parent="moving_paltforms/platform5/Path2D 2/PathFollow2D/platform"]
 
 transform/rot = 3.57518e-06
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 vframes = 13
 hframes = 5
 frame = 50

@@ -59,7 +59,8 @@ func on_opacity_high ():
 func play_damage_sound():
 	var sample_list = sound.get_sample_library().get_sample_list()
 	var sample = sample_list[rand_range(0, sample_list.size())]
-	sound.play(sample, 0)
+	if global.sound:
+		sound.play(sample, 0)
 
 func decrease_life (value):
 	play_damage_sound()

@@ -21,7 +21,8 @@ func open_cage():
 	
 	get_tree().get_nodes_in_group("player_spawner")[0].update_text()
 	
-	sound.play()
+	if global.sound:	
+		sound.play()
 	
 	text_label.set_text( texts[rand_range(0, texts.size())])
 	text_anim.play("Apear")
