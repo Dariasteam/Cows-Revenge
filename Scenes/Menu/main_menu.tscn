@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://Sprites/GUI/Buttons/btn_shoot.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/pixelated_title.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://Scenes/Menu/bttn_play.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Menu/about_button.gd" type="Script" id=4]
-[ext_resource path="res://Music/dangerous_hills.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/Events/music.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/GUI/title_base.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/GUI/title_revenge.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Menu/back_button.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Menu/bttn_play.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Menu/about_button.gd" type="Script" id=5]
+[ext_resource path="res://Music/dangerous_hills.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Events/music.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/GUI/title_base.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GUI/title_revenge.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Effects/leche.png" type="Texture" id=10]
 
 [sub_resource type="GDScript" id=1]
 
@@ -36,14 +37,34 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -13.0
-margin/top = -2.0
+margin/left = -31.0
+margin/top = -31.0
 margin/right = 16.0
 margin/bottom = 23.0
 flat = false
 button/count = 0
 button/min_button_size = -1.0
 button/align = 1065353216
+
+[node name="Button" type="Button" parent="VButtonArray"]
+
+rect/scale = Vector2( 0.08, 0.12 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -3.09944e-06
+margin/top = 0.0
+margin/right = 42.0
+margin/bottom = 37.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "<"
+flat = false
+script/script = ExtResource( 3 )
+scene = null
 
 [node name="play_button" type="Button" parent="VButtonArray"]
 
@@ -55,17 +76,17 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 1.90735e-06
-margin/top = 12.5
-margin/right = 290.0
-margin/bottom = -35.5
+margin/left = 18.0
+margin/top = -2.0
+margin/right = 308.0
+margin/bottom = -50.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "PLAY_GAME"
 flat = false
-script/script = ExtResource( 3 )
+script/script = ExtResource( 4 )
 
 [node name="settings_button" type="Button" parent="VButtonArray"]
 
@@ -78,10 +99,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 14.5
-margin/top = 3.5
-margin/right = -274.5
-margin/bottom = -44.5
+margin/left = 5.5
+margin/top = -11.0
+margin/right = -283.5
+margin/bottom = -59.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -101,23 +122,23 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 14.5
-margin/top = -5.5
-margin/right = -274.5
-margin/bottom = -53.5
+margin/left = 5.5
+margin/top = -20.0
+margin/right = -283.5
+margin/bottom = -68.0
 custom_fonts/font = ExtResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "ABOUT"
 flat = false
-script/script = ExtResource( 4 )
+script/script = ExtResource( 5 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="." groups=[
 "music",
 ]]
 
-stream/stream = ExtResource( 5 )
+stream/stream = ExtResource( 6 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 5.0
@@ -125,20 +146,20 @@ stream/autoplay = false
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="Base" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1.07855, -1.84071 )
 transform/scale = Vector2( 0.0864583, 0.128739 )
 z/z = -1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Revenge" type="Sprite" parent="."]
 
 transform/pos = Vector2( 1.87856, -1.84071 )
 transform/scale = Vector2( 0.0864583, 0.128739 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 
@@ -151,7 +172,7 @@ config/amount = 8
 config/lifetime = 2.5
 config/preprocess = 1.0
 config/process_mode = 1
-config/texture = ExtResource( 9 )
+config/texture = ExtResource( 10 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 500.0
@@ -183,7 +204,7 @@ config/amount = 8
 config/lifetime = 2.5
 config/preprocess = 1.0
 config/process_mode = 1
-config/texture = ExtResource( 9 )
+config/texture = ExtResource( 10 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 500.0
@@ -215,7 +236,7 @@ config/amount = 6
 config/lifetime = 2.5
 config/preprocess = 1.0
 config/process_mode = 1
-config/texture = ExtResource( 9 )
+config/texture = ExtResource( 10 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 500.0
@@ -247,7 +268,7 @@ config/amount = 6
 config/lifetime = 2.5
 config/preprocess = 1.0
 config/process_mode = 1
-config/texture = ExtResource( 9 )
+config/texture = ExtResource( 10 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 500.0
@@ -267,6 +288,8 @@ params/anim_initial_pos = 0.0
 randomness/spread = 10.0
 randomness/linear_velocity = 0.5
 color/color = Color( 0.851562, 0.459045, 0.83623, 1 )
+
+[connection signal="pressed" from="VButtonArray/Button" to="VButtonArray/Button" method="_on_Button_pressed"]
 
 [connection signal="pressed" from="VButtonArray/play_button" to="VButtonArray/play_button" method="_on_Button_pressed"]
 
