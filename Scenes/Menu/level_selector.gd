@@ -19,7 +19,8 @@ func _ready():
 func next_level():	
 	if (global.level < levels.size()):		
 		global.level += 1		
-		global.unlocked_levels += 1
+		if (global.level >= global.unlocked_levels):
+			global.unlocked_levels += 1
 		global.save_game()
 		viewport.get_child(0).queue_free()
 		#reset_hud()

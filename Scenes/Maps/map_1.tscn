@@ -1567,8 +1567,6 @@ script/script = ExtResource( 13 )
 
 [node name="Cages" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="jail" parent="Cages" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( -1250, -2410 )
