@@ -7,7 +7,7 @@ SWITCH_RETRO_EFFECT,Simular pantalla retro,Simulate retro TV,Röhrenfernseher si
 SWITCH_MUSIC,Música,Music,Musik,
 SWITCH_SOUND,Sonidos,Sound,Ton,
 BTTN_BACK,Volver,Back,Zurück,
-TEXT_LICENSE,"El código fuente de este juego está licenciado bajo Geneal Public License versión 3. Todos los recursos gráficos, sonidos y música han sido creados por nosotos y están licenciados como Creative Commons Attribution-Non Commercial-Share Alike 4.0. La tipografía utilizada es Press Start 2P creada por CodeMan38 (Open Font License)
+TEXT_LICENSE,"El código fuente de este juego está licenciado bajo Geneal Public License versión 3. Todos los recursos gráficos, sonidos y música han sido creados por nosotros y están licenciados como Creative Commons Attribution-Non Commercial-Share Alike 4.0. La tipografía utilizada es Press Start 2P creada por CodeMan38 (Open Font License)
 
 Puedes obtener el código fuente y los recusos en gitlab.com/dariasteam/cows-revenge
 
@@ -33,19 +33,19 @@ EP8,Anfibios,Amphibious,Amphibisch,
 EP9,R.U.B.E.N,R.U.B.E.N,R.U.B.E.N,
 UFO_JAIL_COUNTER,Vuelve cuando hayas salvado a todas las gallinas. Te quedan: ,Come back when you have rescued all the hens. Remaining:,Komm wieder wenn du alle Hennen gerettet hast. Verbleibend: ,
 DANIEL_INFO,"dariasteam94@gmail.com
-Mastodo.social/@darias
+Mastodon.social/@darias
 
 - Código
 - Gráficos
 - Música
 - Animaciones","dariasteam94@gmail.com
-Mastodo.social/@darias
+mastodon.social/@darias
 
 - Code
 - Sprites
 - Music
 - Animations","dariasteam94@gmail.com
-Mastodo.social/@darias
+Mastodon.social/@darias
 
 - Code
 - Sprites
