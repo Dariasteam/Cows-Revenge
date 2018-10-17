@@ -48,12 +48,12 @@ button/align = 1065353216
 
 [node name="Button" type="Button" parent="VButtonArray"]
 
-rect/scale = Vector2( 0.08, 0.12 )
+rect/scale = Vector2( 0.06, 0.1 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -3.09944e-06
+margin/left = 0.0
 margin/top = 0.0
 margin/right = 42.0
 margin/bottom = 37.0
