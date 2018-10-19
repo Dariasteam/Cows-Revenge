@@ -33,6 +33,10 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
+[connection signal="area_enter" from="." to="." method="_on_death_line_area_enter"]
+
+[connection signal="area_exit" from="." to="." method="_on_death_line_area_exit"]
+
 [connection signal="body_enter" from="." to="." method="_on_DeathLine_body_enter"]
 
 
