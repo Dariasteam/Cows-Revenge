@@ -9,9 +9,9 @@ func _on_DeathLine_body_enter( body ):
 
 
 func _on_death_line_area_enter( area ):
-	if(area.is_in_group("bottom_level_detector")):		
+	if(area.is_in_group("bottom_level_detector") and global.bottom_particles):		
 		particles.set_emitting(true)		
 
 func _on_death_line_area_exit( area ):
-	if(area.is_in_group("bottom_level_detector")):
+	if(area.is_in_group("bottom_level_detector") and global.bottom_particles):
 		particles.set_emitting(false)

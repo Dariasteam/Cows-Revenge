@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Fonts/pixelated_regular.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=2]
@@ -56,6 +56,18 @@ func _ready():
 
 func _on_CheckButton3_toggled( pressed ):		
 	global.sound = !global.sound"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends CheckButton
+
+func _ready():
+	set_pressed(global.bottom_particles)
+
+func _on_CheckButton4_toggled( pressed ):
+	global.bottom_particles = !global.bottom_particles
+
+"
 
 [node name="Control" type="Control"]
 
@@ -179,6 +191,26 @@ flat = false
 align = 0
 script/script = SubResource( 4 )
 
+[node name="CheckButton4" type="CheckButton" parent="Panel/VBoxContainer"]
+
+rect/min_size = Vector2( 0, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 136.0
+margin/right = 486.0
+margin/bottom = 166.0
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "SWITCH_BOTTOM_PARTICLES"
+flat = false
+align = 0
+script/script = SubResource( 5 )
+
 [node name="VButtonArray" type="VButtonArray" parent="Panel"]
 
 focus/ignore_mouse = false
@@ -227,5 +259,7 @@ max_lines_visible = -1
 [connection signal="toggled" from="Panel/VBoxContainer/CheckButton2" to="Panel/VBoxContainer/CheckButton2" method="_on_CheckButton2_toggled"]
 
 [connection signal="toggled" from="Panel/VBoxContainer/CheckButton3" to="Panel/VBoxContainer/CheckButton3" method="_on_CheckButton3_toggled"]
+
+[connection signal="toggled" from="Panel/VBoxContainer/CheckButton4" to="Panel/VBoxContainer/CheckButton4" method="_on_CheckButton4_toggled"]
 
 

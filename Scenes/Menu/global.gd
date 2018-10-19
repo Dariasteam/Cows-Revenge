@@ -15,6 +15,7 @@ var can_show_in_game_menu = true
 var retro_effect = true
 var music = true
 var sound = true
+var bottom_particles = false
 
 var level = 0
 var unlocked_levels = 1
@@ -81,7 +82,8 @@ func save_game():
 		retro_effect=retro_effect,
 		# NEW STUFF
 		sound=sound,
-		music=music
+		music=music,
+		bottom_particles=bottom_particles
 	}
 	save_game.store_line(data.to_json())
 	save_game.close()	
@@ -100,7 +102,7 @@ func load_game():
 	onscreen_controls = current_line["onscreen_controls"]
 	cowbells = current_line["saved_cowbells"]
 	saved_cowbells = cowbells
-	
+		
 	max_milk = current_line["max_milk"]	
 	max_life = current_line["max_life"]
 	life = current_line["life"]
@@ -112,4 +114,7 @@ func load_game():
 	if (current_line.has("sound")):
 		sound = current_line["sound"]
 		music = current_line["music"]
+		
+	if (current_line.has("bottom_particles")):
+		bottom_particles = current_line["bottom_particles"]
 	
