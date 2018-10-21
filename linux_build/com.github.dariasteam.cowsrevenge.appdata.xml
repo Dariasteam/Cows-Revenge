@@ -68,14 +68,18 @@
     <release version="1.3" date="2018-04-9" urgency="low" type="stable">
       <description>
         <p>
-          First packaged linux release featuring 8 playable levels and
-          gamepad support.
+          - Allow mute sound and music
+          - Add partial German translation (thanks to Basxto)
+	  - Better gamepad support 
+          - Minor bugfixes and improvements
         </p>
       </description>
       <description xml:lang="es">
         <p>
-          Primera versión linux empaquetada, ofrece 8 niveles jugables
-          y soporte para mandos.
+          - Añade la opción de desactivar el sonido y la música
+          - Añade soporte parcial para Alemán (Contribución de Basxto)
+          - Soporte para mando mejorado
+	  - Correciones y mejoras menores
         </p>
       </description>
     </release>
