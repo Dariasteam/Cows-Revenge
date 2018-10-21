@@ -1,0 +1,36 @@
+[gd_resource type="CanvasItemMaterial" load_steps=2 format=1]
+
+[sub_resource type="CanvasItemShader" id=1]
+
+_code = {
+"fragment": "uniform float lines_distance = 4.0;
+uniform float pixel_size = 2.0;
+uniform float size_screen = 600;
+uniform float scanline_alpha = 0.9;
+uniform float lines_velocity = 30.0;
+
+float line_row = floor((SCREEN_UV.y * size_screen/pixel_size) + mod(TIME*lines_velocity, lines_distance));
+
+float n = 1.0 - ceil((mod(line_row,lines_distance)/lines_distance));
+
+vec4 c = vec4(texscreen(SCREEN_UV),1);
+c = c - n*c*(1 - scanline_alpha);
+c.a = 1;
+COLOR = c;",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[resource]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+shader_param/lines_distance = 4.0
+shader_param/pixel_size = 2.0
+shader_param/size_screen = 600.0
+shader_param/scanline_alpha = 0.9
+shader_param/lines_velocity = 30.0
+

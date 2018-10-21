@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=1]
+[gd_scene load_steps=38 format=1]
 
 [ext_resource path="res://Scenes/Menu/level_selector.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Maps/map_0.tscn" type="PackedScene" id=2]
@@ -29,14 +29,15 @@
 [ext_resource path="res://Scenes/Menu/button_back.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/Menu/in_game_menu.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Menu/ufo_store.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Effects/scan_lines.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Effects/retro_shader.tres" type="CanvasItemMaterial" id=30]
+[ext_resource path="res://Sprites/Effects/white.png" type="Texture" id=31]
 
-[sub_resource type="ColorRamp" id=6]
+[sub_resource type="ColorRamp" id=1]
 
 offsets = FloatArray( 0, 1 )
 colors = ColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=2]
 
 ambient_light/enabled = false
 ambient_light/color = Color( 0, 0, 0, 1 )
@@ -80,15 +81,15 @@ bcs/contrast = 1.0
 bcs/saturation = 1.0
 srgb/enabled = false
 
-[sub_resource type="World" id=2]
+[sub_resource type="World" id=3]
 
-environment = SubResource( 1 )
+environment = SubResource( 2 )
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=4]
 
 shader/shading_mode = 0
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 
 script/source = "extends Button
 
@@ -97,7 +98,7 @@ func _on_Back_pressed():
 	get_node(\"in_game_menu\").show()
 "
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=6]
 
 script/source = "extends TextureFrame
 
@@ -157,13 +158,13 @@ params/final_size = 6.0
 params/hue_variation = 0.0
 params/anim_speed_scale = 0.0
 params/anim_initial_pos = 0.0
-color/color_ramp = SubResource( 6 )
+color/color_ramp = SubResource( 1 )
 
 [node name="Viewport" type="Viewport" parent="Control"]
 
 rect = Rect2( 0, 0, 1280, 768 )
 own_world = false
-world = SubResource( 2 )
+world = SubResource( 3 )
 transparent_bg = false
 render_target/enabled = false
 render_target/v_flip = false
@@ -373,7 +374,7 @@ autostart = false
 
 [node name="Sprite" type="Sprite" parent="Control/Cowbells"]
 
-material/material = SubResource( 3 )
+material/material = SubResource( 4 )
 transform/pos = Vector2( 586, 45 )
 transform/scale = Vector2( 3, 3 )
 texture = ExtResource( 24 )
@@ -398,7 +399,7 @@ margin/top = 34.0
 margin/right = 97.0
 margin/bottom = 89.0
 text = "<"
-script/script = SubResource( 4 )
+script/script = SubResource( 5 )
 
 [node name="in_game_menu" parent="Control/Back" instance=ExtResource( 28 )]
 
@@ -410,11 +411,24 @@ margin/bottom = 686.0
 
 [node name="Control" parent="Control" instance=ExtResource( 29 )]
 
-[node name="ScanLine" parent="." instance=ExtResource( 30 )]
+[node name="ScanLine" type="TextureFrame" parent="."]
 
-visibility/opacity = 0.1
-modulate = Color( 1, 1, 1, 0.15302 )
-script/script = SubResource( 5 )
+visibility/opacity = 0.0
+visibility/self_opacity = 0.0
+material/material = ExtResource( 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1280.0
+margin/bottom = 718.0
+texture = ExtResource( 31 )
+modulate = Color( 1, 1, 1, 0 )
+expand = true
+stretch_mode = 0
+script/script = SubResource( 6 )
 
 [connection signal="pressed" from="Control/Buttons/Bttn_U" to="Control/Buttons" method="_on_Bttn_U_pressed"]
 
