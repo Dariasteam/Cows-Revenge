@@ -22,7 +22,7 @@ Code licensed as [GPL v3](LICENSE_CODE), assets as [Creative Commons Attribution
 
 ## Authors
   - **Daniel Darias Sánchez** [mastodon](https://mastodon.social/@darias), [email](dariasteam94@gmail.com)
-      code, music, sprites, aniamtions
+      code, music, sprites, animations
   - **Yanara Aristiguieta** [instagram](https://www.instagram.com/yanaronna/), [twitter](twitter.com/yanaronna), [email](needafreefall-@hotmail.com)
       sprites, character design, animations
 
